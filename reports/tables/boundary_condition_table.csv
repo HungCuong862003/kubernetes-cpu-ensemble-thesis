@@ -1,0 +1,4 @@
+dataset,workload,CV median,Hurst,ACF@120min,delta @30min,delta @120min,verdict
+Alibaba 2018,batch + online,0.347,0.775,0.211,+0.43pp,+4.64pp,ML dominates 60min+
+Bitbrains,VM compute,0.68,0.71,low,+2.95pp,-9.13pp,ML wins only @30min
+DSB,microservice RPC,>2.0,~0.50,~0.00,N/A,-83pp,naive wins all

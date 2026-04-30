@@ -1,0 +1,526 @@
+nohup: ignoring input
+WARNING: PyTorch not found. BiLSTM disabled.
+WARNING: optuna not found. HPO disabled.
+No CUDA -- XGBoost on CPU
+BiLSTM disabled via --no-bilstm flag
+
+======================================================================
+SPRINT 1 v9.1 (Vast.AI)
+======================================================================
+Data dir: /workspace/bitbrains_formatted
+Output:   /workspace/bb_sprint1_output
+Device:   CPU
+Parallel: True (4 workers x 20 cores)
+TF32:     False
+XGBoost:  cpu / auto
+LightGBM: device=cpu n_jobs=-1
+AMP:      off
+BiLSTM:   batch=4096  stride=2  optuna_trials=10
+ET:       max_depth=25  max_samples=0.3  n_estimators=200
+OOF sub:  1.0
+ACI buf:  2000 residuals
+Stat n:   20 containers (parallel)
+DM test:  HLN-corrected, t(n-1) reference
+CQR:      AgACI (Zaffran et al., ICML 2022)
+Logs:     parallel -> run_<horizon>.log  sequential -> run.log
+[12:51:07] Health check:
+[12:51:07]   Disk free: 24.5 GB
+[12:51:07]   RAM: 0.2 GB used
+[12:51:07]   GPU: none
+[12:51:07]   CPU cores: 64
+[12:51:07]   OOF subsample: 1.0
+[12:51:07]   ACI buffer size: 2000
+[12:51:07]   BiLSTM batch: 4096  stride: 2
+[12:51:07]   ET max_depth: 25  max_samples: 0.3
+
+[12:51:07] Running 4 horizons in PARALLEL (4 workers x 20 cores)
+WARNING: PyTorch not found. BiLSTM disabled.
+WARNING: optuna not found. HPO disabled.
+No CUDA -- XGBoost on CPU
+[12:51:09] [worker 10min] cpu=0-19  n_jobs=20  pid=2830
+
+======================================================================
+LOADING DATA
+======================================================================
+[12:51:09]   train.parquet  (3.8 MB)
+[12:51:09]   val.parquet  (1.0 MB)
+[12:51:09]   test.parquet  (0.8 MB)
+WARNING: PyTorch not found. BiLSTM disabled.
+WARNING: optuna not found. HPO disabled.
+WARNING: PyTorch not found. BiLSTM disabled.
+WARNING: optuna not found. HPO disabled.
+WARNING: PyTorch not found. BiLSTM disabled.
+WARNING: optuna not found. HPO disabled.
+No CUDA -- XGBoost on CPU
+[12:51:09] [worker 30min] cpu=20-39  n_jobs=20  pid=2831
+
+======================================================================
+LOADING DATA
+======================================================================
+[12:51:09]   train.parquet  (3.8 MB)
+[12:51:09]   val.parquet  (1.0 MB)
+[12:51:09]   test.parquet  (0.8 MB)
+No CUDA -- XGBoost on CPU
+[12:51:09] [worker 60min] cpu=40-59  n_jobs=20  pid=2827
+
+======================================================================
+LOADING DATA
+======================================================================
+[12:51:09]   train.parquet  (3.8 MB)
+[12:51:09]   val.parquet  (1.0 MB)
+[12:51:09]   test.parquet  (0.8 MB)
+No CUDA -- XGBoost on CPU
+[12:51:09] [worker 120min] cpu=60-79  n_jobs=20  pid=2832
+
+======================================================================
+LOADING DATA
+======================================================================
+[12:51:09]   train.parquet  (3.8 MB)
+[12:51:09]   val.parquet  (1.0 MB)
+[12:51:09]   test.parquet  (0.8 MB)
+[12:51:09]   sizes: train=708,612  val=245,370  test=203,820
+[12:51:09]   temporal ordering: OK
+[12:51:09]   RAM after load: 0.3 GB
+
+======================================================================
+  10min (10min ahead, min_lag=3)
+======================================================================
+[12:51:09] Building features...
+[12:51:09]     train...
+[12:51:09]     computing rolling cache for 'train'...
+[12:51:09]   sizes: train=708,612  val=245,370  test=203,820
+[12:51:09]   temporal ordering: OK
+[12:51:09]   RAM after load: 0.3 GB
+
+======================================================================
+  30min (30min ahead, min_lag=7)
+======================================================================
+[12:51:09] Building features...
+[12:51:09]     train...
+[12:51:09]     computing rolling cache for 'train'...
+[12:51:09]   sizes: train=708,612  val=245,370  test=203,820
+[12:51:09]   temporal ordering: OK
+[12:51:09]   RAM after load: 0.3 GB
+
+======================================================================
+  60min (60min ahead, min_lag=13)
+======================================================================
+[12:51:09] Building features...
+[12:51:09]     train...
+[12:51:09]     computing rolling cache for 'train'...
+[12:51:09]   sizes: train=708,612  val=245,370  test=203,820
+[12:51:09]   temporal ordering: OK
+[12:51:09]   RAM after load: 0.3 GB
+
+======================================================================
+  120min (120min ahead, min_lag=25)
+======================================================================
+[12:51:09] Building features...
+[12:51:09]     train...
+[12:51:09]     computing rolling cache for 'train'...
+[12:51:10]     rolling cache 'train' ready  [0.6GB]
+[12:51:10]     rolling cache 'train' ready  [0.6GB]
+[12:51:10]     rolling cache 'train' ready  [0.6GB]
+[12:51:10]     rolling cache 'train' ready  [0.6GB]
+[12:51:11]     val...
+[12:51:11]     computing rolling cache for 'val'...
+[12:51:11]     val...
+[12:51:11]     computing rolling cache for 'val'...
+[12:51:11]     val...
+[12:51:11]     computing rolling cache for 'val'...
+[12:51:11]     val...
+[12:51:11]     computing rolling cache for 'val'...
+[12:51:12]     rolling cache 'val' ready  [1.0GB]
+[12:51:12]     rolling cache 'val' ready  [1.0GB]
+[12:51:12]     rolling cache 'val' ready  [1.0GB]
+[12:51:12]     rolling cache 'val' ready  [1.0GB]
+[12:51:13]     test...
+[12:51:13]     computing rolling cache for 'test'...
+[12:51:13]     test...
+[12:51:13]     computing rolling cache for 'test'...
+[12:51:13]     test...
+[12:51:13]     computing rolling cache for 'test'...
+[12:51:13]     test...
+[12:51:13]     computing rolling cache for 'test'...
+[12:51:14]     rolling cache 'test' ready  [1.2GB]
+[12:51:14]     rolling cache 'test' ready  [1.2GB]
+[12:51:14]     rolling cache 'test' ready  [1.2GB]
+[12:51:14]     rolling cache 'test' ready  [1.2GB]
+[12:51:14]   Features: all=75  XGB=30  LGBM=59
+[12:51:14]   Features: all=75  XGB=30  LGBM=59
+[12:51:14]   Features: all=75  XGB=30  LGBM=59
+[12:51:14]   Features: all=75  XGB=30  LGBM=59
+[12:51:15]   Clean: train=708,328  val=245,086  test=203,536  [1.6GB]
+[12:51:15] Extracting arrays...
+[12:51:15]   Clean: train=705,204  val=241,962  test=200,412  [1.6GB]
+[12:51:15] Extracting arrays...
+[12:51:15]   Clean: train=707,760  val=244,518  test=202,968  [1.6GB]
+[12:51:15] Extracting arrays...
+[12:51:15]   Clean: train=706,908  val=243,666  test=202,116  [1.6GB]
+[12:51:15] Extracting arrays...
+[12:51:17]   DFs freed  [2.3GB]
+[12:51:17] 1/14  Naive (CPU + MEM)
+[12:51:17]   CPU  R2=0.4967  MAE=12.339
+[12:51:17]   MEM  R2=0.1891  MAE=6.022
+[12:51:17] 2-3/14  ETS + ARIMA (parallel rolling)...
+[12:51:17]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+[12:51:17]   DFs freed  [2.3GB]
+[12:51:17] 1/14  Naive (CPU + MEM)
+[12:51:17]   CPU  R2=0.7946  MAE=6.414
+[12:51:17]   MEM  R2=0.4902  MAE=4.263
+[12:51:17] 2-3/14  ETS + ARIMA (parallel rolling)...
+[12:51:17]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+[12:51:17]   DFs freed  [2.2GB]
+[12:51:17] 1/14  Naive (CPU + MEM)
+[12:51:17]   CPU  R2=0.0755  MAE=20.399
+[12:51:17]   MEM  R2=-0.4104  MAE=8.772
+[12:51:17] 2-3/14  ETS + ARIMA (parallel rolling)...
+[12:51:18]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+[12:51:18]   DFs freed  [2.3GB]
+[12:51:18] 1/14  Naive (CPU + MEM)
+[12:51:18]   CPU  R2=0.1885  MAE=18.110
+[12:51:18]   MEM  R2=-0.0710  MAE=7.493
+[12:51:18] 2-3/14  ETS + ARIMA (parallel rolling)...
+[12:51:18]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+/venv/main/lib/python3.12/site-packages/statsmodels/tsa/holtwinters/model.py:903: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  warnings.warn(
+[12:51:34]   ETS: 20 ok, 419 forecasts, 0 fallback
+[12:51:34]   ETS: R2=-0.0001  MAE=21.729
+[12:51:34]   ARIMA: R2=0.0755  MAE=20.399
+[12:51:34] 4/14  Linear Regression (Ridge, solver=lsqr)
+[12:51:34]   ETS: 20 ok, 420 forecasts, 0 fallback
+[12:51:34]   ETS: R2=0.6901  MAE=8.448
+[12:51:34]   ARIMA: R2=0.7946  MAE=6.414
+[12:51:34] 4/14  Linear Regression (Ridge, solver=lsqr)
+[12:51:35]   ETS: 20 ok, 420 forecasts, 0 fallback
+[12:51:35]   ETS: R2=0.1039  MAE=19.624
+[12:51:35]   ARIMA: R2=0.1885  MAE=18.110
+[12:51:35] 4/14  Linear Regression (Ridge, solver=lsqr)
+[12:51:36]   ETS: 20 ok, 418 forecasts, 0 fallback
+[12:51:36]   ETS: R2=0.4096  MAE=14.003
+[12:51:36]   ARIMA: R2=0.4967  MAE=12.339
+[12:51:36] 4/14  Linear Regression (Ridge, solver=lsqr)
+[12:51:51]   R2=0.0895  vs naive: +1.40pp
+[12:51:51] 5/14  XGBoost
+[12:51:54]   R2=0.7987  vs naive: +0.41pp
+[12:51:54] 5/14  XGBoost
+[12:51:58]   R2=0.5292  vs naive: +3.25pp
+[12:51:58] 5/14  XGBoost
+[12:51:58]   R2=0.1919  vs naive: +0.34pp
+[12:51:58] 5/14  XGBoost
+[12:52:04]   R2=0.7985  vs naive: +0.39pp  (9.4s)
+[12:52:04] 6/14  LightGBM
+[12:52:08]   R2=0.7948  vs naive: +0.03pp
+[12:52:08] 7/14  ExtraTrees (max_depth=25, max_samples=0.3)
+[12:52:09]   R2=0.0712  vs naive: -0.43pp  (17.8s)
+[12:52:09] 6/14  LightGBM
+[12:52:09]   R2=0.1948  vs naive: +0.63pp  (11.5s)
+[12:52:09] 6/14  LightGBM
+[12:52:11]   R2=0.5309  vs naive: +3.43pp  (13.4s)
+[12:52:11] 6/14  LightGBM
+[12:52:14]   R2=0.1891  vs naive: +0.06pp
+[12:52:14] 7/14  ExtraTrees (max_depth=25, max_samples=0.3)
+[12:53:10]   R2=0.5012  vs naive: +0.45pp
+[12:53:10] 7/14  ExtraTrees (max_depth=25, max_samples=0.3)
+[12:56:01]   R2=0.1435  vs naive: -4.50pp  (227.7s)
+[12:56:02] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[12:56:17]   R2=0.8029  vs naive: +0.83pp  (248.3s)
+[12:56:17] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[12:56:28]   R2=0.5111  vs naive: +1.44pp  (197.5s)
+[12:56:28] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[12:56:33]   R2=0.0753  vs naive: -0.02pp
+[12:56:33] 7/14  ExtraTrees (max_depth=25, max_samples=0.3)
+[12:57:49]     XGB-oof OOF R2: 0.1004  (infilled 117818)
+[12:58:19]     LGB-oof OOF R2: 0.0497  (infilled 117818)
+[12:58:29]     XGB-oof OOF R2: 0.1589  (infilled 118058)
+[12:58:36]     XGB-oof OOF R2: 0.1190  (infilled 117960)
+[12:59:57]     LGB-oof OOF R2: 0.0310  (infilled 118058)
+[13:00:14]     LGB-oof OOF R2: 0.0302  (infilled 117960)
+[13:04:30]     ET-oof OOF R2: 0.2365  (infilled 117818)
+[13:04:31]   R2=0.1633  NNLS: XGB=0.177  LGB=0.030  ET=0.792  (509.1s)
+[13:04:31] 10/14  Hetero Ensemble (CPU)
+[13:04:31]     BiLSTM OOF not available -- fallback to homo
+[13:04:31] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[13:06:51]     XGB-MEM OOF R2: 0.1545  (infilled 117818)
+[13:07:12]   R2=-0.0385  vs naive: -11.40pp  (639.2s)
+[13:07:13] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[13:08:25]     LGB-MEM OOF R2: 0.1339  (infilled 117818)
+[13:11:23]     ET-oof OOF R2: 0.1953  (infilled 117960)
+[13:11:24]   R2=0.5262  NNLS: XGB=0.213  LGB=0.139  ET=0.647  (896.0s)
+[13:11:24] 10/14  Hetero Ensemble (CPU)
+[13:11:24]     BiLSTM OOF not available -- fallback to homo
+[13:11:25] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[13:12:47]     XGB-oof OOF R2: 0.1289  (infilled 117534)
+[13:13:11]     ET-oof OOF R2: 0.1937  (infilled 118058)
+[13:13:11]   R2=0.7983  NNLS: XGB=0.267  LGB=0.024  ET=0.709  (1014.2s)
+[13:13:11] 10/14  Hetero Ensemble (CPU)
+[13:13:11]     BiLSTM OOF not available -- fallback to homo
+[13:13:11] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[13:13:32]     XGB-MEM OOF R2: 0.1657  (infilled 117960)
+[13:14:16]     LGB-MEM OOF R2: 0.1207  (infilled 117960)
+[13:17:39]     ET-MEM OOF R2: 0.2206  (infilled 117818)
+[13:17:40]   MEM R2=-0.0731  NNLS: XGB=0.275  LGB=0.190  ET=0.535
+[13:17:40] 12/14  Post-processing + ACI uncertainty quantification...
+[13:18:52]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[13:19:55]     ET-MEM OOF R2: 0.1918  (infilled 117960)
+[13:19:55]   MEM R2=0.1962  NNLS: XGB=0.333  LGB=0.159  ET=0.507
+[13:19:55] 12/14  Post-processing + ACI uncertainty quantification...
+[13:20:06]     XGB-MEM OOF R2: 0.2089  (infilled 118058)
+[13:20:40]     LGB-MEM OOF R2: 0.1327  (infilled 118058)
+[13:20:52]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[13:20:54]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[13:23:19]       AgACI coverage: 82.1%  target: 80%  cal_error: 2.1pp  mean_width: 72.725
+[13:23:19]       expert weights: {0.01: 0.262, 0.02: 0.258, 0.05: 0.247, 0.1: 0.232}
+[13:23:19]       per-gamma cov:  {'gamma_0.01': 79.9, 'gamma_0.02': 79.73, 'gamma_0.05': 79.31, 'gamma_0.1': 78.69}
+[13:23:19]       ACI buffer size: 2000 residuals
+[13:23:20] 13/14  Ablation -- CPU...
+[13:26:18]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[13:26:20] Ablation -- MEM...
+[13:26:58]     ET-MEM OOF R2: 0.1797  (infilled 118058)
+[13:26:59]   MEM R2=0.4678  NNLS: XGB=0.539  LGB=0.006  ET=0.455
+[13:26:59] 12/14  Post-processing + ACI uncertainty quantification...
+[13:27:08] 14/14  Cluster analysis: no cluster_id column, skipping
+
+----------------------------------------------------------------------
+  SUMMARY: 60min (60min, min_lag=13)
+----------------------------------------------------------------------
+  Model                           R2      MAE   vs naive
+  ------------------------- -------- -------- ----------
+  naive                       0.1885   18.110     +0.00pp
+  ets                         0.1039   19.624     -8.46pp
+  arima                       0.1885   18.110     +0.00pp
+  linear_reg                  0.1919   20.461     +0.34pp
+  xgboost                     0.1948   19.839     +0.63pp
+  lightgbm                    0.1891   18.103     +0.06pp
+  extratrees                  0.1435   21.673     -4.50pp
+  bilstm                      0.1885   18.110     +0.00pp
+  homo_ensemble               0.1633   21.396     -2.51pp
+  hetero_ensemble             0.1633   21.396     -2.51pp
+  ------------------------- -------- -------- ----------
+  naive_mem                  -0.0710    7.493     +0.00pp
+  homo_ensemble_mem          -0.0731    8.022     -0.22pp
+[13:27:08] 60min done in 36.0min  [2.9GB]
+[13:27:08]   60min: complete
+[13:27:25]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[13:28:06]       AgACI coverage: 82.3%  target: 80%  cal_error: 2.3pp  mean_width: 50.779
+[13:28:06]       expert weights: {0.01: 0.26, 0.02: 0.258, 0.05: 0.248, 0.1: 0.234}
+[13:28:06]       per-gamma cov:  {'gamma_0.01': 79.95, 'gamma_0.02': 79.87, 'gamma_0.05': 79.51, 'gamma_0.1': 78.92}
+[13:28:06]       ACI buffer size: 2000 residuals
+[13:28:06] 13/14  Ablation -- CPU...
+[13:28:48]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[13:28:54] Ablation -- MEM...
+[13:29:58] 14/14  Cluster analysis: no cluster_id column, skipping
+
+----------------------------------------------------------------------
+  SUMMARY: 30min (30min, min_lag=7)
+----------------------------------------------------------------------
+  Model                           R2      MAE   vs naive
+  ------------------------- -------- -------- ----------
+  naive                       0.4967   12.339     +0.00pp
+  ets                         0.4096   14.003     -8.71pp
+  arima                       0.4967   12.339     +0.00pp
+  linear_reg                  0.5292   13.893     +3.25pp
+  xgboost                     0.5309   14.196     +3.43pp
+  lightgbm                    0.5012   12.294     +0.45pp
+  extratrees                  0.5111   14.403     +1.44pp
+  bilstm                      0.4967   12.339     +0.00pp
+  homo_ensemble               0.5262   14.540     +2.95pp
+  hetero_ensemble             0.5262   14.540     +2.95pp
+  ------------------------- -------- -------- ----------
+  naive_mem                   0.1891    6.022     +0.00pp
+  homo_ensemble_mem           0.1962    6.417     +0.71pp
+[13:29:58] 30min done in 38.8min  [2.9GB]
+[13:29:58]   30min: complete
+[13:30:18]       AgACI coverage: 83.1%  target: 80%  cal_error: 3.1pp  mean_width: 24.951
+[13:30:18]       expert weights: {0.01: 0.257, 0.02: 0.256, 0.05: 0.25, 0.1: 0.237}
+[13:30:18]       per-gamma cov:  {'gamma_0.01': 79.97, 'gamma_0.02': 79.92, 'gamma_0.05': 79.69, 'gamma_0.1': 79.15}
+[13:30:18]       ACI buffer size: 2000 residuals
+[13:30:18] 13/14  Ablation -- CPU...
+[13:30:35] Ablation -- MEM...
+[13:31:02] 14/14  Cluster analysis: no cluster_id column, skipping
+
+----------------------------------------------------------------------
+  SUMMARY: 10min (10min, min_lag=3)
+----------------------------------------------------------------------
+  Model                           R2      MAE   vs naive
+  ------------------------- -------- -------- ----------
+  naive                       0.7946    6.414     +0.00pp
+  ets                         0.6901    8.448    -10.45pp
+  arima                       0.7946    6.414     +0.00pp
+  linear_reg                  0.7987    7.778     +0.41pp
+  xgboost                     0.7985    7.399     +0.39pp
+  lightgbm                    0.7948    6.409     +0.03pp
+  extratrees                  0.8029    7.937     +0.83pp
+  bilstm                      0.7946    6.414     +0.00pp
+  homo_ensemble               0.7983    7.994     +0.37pp
+  hetero_ensemble             0.7983    7.994     +0.37pp
+  ------------------------- -------- -------- ----------
+  naive_mem                   0.4902    4.263     +0.00pp
+  homo_ensemble_mem           0.4678    4.767     -2.24pp
+[13:31:02] 10min done in 39.9min  [2.9GB]
+[13:31:02]   10min: complete
+[15:15:07]     LGB-oof OOF R2: 0.1010  (infilled 117534)
+[15:18:36]     ET-oof OOF R2: 0.3363  (infilled 117534)
+[15:18:37]   R2=-0.0158  NNLS: XGB=0.038  LGB=0.140  ET=0.822  (7884.2s)
+[15:18:37] 10/14  Hetero Ensemble (CPU)
+[15:18:37]     BiLSTM OOF not available -- fallback to homo
+[15:18:37] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[15:19:11]     XGB-MEM OOF R2: 0.1510  (infilled 117534)
+[18:34:34]     LGB-MEM OOF R2: 0.1673  (infilled 117534)
+[18:38:17]     ET-MEM OOF R2: 0.2908  (infilled 117534)
+[18:38:17]   MEM R2=-0.4404  NNLS: XGB=0.167  LGB=0.076  ET=0.757
+[18:38:17] 12/14  Post-processing + ACI uncertainty quantification...
+[18:38:42]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[18:42:17]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[18:43:39]       AgACI coverage: 82.1%  target: 80%  cal_error: 2.1pp  mean_width: 88.073
+[18:43:39]       expert weights: {0.01: 0.262, 0.02: 0.258, 0.05: 0.247, 0.1: 0.233}
+[18:43:39]       per-gamma cov:  {'gamma_0.01': 79.94, 'gamma_0.02': 79.79, 'gamma_0.05': 79.35, 'gamma_0.1': 78.76}
+[18:43:39]       ACI buffer size: 2000 residuals
+[18:43:39] 13/14  Ablation -- CPU...
+[19:11:01] Ablation -- MEM...
+[20:27:15] 14/14  Cluster analysis: no cluster_id column, skipping
+
+----------------------------------------------------------------------
+  SUMMARY: 120min (120min, min_lag=25)
+----------------------------------------------------------------------
+  Model                           R2      MAE   vs naive
+  ------------------------- -------- -------- ----------
+  naive                       0.0755   20.399     +0.00pp
+  ets                        -0.0001   21.729     -7.56pp
+  arima                       0.0755   20.399     +0.00pp
+  linear_reg                  0.0895   23.824     +1.40pp
+  xgboost                     0.0712   23.362     -0.43pp
+  lightgbm                    0.0753   20.424     -0.02pp
+  extratrees                 -0.0385   25.893    -11.40pp
+  bilstm                      0.0755   20.399     +0.00pp
+  homo_ensemble              -0.0158   25.626     -9.13pp
+  hetero_ensemble            -0.0158   25.626     -9.13pp
+  ------------------------- -------- -------- ----------
+  naive_mem                  -0.4104    8.772     +0.00pp
+  homo_ensemble_mem          -0.4404    9.753     -3.00pp
+[20:27:15] 120min done in 456.1min  [2.6GB]
+[20:27:15]   120min: complete
+[20:27:16] Clearing rolling feature cache...
+[20:27:16] Rolling cache cleared (all splits)
+
+======================================================================
+FINAL SUMMARY
+======================================================================
+Horizon  naive_R2  naive_MAE    ets_R2   ets_MAE  arima_R2  arima_MAE  linear_reg_R2  linear_reg_MAE  xgboost_R2  xgboost_MAE  lightgbm_R2  lightgbm_MAE  extratrees_R2  extratrees_MAE  bilstm_R2  bilstm_MAE  homo_ensemble_R2  homo_ensemble_MAE  hetero_ensemble_R2  hetero_ensemble_MAE  naive_mem_R2  naive_mem_MAE  homo_ensemble_mem_R2  homo_ensemble_mem_MAE  cpu_improvement_pp  mem_improvement_pp
+  10min  0.794592   6.414259  0.690140  8.447734  0.794592   6.414259       0.798662        7.777596    0.798473     7.398699     0.794849      6.408579       0.802902        7.937268   0.794592    6.414259          0.798304           7.994172            0.798304             7.994172      0.490226       4.263409              0.467842               4.766548            0.371118           -2.238433
+  30min  0.496677  12.339412  0.409615 14.002826  0.496677  12.339412       0.529188       13.893036    0.530939    14.195895     0.501162     12.294171       0.511092       14.402827   0.496677   12.339412          0.526217          14.540478            0.526217            14.540478      0.189118       6.021671              0.196169               6.416990            2.954019            0.705080
+  60min  0.188468  18.109510  0.103867 19.624126  0.188468  18.109510       0.191916       20.460949    0.194763    19.838923     0.189097     18.102536       0.143484       21.672604   0.188468   18.109510          0.163349          21.395667            0.163349            21.395667     -0.070966       7.492516             -0.073145               8.022133           -2.511951           -0.217980
+ 120min  0.075500  20.398966 -0.000051 21.728928  0.075500  20.398966       0.089512       23.823925    0.071162    23.361700     0.075264     20.424079      -0.038466       25.892611   0.075500   20.398966         -0.015785          25.626101           -0.015785            25.626101     -0.410409       8.772326             -0.440416               9.753318           -9.128486           -3.000720
+[20:27:16] Results saved to /workspace/bb_sprint1_output

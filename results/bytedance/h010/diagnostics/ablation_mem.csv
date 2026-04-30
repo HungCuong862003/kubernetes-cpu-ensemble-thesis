@@ -1,0 +1,14 @@
+Experiment,Features_Removed,N_Features,R2,MAE,R2_Drop,MAE_Increase
+Baseline,None,85,1.0,0.0,0.0,0.0
+Without lag_immediate,lag_immediate,76,1.0,0.0,0.0,0.0
+Without lag_extended,lag_extended,75,1.0,0.0,0.0,0.0
+Without rolling_mean,rolling_mean,77,1.0,0.0,0.0,0.0
+Without rolling_std,rolling_std,77,1.0,0.0,0.0,0.0
+Without rolling_range,rolling_range,69,1.0,0.0,0.0,0.0
+Without trend,trend,77,1.0,0.0,0.0,0.0
+Without acceleration,acceleration,81,1.0,0.0,0.0,0.0
+Without volatility,volatility,79,1.0,0.0,0.0,0.0
+Without temporal,temporal,80,1.0,0.0,0.0,0.0
+Without historical,historical,81,1.0,0.0,0.0,0.0
+Without cross_resource,cross_resource,79,1.0,0.0,0.0,0.0
+Without cluster,cluster,84,1.0,0.0,0.0,0.0

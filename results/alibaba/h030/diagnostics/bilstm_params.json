@@ -1,0 +1,7 @@
+{
+  "hidden": 64,
+  "layers": 2,
+  "dropout": 0.2,
+  "lr": 0.001,
+  "batch_size": 4096
+}

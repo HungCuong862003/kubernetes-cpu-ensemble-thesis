@@ -1,0 +1,5 @@
+Horizon,Coverage,Nominal,Coverage_Gap_pp,Mean_Width,Method
+10min,0.8127,0.8,1.27,2.914,"AgACI (Zaffran et al., ICML 2022)"
+30min,0.8163,0.8,1.63,5.2026,"AgACI (Zaffran et al., ICML 2022)"
+60min,0.8185,0.8,1.85,6.2668,"AgACI (Zaffran et al., ICML 2022)"
+120min,0.8197,0.8,1.97,7.1258,"AgACI (Zaffran et al., ICML 2022)"

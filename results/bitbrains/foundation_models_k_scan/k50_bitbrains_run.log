@@ -1,0 +1,292 @@
+[run_k50_bitbrains] DATA_ROOT    = /workspace/k50_bb/data/bitbrains
+[run_k50_bitbrains] OUTPUT_JSON  = k50_bitbrains_check.json
+[run_k50_bitbrains] BATCH_SIZE   = 512
+[run_k50_bitbrains] num_origins  = 50
+
+[16:24:05] Day 1 sanity check: Chronos-2 zero-shot on bitbrains
+[16:24:05] DATA_ROOT    = /workspace/k50_bb/data/bitbrains
+[16:24:05] dataset      = bitbrains  (cadence=5min)
+[16:24:05] Python       = 3.12.13
+[16:24:05] num_origins  = 50
+[16:24:05] batch_size   = 512
+[16:24:05] loading /workspace/k50_bb/data/bitbrains/test.parquet
+[16:24:05] loaded 203,820 rows, 142 unique containers
+[16:24:05] built per-container series dict with 142 entries
+[16:24:05] sample container bb_1005: length=1728, first 5 values=[18.89999962 18.35000038 18.73333359 19.04999924 23.61666679]
+[16:24:08] loading Chronos-2 pipeline on cuda with dtype=torch.bfloat16
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[16:24:09] === 10min (h_steps=2, cadence=5min) ===
+[16:24:09]   142 containers usable, 0 skipped (too short)
+/venv/main/lib/python3.12/site-packages/chronos/chronos2/dataset.py:89: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  task_target = torch.from_numpy(task_target)
+[16:24:09]   origin 1/50: 142 series in 0.3s (424 series/s)
+[16:24:09]   origin 2/50: 142 series in 0.0s (3844 series/s)
+[16:24:09]   origin 3/50: 142 series in 0.0s (3770 series/s)
+[16:24:09]   origin 4/50: 142 series in 0.0s (3757 series/s)
+[16:24:09]   origin 5/50: 142 series in 0.0s (3670 series/s)
+[16:24:09]   origin 6/50: 142 series in 0.0s (3574 series/s)
+[16:24:09]   origin 7/50: 142 series in 0.0s (3335 series/s)
+[16:24:09]   origin 8/50: 142 series in 0.0s (3245 series/s)
+[16:24:10]   origin 9/50: 142 series in 0.0s (3123 series/s)
+[16:24:10]   origin 10/50: 142 series in 0.0s (2949 series/s)
+[16:24:10]   origin 11/50: 142 series in 0.0s (2935 series/s)
+[16:24:10]   origin 12/50: 142 series in 0.0s (2842 series/s)
+[16:24:10]   origin 13/50: 142 series in 0.1s (2700 series/s)
+[16:24:10]   origin 14/50: 142 series in 0.1s (2568 series/s)
+[16:24:10]   origin 15/50: 142 series in 0.1s (2423 series/s)
+[16:24:10]   origin 16/50: 142 series in 0.1s (2351 series/s)
+[16:24:10]   origin 17/50: 142 series in 0.1s (2241 series/s)
+[16:24:10]   origin 18/50: 142 series in 0.1s (2179 series/s)
+[16:24:10]   origin 19/50: 142 series in 0.1s (2121 series/s)
+[16:24:10]   origin 20/50: 142 series in 0.1s (2026 series/s)
+[16:24:10]   origin 21/50: 142 series in 0.1s (1913 series/s)
+[16:24:10]   origin 22/50: 142 series in 0.1s (1868 series/s)
+[16:24:10]   origin 23/50: 142 series in 0.1s (1825 series/s)
+[16:24:10]   origin 24/50: 142 series in 0.1s (1759 series/s)
+[16:24:11]   origin 25/50: 142 series in 0.1s (1724 series/s)
+[16:24:11]   origin 26/50: 142 series in 0.1s (1683 series/s)
+[16:24:11]   origin 27/50: 142 series in 0.1s (1593 series/s)
+[16:24:11]   origin 28/50: 142 series in 0.1s (1560 series/s)
+[16:24:11]   origin 29/50: 142 series in 0.1s (1513 series/s)
+[16:24:11]   origin 30/50: 142 series in 0.1s (1453 series/s)
+[16:24:11]   origin 31/50: 142 series in 0.1s (1433 series/s)
+[16:24:11]   origin 32/50: 142 series in 0.1s (1384 series/s)
+[16:24:11]   origin 33/50: 142 series in 0.1s (1357 series/s)
+[16:24:11]   origin 34/50: 142 series in 0.1s (1297 series/s)
+[16:24:12]   origin 35/50: 142 series in 0.1s (1273 series/s)
+[16:24:12]   origin 36/50: 142 series in 0.1s (1253 series/s)
+[16:24:12]   origin 37/50: 142 series in 0.1s (1237 series/s)
+[16:24:12]   origin 38/50: 142 series in 0.1s (1205 series/s)
+[16:24:12]   origin 39/50: 142 series in 0.1s (1182 series/s)
+[16:24:12]   origin 40/50: 142 series in 0.1s (1132 series/s)
+[16:24:12]   origin 41/50: 142 series in 0.1s (1110 series/s)
+[16:24:12]   origin 42/50: 142 series in 0.1s (1083 series/s)
+[16:24:13]   origin 43/50: 142 series in 0.1s (1057 series/s)
+[16:24:13]   origin 44/50: 142 series in 0.1s (1046 series/s)
+[16:24:13]   origin 45/50: 142 series in 0.1s (1026 series/s)
+[16:24:13]   origin 46/50: 142 series in 0.1s (1005 series/s)
+[16:24:13]   origin 47/50: 142 series in 0.1s (969 series/s)
+[16:24:13]   origin 48/50: 142 series in 0.1s (955 series/s)
+[16:24:13]   origin 49/50: 142 series in 0.2s (942 series/s)
+[16:24:14]   origin 50/50: 142 series in 0.2s (909 series/s)
+
+=== 10min ===
+  Naive R2 (full test set)   0.8113
+  Naive R2 (same subsample)  0.8115  <-- fair baseline
+  ML (per-VM median) R2    0.6344
+  Chronos-2 R2 (mean)        0.8210
+  Chronos-2 R2 (p50)         0.8210
+  Chronos-2 MAE              5.4444
+  p10-p90 coverage           82.1%
+  n points evaluated         7,100
+  VERDICT: beats ML (per-VM median) by +18.66pp
+
+[16:24:14] === 30min (h_steps=6, cadence=5min) ===
+[16:24:14]   142 containers usable, 0 skipped (too short)
+[16:24:14]   origin 1/50: 142 series in 0.0s (4233 series/s)
+[16:24:14]   origin 2/50: 142 series in 0.0s (4003 series/s)
+[16:24:14]   origin 3/50: 142 series in 0.0s (3823 series/s)
+[16:24:14]   origin 4/50: 142 series in 0.0s (3779 series/s)
+[16:24:14]   origin 5/50: 142 series in 0.0s (3689 series/s)
+[16:24:14]   origin 6/50: 142 series in 0.0s (3570 series/s)
+[16:24:14]   origin 7/50: 142 series in 0.0s (3360 series/s)
+[16:24:14]   origin 8/50: 142 series in 0.0s (3220 series/s)
+[16:24:14]   origin 9/50: 142 series in 0.0s (3098 series/s)
+[16:24:14]   origin 10/50: 142 series in 0.0s (2939 series/s)
+[16:24:14]   origin 11/50: 142 series in 0.0s (2905 series/s)
+[16:24:14]   origin 12/50: 142 series in 0.1s (2834 series/s)
+[16:24:14]   origin 13/50: 142 series in 0.1s (2706 series/s)
+[16:24:14]   origin 14/50: 142 series in 0.1s (2572 series/s)
+[16:24:14]   origin 15/50: 142 series in 0.1s (2420 series/s)
+[16:24:14]   origin 16/50: 142 series in 0.2s (835 series/s)
+[16:24:14]   origin 17/50: 142 series in 0.1s (2156 series/s)
+[16:24:15]   origin 18/50: 142 series in 0.1s (2150 series/s)
+[16:24:15]   origin 19/50: 142 series in 0.1s (2104 series/s)
+[16:24:15]   origin 20/50: 142 series in 0.1s (2030 series/s)
+[16:24:15]   origin 21/50: 142 series in 0.1s (1903 series/s)
+[16:24:15]   origin 22/50: 142 series in 0.1s (1880 series/s)
+[16:24:15]   origin 23/50: 142 series in 0.1s (1841 series/s)
+[16:24:15]   origin 24/50: 142 series in 0.1s (1783 series/s)
+[16:24:15]   origin 25/50: 142 series in 0.1s (1723 series/s)
+[16:24:15]   origin 26/50: 142 series in 0.1s (1691 series/s)
+[16:24:15]   origin 27/50: 142 series in 0.1s (1599 series/s)
+[16:24:15]   origin 28/50: 142 series in 0.1s (1556 series/s)
+[16:24:15]   origin 29/50: 142 series in 0.1s (1525 series/s)
+[16:24:16]   origin 30/50: 142 series in 0.1s (1484 series/s)
+[16:24:16]   origin 31/50: 142 series in 0.1s (1457 series/s)
+[16:24:16]   origin 32/50: 142 series in 0.1s (1435 series/s)
+[16:24:16]   origin 33/50: 142 series in 0.1s (1405 series/s)
+[16:24:16]   origin 34/50: 142 series in 0.1s (1342 series/s)
+[16:24:16]   origin 35/50: 142 series in 0.1s (1311 series/s)
+[16:24:16]   origin 36/50: 142 series in 0.1s (1278 series/s)
+[16:24:16]   origin 37/50: 142 series in 0.1s (1222 series/s)
+[16:24:16]   origin 38/50: 142 series in 0.1s (1200 series/s)
+[16:24:16]   origin 39/50: 142 series in 0.1s (1179 series/s)
+[16:24:17]   origin 40/50: 142 series in 0.1s (1133 series/s)
+[16:24:17]   origin 41/50: 142 series in 0.1s (1109 series/s)
+[16:24:17]   origin 42/50: 142 series in 0.1s (1080 series/s)
+[16:24:17]   origin 43/50: 142 series in 0.1s (1067 series/s)
+[16:24:17]   origin 44/50: 142 series in 0.1s (1044 series/s)
+[16:24:17]   origin 45/50: 142 series in 0.1s (1023 series/s)
+[16:24:17]   origin 46/50: 142 series in 0.1s (1004 series/s)
+[16:24:18]   origin 47/50: 142 series in 0.1s (969 series/s)
+[16:24:18]   origin 48/50: 142 series in 0.1s (954 series/s)
+[16:24:18]   origin 49/50: 142 series in 0.2s (944 series/s)
+[16:24:18]   origin 50/50: 142 series in 0.2s (914 series/s)
+
+=== 30min ===
+  Naive R2 (full test set)   0.5620
+  Naive R2 (same subsample)  0.4769  <-- fair baseline
+  ML (per-VM median) R2    0.3611
+  Chronos-2 R2 (mean)        0.4946
+  Chronos-2 R2 (p50)         0.4946
+  Chronos-2 MAE              11.2129
+  p10-p90 coverage           79.3%
+  n points evaluated         7,100
+  VERDICT: beats ML (per-VM median) by +13.35pp
+
+[16:24:18] === 60min (h_steps=12, cadence=5min) ===
+[16:24:18]   142 containers usable, 0 skipped (too short)
+[16:24:18]   origin 1/50: 142 series in 0.0s (4153 series/s)
+[16:24:18]   origin 2/50: 142 series in 0.0s (3960 series/s)
+[16:24:18]   origin 3/50: 142 series in 0.0s (3783 series/s)
+[16:24:18]   origin 4/50: 142 series in 0.0s (3696 series/s)
+[16:24:18]   origin 5/50: 142 series in 0.0s (3647 series/s)
+[16:24:18]   origin 6/50: 142 series in 0.0s (3558 series/s)
+[16:24:18]   origin 7/50: 142 series in 0.0s (3319 series/s)
+[16:24:18]   origin 8/50: 142 series in 0.0s (3214 series/s)
+[16:24:18]   origin 9/50: 142 series in 0.0s (3093 series/s)
+[16:24:18]   origin 10/50: 142 series in 0.0s (2984 series/s)
+[16:24:18]   origin 11/50: 142 series in 0.0s (2883 series/s)
+[16:24:19]   origin 12/50: 142 series in 0.1s (2814 series/s)
+[16:24:19]   origin 13/50: 142 series in 0.1s (2692 series/s)
+[16:24:19]   origin 14/50: 142 series in 0.1s (2540 series/s)
+[16:24:19]   origin 15/50: 142 series in 0.1s (2383 series/s)
+[16:24:19]   origin 16/50: 142 series in 0.1s (2339 series/s)
+[16:24:19]   origin 17/50: 142 series in 0.1s (2235 series/s)
+[16:24:19]   origin 18/50: 142 series in 0.1s (2168 series/s)
+[16:24:19]   origin 19/50: 142 series in 0.1s (2100 series/s)
+[16:24:19]   origin 20/50: 142 series in 0.1s (2021 series/s)
+[16:24:19]   origin 21/50: 142 series in 0.1s (1929 series/s)
+[16:24:19]   origin 22/50: 142 series in 0.1s (1881 series/s)
+[16:24:19]   origin 23/50: 142 series in 0.1s (1831 series/s)
+[16:24:19]   origin 24/50: 142 series in 0.1s (1779 series/s)
+[16:24:19]   origin 25/50: 142 series in 0.1s (1739 series/s)
+[16:24:20]   origin 26/50: 142 series in 0.1s (1665 series/s)
+[16:24:20]   origin 27/50: 142 series in 0.1s (1604 series/s)
+[16:24:20]   origin 28/50: 142 series in 0.1s (1567 series/s)
+[16:24:20]   origin 29/50: 142 series in 0.1s (1527 series/s)
+[16:24:20]   origin 30/50: 142 series in 0.1s (1492 series/s)
+[16:24:20]   origin 31/50: 142 series in 0.1s (1455 series/s)
+[16:24:20]   origin 32/50: 142 series in 0.1s (1428 series/s)
+[16:24:20]   origin 33/50: 142 series in 0.1s (1403 series/s)
+[16:24:20]   origin 34/50: 142 series in 0.1s (1335 series/s)
+[16:24:20]   origin 35/50: 142 series in 0.1s (1308 series/s)
+[16:24:21]   origin 36/50: 142 series in 0.1s (1285 series/s)
+[16:24:21]   origin 37/50: 142 series in 0.1s (1247 series/s)
+[16:24:21]   origin 38/50: 142 series in 0.1s (1198 series/s)
+[16:24:21]   origin 39/50: 142 series in 0.1s (1177 series/s)
+[16:24:21]   origin 40/50: 142 series in 0.1s (1129 series/s)
+[16:24:21]   origin 41/50: 142 series in 0.1s (1109 series/s)
+[16:24:21]   origin 42/50: 142 series in 0.1s (1086 series/s)
+[16:24:21]   origin 43/50: 142 series in 0.1s (1064 series/s)
+[16:24:22]   origin 44/50: 142 series in 0.1s (1041 series/s)
+[16:24:22]   origin 45/50: 142 series in 0.1s (1021 series/s)
+[16:24:22]   origin 46/50: 142 series in 0.1s (1004 series/s)
+[16:24:22]   origin 47/50: 142 series in 0.1s (974 series/s)
+[16:24:22]   origin 48/50: 142 series in 0.1s (955 series/s)
+[16:24:22]   origin 49/50: 142 series in 0.2s (941 series/s)
+[16:24:22]   origin 50/50: 142 series in 0.2s (917 series/s)
+
+=== 60min ===
+  Naive R2 (full test set)   0.3014
+  Naive R2 (same subsample)  0.1957  <-- fair baseline
+  ML (per-VM median) R2    0.1199
+  Chronos-2 R2 (mean)        0.2179
+  Chronos-2 R2 (p50)         0.2179
+  Chronos-2 MAE              16.7339
+  p10-p90 coverage           76.6%
+  n points evaluated         7,100
+  VERDICT: beats ML (per-VM median) by +9.80pp
+
+[16:24:22] === 120min (h_steps=24, cadence=5min) ===
+[16:24:22]   142 containers usable, 0 skipped (too short)
+[16:24:22]   origin 1/50: 142 series in 0.0s (4049 series/s)
+[16:24:22]   origin 2/50: 142 series in 0.0s (3846 series/s)
+[16:24:23]   origin 3/50: 142 series in 0.0s (3693 series/s)
+[16:24:23]   origin 4/50: 142 series in 0.0s (3688 series/s)
+[16:24:23]   origin 5/50: 142 series in 0.0s (3559 series/s)
+[16:24:23]   origin 6/50: 142 series in 0.0s (3455 series/s)
+[16:24:23]   origin 7/50: 142 series in 0.0s (3258 series/s)
+[16:24:23]   origin 8/50: 142 series in 0.0s (3129 series/s)
+[16:24:23]   origin 9/50: 142 series in 0.0s (3016 series/s)
+[16:24:23]   origin 10/50: 142 series in 0.0s (2875 series/s)
+[16:24:23]   origin 11/50: 142 series in 0.1s (2796 series/s)
+[16:24:23]   origin 12/50: 142 series in 0.1s (2757 series/s)
+[16:24:23]   origin 13/50: 142 series in 0.1s (2597 series/s)
+[16:24:23]   origin 14/50: 142 series in 0.1s (2505 series/s)
+[16:24:23]   origin 15/50: 142 series in 0.1s (2380 series/s)
+[16:24:23]   origin 16/50: 142 series in 0.1s (2310 series/s)
+[16:24:23]   origin 17/50: 142 series in 0.1s (2192 series/s)
+[16:24:23]   origin 18/50: 142 series in 0.1s (2129 series/s)
+[16:24:23]   origin 19/50: 142 series in 0.1s (2077 series/s)
+[16:24:23]   origin 20/50: 142 series in 0.1s (1987 series/s)
+[16:24:23]   origin 21/50: 142 series in 0.1s (1910 series/s)
+[16:24:24]   origin 22/50: 142 series in 0.1s (1860 series/s)
+[16:24:24]   origin 23/50: 142 series in 0.1s (1811 series/s)
+[16:24:24]   origin 24/50: 142 series in 0.1s (1738 series/s)
+[16:24:24]   origin 25/50: 142 series in 0.1s (1708 series/s)
+[16:24:24]   origin 26/50: 142 series in 0.1s (1646 series/s)
+[16:24:24]   origin 27/50: 142 series in 0.1s (1588 series/s)
+[16:24:24]   origin 28/50: 142 series in 0.1s (1553 series/s)
+[16:24:24]   origin 29/50: 142 series in 0.1s (1523 series/s)
+[16:24:24]   origin 30/50: 142 series in 0.1s (1476 series/s)
+[16:24:24]   origin 31/50: 142 series in 0.1s (1442 series/s)
+[16:24:24]   origin 32/50: 142 series in 0.1s (1420 series/s)
+[16:24:25]   origin 33/50: 142 series in 0.1s (1393 series/s)
+[16:24:25]   origin 34/50: 142 series in 0.1s (1325 series/s)
+[16:24:25]   origin 35/50: 142 series in 0.1s (1299 series/s)
+[16:24:25]   origin 36/50: 142 series in 0.1s (1279 series/s)
+[16:24:25]   origin 37/50: 142 series in 0.1s (1238 series/s)
+[16:24:25]   origin 38/50: 142 series in 0.2s (626 series/s)
+[16:24:25]   origin 39/50: 142 series in 0.1s (1171 series/s)
+[16:24:25]   origin 40/50: 142 series in 0.1s (1128 series/s)
+[16:24:26]   origin 41/50: 142 series in 0.1s (1106 series/s)
+[16:24:26]   origin 42/50: 142 series in 0.1s (1086 series/s)
+[16:24:26]   origin 43/50: 142 series in 0.1s (1067 series/s)
+[16:24:26]   origin 44/50: 142 series in 0.1s (1044 series/s)
+[16:24:26]   origin 45/50: 142 series in 0.1s (1022 series/s)
+[16:24:26]   origin 46/50: 142 series in 0.1s (1007 series/s)
+[16:24:26]   origin 47/50: 142 series in 0.1s (972 series/s)
+[16:24:27]   origin 48/50: 142 series in 0.1s (956 series/s)
+[16:24:27]   origin 49/50: 142 series in 0.2s (943 series/s)
+[16:24:27]   origin 50/50: 142 series in 0.2s (924 series/s)
+
+=== 120min ===
+  Naive R2 (full test set)   0.0306
+  Naive R2 (same subsample)  0.0914  <-- fair baseline
+  ML (per-VM median) R2    0.0090
+  Chronos-2 R2 (mean)        0.1474
+  Chronos-2 R2 (p50)         0.1474
+  Chronos-2 MAE              17.9688
+  p10-p90 coverage           75.9%
+  n points evaluated         7,100
+  VERDICT: beats ML (per-VM median) by +13.84pp
+
+
+==============================================================================
+FINAL SUMMARY  dataset=bitbrains  cadence=5min
+==============================================================================
+Horizon   Naive(full)  Naive(sub) ML (per-VM med  Chronos-2           Verdict
+10min          0.8113      0.8115         0.6344     0.8210    beats ML (per-
+30min          0.5620      0.4769         0.3611     0.4946    beats ML (per-
+60min          0.3014      0.1957         0.1199     0.2179    beats ML (per-
+120min         0.0306      0.0914         0.0090     0.1474    beats ML (per-
+[16:24:27] wrote results to k50_bitbrains_check.json
+
+[run_k50_bitbrains] done. Output: k50_bitbrains_check.json
+[run_k50_bitbrains] next: run compare_k20_k50_bitbrains.py against
+                    k20_bitbrains_v2.json to check |deltaR2|. The
+                    comparator is pure-stdlib Python so it runs
+                    anywhere - on this Vast box or on your laptop.

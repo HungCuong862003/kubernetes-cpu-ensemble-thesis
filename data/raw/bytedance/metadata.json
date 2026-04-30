@@ -1,0 +1,18 @@
+{
+  "n_containers": 93,
+  "n_rows_total": 321408,
+  "train_rows": 192789,
+  "val_rows": 64263,
+  "test_rows": 64356,
+  "train_days": 14.4,
+  "val_days": 4.8,
+  "test_days": 4.8,
+  "sampling_interval_s": 600,
+  "cpu_clip_max": 100.0,
+  "horizons": {
+    "10min": 1,
+    "30min": 3,
+    "60min": 6,
+    "120min": 12
+  }
+}

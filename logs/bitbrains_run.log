@@ -1,0 +1,17 @@
+[12:51:07] Health check:
+[12:51:07]   Disk free: 24.5 GB
+[12:51:07]   RAM: 0.2 GB used
+[12:51:07]   GPU: none
+[12:51:07]   CPU cores: 64
+[12:51:07]   OOF subsample: 1.0
+[12:51:07]   ACI buffer size: 2000
+[12:51:07]   BiLSTM batch: 4096  stride: 2
+[12:51:07]   ET max_depth: 25  max_samples: 0.3
+[12:51:07] Running 4 horizons in PARALLEL (4 workers x 20 cores)
+[13:27:08]   60min: complete
+[13:29:58]   30min: complete
+[13:31:02]   10min: complete
+[20:27:15]   120min: complete
+[20:27:16] Clearing rolling feature cache...
+[20:27:16] Rolling cache cleared (all splits)
+[20:27:16] Results saved to /workspace/bb_sprint1_output

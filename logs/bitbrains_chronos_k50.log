@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/day1_chronos2_sanity.py", line 53, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'

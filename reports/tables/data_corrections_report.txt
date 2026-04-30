@@ -1,0 +1,182 @@
+======================================================================
+DATA CORRECTIONS REPORT
+Generated: 2026-04-05 15:24:56
+Data dir:  /content/drive/MyDrive/k8s-ensemble-forecast/results/thesis_figures
+======================================================================
+  10/10 source files loaded.
+
+----------------------------------------------------------------------
+FIX 1: BITBRAINS PER-VM FILE AUTHORITY
+----------------------------------------------------------------------
+  VM 1005 10min naive_r2:
+    bitbrains_per_vm.csv:         0.596685
+    bitbrains_per_vm_results.csv: 0.055860
+  
+  Win rates per horizon:
+    Hz         File1     File2
+    10min      12.2%     73.7%
+    30min      35.9%     73.7%
+    60min      47.4%     71.2%
+    120min     51.9%     71.2%
+    File1 overflow: False
+    File2 overflow: True
+  
+  [OK] bitbrains_per_vm.csv is AUTHORITATIVE
+       No overflow, win rates match bitbrains_cv_stratified.csv
+  bitbrains_per_vm_results.csv is from a different run/split — do NOT use.
+
+----------------------------------------------------------------------
+FIX 2: BITBRAINS SUMMARY — MEDIAN AGGREGATION
+----------------------------------------------------------------------
+    10min : Naive R²=0.8113  ML R²=0.6344  Δ=-8.68pp  Skill=-0.9575  Win%=12.2%
+    30min : Naive R²=0.5620  ML R²=0.3611  Δ=-5.46pp  Skill=-0.6700  Win%=35.9%
+    60min : Naive R²=0.3014  ML R²=0.1199  Δ=-0.79pp  Skill=-0.4976  Win%=47.4%
+    120min: Naive R²=0.0306  ML R²=0.0090  Δ=+3.30pp  Skill=-0.4009  Win%=51.9%
+  [OK] Saved /content/drive/MyDrive/k8s-ensemble-forecast/corrected/bitbrains_summary_corrected.csv
+
+----------------------------------------------------------------------
+FIX 3: CHRONOS WIN COUNT
+----------------------------------------------------------------------
+    Alibaba      10min : ens=0.9214 chr=0.9192 (+0.22pp) → ENSEMBLE
+    Bitbrains    10min : ens=-0.0084 chr=0.8146 (-82.30pp) → Chronos
+    ByteDance    10min : ens=0.8549 chr=0.8855 (-3.06pp) → Chronos
+    Alibaba      30min : ens=0.8404 chr=0.8654 (-2.50pp) → Chronos
+    Bitbrains    30min : ens=-0.1638 chr=0.5681 (-73.19pp) → Chronos
+    ByteDance    30min : ens=0.8014 chr=0.8590 (-5.76pp) → Chronos
+    Alibaba      60min : ens=0.8011 chr=0.8315 (-3.05pp) → Chronos
+    Bitbrains    60min : ens=-0.3373 chr=0.3894 (-72.68pp) → Chronos
+    ByteDance    60min : ens=0.7629 chr=0.8580 (-9.51pp) → Chronos
+    Alibaba      120min: ens=0.7642 chr=0.7541 (+1.01pp) → ENSEMBLE
+    Bitbrains    120min: ens=-0.5006 chr=0.2308 (-73.14pp) → Chronos
+    ByteDance    120min: ens=0.7601 chr=0.8379 (-7.77pp) → Chronos
+  
+    Ensemble wins: 2/12
+    Chronos wins:  10/12
+    Ensemble wins at:
+      Alibaba 10min: +0.22pp
+      Alibaba 120min: +1.01pp
+  
+    NOTE: Bitbrains comparisons use a GLOBAL ensemble in the
+    chronos benchmark, but the main experiments train PER-VM.
+    Global ensemble R² on Bitbrains is negative (broken baseline).
+    Those 4 Chronos wins are trivially true — not meaningful.
+  
+    Fair comparison (Alibaba + ByteDance only):
+      Ensemble wins: 2/8
+      Chronos wins:  6/8
+  [OK] Chronos raw count is 10/12, ensemble wins 2/12
+       Thesis should say '10 of 12' not '11 of 12'
+
+----------------------------------------------------------------------
+FIX 4: STRATIFIED SKILL WIN RATES
+----------------------------------------------------------------------
+    Win rates: CSV values vs old thesis text
+    Hz           CSV    Old text    Match?
+    10min     17.26%        0.0%  MISMATCH
+    30min     31.53%       18.3%  MISMATCH
+    60min     38.64%       39.3%  MISMATCH
+    120min    43.45%       49.2%  MISMATCH
+  
+    Correct values for thesis (from stratified_skill.csv):
+      10min: MAE_naive=0.8669  MAE_ens=0.9704  Skill=-0.1194  Win%=17.26%
+      30min: MAE_naive=1.7173  MAE_ens=1.7505  Skill=-0.0194  Win%=31.53%
+      60min: MAE_naive=2.2077  MAE_ens=2.1348  Skill=0.0330  Win%=38.64%
+      120min: MAE_naive=2.7634  MAE_ens=2.4565  Skill=0.1111  Win%=43.45%
+  [FAIL] Win rates need updating in thesis text
+         Use CSV values: 17.26 / 31.53 / 38.64 / 43.45
+
+----------------------------------------------------------------------
+FIX 5: ALIBABA DESCRIPTIVE STATS
+----------------------------------------------------------------------
+    omega_summary.csv:     N=4902  CV=0.373  Hurst=0.781
+    predictability_table:  N=4919  CV=0.3462  Hurst=0.8981
+  
+    N difference: 17 containers
+    Hurst difference: 0.117
+    Likely cause: different container filtering thresholds.
+  [FAIL] Alibaba Hurst inconsistent between sources
+         omega=0.781 vs pred_table=0.898
+  
+    RECOMMENDATION: use omega_summary.csv (N=4902) as canonical
+    source because it also provides Bitbrains and ByteDance stats.
+
+----------------------------------------------------------------------
+FIX 6: BYTEDANCE ENSEMBLE PERFORMANCE
+----------------------------------------------------------------------
+    Hetero ensemble vs naive and vs ExtraTrees:
+    Hz        naive   hetero       ET    vs naive       vs ET
+    10min   0.7852  0.8549  0.9097    +6.97pp    -5.49pp
+    30min   0.7462  0.8014  0.8741    +5.52pp    -7.27pp
+    60min   0.7019  0.7629  0.8585    +6.09pp    -9.57pp
+    120min  0.6471  0.7601  0.8353   +11.31pp    -7.52pp
+  
+  [OK] ByteDance hetero beats naive at ALL horizons
+       Thesis should NOT say 'negative at 60/120min' for hetero vs naive
+    NOTE: ExtraTrees alone beats hetero ensemble at ALL horizons.
+    If thesis said 'negative at 60/120', it probably meant
+    ensemble vs ET (not ensemble vs naive). Clarify in text.
+
+----------------------------------------------------------------------
+FIX 7: BOUNDARY CONDITION TABLE — FULL REBUILD
+----------------------------------------------------------------------
+    --- Bitbrains row ---
+  [FAIL] Bitbrains CV
+         Table says 0.68, source says 1.056
+  [FAIL] Bitbrains Hurst
+         Table says 0.71, source says 0.997
+  [FAIL] Bitbrains delta@30min
+         Table says +2.95pp, source says -5.46pp
+  [FAIL] Bitbrains delta@120min
+         Table says -9.13pp, source says +3.30pp
+  [FAIL] Bitbrains verdict
+         Table says ML wins only @30min, source says ML wins only @120min
+  
+    --- Alibaba row ---
+  [FAIL] ACF column header is 'ACF@120min'
+         Framework uses ACF@24h, not ACF@120min (2h lag)
+  [FAIL] Alibaba ACF value
+         Table has 0.211 but ACF@24h=0.316
+  
+    --- Building corrected table ---
+  [OK] Saved /content/drive/MyDrive/k8s-ensemble-forecast/corrected/boundary_condition_table_corrected.csv
+  
+    Corrected boundary condition table:
+      Alibaba 2018    CV=0.373  Hurst=0.781  ACF@24h=0.316  d@30= +0.43pp  d@120= +4.64pp  → ML dominates 60min+
+      Bitbrains       CV= 1.06  Hurst=0.997  ACF@24h=0.116  d@30= -5.46pp  d@120= +3.30pp  → ML wins only @120min
+      DSB             CV= >2.0  Hurst=~0.50  ACF@24h=~0.00  d@30=     N/A  d@120=   -83pp  → naive wins all
+
+----------------------------------------------------------------------
+BONUS: 10min BiLSTM OOF STATUS
+----------------------------------------------------------------------
+    Homo Ens R² at 10min:   0.921268120926448
+    Hetero Ens R² at 10min: 0.9212949025474896
+    Difference:             0.0000267816
+  [OK] 10min hetero includes BiLSTM (hetero ≠ homo)
+       Earlier system prompt said 'BiLSTM OOF failed' — that was run 1 only
+    Run 2 succeeded: NNLS weights ET=0.514, BiLSTM=0.485
+    Update NNLS weight table in thesis for 10min row.
+
+----------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------
+    6 checks passed, 9 checks FAILED
+  
+    FAILED checks (must fix before submission):
+      - Win rates need updating in thesis text: Use CSV values: 17.26 / 31.53 / 38.64 / 43.45
+      - Alibaba Hurst inconsistent between sources: omega=0.781 vs pred_table=0.898
+      - Bitbrains CV: Table says 0.68, source says 1.056
+      - Bitbrains Hurst: Table says 0.71, source says 0.997
+      - Bitbrains delta@30min: Table says +2.95pp, source says -5.46pp
+      - Bitbrains delta@120min: Table says -9.13pp, source says +3.30pp
+      - Bitbrains verdict: Table says ML wins only @30min, source says ML wins only @120min
+      - ACF column header is 'ACF@120min': Framework uses ACF@24h, not ACF@120min (2h lag)
+      - Alibaba ACF value: Table has 0.211 but ACF@24h=0.316
+  
+    THESIS TEXT UPDATES NEEDED:
+    1. boundary_condition_table: rebuild ALL rows with ACF@24h column
+    2. Chronos comparison: raw count is 10/12 (not 11/12)
+       Ensemble wins: Alibaba 10min (+0.22pp) AND 120min (+1.01pp)
+    3. Win rates: use CSV values 17.26 / 31.53 / 38.64 / 43.45
+    4. ByteDance: ensemble beats naive at ALL four horizons
+    5. NNLS weights at 10min: BiLSTM IS included (48.5% weight)
+    6. Pick omega_summary.csv (N=4902) as canonical Alibaba source

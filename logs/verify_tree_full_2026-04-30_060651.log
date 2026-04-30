@@ -1,0 +1,1228 @@
+# Tree verification report  2026-04-30T06:06:51.899757
+
+======================================================================
+  STEP 1 — Top-level shape (depth 1)
+======================================================================
+
+$ tree -L 1 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+├── CHANGELOG.md
+├── CITATION.cff
+├── data
+├── docs
+├── environment.yml
+├── LICENSE
+├── logs
+├── Makefile
+├── models
+├── notebooks
+├── pyproject.toml
+├── README.md
+├── references
+├── reports
+├── requirements-lock.txt
+├── results
+├── src
+├── submission
+├── tests
+└── thesis
+
+12 directories, 8 files
+
+======================================================================
+  STEP 2 — Depth-2 overview with sizes
+======================================================================
+
+$ tree -L 2 -h --du /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+----------------------------------------------------------------------
+[2.1M]  /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+├── [ 240]  CHANGELOG.md
+├── [ 318]  CITATION.cff
+├── [ 21K]  data
+│   ├── [4.0K]  external
+│   ├── [4.0K]  interim
+│   ├── [4.0K]  processed
+│   ├── [4.0K]  raw
+│   └── [ 784]  README.md
+├── [ 12K]  docs
+│   ├── [4.0K]  data_dictionary
+│   ├── [4.0K]  model_cards
+│   └── [ 321]  README.md
+├── [ 129]  environment.yml
+├── [1.0K]  LICENSE
+├── [1.3M]  logs
+│   ├── [5.6K]  alibaba_h010_run_10min.log
+│   ├── [5.6K]  alibaba_h030_run_30min.log
+│   ├── [5.6K]  alibaba_h060_run_60min.log
+│   ├── [5.6K]  alibaba_h120_run_120min.log
+│   ├── [ 24K]  alibaba_run.log
+│   ├── [ 31K]  bitbrains_bb_run.log
+│   ├── [ 171]  bitbrains_chronos_k50.log
+│   ├── [3.0K]  bitbrains_run_10min.log
+│   ├── [3.0K]  bitbrains_run_120min.log
+│   ├── [3.0K]  bitbrains_run_30min.log
+│   ├── [3.0K]  bitbrains_run_60min.log
+│   ├── [ 625]  bitbrains_run.log
+│   ├── [152K]  bitbrains_thesis_analysis_v2.log
+│   ├── [5.4K]  bytedance_run.log
+│   ├── [5.4K]  bytedance_run_old.log
+│   ├── [5.3K]  cleanup_2026-04-30_055426.log
+│   ├── [5.2K]  cleanup_2026-04-30_055448.log
+│   ├── [3.4K]  cleanup_v2_2026-04-30_060036.log
+│   ├── [3.3K]  cleanup_v2_2026-04-30_060045.log
+│   ├── [2.7K]  dm_logs.log
+│   ├── [8.3K]  granite_ttm_alibaba.log
+│   ├── [ 14K]  granite_ttm_bitbrains.log
+│   ├── [ 14K]  granite_ttm_bytedance.log
+│   ├── [189K]  migration_execute_2026-04-30_053238.log
+│   ├── [186K]  migration_execute_2026-04-30_053325.log
+│   ├── [190K]  migration_plan_2026-04-30_052046.csv
+│   ├── [199K]  migration_plan_2026-04-30_052824.csv
+│   ├── [200K]  migration_plan_2026-04-30_053055.csv
+│   ├── [ 44K]  post_migration_tree_2026-04-30.txt
+│   ├── [  78]  README.md
+│   └── [ 16K]  scaffold_2026-04-30_051304.log
+├── [1.5K]  Makefile
+├── [ 20K]  models
+│   ├── [4.0K]  base_learners
+│   ├── [4.0K]  demo
+│   ├── [4.0K]  foundation_zero_shot
+│   ├── [4.0K]  meta_learner
+│   └── [  77]  README.md
+├── [646K]  notebooks
+│   ├── [ 14K]  bitbrains_profiling.ipynb
+│   ├── [119K]  data_preparation.ipynb
+│   ├── [117K]  data_profiling.ipynb
+│   ├── [ 43K]  omega_computing.ipynb
+│   ├── [  96]  README.md
+│   ├── [336K]  residual_diagnostics.ipynb
+│   └── [ 12K]  sprint1_bytedance_colab.ipynb
+├── [ 805]  pyproject.toml
+├── [1.9K]  README.md
+├── [8.1K]  references
+│   ├── [4.0K]  pdfs
+│   └── [  67]  README.md
+├── [ 16K]  reports
+│   ├── [4.0K]  figures
+│   ├── [ 389]  README.md
+│   ├── [4.0K]  statistical_tests
+│   └── [4.0K]  tables
+├── [  68]  requirements-lock.txt
+├── [ 29K]  results
+│   ├── [4.0K]  alibaba
+│   ├── [4.0K]  bcf
+│   ├── [4.0K]  bitbrains
+│   ├── [4.0K]  bytedance
+│   ├── [4.0K]  foundation_comparison
+│   ├── [4.0K]  hpa_simulation
+│   ├── [ 203]  omega_summary.csv
+│   └── [1018]  README.md
+├── [ 16K]  src
+│   ├── [4.0K]  analysis
+│   ├── [4.0K]  scripts
+│   └── [4.0K]  thesis_pipeline
+├── [4.5K]  submission
+│   └── [ 511]  README.md
+├── [4.0K]  tests
+│   └── [  50]  README.md
+└── [ 17K]  thesis
+    ├── [4.0K]  defense
+    ├── [4.0K]  manuscript
+    ├── [4.0K]  proposal
+    └── [ 514]  README.md
+
+ 2.1M used in 38 directories, 56 files
+
+======================================================================
+  STEP 3 — data/ split (raw vs processed)
+======================================================================
+
+$ tree -L 3 -h /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/data
+----------------------------------------------------------------------
+[4.0K]  /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/data
+├── [4.0K]  external
+├── [4.0K]  interim
+├── [4.0K]  processed
+│   ├── [4.0K]  alibaba
+│   │   ├── [ 12M]  test.parquet
+│   │   ├── [ 54M]  train.parquet
+│   │   └── [ 12M]  val.parquet
+│   ├── [4.0K]  bitbrains
+│   │   ├── [6.9M]  test.csv
+│   │   ├── [764K]  test.parquet
+│   │   ├── [ 25M]  train.csv
+│   │   ├── [3.6M]  train.parquet
+│   │   ├── [8.5M]  val.csv
+│   │   └── [947K]  val.parquet
+│   └── [4.0K]  bytedance
+│       ├── [209K]  test.parquet
+│       ├── [578K]  train.parquet
+│       └── [213K]  val.parquet
+├── [4.0K]  raw
+│   ├── [4.0K]  alibaba
+│   │   └── [ 304]  PROVENANCE.md
+│   ├── [4.0K]  bitbrains
+│   │   ├── [ 677]  manifest.json
+│   │   └── [ 306]  PROVENANCE.md
+│   └── [4.0K]  bytedance
+│       ├── [ 14M]  iaas.csv
+│       ├── [ 319]  metadata.json
+│       └── [ 306]  PROVENANCE.md
+└── [ 784]  README.md
+
+10 directories, 19 files
+
+======================================================================
+  STEP 4 — Dataset x horizon x artefact matrix
+======================================================================
+
+$ tree -L 4 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/alibaba
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/alibaba
+├── cross_horizon
+│   ├── dm_ensemble_vs_chronos2.csv
+│   ├── dm_ensemble_vs_chronos2.py
+│   └── dm_foundation_models.py
+├── diagnostics
+│   └── per_container_r2.csv
+├── foundation_models_k_scan
+│   ├── granite_ttm_k20_alibaba.json
+│   ├── k20_alibaba.json
+│   ├── k20_alibaba_v2.json
+│   ├── k20_alibaba_v3.json
+│   └── k20_alibaba_v3.log
+├── h010
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   ├── chronos_bolt_perpoint.npz
+│   │   ├── granite_ttm_perpoint.npz
+│   │   └── timesfm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   └── xgboost.json
+│   └── shap
+├── h030
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   ├── chronos_bolt_perpoint.npz
+│   │   ├── granite_ttm_perpoint.npz
+│   │   └── timesfm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   └── xgboost.json
+│   └── shap
+├── h060
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   ├── chronos_bolt_perpoint.npz
+│   │   ├── granite_ttm_perpoint.npz
+│   │   └── timesfm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   └── xgboost.json
+│   └── shap
+├── h120
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   ├── chronos_bolt_perpoint.npz
+│   │   ├── granite_ttm_perpoint.npz
+│   │   └── timesfm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   └── xgboost.json
+│   └── shap
+├── omega_alibaba.csv
+├── README.md
+├── results_summary.csv
+├── timesfm_k20_alibaba.json
+└── ttm_k20_alibaba.json
+
+31 directories, 158 files
+
+$ tree -L 4 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/bitbrains
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/bitbrains
+├── bitbrains_summary_corrected.csv
+├── bitbrains_summary.csv
+├── cross_horizon
+│   ├── bitbrains_cv_stratified.csv
+│   └── cv_stratified_heatmap.pdf
+├── diagnostics
+│   ├── active_vms.csv
+│   ├── bitbrains_landscape_stats.csv
+│   ├── bitbrains_per_vm.csv
+│   ├── bitbrains_per_vm_results.csv
+│   ├── checkpoint.json
+│   ├── container_landscape_stats.csv
+│   └── workload_stats.csv
+├── foundation_models_k_scan
+│   ├── granite_ttm_k50_bitbrains.json
+│   ├── k20_bitbrains.json
+│   ├── k20_bitbrains_v2.json
+│   ├── k50_bitbrains_check.json
+│   └── k50_bitbrains_run.log
+├── h010
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── cd_diagram_10min.pdf
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── raw_cpu_series.npz
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── h030
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── raw_cpu_series.npz
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── h060
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── raw_cpu_series.npz
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── h120
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── raw_cpu_series.npz
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── metadata.json
+├── omega_bitbrains.csv
+├── README.md
+├── results_summary.csv
+├── timesfm_k50_bitbrains.json
+└── ttm_k50_bitbrains.json
+
+31 directories, 163 files
+
+$ tree -L 4 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/bytedance
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/bytedance
+├── bytedance_per_instance_stats.csv
+├── bytedance_runner.py
+├── bytedance_training.ipynb
+├── cross_horizon
+├── diagnostics
+│   └── bytedance_per_instance_stats.csv
+├── foundation_models_k_scan
+│   ├── granite_ttm_k50_bytedance.json
+│   ├── k20_bytedance.json
+│   ├── k20_bytedance_v2.json
+│   └── k50_bytedance_check.json
+├── h010
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── h030
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── h060
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── h120
+│   ├── diagnostics
+│   │   ├── ablation_cpu.csv
+│   │   ├── ablation_mem.csv
+│   │   ├── analysis.json
+│   │   ├── bilstm_params.json
+│   │   ├── cluster_analysis.json
+│   │   ├── container_index.csv
+│   │   ├── improvement.json
+│   │   ├── stat_baselines.json
+│   │   └── _state.json
+│   ├── foundation_models
+│   │   └── granite_ttm_perpoint.npz
+│   ├── intervals
+│   │   └── cqr_intervals.npz
+│   ├── meta_learner
+│   │   ├── hetero_ensemble.json
+│   │   ├── homo_ensemble.json
+│   │   └── homo_ensemble_mem.json
+│   ├── predictions
+│   │   ├── bilstm.json
+│   │   ├── extratrees.json
+│   │   ├── lightgbm.json
+│   │   ├── linear_reg.json
+│   │   ├── naive.json
+│   │   ├── oof_et.npy
+│   │   ├── oof_lgbm.npy
+│   │   ├── oof_xgb.npy
+│   │   ├── test_arima.npy
+│   │   ├── test_bilstm.npy
+│   │   ├── test_ensemble_hetero.npy
+│   │   ├── test_ensemble_homo_mem.npy
+│   │   ├── test_ensemble_homo.npy
+│   │   ├── test_et.npy
+│   │   ├── test_ets.npy
+│   │   ├── test_lgbm.npy
+│   │   ├── test_linreg.npy
+│   │   ├── test_naive_mem.npy
+│   │   ├── test_naive.npy
+│   │   ├── test_xgb.npy
+│   │   ├── xgboost.json
+│   │   ├── y_naive.npy
+│   │   └── y_true.npy
+│   └── shap
+├── README.md
+├── results_summary.csv
+├── timesfm_k50_bytedance.json
+└── ttm_k50_bytedance.json
+
+31 directories, 160 files
+
+======================================================================
+  STEP 5 — Cross-dataset experiment folders
+======================================================================
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/hpa_simulation
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/hpa_simulation
+├── hpa_pareto_v2.pdf
+├── hpa_simulation_v2.csv
+├── pareto_hpa.pdf
+├── pareto_hpa.png
+├── pareto_hpa_solutions.csv
+├── reactive_hpa_grid.csv
+└── README.md
+
+0 directories, 7 files
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/bcf
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/bcf
+├── bcf_pairs.csv
+├── bcf_per_model_auc.csv
+├── bcf_pooled_results.json
+└── README.md
+
+0 directories, 4 files
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/foundation_comparison
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/results/foundation_comparison
+├── chronos2_leaderboard.csv
+├── chronos2_zero_shot_results.json
+├── classifier_feature_importance.csv
+├── classifier_results.json
+├── compare_k20_k50_output.txt
+├── k50_sensitivity_summary.csv
+├── leaderboard_v1.csv
+├── same_sample_bitbrains.csv
+├── same_sample_bytedance.csv
+├── same_sample_comparison.py
+├── same_sample_leaderboard.csv
+├── same_sample_leaderboard_full.bak.csv
+├── same_sample_leaderboard_full.csv
+├── same_sample_leaderboard_v2.csv
+└── same_sample_leaderboard_v3.csv
+
+0 directories, 15 files
+
+======================================================================
+  STEP 6 — Reports (figures vs tables vs statistical_tests)
+======================================================================
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/reports
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/reports
+├── figures
+│   ├── acf_quartile_figure.pdf
+│   ├── acf_quartile_figure.png
+│   ├── bitbrains_cross_validation.pdf
+│   ├── bitbrains_figures.png
+│   ├── bitbrains_sanity.png
+│   ├── bitbrains_validation_figures.png
+│   ├── cost_pareto.pdf
+│   ├── cross_dataset_skill.pdf
+│   ├── deployment_classifier.pdf
+│   ├── deployment_classifier.png
+│   ├── forecastability_profile.pdf
+│   ├── forecastability_profile.png
+│   ├── hpa_pareto_corrected.pdf
+│   ├── hpa_pareto_corrected.png
+│   ├── hpa_pareto.pdf
+│   ├── predictability_landscape.pdf
+│   ├── residual_diagnostics_figure.pdf
+│   ├── shap_group_bars.pdf
+│   ├── shap_group_bars_v2.pdf
+│   ├── shap_heatmap.pdf
+│   └── uq_recalibration.pdf
+├── README.md
+├── statistical_tests
+│   ├── boundary_null_dist.pdf
+│   ├── cd_diagram_10min-checkpoint.pdf
+│   ├── cd_diagram_10min.pdf
+│   ├── cd_diagram_120min.pdf
+│   ├── cd_diagram_30min.pdf
+│   ├── cd_diagram_60min.pdf
+│   ├── dm_heatmap_10min.pdf
+│   ├── dm_heatmap_120min.pdf
+│   ├── dm_heatmap_30min.pdf
+│   └── dm_heatmap_60min.pdf
+└── tables
+    ├── acf_quartile_per_container.csv
+    ├── acf_quartile_skill.csv
+    ├── acf_skill_correlation.csv
+    ├── base_model_correlations.csv
+    ├── bootstrap_weight_stats.csv
+    ├── boundary_condition_table_corrected.csv
+    ├── boundary_condition_table.csv
+    ├── boundary_eval_12cases.csv
+    ├── boundary_stats_summary.csv
+    ├── chronos_benchmark_results.csv
+    ├── combination_diagnostics.csv
+    ├── comparison_table.csv
+    ├── computational_cost_table.md
+    ├── computational_cost_table.tex
+    ├── cost_rankings.csv
+    ├── cost_sensitivity.csv
+    ├── cv_stratified_skill.csv
+    ├── data_corrections_report.txt
+    ├── dm_pvalues_10min.csv
+    ├── dm_pvalues_120min.csv
+    ├── dm_pvalues_30min.csv
+    ├── dm_pvalues_60min.csv
+    ├── dm_stats_10min.csv
+    ├── dm_stats_120min.csv
+    ├── dm_stats_30min.csv
+    ├── dm_stats_60min.csv
+    ├── forecastability_profiles.csv
+    ├── friedman_table.csv
+    ├── hpa_simulation.csv
+    ├── loo_ablation.csv
+    ├── meta_learner_comparison.csv
+    ├── predictability_table.csv
+    ├── residual_diagnostics.csv
+    ├── shap_importance.csv
+    ├── stratified_skill.csv
+    ├── thesis_numbers.json
+    ├── thesis_numbers.txt
+    ├── threshold_sensitivity.csv
+    ├── uq_recalibration_table_bitbrains.csv
+    └── uq_recalibration_table.csv
+
+3 directories, 72 files
+
+======================================================================
+  STEP 7 — Source code split
+======================================================================
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/src
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/src
+├── analysis
+│   ├── base_model_correlations.py
+│   ├── bcf_5model.py
+│   ├── bcf_generalization.py
+│   ├── bitbrains_to_sprint1_v2.py
+│   ├── boundary_condition_stats.py
+│   ├── build_leaderboard.py
+│   ├── build_per_container_r2.py
+│   ├── computational_cost_table.py
+│   ├── finalize_leaderboard_v1.py
+│   ├── fix_uq_figure.py
+│   ├── inspect_n_points.py
+│   ├── inspect_ttm_al.py
+│   ├── inspect_ttm_bb.py
+│   ├── inspect_ttm_bd.py
+│   ├── inspect_ttm.py
+│   ├── loo_ablation.py
+│   ├── merge_granite_ttm_into_leaderboard.py
+│   ├── merge_timesfm_into_leaderboard.py
+│   ├── omega_analysis.py
+│   ├── residual_diagnostics_figure.py
+│   ├── supplementary_metrics.py
+│   ├── task0_data_corrections.py
+│   ├── task0_extract_per_container.py
+│   ├── task1_bytedance_omega.py
+│   ├── task1_chronos_benchmark.py
+│   ├── task1_meta_learner_bench.py
+│   ├── task2_hpa_v2.py
+│   ├── task2_loo_ablation.py
+│   ├── task4_verify_tables.py
+│   ├── task_retrain_et_for_demo.py
+│   ├── thesis_analysis.py
+│   └── thesis_final_analyses_v3.py
+├── scripts
+│   ├── 02_train_base_learners.py
+│   ├── bitbrains_xval.py
+│   ├── bytedance_runner.py
+│   ├── chronos_benchmark.py
+│   ├── day1_chronos2_sanity.py
+│   ├── day2_timesfm_sanity.py
+│   ├── day3_granite_ttm_sanity.py
+│   ├── _patch_load_timesfm.py
+│   ├── run_k50_bitbrains.sh
+│   └── setup_timesfm.sh
+└── thesis_pipeline
+    ├── data
+    ├── ensemble
+    ├── evaluation
+    ├── features
+    ├── hpa
+    ├── __init__.py
+    ├── models
+    └── utils
+
+10 directories, 43 files
+
+======================================================================
+  STEP 8 — Models, notebooks, thesis manuscript
+======================================================================
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/models
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/models
+├── base_learners
+├── demo
+│   ├── et_demo_10min.joblib
+│   ├── et_demo_120min.joblib
+│   ├── et_demo_30min.joblib
+│   ├── et_demo_60min.joblib
+│   ├── et_demo_features_10min.json
+│   ├── et_demo_features_120min.json
+│   ├── et_demo_features_30min.json
+│   ├── et_demo_features_60min.json
+│   └── et_demo_verification.csv
+├── foundation_zero_shot
+├── meta_learner
+└── README.md
+
+4 directories, 10 files
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/notebooks
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/notebooks
+├── bitbrains_profiling.ipynb
+├── data_preparation.ipynb
+├── data_profiling.ipynb
+├── omega_computing.ipynb
+├── README.md
+├── residual_diagnostics.ipynb
+└── sprint1_bytedance_colab.ipynb
+
+0 directories, 7 files
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/thesis
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/thesis
+├── defense
+├── manuscript
+│   ├── appendices
+│   ├── build
+│   ├── chapters
+│   ├── figures
+│   └── tables
+├── proposal
+└── README.md
+
+8 directories, 1 file
+
+======================================================================
+  STEP 9 — Logs and docs
+======================================================================
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/logs
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/logs
+├── alibaba_h010_run_10min.log
+├── alibaba_h030_run_30min.log
+├── alibaba_h060_run_60min.log
+├── alibaba_h120_run_120min.log
+├── alibaba_run.log
+├── bitbrains_bb_run.log
+├── bitbrains_chronos_k50.log
+├── bitbrains_run_10min.log
+├── bitbrains_run_120min.log
+├── bitbrains_run_30min.log
+├── bitbrains_run_60min.log
+├── bitbrains_run.log
+├── bitbrains_thesis_analysis_v2.log
+├── bytedance_run.log
+├── bytedance_run_old.log
+├── cleanup_2026-04-30_055426.log
+├── cleanup_2026-04-30_055448.log
+├── cleanup_v2_2026-04-30_060036.log
+├── cleanup_v2_2026-04-30_060045.log
+├── dm_logs.log
+├── granite_ttm_alibaba.log
+├── granite_ttm_bitbrains.log
+├── granite_ttm_bytedance.log
+├── migration_execute_2026-04-30_053238.log
+├── migration_execute_2026-04-30_053325.log
+├── migration_plan_2026-04-30_052046.csv
+├── migration_plan_2026-04-30_052824.csv
+├── migration_plan_2026-04-30_053055.csv
+├── post_migration_tree_2026-04-30.txt
+├── README.md
+└── scaffold_2026-04-30_051304.log
+
+0 directories, 31 files
+
+$ tree -L 2 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/docs
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/docs
+├── data_dictionary
+├── model_cards
+└── README.md
+
+2 directories, 1 file
+
+======================================================================
+  STEP 10 — Sanity assertions
+======================================================================
+
+--- scratch/_unsorted check ---
+
+$ ls -la /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/scratch/_unsorted 2>/dev/null || echo 'OK: no scratch needed'
+----------------------------------------------------------------------
+OK: no scratch needed
+
+--- empty top-level dirs (depth <= 2) ---
+
+$ find /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis -maxdepth 2 -type d -empty
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/data/interim
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/data/external
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/models/base_learners
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/models/meta_learner
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/models/foundation_zero_shot
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/thesis/defense
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/thesis/proposal
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/docs/data_dictionary
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/docs/model_cards
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/references/pdfs
+
+--- total size + file count ---
+
+$ du -sh /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+----------------------------------------------------------------------
+1.3G	/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+
+$ find /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis -type f | wc -l
+----------------------------------------------------------------------
+715
+
+--- redundancy patterns (should be empty) ---
+
+$ find /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis \( -name '*.zip' -o -name '*(1)*' -o -name '*_FINAL*' -o -name '* - Copy*' -o -name '*.bak' \) 2>/dev/null
+----------------------------------------------------------------------
+
+======================================================================
+  STEP 11 — Old vs new comparison
+======================================================================
+
+$ du -sh /content/drive/MyDrive/k8s-ensemble-forecast
+----------------------------------------------------------------------
+19G	/content/drive/MyDrive/k8s-ensemble-forecast
+
+$ du -sh /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+----------------------------------------------------------------------
+1.3G	/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+
+$ find /content/drive/MyDrive/k8s-ensemble-forecast -type f | wc -l
+----------------------------------------------------------------------
+1673
+
+$ find /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis -type f | wc -l
+----------------------------------------------------------------------
+715
+
+======================================================================
+  STEP 12 — Full depth-5 tree dump (archival)
+======================================================================
+
+$ tree -L 5 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis > /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/logs/post_migration_tree_2026-04-30_060651.txt
+----------------------------------------------------------------------
+
+$ wc -l /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/logs/post_migration_tree_2026-04-30_060651.txt
+----------------------------------------------------------------------
+870 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/logs/post_migration_tree_2026-04-30_060651.txt
+
+First 80 lines of the dump:
+
+$ head -80 /content/drive/MyDrive/kubernetes-cpu-ensemble-thesis/logs/post_migration_tree_2026-04-30_060651.txt
+----------------------------------------------------------------------
+/content/drive/MyDrive/kubernetes-cpu-ensemble-thesis
+├── CHANGELOG.md
+├── CITATION.cff
+├── data
+│   ├── external
+│   ├── interim
+│   ├── processed
+│   │   ├── alibaba
+│   │   │   ├── test.parquet
+│   │   │   ├── train.parquet
+│   │   │   └── val.parquet
+│   │   ├── bitbrains
+│   │   │   ├── test.csv
+│   │   │   ├── test.parquet
+│   │   │   ├── train.csv
+│   │   │   ├── train.parquet
+│   │   │   ├── val.csv
+│   │   │   └── val.parquet
+│   │   └── bytedance
+│   │       ├── test.parquet
+│   │       ├── train.parquet
+│   │       └── val.parquet
+│   ├── raw
+│   │   ├── alibaba
+│   │   │   └── PROVENANCE.md
+│   │   ├── bitbrains
+│   │   │   ├── manifest.json
+│   │   │   └── PROVENANCE.md
+│   │   └── bytedance
+│   │       ├── iaas.csv
+│   │       ├── metadata.json
+│   │       └── PROVENANCE.md
+│   └── README.md
+├── docs
+│   ├── data_dictionary
+│   ├── model_cards
+│   └── README.md
+├── environment.yml
+├── LICENSE
+├── logs
+│   ├── alibaba_h010_run_10min.log
+│   ├── alibaba_h030_run_30min.log
+│   ├── alibaba_h060_run_60min.log
+│   ├── alibaba_h120_run_120min.log
+│   ├── alibaba_run.log
+│   ├── bitbrains_bb_run.log
+│   ├── bitbrains_chronos_k50.log
+│   ├── bitbrains_run_10min.log
+│   ├── bitbrains_run_120min.log
+│   ├── bitbrains_run_30min.log
+│   ├── bitbrains_run_60min.log
+│   ├── bitbrains_run.log
+│   ├── bitbrains_thesis_analysis_v2.log
+│   ├── bytedance_run.log
+│   ├── bytedance_run_old.log
+│   ├── cleanup_2026-04-30_055426.log
+│   ├── cleanup_2026-04-30_055448.log
+│   ├── cleanup_v2_2026-04-30_060036.log
+│   ├── cleanup_v2_2026-04-30_060045.log
+│   ├── dm_logs.log
+│   ├── granite_ttm_alibaba.log
+│   ├── granite_ttm_bitbrains.log
+│   ├── granite_ttm_bytedance.log
+│   ├── migration_execute_2026-04-30_053238.log
+│   ├── migration_execute_2026-04-30_053325.log
+│   ├── migration_plan_2026-04-30_052046.csv
+│   ├── migration_plan_2026-04-30_052824.csv
+│   ├── migration_plan_2026-04-30_053055.csv
+│   ├── post_migration_tree_2026-04-30_060651.txt
+│   ├── post_migration_tree_2026-04-30.txt
+│   ├── README.md
+│   └── scaffold_2026-04-30_051304.log
+├── Makefile
+├── models
+│   ├── base_learners
+│   ├── demo
+│   │   ├── et_demo_10min.joblib
+│   │   ├── et_demo_120min.joblib
+│   │   ├── et_demo_30min.joblib
+│   │   ├── et_demo_60min.joblib
+
+======================================================================
+  REPORT SAVED
+======================================================================

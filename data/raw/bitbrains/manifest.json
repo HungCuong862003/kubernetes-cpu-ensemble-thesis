@@ -1,0 +1,27 @@
+{
+  "generator": "bitbrains_to_sprint1.py",
+  "created_utc": "2026-03-22T12:49:08Z",
+  "vm_count": 142,
+  "total_rows": 1157802,
+  "time_range": {
+    "min_unix_s": 1376314846,
+    "max_unix_s": 1378906798
+  },
+  "splits": {
+    "train": {
+      "rows": 708612,
+      "bytes": 3780384,
+      "sha256": "0d503821cb6b956ed2818fbbf65326da82477a5754c8b721991dcec8c1879c06"
+    },
+    "val": {
+      "rows": 245370,
+      "bytes": 969900,
+      "sha256": "40dd2c129b70ec98866a48a483d3008fbdd9f6a0d3fa690aab70e5644cc86f2d"
+    },
+    "test": {
+      "rows": 203820,
+      "bytes": 781906,
+      "sha256": "46ca8dabf66dbd642252cdc5be7137ffd7befcafd19b159f269f3e46c8704c35"
+    }
+  }
+}

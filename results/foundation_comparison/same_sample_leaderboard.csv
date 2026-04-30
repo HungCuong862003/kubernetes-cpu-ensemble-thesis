@@ -1,0 +1,5 @@
+dataset,horizon,n_points,naive_sub_r2,ensemble_sub_r2,chronos2_r2,delta_ens_c2_pp,delta_naive_c2_pp,delta_vs_full_test_pp,full_test_ens_r2_ref,c2_n_points_json,ensemble_source,naive_source,diag_passed
+alibaba,10min,98389,0.920081,0.922363,0.919049,-0.3314,-0.1032,0.1063,0.9213,98389,hetero_ensemble,recomputed from y_naive.npy on same positions,True
+alibaba,30min,98385,0.832383,0.837487,0.857217,1.973,2.4834,-0.2913,0.8404,98385,hetero_ensemble,recomputed from y_naive.npy on same positions,True
+alibaba,60min,98373,0.787891,0.802915,0.824094,2.1179,3.6203,0.1815,0.8011,98373,hetero_ensemble,recomputed from y_naive.npy on same positions,True
+alibaba,120min,98315,0.708541,0.758416,0.761177,0.2761,5.2636,-0.5784,0.7642,98315,hetero_ensemble,recomputed from y_naive.npy on same positions,True

@@ -1,0 +1,5 @@
+dataset,horizon,n_points,naive_sub_r2,ensemble_sub_r2,chronos2_r2,delta_ens_c2_pp,delta_naive_c2_pp,full_test_ens_r2_ref,delta_vs_full_test_pp,c2_n_points_json,note
+bitbrains,10min,2840,0.8678987543486205,,0.8771999797520251,,0.9301225403404612,,,2840,"ensemble N/A: per-VM XGB on full 20% test split, not subsampleable"
+bitbrains,30min,2840,0.6068060746817555,,0.6352632702895389,,2.845719560778337,,,2840,"ensemble N/A: per-VM XGB on full 20% test split, not subsampleable"
+bitbrains,60min,2840,0.17181168516831824,,0.25548354576919596,,8.367186060087771,,,2840,"ensemble N/A: per-VM XGB on full 20% test split, not subsampleable"
+bitbrains,120min,2840,-0.09208471104924576,,0.043959081577246484,,13.604379262649225,,,2840,"ensemble N/A: per-VM XGB on full 20% test split, not subsampleable"

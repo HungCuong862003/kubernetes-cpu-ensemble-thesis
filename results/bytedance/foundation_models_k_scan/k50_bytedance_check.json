@@ -1,0 +1,78 @@
+{
+  "dataset": "bytedance",
+  "cadence_min": 10,
+  "baselines": {
+    "10min": {
+      "naive": 0.7852,
+      "hetero_ens": 0.8549
+    },
+    "30min": {
+      "naive": 0.7462,
+      "hetero_ens": 0.8014
+    },
+    "60min": {
+      "naive": 0.7019,
+      "hetero_ens": 0.7629
+    },
+    "120min": {
+      "naive": 0.6471,
+      "hetero_ens": 0.7601
+    }
+  },
+  "ens_label": "NNLS Ensemble",
+  "chronos2_zero_shot": {
+    "10min": {
+      "n_points": 4650,
+      "r2_mean": 0.9546026506070742,
+      "r2_p50": 0.9546026506070742,
+      "mae_mean": 1.3948317080383659,
+      "mae_p50": 1.3948317080383659,
+      "r2_naive_subsample": 0.7819889856132837,
+      "mae_naive_subsample": 3.2653582454312553,
+      "mean_p10": 16.117525378811745,
+      "mean_p90": 20.215709425403226,
+      "pct_inside_p10_p90": 0.766236559139785
+    },
+    "30min": {
+      "n_points": 4650,
+      "r2_mean": 0.942300342408981,
+      "r2_p50": 0.942300342408981,
+      "mae_mean": 1.680684966071639,
+      "mae_p50": 1.680684966071639,
+      "r2_naive_subsample": 0.7450118538312815,
+      "mae_naive_subsample": 3.3768415670625624,
+      "mean_p10": 15.770883106518816,
+      "mean_p90": 20.77134492607527,
+      "pct_inside_p10_p90": 0.7810752688172043
+    },
+    "60min": {
+      "n_points": 4650,
+      "r2_mean": 0.926532473176692,
+      "r2_p50": 0.926532473176692,
+      "mae_mean": 1.889032358366956,
+      "mae_p50": 1.889032358366956,
+      "r2_naive_subsample": 0.6949260838296464,
+      "mae_naive_subsample": 3.6600071893993924,
+      "mean_p10": 15.335865964171706,
+      "mean_p90": 21.15332535282258,
+      "pct_inside_p10_p90": 0.7645161290322581
+    },
+    "120min": {
+      "n_points": 4650,
+      "r2_mean": 0.9102825327555543,
+      "r2_p50": 0.9102825327555543,
+      "mae_mean": 2.2249124638431814,
+      "mae_p50": 2.2249124638431814,
+      "r2_naive_subsample": 0.6532478426518356,
+      "mae_naive_subsample": 3.8177988367149185,
+      "mean_p10": 15.046658817414315,
+      "mean_p90": 21.579716061827956,
+      "pct_inside_p10_p90": 0.7578494623655914
+    }
+  },
+  "num_origins": 50,
+  "batch_size": 512,
+  "min_context": 24,
+  "data_root": "/workspace/k8s-ensemble-forecast/data/bytedance",
+  "test_file": "/workspace/k8s-ensemble-forecast/data/bytedance/test.parquet"
+}

@@ -1,0 +1,37 @@
+# Data — too large + licensing
+data/raw/alibaba/*
+data/raw/bitbrains/*
+data/raw/bytedance/iaas.csv
+data/processed/
+data/interim/
+data/external/
+!data/raw/**/PROVENANCE.md
+!data/raw/**/manifest.json
+!data/raw/**/metadata.json
+
+# Heavy regenerable artifacts
+results/*/h*/predictions/*.npy
+results/*/h*/predictions/*.npz
+results/*/h*/foundation_models/*.npz
+results/*/h*/intervals/*.npz
+
+# Trained models
+models/demo/*.joblib
+models/base_learners/*
+models/meta_learner/*
+models/foundation_zero_shot/*
+
+# Migration / cleanup logs (keep run logs)
+logs/migration_*
+logs/cleanup_*
+logs/scaffold_*
+logs/post_migration_tree_*
+
+# Python / IDE
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+.env

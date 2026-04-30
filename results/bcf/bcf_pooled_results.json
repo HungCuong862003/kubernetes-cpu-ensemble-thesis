@@ -1,0 +1,30 @@
+{
+  "predicate": "(ACF@24h > 0.2) AND (horizon >= 30min)",
+  "nnls_bitbrains_agg": "per_vm_median",
+  "acf_24h_used": {
+    "Bitbrains": 0.116,
+    "Alibaba": 0.316,
+    "ByteDance": 0.489
+  },
+  "n_pooled_pairs": 36,
+  "n_ml_wins": 30,
+  "n_predicate_pos": 18,
+  "pooled_auc": 0.8,
+  "bca_95_ci_lo": 0.7037037037037037,
+  "bca_95_ci_hi": 0.8793103448275862,
+  "bca_z0": -0.06644878548661275,
+  "bca_a_hat": -0.012422599874999553,
+  "permutation_p": 0.010698930106989302,
+  "permutation_method": "Phipson-Smyth (count_ge + 1) / (n_perm + 1)",
+  "n_boot": 10000,
+  "n_perm": 10000,
+  "excluded": [
+    "Naive (all ml_wins=0 by construction)"
+  ],
+  "caveats": [
+    "NNLS and foundation models use different naive references (NNLS: full-test pooled naive from chronos_benchmark_results.csv; Chronos-2 and TimesFM: k20/k50 same-subsample naive from sanity JSONs). Each delta is internally consistent (model vs naive on identical points) but reference sets differ across models.",
+    "NNLS Bitbrains uses median of per-VM deltas (NNLS_BITBRAINS_AGG='per_vm_median') to match boundary_condition_table_corrected.csv. Pooled scoring flips Bitbrains-120min from win to loss and shifts pooled AUC by ~0.03.",
+    "36 pooled pairs = 12 (dataset, horizon) cells under 3 models. Pairs are not iid; CI and p-value are pair-level and overstate precision relative to cluster-aware inference at n=12.",
+    "BCa CI precision is illusory beyond 2 decimals; ~200 unique AUC values in the bootstrap distribution. Report CI rounded."
+  ]
+}

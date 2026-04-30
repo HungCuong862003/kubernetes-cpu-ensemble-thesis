@@ -1,0 +1,4 @@
+Dataset,N_series,CV_median,Hurst_median,ACF@1h,ACF@24h,Omega_median
+Bitbrains,156,1.056,0.997,0.748,0.116,0.436
+Alibaba,4902,0.373,0.781,0.416,0.316,0.346
+ByteDance IaaS,93,0.123,0.956,0.385,0.489,0.351

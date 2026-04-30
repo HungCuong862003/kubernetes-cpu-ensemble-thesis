@@ -1,0 +1,5 @@
+Horizon,Original_Coverage,Recalibrated_Coverage,Nominal,Coverage_Gap_pp,Original_Width,Recalibrated_Width,Method
+10min,0.8131,0.8171,0.8,1.71,2.9209,2.9717,"CQR rescale asymmetric (s_lo=1.017, s_hi=1.017)"
+30min,0.8163,0.8726,0.8,7.26,5.2026,6.1208,"CQR rescale asymmetric (s_lo=1.176, s_hi=1.176)"
+60min,0.8185,0.9082,0.8,10.82,6.2668,8.2511,"CQR rescale asymmetric (s_lo=1.317, s_hi=1.317)"
+120min,0.8197,0.9135,0.8,11.35,7.1258,9.4808,"CQR rescale asymmetric (s_lo=1.330, s_hi=1.330)"

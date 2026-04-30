@@ -1,0 +1,66 @@
+{
+  "model": "granite-ttm-r2-1024-96-r2",
+  "dataset": "bytedance",
+  "cadence_min": 10,
+  "num_origins": 50,
+  "min_context": 24,
+  "ttm_revision": "1024-96-r2",
+  "ttm_context_length": 1024,
+  "ttm_prediction_length": 96,
+  "ens_label": "NNLS Ensemble",
+  "has_quantile_head": false,
+  "granite_ttm_zero_shot": {
+    "10min": {
+      "n_points": 4650,
+      "r2_mean": 0.7989204493726417,
+      "r2_p50": null,
+      "mae_mean": 4.232174694164787,
+      "mae_p50": null,
+      "r2_naive_subsample": 0.7828888393757805,
+      "mae_naive_subsample": 3.24288603779289,
+      "mean_p10": null,
+      "mean_p90": null,
+      "pct_inside_p10_p90": null,
+      "quantile_order_ok_pct": null
+    },
+    "30min": {
+      "n_points": 4650,
+      "r2_mean": 0.7661264311266308,
+      "r2_p50": null,
+      "mae_mean": 5.113708159872281,
+      "mae_p50": null,
+      "r2_naive_subsample": 0.7528819392041521,
+      "mae_naive_subsample": 3.3119816276951823,
+      "mean_p10": null,
+      "mean_p90": null,
+      "pct_inside_p10_p90": null,
+      "quantile_order_ok_pct": null
+    },
+    "60min": {
+      "n_points": 4650,
+      "r2_mean": 0.7130757679315725,
+      "r2_p50": null,
+      "mae_mean": 5.956794054780596,
+      "mae_p50": null,
+      "r2_naive_subsample": 0.6720621715968177,
+      "mae_naive_subsample": 3.716357570273842,
+      "mean_p10": null,
+      "mean_p90": null,
+      "pct_inside_p10_p90": null,
+      "quantile_order_ok_pct": null
+    },
+    "120min": {
+      "n_points": 4650,
+      "r2_mean": 0.6961482223880036,
+      "r2_p50": null,
+      "mae_mean": 6.472589509197141,
+      "mae_p50": null,
+      "r2_naive_subsample": 0.6522737579989881,
+      "mae_naive_subsample": 3.8363115086684862,
+      "mean_p10": null,
+      "mean_p90": null,
+      "pct_inside_p10_p90": null,
+      "quantile_order_ok_pct": null
+    }
+  }
+}

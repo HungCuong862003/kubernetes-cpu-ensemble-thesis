@@ -1,0 +1,549 @@
+THESIS NUMBER VERIFICATION REPORT
+Generated: 2026-04-05 17:56:06
+Data dir:     /content/drive/MyDrive/k8s-ensemble-forecast/results/thesis_figures
+Corrected dir: /content/drive/MyDrive/k8s-ensemble-forecast/corrected
+
+======================================================================
+Section 1: Alibaba Results
+======================================================================
+  --- R² comparison (from comparison_table.csv) ---
+  10min.Naive_R2: 0.9188
+  10min.Hetero_R2: 0.9213
+  10min.Delta_pp: 0.25
+  10min.Resid_Var_Reduction: 3.1%
+  30min.Naive_R2: 0.8361
+  30min.Hetero_R2: 0.8404
+  30min.Delta_pp: 0.43
+  30min.Resid_Var_Reduction: 2.6%
+  60min.Naive_R2: 0.7878
+  60min.Hetero_R2: 0.8011
+  60min.Delta_pp: 1.33
+  60min.Resid_Var_Reduction: 6.3%
+  120min.Naive_R2: 0.7178
+  120min.Hetero_R2: 0.7642
+  120min.Delta_pp: 4.64
+  120min.Resid_Var_Reduction: 16.4%
+  
+  --- Individual model R² ---
+  10min.ET_R2: 0.9212
+  10min.BiLSTM_R2: 0.9212
+  10min.Homo_R2: 0.9213
+  30min.ET_R2: 0.8402
+  30min.BiLSTM_R2: 0.8397
+  30min.Homo_R2: 0.8404
+  60min.ET_R2: 0.7997
+  60min.BiLSTM_R2: 0.7979
+  60min.Homo_R2: 0.8007
+  120min.ET_R2: 0.7624
+  120min.BiLSTM_R2: 0.7597
+  120min.Homo_R2: 0.763
+  
+  --- MAE skill scores (from stratified_skill.csv) ---
+  10min.MAE_naive: 0.8669
+  10min.MAE_ensemble: 0.9704
+  10min.Skill_score: -0.1194
+  10min.Win_rate_pct: 17.26
+  30min.MAE_naive: 1.7173
+  30min.MAE_ensemble: 1.7505
+  30min.Skill_score: -0.0194
+  30min.Win_rate_pct: 31.53
+  60min.MAE_naive: 2.2077
+  60min.MAE_ensemble: 2.1348
+  60min.Skill_score: 0.033
+  60min.Win_rate_pct: 38.64
+  120min.MAE_naive: 2.7634
+  120min.MAE_ensemble: 2.4565
+  120min.Skill_score: 0.1111
+  120min.Win_rate_pct: 43.45
+  
+  --- CV-stratified skill (Alibaba, from cv_stratified_skill.csv) ---
+  10min.CV<0.1.Skill: -0.3001
+  10min.CV<0.1.Win_pct: 0.0
+  10min.CV<0.1.N: 32
+  10min.CV 0.1-0.3.Skill: -0.128
+  10min.CV 0.1-0.3.Win_pct: 0.0
+  10min.CV 0.1-0.3.N: 1616
+  10min.CV 0.3-0.5.Skill: -0.1103
+  10min.CV 0.3-0.5.Win_pct: 0.0
+  10min.CV 0.3-0.5.N: 2004
+  10min.CV 0.5-0.7.Skill: -0.1064
+  10min.CV 0.5-0.7.Win_pct: 0.0
+  10min.CV 0.5-0.7.N: 460
+  10min.CV>0.7.Skill: -0.1231
+  10min.CV>0.7.Win_pct: 0.0
+  10min.CV>0.7.N: 525
+  30min.CV<0.1.Skill: -0.2295
+  30min.CV<0.1.Win_pct: 0.0
+  30min.CV<0.1.N: 32
+  30min.CV 0.1-0.3.Skill: -0.0341
+  30min.CV 0.1-0.3.Win_pct: 14.0
+  30min.CV 0.1-0.3.N: 1616
+  30min.CV 0.3-0.5.Skill: -0.0039
+  30min.CV 0.3-0.5.Win_pct: 27.9
+  30min.CV 0.3-0.5.N: 2004
+  30min.CV 0.5-0.7.Skill: -0.0128
+  30min.CV 0.5-0.7.Win_pct: 19.8
+  30min.CV 0.5-0.7.N: 460
+  30min.CV>0.7.Skill: -0.0316
+  30min.CV>0.7.Win_pct: 4.0
+  30min.CV>0.7.N: 525
+  60min.CV<0.1.Skill: -0.3421
+  60min.CV<0.1.Win_pct: 0.0
+  60min.CV<0.1.N: 32
+  60min.CV 0.1-0.3.Skill: 0.0163
+  60min.CV 0.1-0.3.Win_pct: 37.0
+  60min.CV 0.1-0.3.N: 1616
+  60min.CV 0.3-0.5.Skill: 0.0694
+  60min.CV 0.3-0.5.Win_pct: 53.1
+  60min.CV 0.3-0.5.N: 2004
+  60min.CV 0.5-0.7.Skill: 0.0222
+  60min.CV 0.5-0.7.Win_pct: 43.0
+  60min.CV 0.5-0.7.N: 460
+  60min.CV>0.7.Skill: -0.016
+  60min.CV>0.7.Win_pct: 13.7
+  60min.CV>0.7.N: 525
+  120min.CV<0.1.Skill: -0.4504
+  120min.CV<0.1.Win_pct: 0.0
+  120min.CV<0.1.N: 32
+  120min.CV 0.1-0.3.Skill: 0.1038
+  120min.CV 0.1-0.3.Win_pct: 50.1
+  120min.CV 0.1-0.3.N: 1616
+  120min.CV 0.3-0.5.Skill: 0.1701
+  120min.CV 0.3-0.5.Win_pct: 62.3
+  120min.CV 0.3-0.5.N: 2004
+  120min.CV 0.5-0.7.Skill: 0.0732
+  120min.CV 0.5-0.7.Win_pct: 56.1
+  120min.CV 0.5-0.7.N: 460
+  120min.CV>0.7.Skill: -0.0056
+  120min.CV>0.7.Win_pct: 19.6
+  120min.CV>0.7.N: 525
+
+======================================================================
+Section 2: Bitbrains Cross-Dataset
+======================================================================
+  --- Corrected summary (median aggregation) ---
+  10min.BB_Naive_R2: 0.8113
+  10min.BB_ML_R2: 0.6344
+  10min.BB_Delta_pp: -8.68
+  10min.BB_Win_pct: 12.2
+  30min.BB_Naive_R2: 0.562
+  30min.BB_ML_R2: 0.3611
+  30min.BB_Delta_pp: -5.46
+  30min.BB_Win_pct: 35.9
+  60min.BB_Naive_R2: 0.3014
+  60min.BB_ML_R2: 0.1199
+  60min.BB_Delta_pp: -0.79
+  60min.BB_Win_pct: 47.4
+  120min.BB_Naive_R2: 0.0306
+  120min.BB_ML_R2: 0.009
+  120min.BB_Delta_pp: 3.3
+  120min.BB_Win_pct: 51.9
+  
+  --- CV-stratified breakdown ---
+  10min.Low  CV (<0.3).Win_pct: 85.7
+  10min.Low  CV (<0.3).N: 7
+  10min.Med  CV (0.3-0.7).Win_pct: 75.0
+  10min.Med  CV (0.3-0.7).N: 8
+  10min.High CV (>0.7).Win_pct: 5.0
+  10min.High CV (>0.7).N: 141
+  30min.Low  CV (<0.3).Win_pct: 85.7
+  30min.Low  CV (<0.3).N: 7
+  30min.Med  CV (0.3-0.7).Win_pct: 87.5
+  30min.Med  CV (0.3-0.7).N: 8
+  30min.High CV (>0.7).Win_pct: 30.5
+  30min.High CV (>0.7).N: 141
+  60min.Low  CV (<0.3).Win_pct: 85.7
+  60min.Low  CV (<0.3).N: 7
+  60min.Med  CV (0.3-0.7).Win_pct: 87.5
+  60min.Med  CV (0.3-0.7).N: 8
+  60min.High CV (>0.7).Win_pct: 43.3
+  60min.High CV (>0.7).N: 141
+  120min.Low  CV (<0.3).Win_pct: 85.7
+  120min.Low  CV (<0.3).N: 7
+  120min.Med  CV (0.3-0.7).Win_pct: 75.0
+  120min.Med  CV (0.3-0.7).N: 8
+  120min.High CV (>0.7).Win_pct: 48.9
+  120min.High CV (>0.7).N: 141
+
+======================================================================
+Section 3: Chronos-Bolt
+======================================================================
+  Alibaba.10min.ens_r2: 0.9214
+  Alibaba.10min.chr_r2: 0.9192
+  Alibaba.10min.delta_pp: 0.22
+  Bitbrains.10min.ens_r2: -0.0084
+  Bitbrains.10min.chr_r2: 0.8146
+  Bitbrains.10min.delta_pp: -82.3
+  ByteDance.10min.ens_r2: 0.8549
+  ByteDance.10min.chr_r2: 0.8855
+  ByteDance.10min.delta_pp: -3.06
+  Alibaba.30min.ens_r2: 0.8404
+  Alibaba.30min.chr_r2: 0.8654
+  Alibaba.30min.delta_pp: -2.5
+  Bitbrains.30min.ens_r2: -0.1638
+  Bitbrains.30min.chr_r2: 0.5681
+  Bitbrains.30min.delta_pp: -73.19
+  ByteDance.30min.ens_r2: 0.8014
+  ByteDance.30min.chr_r2: 0.859
+  ByteDance.30min.delta_pp: -5.76
+  Alibaba.60min.ens_r2: 0.8011
+  Alibaba.60min.chr_r2: 0.8315
+  Alibaba.60min.delta_pp: -3.05
+  Bitbrains.60min.ens_r2: -0.3373
+  Bitbrains.60min.chr_r2: 0.3894
+  Bitbrains.60min.delta_pp: -72.68
+  ByteDance.60min.ens_r2: 0.7629
+  ByteDance.60min.chr_r2: 0.858
+  ByteDance.60min.delta_pp: -9.51
+  Alibaba.120min.ens_r2: 0.7642
+  Alibaba.120min.chr_r2: 0.7541
+  Alibaba.120min.delta_pp: 1.01
+  Bitbrains.120min.ens_r2: -0.5006
+  Bitbrains.120min.chr_r2: 0.2308
+  Bitbrains.120min.delta_pp: -73.14
+  ByteDance.120min.ens_r2: 0.7601
+  ByteDance.120min.chr_r2: 0.8379
+  ByteDance.120min.delta_pp: -7.77
+  
+  Ensemble_wins: 2/12
+  Chronos_wins: 10/12
+  Ensemble wins at: Alibaba 10min: +0.22pp; Alibaba 120min: +1.01pp
+  Fair_Ensemble_wins: 2/8  (excluding Bitbrains global ensemble)
+
+======================================================================
+Section 4: ByteDance
+======================================================================
+  --- Hetero ensemble vs naive and vs ExtraTrees ---
+  10min.naive_R2: 0.7852
+  10min.hetero_R2: 0.8549
+  10min.ET_R2: 0.9097
+  10min.vs_naive_pp: 6.97
+  10min.vs_ET_pp: -5.49
+  30min.naive_R2: 0.7462
+  30min.hetero_R2: 0.8014
+  30min.ET_R2: 0.8741
+  30min.vs_naive_pp: 5.52
+  30min.vs_ET_pp: -7.27
+  60min.naive_R2: 0.7019
+  60min.hetero_R2: 0.7629
+  60min.ET_R2: 0.8585
+  60min.vs_naive_pp: 6.09
+  60min.vs_ET_pp: -9.57
+  120min.naive_R2: 0.6471
+  120min.hetero_R2: 0.7601
+  120min.ET_R2: 0.8353
+  120min.vs_naive_pp: 11.31
+  120min.vs_ET_pp: -7.52
+
+======================================================================
+Section 5: Statistical Tests
+======================================================================
+  --- Friedman test ---
+  10min.chi2: 38386.6
+  10min.p_value: 0.0
+  10min.n_containers: 4921
+  30min.chi2: 21922.7
+  30min.p_value: 0.0
+  30min.n_containers: 4921
+  60min.chi2: 7967.8
+  60min.p_value: 0.0
+  60min.n_containers: 4921
+  120min.chi2: 7601.2
+  120min.p_value: 0.0
+  120min.n_containers: 4920
+  
+  --- Diebold-Mariano: hetero_ensemble vs others ---
+  10min.DM_sig_pairs: 9  (vs naive, ets, arima, linear_reg, xgboost, lightgbm, extratrees, bilstm, homo_ensemble)
+  30min.DM_sig_pairs: 9  (vs naive, ets, arima, linear_reg, xgboost, lightgbm, extratrees, bilstm, homo_ensemble)
+  60min.DM_sig_pairs: 9  (vs naive, ets, arima, linear_reg, xgboost, lightgbm, extratrees, bilstm, homo_ensemble)
+  120min.DM_sig_pairs: 9  (vs naive, ets, arima, linear_reg, xgboost, lightgbm, extratrees, bilstm, homo_ensemble)
+
+======================================================================
+Section 6: SHAP Feature Importance
+======================================================================
+  --- 10min ---
+  10min.hour_sin+cos: 21.0%
+  10min.broad_temporal: 23.2%
+  10min.cpu_roll: 18.7%
+  10min.cpu_lag: 28.2%
+  10min.cross_resource: 6.9%
+  10min.cluster_id: 4.4%
+  --- 30min ---
+  30min.hour_sin+cos: 36.4%
+  30min.broad_temporal: 41.4%
+  30min.cpu_roll: 18.3%
+  30min.cpu_lag: 16.2%
+  30min.cross_resource: 8.3%
+  30min.cluster_id: 6.6%
+  --- 60min ---
+  60min.hour_sin+cos: 42.7%
+  60min.broad_temporal: 50.3%
+  60min.cpu_roll: 19.0%
+  60min.cpu_lag: 9.7%
+  60min.cross_resource: 9.1%
+  60min.cluster_id: 7.6%
+  --- 120min ---
+  120min.hour_sin+cos: 45.0%
+  120min.broad_temporal: 53.5%
+  120min.cpu_roll: 17.9%
+  120min.cpu_lag: 9.1%
+  120min.cross_resource: 8.4%
+  120min.cluster_id: 6.9%
+
+======================================================================
+Section 7: UQ Recalibration
+======================================================================
+  10min.Original_Coverage: 0.8129
+  10min.Recalibrated_Coverage: 0.8172
+  10min.Coverage_Gap_pp: 1.72
+  10min.Original_Width: 2.9139
+  10min.Recalibrated_Width: 2.9677
+  30min.Original_Coverage: 0.8163
+  30min.Recalibrated_Coverage: 0.8714
+  30min.Coverage_Gap_pp: 7.14
+  30min.Original_Width: 5.2026
+  30min.Recalibrated_Width: 6.0975
+  60min.Original_Coverage: 0.8185
+  60min.Recalibrated_Coverage: 0.9046
+  60min.Coverage_Gap_pp: 10.46
+  60min.Original_Width: 6.2668
+  60min.Recalibrated_Width: 8.18
+  120min.Original_Coverage: 0.8197
+  120min.Recalibrated_Coverage: 0.9094
+  120min.Coverage_Gap_pp: 10.94
+  120min.Original_Width: 7.1258
+  120min.Recalibrated_Width: 9.3759
+
+======================================================================
+Section 8: Residual Diagnostics
+======================================================================
+  WARNING: residual_diagnostics.csv not found
+
+======================================================================
+Section 9: HPA Simulation
+======================================================================
+  total_rows: 800
+  10min.reactive_rows: 160
+  10min.reactive_unique: 160  (was 4 in buggy version)
+  10min.ml_rows: 40
+  30min.reactive_rows: 160
+  30min.reactive_unique: 160  (was 4 in buggy version)
+  30min.ml_rows: 40
+  60min.reactive_rows: 160
+  60min.reactive_unique: 160  (was 4 in buggy version)
+  60min.ml_rows: 40
+  120min.reactive_rows: 160
+  120min.reactive_unique: 160  (was 4 in buggy version)
+  120min.ml_rows: 40
+  has_target_util_col: True
+  target_util_values: [0.5, 0.6, 0.7, 0.8]
+
+======================================================================
+Section 10: Meta-Learner Comparison
+======================================================================
+  total_rows: 20
+  
+  --- 10min ---
+  10min.NNLS.R2: 0.921182
+  10min.NNLS.MAE: 0.9706
+  10min.Simple Average.R2: 0.920632
+  10min.Simple Average.MAE: 0.9276
+  10min.Ridge.R2: 0.921224
+  10min.Ridge.MAE: 0.9759
+  10min.Bates-Granger.R2: 0.920641
+  10min.Bates-Granger.MAE: 0.9281
+  10min.Best Individual (LGB).R2: 0.918777
+  10min.Best Individual (LGB).MAE: 0.8669
+  --- 30min ---
+  30min.NNLS.R2: 0.840099
+  30min.NNLS.MAE: 1.7465
+  30min.Simple Average.R2: 0.839457
+  30min.Simple Average.MAE: 1.7366
+  30min.Ridge.R2: 0.840167
+  30min.Ridge.MAE: 1.7533
+  30min.Bates-Granger.R2: 0.839468
+  30min.Bates-Granger.MAE: 1.7367
+  30min.Best Individual (LGB).R2: 0.837382
+  30min.Best Individual (LGB).MAE: 1.7111
+  --- 60min ---
+  60min.NNLS.R2: 0.800681
+  60min.NNLS.MAE: 2.1288
+  60min.Simple Average.R2: 0.799192
+  60min.Simple Average.MAE: 2.1331
+  60min.Ridge.R2: 0.800729
+  60min.Ridge.MAE: 2.1301
+  60min.Bates-Granger.R2: 0.799238
+  60min.Bates-Granger.MAE: 2.1326
+  60min.Best Individual (LGB).R2: 0.797416
+  60min.Best Individual (LGB).MAE: 2.1179
+  --- 120min ---
+  120min.NNLS.R2: 0.763571
+  120min.NNLS.MAE: 2.4578
+  120min.Simple Average.R2: 0.758394
+  120min.Simple Average.MAE: 2.4914
+  120min.Ridge.R2: 0.763687
+  120min.Ridge.MAE: 2.4578
+  120min.Bates-Granger.R2: 0.758845
+  120min.Bates-Granger.MAE: 2.4867
+  120min.Best Individual (LGB).R2: 0.75459
+  120min.Best Individual (LGB).MAE: 2.4802
+  
+  --- Combination puzzle diagnostics ---
+  10min.Cond_Number: 5.188404146333147e+17
+  10min.Mean_Err_Corr: 0.9901
+  10min.R2_Spread_pp: 0.2447
+  10min.Best_Individual: LGB
+  30min.Cond_Number: 42.4
+  30min.Mean_Err_Corr: 0.9906
+  30min.R2_Spread_pp: 0.2785
+  30min.Best_Individual: LGB
+  60min.Cond_Number: 28.4
+  60min.Mean_Err_Corr: 0.983
+  60min.R2_Spread_pp: 0.3313
+  60min.Best_Individual: LGB
+  120min.Cond_Number: 38.0
+  120min.Mean_Err_Corr: 0.9569
+  120min.R2_Spread_pp: 0.9097
+  120min.Best_Individual: LGB
+  
+  --- Bootstrap weight stability ---
+  10min.XGB.Mean_W: 0.0162
+  10min.XGB.Std_W: 0.0172
+  10min.XGB.Frac_Zero: 0.34
+  10min.LGB.Mean_W: 0.0
+  10min.LGB.Std_W: 0.0
+  10min.LGB.Frac_Zero: 1.0
+  10min.ET.Mean_W: 0.3348
+  10min.ET.Std_W: 0.0207
+  10min.ET.Frac_Zero: 0.0
+  10min.BiLSTM.Mean_W: 0.649
+  10min.BiLSTM.Std_W: 0.0248
+  10min.BiLSTM.Frac_Zero: 0.0
+  30min.XGB.Mean_W: 0.0168
+  30min.XGB.Std_W: 0.0182
+  30min.XGB.Frac_Zero: 0.345
+  30min.LGB.Mean_W: 0.1252
+  30min.LGB.Std_W: 0.021
+  30min.LGB.Frac_Zero: 0.0
+  30min.ET.Mean_W: 0.4383
+  30min.ET.Std_W: 0.0177
+  30min.ET.Frac_Zero: 0.0
+  30min.BiLSTM.Mean_W: 0.4197
+  30min.BiLSTM.Std_W: 0.0164
+  30min.BiLSTM.Frac_Zero: 0.0
+  60min.XGB.Mean_W: 0.0015
+  60min.XGB.Std_W: 0.0038
+  60min.XGB.Frac_Zero: 0.765
+  60min.LGB.Mean_W: 0.075
+  60min.LGB.Std_W: 0.0112
+  60min.LGB.Frac_Zero: 0.0
+  60min.ET.Mean_W: 0.5692
+  60min.ET.Std_W: 0.0096
+  60min.ET.Frac_Zero: 0.0
+  60min.BiLSTM.Mean_W: 0.3543
+  60min.BiLSTM.Std_W: 0.0082
+  60min.BiLSTM.Frac_Zero: 0.0
+  120min.XGB.Mean_W: 0.0
+  120min.XGB.Std_W: 0.0
+  120min.XGB.Frac_Zero: 0.995
+  120min.LGB.Mean_W: 0.0089
+  120min.LGB.Std_W: 0.0058
+  120min.LGB.Frac_Zero: 0.08
+  120min.ET.Mean_W: 0.5702
+  120min.ET.Std_W: 0.0064
+  120min.ET.Frac_Zero: 0.0
+  120min.BiLSTM.Mean_W: 0.4209
+  120min.BiLSTM.Std_W: 0.005
+  120min.BiLSTM.Frac_Zero: 0.0
+
+======================================================================
+Section 11: Boundary Conditions
+======================================================================
+  --- Corrected boundary condition table ---
+  Alibaba 2018.CV: 0.373
+  Alibaba 2018.Hurst: 0.781
+  Alibaba 2018.ACF_24h: 0.316
+  Alibaba 2018.delta_30min: +0.43pp
+  Alibaba 2018.delta_120min: +4.64pp
+  Alibaba 2018.verdict: ML dominates 60min+
+  Bitbrains.CV: 1.06
+  Bitbrains.Hurst: 0.997
+  Bitbrains.ACF_24h: 0.116
+  Bitbrains.delta_30min: -5.46pp
+  Bitbrains.delta_120min: +3.30pp
+  Bitbrains.verdict: ML wins only @120min
+  DSB.CV: >2.0
+  DSB.Hurst: ~0.50
+  DSB.ACF_24h: ~0.00
+  DSB.delta_30min: nan
+  DSB.delta_120min: -83pp
+  DSB.verdict: naive wins all
+  
+  --- Omega summary (canonical descriptive stats) ---
+  Bitbrains.N_series: 156
+  Bitbrains.CV_median: 1.056
+  Bitbrains.Hurst_median: 0.997
+  Bitbrains.ACF_1h: 0.748
+  Bitbrains.ACF_24h: 0.116
+  Bitbrains.Omega_median: 0.436
+  Alibaba.N_series: 4902
+  Alibaba.CV_median: 0.373
+  Alibaba.Hurst_median: 0.781
+  Alibaba.ACF_1h: 0.416
+  Alibaba.ACF_24h: 0.316
+  Alibaba.Omega_median: 0.346
+  ByteDance IaaS.N_series: 93
+  ByteDance IaaS.CV_median: 0.123
+  ByteDance IaaS.Hurst_median: 0.956
+  ByteDance IaaS.ACF_1h: 0.385
+  ByteDance IaaS.ACF_24h: 0.489
+  ByteDance IaaS.Omega_median: 0.351
+
+======================================================================
+Section 12: Base Model Correlations
+======================================================================
+  10min.min_err_corr: 0.9865
+  10min.max_err_corr: 0.9968
+  10min.mean_err_corr: 0.9928
+  30min.min_err_corr: 0.9893
+  30min.max_err_corr: 0.9954
+  30min.mean_err_corr: 0.9921
+  60min.min_err_corr: 0.9712
+  60min.max_err_corr: 0.9886
+  60min.mean_err_corr: 0.9828
+  120min.min_err_corr: 0.9267
+  120min.max_err_corr: 0.9778
+  120min.mean_err_corr: 0.9563
+
+======================================================================
+Section 13: LOO Ablation
+======================================================================
+  total_rows: 34
+  10min.Full_R2: 0.92109
+  10min.Full_MAE: 0.9564
+  10min.ET_alone_delta_pp: 0.0072
+  30min.Full_R2: 0.840099
+  30min.Full_MAE: 1.7465
+  30min.ET_alone_delta_pp: 0.0074
+  60min.Full_R2: 0.800681
+  60min.Full_MAE: 2.1288
+  60min.ET_alone_delta_pp: 0.0113
+  120min.Full_R2: 0.763571
+  120min.Full_MAE: 2.4578
+  120min.ET_alone_delta_pp: -0.0654
+
+======================================================================
+SUMMARY
+======================================================================
+  Total numbers recorded: 443
+  Sections covered: 13
+  
+  KEY NUMBERS FOR QUICK REFERENCE:
+  
+    [OK] Chronos wins: 10/12 (expected 10/12)
+    [OK] Win rate 10min: 17.26 (expected 17.26)
+    [OK] Win rate 30min: 31.53 (expected 31.53)
+    [OK] Win rate 60min: 38.64 (expected 38.64)
+    [OK] Win rate 120min: 43.45 (expected 43.45)
+    [OK] Alibaba 120min delta: 4.64 (expected 4.64)
+    [OK] BB 120min ML wins: 51.9 (expected 51.9)

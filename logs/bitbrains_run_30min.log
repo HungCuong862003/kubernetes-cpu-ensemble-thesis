@@ -1,0 +1,60 @@
+[12:51:09] [worker 30min] cpu=20-39  n_jobs=20  pid=2831
+[12:51:09]   train.parquet  (3.8 MB)
+[12:51:09]   val.parquet  (1.0 MB)
+[12:51:09]   test.parquet  (0.8 MB)
+[12:51:09]   sizes: train=708,612  val=245,370  test=203,820
+[12:51:09]   temporal ordering: OK
+[12:51:09]   RAM after load: 0.3 GB
+[12:51:09] Building features...
+[12:51:09]     train...
+[12:51:09]     computing rolling cache for 'train'...
+[12:51:10]     rolling cache 'train' ready  [0.6GB]
+[12:51:11]     val...
+[12:51:11]     computing rolling cache for 'val'...
+[12:51:12]     rolling cache 'val' ready  [1.0GB]
+[12:51:13]     test...
+[12:51:13]     computing rolling cache for 'test'...
+[12:51:14]     rolling cache 'test' ready  [1.2GB]
+[12:51:14]   Features: all=75  XGB=30  LGBM=59
+[12:51:15]   Clean: train=707,760  val=244,518  test=202,968  [1.6GB]
+[12:51:15] Extracting arrays...
+[12:51:17]   DFs freed  [2.3GB]
+[12:51:17] 1/14  Naive (CPU + MEM)
+[12:51:17]   CPU  R2=0.4967  MAE=12.339
+[12:51:17]   MEM  R2=0.1891  MAE=6.022
+[12:51:17] 2-3/14  ETS + ARIMA (parallel rolling)...
+[12:51:17]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+[12:51:36]   ETS: 20 ok, 418 forecasts, 0 fallback
+[12:51:36]   ETS: R2=0.4096  MAE=14.003
+[12:51:36]   ARIMA: R2=0.4967  MAE=12.339
+[12:51:36] 4/14  Linear Regression (Ridge, solver=lsqr)
+[12:51:58]   R2=0.5292  vs naive: +3.25pp
+[12:51:58] 5/14  XGBoost
+[12:52:11]   R2=0.5309  vs naive: +3.43pp  (13.4s)
+[12:52:11] 6/14  LightGBM
+[12:53:10]   R2=0.5012  vs naive: +0.45pp
+[12:53:10] 7/14  ExtraTrees (max_depth=25, max_samples=0.3)
+[12:56:28]   R2=0.5111  vs naive: +1.44pp  (197.5s)
+[12:56:28] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[12:58:36]     XGB-oof OOF R2: 0.1190  (infilled 117960)
+[13:00:14]     LGB-oof OOF R2: 0.0302  (infilled 117960)
+[13:11:23]     ET-oof OOF R2: 0.1953  (infilled 117960)
+[13:11:24]   R2=0.5262  NNLS: XGB=0.213  LGB=0.139  ET=0.647  (896.0s)
+[13:11:24] 10/14  Hetero Ensemble (CPU)
+[13:11:24]     BiLSTM OOF not available -- fallback to homo
+[13:11:25] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[13:13:32]     XGB-MEM OOF R2: 0.1657  (infilled 117960)
+[13:14:16]     LGB-MEM OOF R2: 0.1207  (infilled 117960)
+[13:19:55]     ET-MEM OOF R2: 0.1918  (infilled 117960)
+[13:19:55]   MEM R2=0.1962  NNLS: XGB=0.333  LGB=0.159  ET=0.507
+[13:19:55] 12/14  Post-processing + ACI uncertainty quantification...
+[13:20:54]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[13:26:18]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[13:28:06]       AgACI coverage: 82.3%  target: 80%  cal_error: 2.3pp  mean_width: 50.779
+[13:28:06]       expert weights: {0.01: 0.26, 0.02: 0.258, 0.05: 0.248, 0.1: 0.234}
+[13:28:06]       per-gamma cov:  {'gamma_0.01': 79.95, 'gamma_0.02': 79.87, 'gamma_0.05': 79.51, 'gamma_0.1': 78.92}
+[13:28:06]       ACI buffer size: 2000 residuals
+[13:28:06] 13/14  Ablation -- CPU...
+[13:28:54] Ablation -- MEM...
+[13:29:58] 14/14  Cluster analysis: no cluster_id column, skipping
+[13:29:58] 30min done in 38.8min  [2.9GB]

@@ -1,0 +1,2044 @@
+[09:03:00] Output dir  : /root/thesis_figures
+[09:03:00] Checkpoint  : /root/thesis_figures/checkpoints
+[09:03:00] Loaded sprint1_v9 from /workspace/sprint1_v9.py
+[09:03:00] Checkpoint summary:
+[09:03:00] ============================================================  PART: SHAP
+[09:03:07] 
+  [10min]
+[09:03:07]     computing rolling cache for 'train'...
+[09:03:47]     rolling cache 'train' ready  [4.1GB]
+[09:04:00]     computing rolling cache for 'val'...
+[09:04:33]     rolling cache 'val' ready  [10.5GB]
+[09:04:41]     computing rolling cache for 'test'...
+[09:05:15]     rolling cache 'test' ready  [12.9GB]
+[09:05:22] BiLSTM carries 42.8% of NNLS weight — tree-only SHAP renorm will under-represent it
+[09:05:29]     fitting XGB...
+[09:05:29]   SHAP 10min: XGBModel.fit() got an unexpected keyword argument 'early_stopping_rounds'
+[09:05:29] 
+  [30min]
+[09:05:56] BiLSTM carries 22.0% of NNLS weight — tree-only SHAP renorm will under-represent it
+[09:06:02]     fitting XGB...
+[09:06:02]   SHAP 30min: XGBModel.fit() got an unexpected keyword argument 'early_stopping_rounds'
+[09:06:02] 
+  [60min]
+[09:06:29] BiLSTM carries 21.6% of NNLS weight — tree-only SHAP renorm will under-represent it
+[09:06:35]     fitting XGB...
+[09:06:35]   SHAP 60min: XGBModel.fit() got an unexpected keyword argument 'early_stopping_rounds'
+[09:06:35] 
+  [120min]
+[09:07:02] BiLSTM carries 24.1% of NNLS weight — tree-only SHAP renorm will under-represent it
+[09:07:08]     fitting XGB...
+[09:07:08]   SHAP 120min: XGBModel.fit() got an unexpected keyword argument 'early_stopping_rounds'
+[09:07:08] No SHAP results produced
+[09:07:08] ✓  'shap' finished in 248.6s
+[09:07:08] ============================================================  PART: WORKLOAD
+[09:07:10]   Alibaba: 4919 containers
+[09:10:42] Output dir  : /root/thesis_figures
+[09:10:42] Checkpoint  : /root/thesis_figures/checkpoints
+[09:10:42] Loaded sprint1_v9 from /workspace/sprint1_v9.py
+[09:10:42] Checkpoint summary:
+[09:10:42]   ✓ shap (248.6s)
+[09:10:42] ⏭  'shap' already done — skipping (use --force shap to re-run)
+[09:10:42] ============================================================  PART: WORKLOAD
+[09:10:45]   Alibaba: 4919 containers
+[09:11:06] 
+  Workload predictability table:
+[09:11:06]   saved: workload_stats.csv
+[09:11:28]   saved: container_landscape_stats.csv (4637 containers)
+[09:11:29] maxp pruned
+[09:11:29] cmap pruned
+[09:11:29] kern dropped
+[09:11:29] post pruned
+[09:11:29] FFTM dropped
+[09:11:29] GPOS pruned
+[09:11:29] GSUB pruned
+[09:11:29] glyf pruned
+[09:11:29] Added gid0 to subset
+[09:11:29] Added first four glyphs to subset
+[09:11:29] Closing glyph list over 'MATH': 46 glyphs before
+[09:11:29] Glyph names: ['.notdef', '.null', 'A', 'C', 'E', 'H', 'V', 'W', 'a', 'b', 'c', 'comma', 'd', 'e', 'eight', 'equal', 'f', 'five', 'four', 'h', 'i', 'k', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'w', 'x', 'y', 'zero']
+[09:11:29] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 40, 43, 57, 58, 68, 69, 70, 71, 72, 73, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 90, 91, 92]
+[09:11:29] Closed glyph list over 'MATH': 52 glyphs after
+[09:11:29] Glyph names: ['.notdef', '.null', 'A', 'C', 'E', 'H', 'V', 'W', 'a', 'b', 'c', 'comma', 'd', 'e', 'eight', 'equal', 'f', 'five', 'four', 'h', 'i', 'k', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'w', 'x', 'y', 'zero']
+[09:11:29] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 40, 43, 57, 58, 68, 69, 70, 71, 72, 73, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 90, 91, 92, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:11:29] Closing glyph list over 'GSUB': 52 glyphs before
+[09:11:29] Glyph names: ['.notdef', '.null', 'A', 'C', 'E', 'H', 'V', 'W', 'a', 'b', 'c', 'comma', 'd', 'e', 'eight', 'equal', 'f', 'five', 'four', 'h', 'i', 'k', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'w', 'x', 'y', 'zero']
+[09:11:29] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 40, 43, 57, 58, 68, 69, 70, 71, 72, 73, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 90, 91, 92, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:11:29] Closed glyph list over 'GSUB': 57 glyphs after
+[09:11:29] Glyph names: ['.notdef', '.null', 'A', 'C', 'E', 'H', 'V', 'W', 'a', 'b', 'c', 'comma', 'd', 'e', 'eight', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'h', 'i', 'k', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'y', 'zero']
+[09:11:29] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 40, 43, 57, 58, 68, 69, 70, 71, 72, 73, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 90, 91, 92, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:11:29] Closing glyph list over 'glyf': 57 glyphs before
+[09:11:29] Glyph names: ['.notdef', '.null', 'A', 'C', 'E', 'H', 'V', 'W', 'a', 'b', 'c', 'comma', 'd', 'e', 'eight', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'h', 'i', 'k', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'y', 'zero']
+[09:11:29] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 40, 43, 57, 58, 68, 69, 70, 71, 72, 73, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 90, 91, 92, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:11:29] Closed glyph list over 'glyf': 57 glyphs after
+[09:11:29] Glyph names: ['.notdef', '.null', 'A', 'C', 'E', 'H', 'V', 'W', 'a', 'b', 'c', 'comma', 'd', 'e', 'eight', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'h', 'i', 'k', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'y', 'zero']
+[09:11:29] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 40, 43, 57, 58, 68, 69, 70, 71, 72, 73, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 90, 91, 92, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:11:29] Retaining 57 glyphs
+[09:11:29] head subsetting not needed
+[09:11:29] hhea subsetting not needed
+[09:11:29] maxp subsetting not needed
+[09:11:29] OS/2 subsetting not needed
+[09:11:29] hmtx subsetted
+[09:11:29] cmap subsetted
+[09:11:29] fpgm subsetting not needed
+[09:11:29] prep subsetting not needed
+[09:11:29] cvt  subsetting not needed
+[09:11:29] loca subsetting not needed
+[09:11:29] post subsetted
+[09:11:29] gasp subsetting not needed
+[09:11:29] MATH subsetted
+[09:11:29] GDEF subsetted
+[09:11:29] GPOS subsetted
+[09:11:29] GSUB subsetted
+[09:11:29] name subsetting not needed
+[09:11:29] glyf subsetted
+[09:11:29] head pruned
+[09:11:29] OS/2 Unicode ranges pruned: [0]
+[09:11:29] OS/2 CodePage ranges pruned: [0]
+[09:11:29] glyf pruned
+[09:11:29] GDEF pruned
+[09:11:29] GPOS pruned
+[09:11:29] GSUB pruned
+[09:11:29] name pruned
+[09:11:29]   saved: predictability_landscape.pdf
+[09:11:29] ✓  'workload' finished in 46.3s
+[09:11:29] ============================================================  PART: UQ
+[09:11:30]   [10min]
+[09:11:30]     computing rolling cache for 'test'...
+[09:12:03]     rolling cache 'test' ready  [1.2GB]
+[09:12:11]   cov: 0.813 -> 0.817 | width: 2.9209 -> 2.9717
+[09:12:11]   [30min]
+[09:12:18]   cov: 0.816 -> 0.873 | width: 5.2026 -> 6.1208
+[09:12:18]   [60min]
+[09:12:25]   cov: 0.818 -> 0.908 | width: 6.2668 -> 8.2511
+[09:12:25]   [120min]
+[09:12:32]   cov: 0.820 -> 0.914 | width: 7.1258 -> 9.4808
+[09:12:33] maxp pruned
+[09:12:33] cmap pruned
+[09:12:33] kern dropped
+[09:12:33] post pruned
+[09:12:33] FFTM dropped
+[09:12:33] GPOS pruned
+[09:12:33] GSUB pruned
+[09:12:33] glyf pruned
+[09:12:33] Added gid0 to subset
+[09:12:33] Added first four glyphs to subset
+[09:12:33] Closing glyph list over 'MATH': 39 glyphs before
+[09:12:33] Glyph names: ['.notdef', '.null', 'I', 'P', 'Q', 'U', 'a', 'arrowright', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'v', 'zero']
+[09:12:33] Glyph IDs:   [0, 1, 2, 3, 8, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 44, 51, 52, 56, 68, 69, 70, 71, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 2132, 2255]
+[09:12:33] Closed glyph list over 'MATH': 40 glyphs after
+[09:12:33] Glyph names: ['.notdef', '.null', 'I', 'P', 'Q', 'U', 'a', 'arrowright', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni27F6', 'v', 'zero']
+[09:12:33] Glyph IDs:   [0, 1, 2, 3, 8, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 44, 51, 52, 56, 68, 69, 70, 71, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 2132, 2255, 2678]
+[09:12:33] Closing glyph list over 'GSUB': 40 glyphs before
+[09:12:33] Glyph names: ['.notdef', '.null', 'I', 'P', 'Q', 'U', 'a', 'arrowright', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni27F6', 'v', 'zero']
+[09:12:33] Glyph IDs:   [0, 1, 2, 3, 8, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 44, 51, 52, 56, 68, 69, 70, 71, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 2132, 2255, 2678]
+[09:12:33] Closed glyph list over 'GSUB': 40 glyphs after
+[09:12:33] Glyph names: ['.notdef', '.null', 'I', 'P', 'Q', 'U', 'a', 'arrowright', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni27F6', 'v', 'zero']
+[09:12:33] Glyph IDs:   [0, 1, 2, 3, 8, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 44, 51, 52, 56, 68, 69, 70, 71, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 2132, 2255, 2678]
+[09:12:33] Closing glyph list over 'glyf': 40 glyphs before
+[09:12:33] Glyph names: ['.notdef', '.null', 'I', 'P', 'Q', 'U', 'a', 'arrowright', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni27F6', 'v', 'zero']
+[09:12:33] Glyph IDs:   [0, 1, 2, 3, 8, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 44, 51, 52, 56, 68, 69, 70, 71, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 2132, 2255, 2678]
+[09:12:33] Closed glyph list over 'glyf': 40 glyphs after
+[09:12:33] Glyph names: ['.notdef', '.null', 'I', 'P', 'Q', 'U', 'a', 'arrowright', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni27F6', 'v', 'zero']
+[09:12:33] Glyph IDs:   [0, 1, 2, 3, 8, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 44, 51, 52, 56, 68, 69, 70, 71, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 2132, 2255, 2678]
+[09:12:33] Retaining 40 glyphs
+[09:12:33] head subsetting not needed
+[09:12:33] hhea subsetting not needed
+[09:12:33] maxp subsetting not needed
+[09:12:33] OS/2 subsetting not needed
+[09:12:33] hmtx subsetted
+[09:12:33] cmap subsetted
+[09:12:33] fpgm subsetting not needed
+[09:12:33] prep subsetting not needed
+[09:12:33] cvt  subsetting not needed
+[09:12:33] loca subsetting not needed
+[09:12:33] post subsetted
+[09:12:33] gasp subsetting not needed
+[09:12:33] MATH subsetted
+[09:12:33] GDEF subsetted
+[09:12:33] GPOS subsetted
+[09:12:33] GSUB subsetted
+[09:12:33] name subsetting not needed
+[09:12:33] glyf subsetted
+[09:12:33] head pruned
+[09:12:33] OS/2 Unicode ranges pruned: [0, 37, 38]
+[09:12:33] OS/2 CodePage ranges pruned: [0]
+[09:12:33] glyf pruned
+[09:12:33] GDEF pruned
+[09:12:33] GPOS pruned
+[09:12:33] GSUB pruned
+[09:12:33] name pruned
+[09:12:33]   saved: uq_recalibration.pdf
+[09:12:33]   saved: uq_recalibration_table.csv
+[09:12:33] ✓  'uq' finished in 64.0s
+[09:12:33] ============================================================  PART: DM
+[09:12:34] 
+  [10min]
+[09:12:42] maxp pruned
+[09:12:42] cmap pruned
+[09:12:42] kern dropped
+[09:12:42] post pruned
+[09:12:42] FFTM dropped
+[09:12:42] GPOS pruned
+[09:12:42] GSUB pruned
+[09:12:42] glyf pruned
+[09:12:42] Added gid0 to subset
+[09:12:42] Added first four glyphs to subset
+[09:12:42] Closing glyph list over 'GSUB': 27 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'w', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:42] Closed glyph list over 'GSUB': 27 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'w', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:42] Closing glyph list over 'glyf': 27 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'w', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:42] Closed glyph list over 'glyf': 27 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'w', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:42] Retaining 27 glyphs
+[09:12:42] head subsetting not needed
+[09:12:42] hhea subsetting not needed
+[09:12:42] maxp subsetting not needed
+[09:12:42] OS/2 subsetting not needed
+[09:12:42] hmtx subsetted
+[09:12:42] cmap subsetted
+[09:12:42] fpgm subsetting not needed
+[09:12:42] prep subsetting not needed
+[09:12:42] cvt  subsetting not needed
+[09:12:42] loca subsetting not needed
+[09:12:42] post subsetted
+[09:12:42] gasp subsetting not needed
+[09:12:42] GDEF subsetted
+[09:12:42] GPOS subsetted
+[09:12:42] GSUB subsetted
+[09:12:42] name subsetting not needed
+[09:12:42] glyf subsetted
+[09:12:42] head pruned
+[09:12:42] OS/2 Unicode ranges pruned: [0, 31]
+[09:12:42] OS/2 CodePage ranges pruned: [0]
+[09:12:42] glyf pruned
+[09:12:42] GDEF pruned
+[09:12:42] GPOS pruned
+[09:12:42] GSUB pruned
+[09:12:42] name pruned
+[09:12:42] maxp pruned
+[09:12:42] cmap pruned
+[09:12:42] kern dropped
+[09:12:42] post pruned
+[09:12:42] FFTM dropped
+[09:12:42] GPOS pruned
+[09:12:42] GSUB pruned
+[09:12:42] glyf pruned
+[09:12:42] Added gid0 to subset
+[09:12:42] Added first four glyphs to subset
+[09:12:42] Closing glyph list over 'GSUB': 25 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'five', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85]
+[09:12:42] Closed glyph list over 'GSUB': 30 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:42] Closing glyph list over 'glyf': 30 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:42] Closed glyph list over 'glyf': 30 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:42] Retaining 30 glyphs
+[09:12:42] head subsetting not needed
+[09:12:42] hhea subsetting not needed
+[09:12:42] maxp subsetting not needed
+[09:12:42] OS/2 subsetting not needed
+[09:12:42] hmtx subsetted
+[09:12:42] cmap subsetted
+[09:12:42] fpgm subsetting not needed
+[09:12:42] prep subsetting not needed
+[09:12:42] cvt  subsetting not needed
+[09:12:42] loca subsetting not needed
+[09:12:42] post subsetted
+[09:12:42] gasp subsetting not needed
+[09:12:42] GDEF subsetted
+[09:12:42] GPOS subsetted
+[09:12:42] GSUB subsetted
+[09:12:42] name subsetting not needed
+[09:12:42] glyf subsetted
+[09:12:42] head pruned
+[09:12:42] OS/2 Unicode ranges pruned: [0]
+[09:12:42] OS/2 CodePage ranges pruned: [0]
+[09:12:42] glyf pruned
+[09:12:42] GDEF pruned
+[09:12:42] GPOS pruned
+[09:12:42] GSUB pruned
+[09:12:42] name pruned
+[09:12:42] maxp pruned
+[09:12:42] cmap pruned
+[09:12:42] kern dropped
+[09:12:42] post pruned
+[09:12:42] FFTM dropped
+[09:12:42] GPOS pruned
+[09:12:42] GSUB pruned
+[09:12:42] glyf pruned
+[09:12:42] Added gid0 to subset
+[09:12:42] Added first four glyphs to subset
+[09:12:42] Closing glyph list over 'MATH': 40 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'v', 'x', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91]
+[09:12:42] Closed glyph list over 'MATH': 46 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:42] Closing glyph list over 'GSUB': 46 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:42] Closed glyph list over 'GSUB': 46 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:42] Closing glyph list over 'glyf': 46 glyphs before
+[09:12:42] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:42] Closed glyph list over 'glyf': 46 glyphs after
+[09:12:42] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:42] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:42] Retaining 46 glyphs
+[09:12:42] head subsetting not needed
+[09:12:42] hhea subsetting not needed
+[09:12:42] maxp subsetting not needed
+[09:12:42] OS/2 subsetting not needed
+[09:12:42] hmtx subsetted
+[09:12:42] cmap subsetted
+[09:12:42] fpgm subsetting not needed
+[09:12:42] prep subsetting not needed
+[09:12:42] cvt  subsetting not needed
+[09:12:42] loca subsetting not needed
+[09:12:42] post subsetted
+[09:12:42] gasp subsetting not needed
+[09:12:42] MATH subsetted
+[09:12:42] GDEF subsetted
+[09:12:42] GPOS subsetted
+[09:12:42] GSUB subsetted
+[09:12:42] name subsetting not needed
+[09:12:42] glyf subsetted
+[09:12:42] head pruned
+[09:12:42] OS/2 Unicode ranges pruned: [0]
+[09:12:42] OS/2 CodePage ranges pruned: [0]
+[09:12:42] glyf pruned
+[09:12:42] GDEF pruned
+[09:12:42] GPOS pruned
+[09:12:42] GSUB pruned
+[09:12:42] name pruned
+[09:12:42]   saved: dm_heatmap_10min.pdf
+[09:12:42] 
+  [30min]
+[09:12:50] maxp pruned
+[09:12:50] cmap pruned
+[09:12:50] kern dropped
+[09:12:50] post pruned
+[09:12:50] FFTM dropped
+[09:12:50] GPOS pruned
+[09:12:50] GSUB pruned
+[09:12:50] glyf pruned
+[09:12:50] Added gid0 to subset
+[09:12:50] Added first four glyphs to subset
+[09:12:50] Closing glyph list over 'GSUB': 27 glyphs before
+[09:12:50] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'three', 'w', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 22, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:50] Closed glyph list over 'GSUB': 27 glyphs after
+[09:12:50] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'three', 'w', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 22, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:50] Closing glyph list over 'glyf': 27 glyphs before
+[09:12:50] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'three', 'w', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 22, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:50] Closed glyph list over 'glyf': 27 glyphs after
+[09:12:50] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'three', 'w', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 22, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:50] Retaining 27 glyphs
+[09:12:50] head subsetting not needed
+[09:12:50] hhea subsetting not needed
+[09:12:50] maxp subsetting not needed
+[09:12:50] OS/2 subsetting not needed
+[09:12:50] hmtx subsetted
+[09:12:50] cmap subsetted
+[09:12:50] fpgm subsetting not needed
+[09:12:50] prep subsetting not needed
+[09:12:50] cvt  subsetting not needed
+[09:12:50] loca subsetting not needed
+[09:12:50] post subsetted
+[09:12:50] gasp subsetting not needed
+[09:12:50] GDEF subsetted
+[09:12:50] GPOS subsetted
+[09:12:50] GSUB subsetted
+[09:12:50] name subsetting not needed
+[09:12:50] glyf subsetted
+[09:12:50] head pruned
+[09:12:50] OS/2 Unicode ranges pruned: [0, 31]
+[09:12:50] OS/2 CodePage ranges pruned: [0]
+[09:12:50] glyf pruned
+[09:12:50] GDEF pruned
+[09:12:50] GPOS pruned
+[09:12:50] GSUB pruned
+[09:12:50] name pruned
+[09:12:50] maxp pruned
+[09:12:50] cmap pruned
+[09:12:50] kern dropped
+[09:12:50] post pruned
+[09:12:50] FFTM dropped
+[09:12:50] GPOS pruned
+[09:12:50] GSUB pruned
+[09:12:50] glyf pruned
+[09:12:50] Added gid0 to subset
+[09:12:50] Added first four glyphs to subset
+[09:12:50] Closing glyph list over 'GSUB': 25 glyphs before
+[09:12:50] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'five', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85]
+[09:12:50] Closed glyph list over 'GSUB': 30 glyphs after
+[09:12:50] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:50] Closing glyph list over 'glyf': 30 glyphs before
+[09:12:50] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:50] Closed glyph list over 'glyf': 30 glyphs after
+[09:12:50] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:50] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:50] Retaining 30 glyphs
+[09:12:50] head subsetting not needed
+[09:12:50] hhea subsetting not needed
+[09:12:50] maxp subsetting not needed
+[09:12:50] OS/2 subsetting not needed
+[09:12:50] hmtx subsetted
+[09:12:50] cmap subsetted
+[09:12:50] fpgm subsetting not needed
+[09:12:50] prep subsetting not needed
+[09:12:50] cvt  subsetting not needed
+[09:12:50] loca subsetting not needed
+[09:12:50] post subsetted
+[09:12:50] gasp subsetting not needed
+[09:12:50] GDEF subsetted
+[09:12:50] GPOS subsetted
+[09:12:50] GSUB subsetted
+[09:12:50] name subsetting not needed
+[09:12:50] glyf subsetted
+[09:12:50] head pruned
+[09:12:50] OS/2 Unicode ranges pruned: [0]
+[09:12:50] OS/2 CodePage ranges pruned: [0]
+[09:12:50] glyf pruned
+[09:12:50] GDEF pruned
+[09:12:50] GPOS pruned
+[09:12:50] GSUB pruned
+[09:12:50] name pruned
+[09:12:50] maxp pruned
+[09:12:50] cmap pruned
+[09:12:50] kern dropped
+[09:12:50] post pruned
+[09:12:50] FFTM dropped
+[09:12:50] GPOS pruned
+[09:12:50] GSUB pruned
+[09:12:51] glyf pruned
+[09:12:51] Added gid0 to subset
+[09:12:51] Added first four glyphs to subset
+[09:12:51] Closing glyph list over 'MATH': 40 glyphs before
+[09:12:51] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'v', 'x', 'zero']
+[09:12:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91]
+[09:12:51] Closed glyph list over 'MATH': 46 glyphs after
+[09:12:51] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:51] Closing glyph list over 'GSUB': 46 glyphs before
+[09:12:51] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:51] Closed glyph list over 'GSUB': 46 glyphs after
+[09:12:51] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:51] Closing glyph list over 'glyf': 46 glyphs before
+[09:12:51] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:51] Closed glyph list over 'glyf': 46 glyphs after
+[09:12:51] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:51] Retaining 46 glyphs
+[09:12:51] head subsetting not needed
+[09:12:51] hhea subsetting not needed
+[09:12:51] maxp subsetting not needed
+[09:12:51] OS/2 subsetting not needed
+[09:12:51] hmtx subsetted
+[09:12:51] cmap subsetted
+[09:12:51] fpgm subsetting not needed
+[09:12:51] prep subsetting not needed
+[09:12:51] cvt  subsetting not needed
+[09:12:51] loca subsetting not needed
+[09:12:51] post subsetted
+[09:12:51] gasp subsetting not needed
+[09:12:51] MATH subsetted
+[09:12:51] GDEF subsetted
+[09:12:51] GPOS subsetted
+[09:12:51] GSUB subsetted
+[09:12:51] name subsetting not needed
+[09:12:51] glyf subsetted
+[09:12:51] head pruned
+[09:12:51] OS/2 Unicode ranges pruned: [0]
+[09:12:51] OS/2 CodePage ranges pruned: [0]
+[09:12:51] glyf pruned
+[09:12:51] GDEF pruned
+[09:12:51] GPOS pruned
+[09:12:51] GSUB pruned
+[09:12:51] name pruned
+[09:12:51]   saved: dm_heatmap_30min.pdf
+[09:12:51] 
+  [60min]
+[09:12:59] maxp pruned
+[09:12:59] cmap pruned
+[09:12:59] kern dropped
+[09:12:59] post pruned
+[09:12:59] FFTM dropped
+[09:12:59] GPOS pruned
+[09:12:59] GSUB pruned
+[09:12:59] glyf pruned
+[09:12:59] Added gid0 to subset
+[09:12:59] Added first four glyphs to subset
+[09:12:59] Closing glyph list over 'GSUB': 27 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'six', 'space', 't', 'w', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 25, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:59] Closed glyph list over 'GSUB': 27 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'six', 'space', 't', 'w', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 25, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:59] Closing glyph list over 'glyf': 27 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'six', 'space', 't', 'w', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 25, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:59] Closed glyph list over 'glyf': 27 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'six', 'space', 't', 'w', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 25, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:12:59] Retaining 27 glyphs
+[09:12:59] head subsetting not needed
+[09:12:59] hhea subsetting not needed
+[09:12:59] maxp subsetting not needed
+[09:12:59] OS/2 subsetting not needed
+[09:12:59] hmtx subsetted
+[09:12:59] cmap subsetted
+[09:12:59] fpgm subsetting not needed
+[09:12:59] prep subsetting not needed
+[09:12:59] cvt  subsetting not needed
+[09:12:59] loca subsetting not needed
+[09:12:59] post subsetted
+[09:12:59] gasp subsetting not needed
+[09:12:59] GDEF subsetted
+[09:12:59] GPOS subsetted
+[09:12:59] GSUB subsetted
+[09:12:59] name subsetting not needed
+[09:12:59] glyf subsetted
+[09:12:59] head pruned
+[09:12:59] OS/2 Unicode ranges pruned: [0, 31]
+[09:12:59] OS/2 CodePage ranges pruned: [0]
+[09:12:59] glyf pruned
+[09:12:59] GDEF pruned
+[09:12:59] GPOS pruned
+[09:12:59] GSUB pruned
+[09:12:59] name pruned
+[09:12:59] maxp pruned
+[09:12:59] cmap pruned
+[09:12:59] kern dropped
+[09:12:59] post pruned
+[09:12:59] FFTM dropped
+[09:12:59] GPOS pruned
+[09:12:59] GSUB pruned
+[09:12:59] glyf pruned
+[09:12:59] Added gid0 to subset
+[09:12:59] Added first four glyphs to subset
+[09:12:59] Closing glyph list over 'GSUB': 25 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'five', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85]
+[09:12:59] Closed glyph list over 'GSUB': 30 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:59] Closing glyph list over 'glyf': 30 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:59] Closed glyph list over 'glyf': 30 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:12:59] Retaining 30 glyphs
+[09:12:59] head subsetting not needed
+[09:12:59] hhea subsetting not needed
+[09:12:59] maxp subsetting not needed
+[09:12:59] OS/2 subsetting not needed
+[09:12:59] hmtx subsetted
+[09:12:59] cmap subsetted
+[09:12:59] fpgm subsetting not needed
+[09:12:59] prep subsetting not needed
+[09:12:59] cvt  subsetting not needed
+[09:12:59] loca subsetting not needed
+[09:12:59] post subsetted
+[09:12:59] gasp subsetting not needed
+[09:12:59] GDEF subsetted
+[09:12:59] GPOS subsetted
+[09:12:59] GSUB subsetted
+[09:12:59] name subsetting not needed
+[09:12:59] glyf subsetted
+[09:12:59] head pruned
+[09:12:59] OS/2 Unicode ranges pruned: [0]
+[09:12:59] OS/2 CodePage ranges pruned: [0]
+[09:12:59] glyf pruned
+[09:12:59] GDEF pruned
+[09:12:59] GPOS pruned
+[09:12:59] GSUB pruned
+[09:12:59] name pruned
+[09:12:59] maxp pruned
+[09:12:59] cmap pruned
+[09:12:59] kern dropped
+[09:12:59] post pruned
+[09:12:59] FFTM dropped
+[09:12:59] GPOS pruned
+[09:12:59] GSUB pruned
+[09:12:59] glyf pruned
+[09:12:59] Added gid0 to subset
+[09:12:59] Added first four glyphs to subset
+[09:12:59] Closing glyph list over 'MATH': 40 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'v', 'x', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91]
+[09:12:59] Closed glyph list over 'MATH': 46 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:59] Closing glyph list over 'GSUB': 46 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:59] Closed glyph list over 'GSUB': 46 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:59] Closing glyph list over 'glyf': 46 glyphs before
+[09:12:59] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:59] Closed glyph list over 'glyf': 46 glyphs after
+[09:12:59] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:12:59] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:12:59] Retaining 46 glyphs
+[09:12:59] head subsetting not needed
+[09:12:59] hhea subsetting not needed
+[09:12:59] maxp subsetting not needed
+[09:12:59] OS/2 subsetting not needed
+[09:12:59] hmtx subsetted
+[09:12:59] cmap subsetted
+[09:12:59] fpgm subsetting not needed
+[09:12:59] prep subsetting not needed
+[09:12:59] cvt  subsetting not needed
+[09:12:59] loca subsetting not needed
+[09:12:59] post subsetted
+[09:12:59] gasp subsetting not needed
+[09:12:59] MATH subsetted
+[09:12:59] GDEF subsetted
+[09:12:59] GPOS subsetted
+[09:12:59] GSUB subsetted
+[09:12:59] name subsetting not needed
+[09:12:59] glyf subsetted
+[09:12:59] head pruned
+[09:12:59] OS/2 Unicode ranges pruned: [0]
+[09:12:59] OS/2 CodePage ranges pruned: [0]
+[09:12:59] glyf pruned
+[09:12:59] GDEF pruned
+[09:12:59] GPOS pruned
+[09:12:59] GSUB pruned
+[09:12:59] name pruned
+[09:12:59]   saved: dm_heatmap_60min.pdf
+[09:12:59] 
+  [120min]
+[09:13:07] maxp pruned
+[09:13:07] cmap pruned
+[09:13:07] kern dropped
+[09:13:07] post pruned
+[09:13:07] FFTM dropped
+[09:13:07] GPOS pruned
+[09:13:07] GSUB pruned
+[09:13:07] glyf pruned
+[09:13:07] Added gid0 to subset
+[09:13:07] Added first four glyphs to subset
+[09:13:07] Closing glyph list over 'GSUB': 28 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'two', 'w', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 21, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:13:07] Closed glyph list over 'GSUB': 28 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'two', 'w', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 21, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:13:07] Closing glyph list over 'glyf': 28 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'two', 'w', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 21, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:13:07] Closed glyph list over 'glyf': 28 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'D', 'H', 'L', 'M', 'N', 'a', 'e', 'emdash', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'plus', 'r', 's', 'space', 't', 'two', 'w', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 14, 19, 20, 21, 39, 43, 47, 48, 49, 68, 72, 76, 79, 80, 81, 82, 83, 85, 86, 87, 90, 1922]
+[09:13:07] Retaining 28 glyphs
+[09:13:07] head subsetting not needed
+[09:13:07] hhea subsetting not needed
+[09:13:07] maxp subsetting not needed
+[09:13:07] OS/2 subsetting not needed
+[09:13:07] hmtx subsetted
+[09:13:07] cmap subsetted
+[09:13:07] fpgm subsetting not needed
+[09:13:07] prep subsetting not needed
+[09:13:07] cvt  subsetting not needed
+[09:13:07] loca subsetting not needed
+[09:13:07] post subsetted
+[09:13:07] gasp subsetting not needed
+[09:13:07] GDEF subsetted
+[09:13:07] GPOS subsetted
+[09:13:07] GSUB subsetted
+[09:13:07] name subsetting not needed
+[09:13:07] glyf subsetted
+[09:13:07] head pruned
+[09:13:07] OS/2 Unicode ranges pruned: [0, 31]
+[09:13:07] OS/2 CodePage ranges pruned: [0]
+[09:13:07] glyf pruned
+[09:13:07] GDEF pruned
+[09:13:07] GPOS pruned
+[09:13:07] GSUB pruned
+[09:13:07] name pruned
+[09:13:07] maxp pruned
+[09:13:07] cmap pruned
+[09:13:07] kern dropped
+[09:13:07] post pruned
+[09:13:07] FFTM dropped
+[09:13:07] GPOS pruned
+[09:13:07] GSUB pruned
+[09:13:07] glyf pruned
+[09:13:07] Added gid0 to subset
+[09:13:07] Added first four glyphs to subset
+[09:13:07] Closing glyph list over 'GSUB': 25 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'five', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85]
+[09:13:07] Closed glyph list over 'GSUB': 30 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:13:07] Closing glyph list over 'glyf': 30 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:13:07] Closed glyph list over 'glyf': 30 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'B', 'H', 'asterisk', 'e', 'f', 'fi', 'five', 'fl', 'greater', 'hyphen', 'i', 'l', 'less', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 'space', 'uniFB00', 'uniFB03', 'uniFB04', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 24, 31, 33, 37, 43, 72, 73, 76, 79, 80, 81, 82, 83, 85, 3297, 3298, 3299, 3300, 3301]
+[09:13:07] Retaining 30 glyphs
+[09:13:07] head subsetting not needed
+[09:13:07] hhea subsetting not needed
+[09:13:07] maxp subsetting not needed
+[09:13:07] OS/2 subsetting not needed
+[09:13:07] hmtx subsetted
+[09:13:07] cmap subsetted
+[09:13:07] fpgm subsetting not needed
+[09:13:07] prep subsetting not needed
+[09:13:07] cvt  subsetting not needed
+[09:13:07] loca subsetting not needed
+[09:13:07] post subsetted
+[09:13:07] gasp subsetting not needed
+[09:13:07] GDEF subsetted
+[09:13:07] GPOS subsetted
+[09:13:07] GSUB subsetted
+[09:13:07] name subsetting not needed
+[09:13:07] glyf subsetted
+[09:13:07] head pruned
+[09:13:07] OS/2 Unicode ranges pruned: [0]
+[09:13:07] OS/2 CodePage ranges pruned: [0]
+[09:13:07] glyf pruned
+[09:13:07] GDEF pruned
+[09:13:07] GPOS pruned
+[09:13:07] GSUB pruned
+[09:13:07] name pruned
+[09:13:07] maxp pruned
+[09:13:07] cmap pruned
+[09:13:07] kern dropped
+[09:13:07] post pruned
+[09:13:07] FFTM dropped
+[09:13:07] GPOS pruned
+[09:13:07] GSUB pruned
+[09:13:07] glyf pruned
+[09:13:07] Added gid0 to subset
+[09:13:07] Added first four glyphs to subset
+[09:13:07] Closing glyph list over 'MATH': 40 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'v', 'x', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91]
+[09:13:07] Closed glyph list over 'MATH': 46 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:13:07] Closing glyph list over 'GSUB': 46 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:13:07] Closed glyph list over 'GSUB': 46 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:13:07] Closing glyph list over 'glyf': 46 glyphs before
+[09:13:07] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:13:07] Closed glyph list over 'glyf': 46 glyphs after
+[09:13:07] Glyph names: ['.notdef', '.null', 'H', 'a', 'asterisk', 'b', 'c', 'd', 'e', 'eight', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'zero']
+[09:13:07] Glyph IDs:   [0, 1, 2, 3, 11, 12, 13, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 43, 66, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 91, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:13:07] Retaining 46 glyphs
+[09:13:07] head subsetting not needed
+[09:13:07] hhea subsetting not needed
+[09:13:07] maxp subsetting not needed
+[09:13:07] OS/2 subsetting not needed
+[09:13:07] hmtx subsetted
+[09:13:07] cmap subsetted
+[09:13:07] fpgm subsetting not needed
+[09:13:07] prep subsetting not needed
+[09:13:07] cvt  subsetting not needed
+[09:13:07] loca subsetting not needed
+[09:13:07] post subsetted
+[09:13:07] gasp subsetting not needed
+[09:13:07] MATH subsetted
+[09:13:07] GDEF subsetted
+[09:13:07] GPOS subsetted
+[09:13:07] GSUB subsetted
+[09:13:07] name subsetting not needed
+[09:13:07] glyf subsetted
+[09:13:07] head pruned
+[09:13:07] OS/2 Unicode ranges pruned: [0]
+[09:13:07] OS/2 CodePage ranges pruned: [0]
+[09:13:07] glyf pruned
+[09:13:07] GDEF pruned
+[09:13:07] GPOS pruned
+[09:13:07] GSUB pruned
+[09:13:07] name pruned
+[09:13:07]   saved: dm_heatmap_120min.pdf
+[09:13:07] 
+  Friedman + Nemenyi + CD diagrams
+[09:22:43]   [10min] Friedman χ²=38386.556 p=0.000000
+[09:22:44] maxp pruned
+[09:22:44] cmap pruned
+[09:22:44] kern dropped
+[09:22:44] post pruned
+[09:22:44] FFTM dropped
+[09:22:44] GPOS pruned
+[09:22:44] GSUB pruned
+[09:22:44] glyf pruned
+[09:22:44] Added gid0 to subset
+[09:22:44] Added first four glyphs to subset
+[09:22:44] Closing glyph list over 'MATH': 43 glyphs before
+[09:22:44] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'v', 'x', 'y', 'zero']
+[09:22:44] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922]
+[09:22:44] Closed glyph list over 'MATH': 49 glyphs after
+[09:22:44] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:22:44] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:22:44] Closing glyph list over 'GSUB': 49 glyphs before
+[09:22:44] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:22:44] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:22:44] Closed glyph list over 'GSUB': 54 glyphs after
+[09:22:44] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:22:44] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:22:44] Closing glyph list over 'glyf': 54 glyphs before
+[09:22:44] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:22:44] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:22:44] Closed glyph list over 'glyf': 54 glyphs after
+[09:22:44] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:22:44] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:22:44] Retaining 54 glyphs
+[09:22:44] head subsetting not needed
+[09:22:44] hhea subsetting not needed
+[09:22:44] maxp subsetting not needed
+[09:22:44] OS/2 subsetting not needed
+[09:22:44] hmtx subsetted
+[09:22:44] cmap subsetted
+[09:22:44] fpgm subsetting not needed
+[09:22:44] prep subsetting not needed
+[09:22:44] cvt  subsetting not needed
+[09:22:44] loca subsetting not needed
+[09:22:44] post subsetted
+[09:22:44] gasp subsetting not needed
+[09:22:44] MATH subsetted
+[09:22:44] GDEF subsetted
+[09:22:44] GPOS subsetted
+[09:22:44] GSUB subsetted
+[09:22:44] name subsetting not needed
+[09:22:44] glyf subsetted
+[09:22:44] head pruned
+[09:22:44] OS/2 Unicode ranges pruned: [0, 7, 31]
+[09:22:44] OS/2 CodePage ranges pruned: [0]
+[09:22:44] glyf pruned
+[09:22:44] GDEF pruned
+[09:22:44] GPOS pruned
+[09:22:44] GSUB pruned
+[09:22:44] name pruned
+[09:22:44]   saved: cd_diagram_10min.pdf
+[09:32:18]   [30min] Friedman χ²=21922.708 p=0.000000
+[09:32:19] maxp pruned
+[09:32:19] cmap pruned
+[09:32:19] kern dropped
+[09:32:19] post pruned
+[09:32:19] FFTM dropped
+[09:32:19] GPOS pruned
+[09:32:19] GSUB pruned
+[09:32:19] glyf pruned
+[09:32:19] Added gid0 to subset
+[09:32:19] Added first four glyphs to subset
+[09:32:19] Closing glyph list over 'MATH': 43 glyphs before
+[09:32:19] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'v', 'x', 'y', 'zero']
+[09:32:19] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922]
+[09:32:19] Closed glyph list over 'MATH': 49 glyphs after
+[09:32:19] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:32:19] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:32:19] Closing glyph list over 'GSUB': 49 glyphs before
+[09:32:19] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:32:19] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:32:19] Closed glyph list over 'GSUB': 54 glyphs after
+[09:32:19] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:32:19] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:32:19] Closing glyph list over 'glyf': 54 glyphs before
+[09:32:19] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:32:19] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:32:19] Closed glyph list over 'glyf': 54 glyphs after
+[09:32:19] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:32:19] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:32:19] Retaining 54 glyphs
+[09:32:19] head subsetting not needed
+[09:32:19] hhea subsetting not needed
+[09:32:19] maxp subsetting not needed
+[09:32:19] OS/2 subsetting not needed
+[09:32:19] hmtx subsetted
+[09:32:19] cmap subsetted
+[09:32:19] fpgm subsetting not needed
+[09:32:19] prep subsetting not needed
+[09:32:19] cvt  subsetting not needed
+[09:32:19] loca subsetting not needed
+[09:32:19] post subsetted
+[09:32:19] gasp subsetting not needed
+[09:32:19] MATH subsetted
+[09:32:19] GDEF subsetted
+[09:32:19] GPOS subsetted
+[09:32:19] GSUB subsetted
+[09:32:19] name subsetting not needed
+[09:32:19] glyf subsetted
+[09:32:19] head pruned
+[09:32:19] OS/2 Unicode ranges pruned: [0, 7, 31]
+[09:32:19] OS/2 CodePage ranges pruned: [0]
+[09:32:19] glyf pruned
+[09:32:19] GDEF pruned
+[09:32:19] GPOS pruned
+[09:32:19] GSUB pruned
+[09:32:19] name pruned
+[09:32:19]   saved: cd_diagram_30min.pdf
+[09:41:50]   [60min] Friedman χ²=7967.848 p=0.000000
+[09:41:51] maxp pruned
+[09:41:51] cmap pruned
+[09:41:51] kern dropped
+[09:41:51] post pruned
+[09:41:51] FFTM dropped
+[09:41:51] GPOS pruned
+[09:41:51] GSUB pruned
+[09:41:51] glyf pruned
+[09:41:51] Added gid0 to subset
+[09:41:51] Added first four glyphs to subset
+[09:41:51] Closing glyph list over 'MATH': 43 glyphs before
+[09:41:51] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'v', 'x', 'y', 'zero']
+[09:41:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922]
+[09:41:51] Closed glyph list over 'MATH': 49 glyphs after
+[09:41:51] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:41:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:41:51] Closing glyph list over 'GSUB': 49 glyphs before
+[09:41:51] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:41:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:41:51] Closed glyph list over 'GSUB': 54 glyphs after
+[09:41:51] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:41:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:41:51] Closing glyph list over 'glyf': 54 glyphs before
+[09:41:51] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:41:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:41:51] Closed glyph list over 'glyf': 54 glyphs after
+[09:41:51] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:41:51] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:41:51] Retaining 54 glyphs
+[09:41:51] head subsetting not needed
+[09:41:51] hhea subsetting not needed
+[09:41:51] maxp subsetting not needed
+[09:41:51] OS/2 subsetting not needed
+[09:41:51] hmtx subsetted
+[09:41:51] cmap subsetted
+[09:41:51] fpgm subsetting not needed
+[09:41:51] prep subsetting not needed
+[09:41:51] cvt  subsetting not needed
+[09:41:51] loca subsetting not needed
+[09:41:51] post subsetted
+[09:41:51] gasp subsetting not needed
+[09:41:51] MATH subsetted
+[09:41:51] GDEF subsetted
+[09:41:51] GPOS subsetted
+[09:41:51] GSUB subsetted
+[09:41:51] name subsetting not needed
+[09:41:51] glyf subsetted
+[09:41:51] head pruned
+[09:41:51] OS/2 Unicode ranges pruned: [0, 7, 31]
+[09:41:51] OS/2 CodePage ranges pruned: [0]
+[09:41:51] glyf pruned
+[09:41:51] GDEF pruned
+[09:41:51] GPOS pruned
+[09:41:51] GSUB pruned
+[09:41:51] name pruned
+[09:41:51]   saved: cd_diagram_60min.pdf
+[09:50:57]   [120min] Friedman χ²=7601.249 p=0.000000
+[09:50:57] maxp pruned
+[09:50:57] cmap pruned
+[09:50:57] kern dropped
+[09:50:57] post pruned
+[09:50:57] FFTM dropped
+[09:50:57] GPOS pruned
+[09:50:57] GSUB pruned
+[09:50:57] glyf pruned
+[09:50:57] Added gid0 to subset
+[09:50:57] Added first four glyphs to subset
+[09:50:57] Closing glyph list over 'MATH': 43 glyphs before
+[09:50:57] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'v', 'x', 'y', 'zero']
+[09:50:57] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922]
+[09:50:57] Closed glyph list over 'MATH': 49 glyphs after
+[09:50:57] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:50:57] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:50:57] Closing glyph list over 'GSUB': 49 glyphs before
+[09:50:57] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'x', 'y', 'zero']
+[09:50:57] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:50:57] Closed glyph list over 'GSUB': 54 glyphs after
+[09:50:57] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:50:57] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:50:57] Closing glyph list over 'glyf': 54 glyphs before
+[09:50:57] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:50:57] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:50:57] Closed glyph list over 'glyf': 54 glyphs after
+[09:50:57] Glyph names: ['.notdef', '.null', 'C', 'N', 'a', 'alpha', 'b', 'c', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'underscore', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'x', 'y', 'zero']
+[09:50:57] Glyph IDs:   [0, 1, 2, 3, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 38, 49, 66, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 85, 86, 87, 89, 91, 92, 809, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[09:50:57] Retaining 54 glyphs
+[09:50:57] head subsetting not needed
+[09:50:57] hhea subsetting not needed
+[09:50:57] maxp subsetting not needed
+[09:50:57] OS/2 subsetting not needed
+[09:50:57] hmtx subsetted
+[09:50:57] cmap subsetted
+[09:50:57] fpgm subsetting not needed
+[09:50:57] prep subsetting not needed
+[09:50:57] cvt  subsetting not needed
+[09:50:57] loca subsetting not needed
+[09:50:57] post subsetted
+[09:50:57] gasp subsetting not needed
+[09:50:57] MATH subsetted
+[09:50:57] GDEF subsetted
+[09:50:57] GPOS subsetted
+[09:50:57] GSUB subsetted
+[09:50:57] name subsetting not needed
+[09:50:57] glyf subsetted
+[09:50:57] head pruned
+[09:50:57] OS/2 Unicode ranges pruned: [0, 7, 31]
+[09:50:57] OS/2 CodePage ranges pruned: [0]
+[09:50:57] glyf pruned
+[09:50:57] GDEF pruned
+[09:50:57] GPOS pruned
+[09:50:57] GSUB pruned
+[09:50:57] name pruned
+[09:50:57]   saved: cd_diagram_120min.pdf
+[09:50:57]   saved: friedman_table.csv
+[09:50:57] ✓  'dm' finished in 2304.6s
+[09:50:57] ============================================================  PART: HPA
+[09:50:58] 
+  [10min]
+[09:52:52] 
+  [30min]
+[09:54:36] 
+  [60min]
+[09:56:20] 
+  [120min]
+[09:58:00]   saved: hpa_simulation.csv
+[09:58:00] maxp pruned
+[09:58:00] cmap pruned
+[09:58:00] kern dropped
+[09:58:00] post pruned
+[09:58:00] FFTM dropped
+[09:58:00] GPOS pruned
+[09:58:00] GSUB pruned
+[09:58:00] glyf pruned
+[09:58:00] Added gid0 to subset
+[09:58:00] Added first four glyphs to subset
+[09:58:00] Closing glyph list over 'GSUB': 27 glyphs before
+[09:58:00] Glyph names: ['.notdef', '.null', 'A', 'H', 'L', 'M', 'P', 'R', 'a', 'c', 'colon', 'e', 'emdash', 'f', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'r', 's', 'space', 't', 'u', 'v']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 16, 29, 36, 43, 47, 48, 51, 53, 68, 70, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 1922]
+[09:58:00] Closed glyph list over 'GSUB': 32 glyphs after
+[09:58:00] Glyph names: ['.notdef', '.null', 'A', 'H', 'L', 'M', 'P', 'R', 'a', 'c', 'colon', 'e', 'emdash', 'f', 'fi', 'fl', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'r', 's', 'space', 't', 'u', 'uniFB00', 'uniFB03', 'uniFB04', 'v']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 16, 29, 36, 43, 47, 48, 51, 53, 68, 70, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 1922, 3293, 3294, 3295, 3296, 3297]
+[09:58:00] Closing glyph list over 'glyf': 32 glyphs before
+[09:58:00] Glyph names: ['.notdef', '.null', 'A', 'H', 'L', 'M', 'P', 'R', 'a', 'c', 'colon', 'e', 'emdash', 'f', 'fi', 'fl', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'r', 's', 'space', 't', 'u', 'uniFB00', 'uniFB03', 'uniFB04', 'v']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 16, 29, 36, 43, 47, 48, 51, 53, 68, 70, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 1922, 3293, 3294, 3295, 3296, 3297]
+[09:58:00] Closed glyph list over 'glyf': 32 glyphs after
+[09:58:00] Glyph names: ['.notdef', '.null', 'A', 'H', 'L', 'M', 'P', 'R', 'a', 'c', 'colon', 'e', 'emdash', 'f', 'fi', 'fl', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'r', 's', 'space', 't', 'u', 'uniFB00', 'uniFB03', 'uniFB04', 'v']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 16, 29, 36, 43, 47, 48, 51, 53, 68, 70, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 1922, 3293, 3294, 3295, 3296, 3297]
+[09:58:00] Retaining 32 glyphs
+[09:58:00] head subsetting not needed
+[09:58:00] hhea subsetting not needed
+[09:58:00] maxp subsetting not needed
+[09:58:00] OS/2 subsetting not needed
+[09:58:00] hmtx subsetted
+[09:58:00] cmap subsetted
+[09:58:00] fpgm subsetting not needed
+[09:58:00] prep subsetting not needed
+[09:58:00] cvt  subsetting not needed
+[09:58:00] loca subsetting not needed
+[09:58:00] post subsetted
+[09:58:00] gasp subsetting not needed
+[09:58:00] GDEF subsetted
+[09:58:00] GPOS subsetted
+[09:58:00] GSUB subsetted
+[09:58:00] name subsetting not needed
+[09:58:00] glyf subsetted
+[09:58:00] head pruned
+[09:58:00] OS/2 Unicode ranges pruned: [0, 31]
+[09:58:00] OS/2 CodePage ranges pruned: [0]
+[09:58:00] glyf pruned
+[09:58:00] GDEF pruned
+[09:58:00] GPOS pruned
+[09:58:00] GSUB pruned
+[09:58:00] name pruned
+[09:58:00] maxp pruned
+[09:58:00] cmap pruned
+[09:58:00] kern dropped
+[09:58:00] post pruned
+[09:58:00] FFTM dropped
+[09:58:00] GPOS pruned
+[09:58:00] GSUB pruned
+[09:58:00] glyf pruned
+[09:58:00] Added gid0 to subset
+[09:58:00] Added first four glyphs to subset
+[09:58:00] Closing glyph list over 'MATH': 37 glyphs before
+[09:58:00] Glyph names: ['.notdef', '.null', 'L', 'M', 'P', 'Q', 'R', 'S', 'V', 'W', 'a', 'c', 'e', 'five', 'four', 'g', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'v', 'zero']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 47, 48, 51, 52, 53, 54, 57, 58, 68, 70, 72, 74, 76, 79, 80, 81, 82, 83, 85, 86, 87, 89]
+[09:58:00] Closed glyph list over 'MATH': 43 glyphs after
+[09:58:00] Glyph names: ['.notdef', '.null', 'L', 'M', 'P', 'Q', 'R', 'S', 'V', 'W', 'a', 'c', 'e', 'five', 'four', 'g', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'zero']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 47, 48, 51, 52, 53, 54, 57, 58, 68, 70, 72, 74, 76, 79, 80, 81, 82, 83, 85, 86, 87, 89, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:00] Closing glyph list over 'GSUB': 43 glyphs before
+[09:58:00] Glyph names: ['.notdef', '.null', 'L', 'M', 'P', 'Q', 'R', 'S', 'V', 'W', 'a', 'c', 'e', 'five', 'four', 'g', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'zero']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 47, 48, 51, 52, 53, 54, 57, 58, 68, 70, 72, 74, 76, 79, 80, 81, 82, 83, 85, 86, 87, 89, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:00] Closed glyph list over 'GSUB': 43 glyphs after
+[09:58:00] Glyph names: ['.notdef', '.null', 'L', 'M', 'P', 'Q', 'R', 'S', 'V', 'W', 'a', 'c', 'e', 'five', 'four', 'g', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'zero']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 47, 48, 51, 52, 53, 54, 57, 58, 68, 70, 72, 74, 76, 79, 80, 81, 82, 83, 85, 86, 87, 89, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:00] Closing glyph list over 'glyf': 43 glyphs before
+[09:58:00] Glyph names: ['.notdef', '.null', 'L', 'M', 'P', 'Q', 'R', 'S', 'V', 'W', 'a', 'c', 'e', 'five', 'four', 'g', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'zero']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 47, 48, 51, 52, 53, 54, 57, 58, 68, 70, 72, 74, 76, 79, 80, 81, 82, 83, 85, 86, 87, 89, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:00] Closed glyph list over 'glyf': 43 glyphs after
+[09:58:00] Glyph names: ['.notdef', '.null', 'L', 'M', 'P', 'Q', 'R', 'S', 'V', 'W', 'a', 'c', 'e', 'five', 'four', 'g', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'zero']
+[09:58:00] Glyph IDs:   [0, 1, 2, 3, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 47, 48, 51, 52, 53, 54, 57, 58, 68, 70, 72, 74, 76, 79, 80, 81, 82, 83, 85, 86, 87, 89, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:00] Retaining 43 glyphs
+[09:58:00] head subsetting not needed
+[09:58:00] hhea subsetting not needed
+[09:58:00] maxp subsetting not needed
+[09:58:00] OS/2 subsetting not needed
+[09:58:00] hmtx subsetted
+[09:58:00] cmap subsetted
+[09:58:00] fpgm subsetting not needed
+[09:58:00] prep subsetting not needed
+[09:58:00] cvt  subsetting not needed
+[09:58:00] loca subsetting not needed
+[09:58:00] post subsetted
+[09:58:00] gasp subsetting not needed
+[09:58:00] MATH subsetted
+[09:58:00] GDEF subsetted
+[09:58:00] GPOS subsetted
+[09:58:00] GSUB subsetted
+[09:58:00] name subsetting not needed
+[09:58:00] glyf subsetted
+[09:58:00] head pruned
+[09:58:00] OS/2 Unicode ranges pruned: [0]
+[09:58:00] OS/2 CodePage ranges pruned: [0]
+[09:58:00] glyf pruned
+[09:58:00] GDEF pruned
+[09:58:00] GPOS pruned
+[09:58:00] GSUB pruned
+[09:58:00] name pruned
+[09:58:00]   saved: hpa_pareto.pdf
+[09:58:12] maxp pruned
+[09:58:12] cmap pruned
+[09:58:12] kern dropped
+[09:58:12] post pruned
+[09:58:12] FFTM dropped
+[09:58:12] GPOS pruned
+[09:58:12] GSUB pruned
+[09:58:12] glyf pruned
+[09:58:12] Added gid0 to subset
+[09:58:12] Added first four glyphs to subset
+[09:58:12] Closing glyph list over 'MATH': 50 glyphs before
+[09:58:12] Glyph names: ['.notdef', '.null', 'A', 'C', 'H', 'L', 'M', 'P', 'R', 'U', 'V', 'W', 'a', 'c', 'colon', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'v', 'w', 'y', 'z', 'zero']
+[09:58:12] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 38, 43, 47, 48, 51, 53, 56, 57, 58, 68, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93]
+[09:58:12] Closed glyph list over 'MATH': 56 glyphs after
+[09:58:12] Glyph names: ['.notdef', '.null', 'A', 'C', 'H', 'L', 'M', 'P', 'R', 'U', 'V', 'W', 'a', 'c', 'colon', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[09:58:12] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 38, 43, 47, 48, 51, 53, 56, 57, 58, 68, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:12] Closing glyph list over 'GSUB': 56 glyphs before
+[09:58:12] Glyph names: ['.notdef', '.null', 'A', 'C', 'H', 'L', 'M', 'P', 'R', 'U', 'V', 'W', 'a', 'c', 'colon', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[09:58:12] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 38, 43, 47, 48, 51, 53, 56, 57, 58, 68, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:12] Closed glyph list over 'GSUB': 56 glyphs after
+[09:58:12] Glyph names: ['.notdef', '.null', 'A', 'C', 'H', 'L', 'M', 'P', 'R', 'U', 'V', 'W', 'a', 'c', 'colon', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[09:58:12] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 38, 43, 47, 48, 51, 53, 56, 57, 58, 68, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:12] Closing glyph list over 'glyf': 56 glyphs before
+[09:58:12] Glyph names: ['.notdef', '.null', 'A', 'C', 'H', 'L', 'M', 'P', 'R', 'U', 'V', 'W', 'a', 'c', 'colon', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[09:58:12] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 38, 43, 47, 48, 51, 53, 56, 57, 58, 68, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:12] Closed glyph list over 'glyf': 56 glyphs after
+[09:58:12] Glyph names: ['.notdef', '.null', 'A', 'C', 'H', 'L', 'M', 'P', 'R', 'U', 'V', 'W', 'a', 'c', 'colon', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[09:58:12] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 38, 43, 47, 48, 51, 53, 56, 57, 58, 68, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:58:12] Retaining 56 glyphs
+[09:58:12] head subsetting not needed
+[09:58:12] hhea subsetting not needed
+[09:58:12] maxp subsetting not needed
+[09:58:12] OS/2 subsetting not needed
+[09:58:12] hmtx subsetted
+[09:58:12] cmap subsetted
+[09:58:12] fpgm subsetting not needed
+[09:58:12] prep subsetting not needed
+[09:58:12] cvt  subsetting not needed
+[09:58:12] loca subsetting not needed
+[09:58:12] post subsetted
+[09:58:12] gasp subsetting not needed
+[09:58:12] MATH subsetted
+[09:58:12] GDEF subsetted
+[09:58:12] GPOS subsetted
+[09:58:12] GSUB subsetted
+[09:58:12] name subsetting not needed
+[09:58:12] glyf subsetted
+[09:58:12] head pruned
+[09:58:12] OS/2 Unicode ranges pruned: [0]
+[09:58:12] OS/2 CodePage ranges pruned: [0]
+[09:58:12] glyf pruned
+[09:58:12] GDEF pruned
+[09:58:12] GPOS pruned
+[09:58:12] GSUB pruned
+[09:58:12] name pruned
+[09:58:12]   saved: hpa_timeseries.pdf
+[09:58:12] ✓  'hpa' finished in 434.5s
+[09:58:12] ============================================================  PART: EXTRA
+[09:58:13] 
+  [10min]
+[09:58:20]   skill=-0.1194  win=17.3%
+[09:58:26] 
+  [30min]
+[09:58:33]   skill=-0.0194  win=31.5%
+[09:58:39] 
+  [60min]
+[09:58:46]   skill=0.0330  win=38.6%
+[09:58:52] 
+  [120min]
+[09:58:59]   skill=0.1111  win=43.5%
+[09:59:06] 
+  saved: stratified_skill.csv
+[09:59:06] maxp pruned
+[09:59:06] cmap pruned
+[09:59:06] kern dropped
+[09:59:06] post pruned
+[09:59:06] FFTM dropped
+[09:59:06] GPOS pruned
+[09:59:06] GSUB pruned
+[09:59:06] glyf pruned
+[09:59:06] Added gid0 to subset
+[09:59:06] Added first four glyphs to subset
+[09:59:06] Closing glyph list over 'MATH': 40 glyphs before
+[09:59:06] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'v', 'y', 'z', 'zero']
+[09:59:06] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255]
+[09:59:06] Closed glyph list over 'MATH': 46 glyphs after
+[09:59:06] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:59:06] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:59:06] Closing glyph list over 'GSUB': 46 glyphs before
+[09:59:06] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:59:06] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:59:06] Closed glyph list over 'GSUB': 46 glyphs after
+[09:59:06] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:59:06] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:59:06] Closing glyph list over 'glyf': 46 glyphs before
+[09:59:06] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:59:06] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:59:06] Closed glyph list over 'glyf': 46 glyphs after
+[09:59:06] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:59:06] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:59:06] Retaining 46 glyphs
+[09:59:06] head subsetting not needed
+[09:59:06] hhea subsetting not needed
+[09:59:06] maxp subsetting not needed
+[09:59:06] OS/2 subsetting not needed
+[09:59:06] hmtx subsetted
+[09:59:06] cmap subsetted
+[09:59:06] fpgm subsetting not needed
+[09:59:06] prep subsetting not needed
+[09:59:06] cvt  subsetting not needed
+[09:59:06] loca subsetting not needed
+[09:59:06] post subsetted
+[09:59:06] gasp subsetting not needed
+[09:59:06] MATH subsetted
+[09:59:06] GDEF subsetted
+[09:59:06] GPOS subsetted
+[09:59:06] GSUB subsetted
+[09:59:06] name subsetting not needed
+[09:59:06] glyf subsetted
+[09:59:06] head pruned
+[09:59:06] OS/2 Unicode ranges pruned: [0, 31, 38]
+[09:59:06] OS/2 CodePage ranges pruned: [0]
+[09:59:06] glyf pruned
+[09:59:06] GDEF pruned
+[09:59:06] GPOS pruned
+[09:59:06] GSUB pruned
+[09:59:06] name pruned
+[09:59:06]   saved: skill_score_by_horizon.pdf
+[09:59:06]   saved: residual_diagnostics.csv
+[09:59:06] 
+  Per-container win-rate scatter
+[10:30:45] maxp pruned
+[10:30:45] cmap pruned
+[10:30:45] kern dropped
+[10:30:45] post pruned
+[10:30:45] FFTM dropped
+[10:30:45] GPOS pruned
+[10:30:45] GSUB pruned
+[10:30:45] glyf pruned
+[10:30:45] Added gid0 to subset
+[10:30:45] Added first four glyphs to subset
+[10:30:45] Closing glyph list over 'MATH': 45 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'v', 'w', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922]
+[10:30:45] Closed glyph list over 'MATH': 51 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[10:30:45] Closing glyph list over 'GSUB': 51 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[10:30:45] Closed glyph list over 'GSUB': 56 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:30:45] Closing glyph list over 'glyf': 56 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:30:45] Closed glyph list over 'glyf': 56 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:30:45] Retaining 56 glyphs
+[10:30:45] head subsetting not needed
+[10:30:45] hhea subsetting not needed
+[10:30:45] maxp subsetting not needed
+[10:30:45] OS/2 subsetting not needed
+[10:30:45] hmtx subsetted
+[10:30:45] cmap subsetted
+[10:30:45] fpgm subsetting not needed
+[10:30:45] prep subsetting not needed
+[10:30:45] cvt  subsetting not needed
+[10:30:45] loca subsetting not needed
+[10:30:45] post subsetted
+[10:30:45] gasp subsetting not needed
+[10:30:45] MATH subsetted
+[10:30:45] GDEF subsetted
+[10:30:45] GPOS subsetted
+[10:30:45] GSUB subsetted
+[10:30:45] name subsetting not needed
+[10:30:45] glyf subsetted
+[10:30:45] head pruned
+[10:30:45] OS/2 Unicode ranges pruned: [0, 31]
+[10:30:45] OS/2 CodePage ranges pruned: [0]
+[10:30:45] glyf pruned
+[10:30:45] GDEF pruned
+[10:30:45] GPOS pruned
+[10:30:45] GSUB pruned
+[10:30:45] name pruned
+[10:30:45]   saved: per_container_winrate.pdf
+[10:30:45] ✓  'extra' finished in 1952.9s
+[10:30:45] ============================================================  PART: SUMMARY
+[10:30:45]   NNLS weights stacked bar
+[10:30:45] maxp pruned
+[10:30:45] cmap pruned
+[10:30:45] kern dropped
+[10:30:45] post pruned
+[10:30:45] FFTM dropped
+[10:30:45] GPOS pruned
+[10:30:45] GSUB pruned
+[10:30:45] glyf pruned
+[10:30:45] Added gid0 to subset
+[10:30:45] Added first four glyphs to subset
+[10:30:45] Closing glyph list over 'GSUB': 12 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[10:30:45] Closed glyph list over 'GSUB': 12 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[10:30:45] Closing glyph list over 'glyf': 12 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[10:30:45] Closed glyph list over 'glyf': 12 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[10:30:45] Retaining 12 glyphs
+[10:30:45] head subsetting not needed
+[10:30:45] hhea subsetting not needed
+[10:30:45] maxp subsetting not needed
+[10:30:45] OS/2 subsetting not needed
+[10:30:45] hmtx subsetted
+[10:30:45] cmap subsetted
+[10:30:45] fpgm subsetting not needed
+[10:30:45] prep subsetting not needed
+[10:30:45] cvt  subsetting not needed
+[10:30:45] loca subsetting not needed
+[10:30:45] post subsetted
+[10:30:45] gasp subsetting not needed
+[10:30:45] GDEF subsetted
+[10:30:45] GPOS subsetted
+[10:30:45] GSUB subsetted
+[10:30:45] name subsetting not needed
+[10:30:45] glyf subsetted
+[10:30:45] head pruned
+[10:30:45] OS/2 Unicode ranges pruned: [0]
+[10:30:45] OS/2 CodePage ranges pruned: [0]
+[10:30:45] glyf pruned
+[10:30:45] GDEF pruned
+[10:30:45] GPOS pruned
+[10:30:45] GSUB pruned
+[10:30:45] name pruned
+[10:30:45] maxp pruned
+[10:30:45] cmap pruned
+[10:30:45] kern dropped
+[10:30:45] post pruned
+[10:30:45] FFTM dropped
+[10:30:45] GPOS pruned
+[10:30:45] GSUB pruned
+[10:30:45] glyf pruned
+[10:30:45] Added gid0 to subset
+[10:30:45] Added first four glyphs to subset
+[10:30:45] Closing glyph list over 'MATH': 47 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'w', 'x', 'z', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93]
+[10:30:45] Closed glyph list over 'MATH': 53 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'w', 'x', 'z', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[10:30:45] Closing glyph list over 'GSUB': 53 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'w', 'x', 'z', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[10:30:45] Closed glyph list over 'GSUB': 58 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'fi', 'fl', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'z', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:30:45] Closing glyph list over 'glyf': 58 glyphs before
+[10:30:45] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'fi', 'fl', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'z', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:30:45] Closed glyph list over 'glyf': 58 glyphs after
+[10:30:45] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'fi', 'fl', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'z', 'zero']
+[10:30:45] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:30:45] Retaining 58 glyphs
+[10:30:45] head subsetting not needed
+[10:30:45] hhea subsetting not needed
+[10:30:45] maxp subsetting not needed
+[10:30:45] OS/2 subsetting not needed
+[10:30:45] hmtx subsetted
+[10:30:45] cmap subsetted
+[10:30:45] fpgm subsetting not needed
+[10:30:45] prep subsetting not needed
+[10:30:45] cvt  subsetting not needed
+[10:30:45] loca subsetting not needed
+[10:30:45] post subsetted
+[10:30:45] gasp subsetting not needed
+[10:30:45] MATH subsetted
+[10:30:45] GDEF subsetted
+[10:30:45] GPOS subsetted
+[10:30:45] GSUB subsetted
+[10:30:45] name subsetting not needed
+[10:30:45] glyf subsetted
+[10:30:45] head pruned
+[10:30:45] OS/2 Unicode ranges pruned: [0]
+[10:30:45] OS/2 CodePage ranges pruned: [0]
+[10:30:45] glyf pruned
+[10:30:45] GDEF pruned
+[10:30:45] GPOS pruned
+[10:30:45] GSUB pruned
+[10:30:45] name pruned
+[10:30:45]   saved: nnls_weights_bar.pdf
+[10:30:45] 
+  Ablation baseline disclosure:
+[10:30:45] ✓  'summary' finished in 0.3s
+[10:30:45] ============================================================
+[10:30:45] Checkpoint summary:
+[10:30:45]   ✓ shap (248.6s)
+[10:30:45]   ✓ workload (46.3s)
+[10:30:45]   ✓ uq (64.0s)
+[10:30:45]   ✓ dm (2304.6s)
+[10:30:45]   ✓ hpa (434.5s)
+[10:30:45]   ✓ extra (1952.9s)
+[10:30:45]   ✓ summary (0.3s)
+[10:30:45] 
+All done. Figures in: /root/thesis_figures
+[12:27:53]   Cleared checkpoint for 'summary'
+[12:27:53] Output dir  : /root/thesis_figures
+[12:27:53] Checkpoint  : /root/thesis_figures/checkpoints
+[12:27:53] Checkpoint summary:
+[12:27:53]   ✓ shap (248.6s)
+[12:27:53]   ✓ workload (46.3s)
+[12:27:53]   ✓ uq (64.0s)
+[12:27:53]   ✓ dm (2304.6s)
+[12:27:53]   ✓ hpa (434.5s)
+[12:27:53]   ✓ extra (1952.9s)
+[12:27:53] ⏭  shap skipped (--skip-shap)
+[12:27:53] ⏭  workload skipped (--skip-workload)
+[12:27:53] ⏭  uq skipped (--skip-uq)
+[12:27:53] ⏭  dm skipped (--skip-dm)
+[12:27:53] ⏭  hpa skipped (--skip-hpa)
+[12:27:53] ⏭  extra skipped (--skip-extra)
+[12:27:53] ============================================================  PART: SUMMARY
+[12:27:53]   Loaded results from /workspace/results_summary_5.csv
+[12:27:53]   NNLS weights stacked bar
+[12:27:53] maxp pruned
+[12:27:53] cmap pruned
+[12:27:53] kern dropped
+[12:27:53] post pruned
+[12:27:53] FFTM dropped
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] glyf pruned
+[12:27:53] Added gid0 to subset
+[12:27:53] Added first four glyphs to subset
+[12:27:53] Closing glyph list over 'GSUB': 12 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[12:27:53] Closed glyph list over 'GSUB': 12 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[12:27:53] Closing glyph list over 'glyf': 12 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[12:27:53] Closed glyph list over 'glyf': 12 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'eight', 'five', 'four', 'nonmarkingreturn', 'percent', 'seven', 'six', 'space', 'three', 'two']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 21, 22, 23, 24, 25, 26, 27]
+[12:27:53] Retaining 12 glyphs
+[12:27:53] head subsetting not needed
+[12:27:53] hhea subsetting not needed
+[12:27:53] maxp subsetting not needed
+[12:27:53] OS/2 subsetting not needed
+[12:27:53] hmtx subsetted
+[12:27:53] cmap subsetted
+[12:27:53] fpgm subsetting not needed
+[12:27:53] prep subsetting not needed
+[12:27:53] cvt  subsetting not needed
+[12:27:53] loca subsetting not needed
+[12:27:53] post subsetted
+[12:27:53] gasp subsetting not needed
+[12:27:53] GDEF subsetted
+[12:27:53] GPOS subsetted
+[12:27:53] GSUB subsetted
+[12:27:53] name subsetting not needed
+[12:27:53] glyf subsetted
+[12:27:53] head pruned
+[12:27:53] OS/2 Unicode ranges pruned: [0]
+[12:27:53] OS/2 CodePage ranges pruned: [0]
+[12:27:53] glyf pruned
+[12:27:53] GDEF pruned
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] name pruned
+[12:27:53] maxp pruned
+[12:27:53] cmap pruned
+[12:27:53] kern dropped
+[12:27:53] post pruned
+[12:27:53] FFTM dropped
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] glyf pruned
+[12:27:53] Added gid0 to subset
+[12:27:53] Added first four glyphs to subset
+[12:27:53] Closing glyph list over 'MATH': 47 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'w', 'x', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93]
+[12:27:53] Closed glyph list over 'MATH': 53 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'w', 'x', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Closing glyph list over 'GSUB': 53 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'w', 'x', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Closed glyph list over 'GSUB': 58 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'fi', 'fl', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[12:27:53] Closing glyph list over 'glyf': 58 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'fi', 'fl', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[12:27:53] Closed glyph list over 'glyf': 58 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'B', 'E', 'G', 'L', 'M', 'N', 'S', 'T', 'X', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'f', 'fi', 'fl', 'four', 'g', 'h', 'hyphen', 'i', 'l', 'm', 'n', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'q', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'w', 'x', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 19, 20, 21, 22, 23, 25, 27, 29, 37, 40, 42, 47, 48, 49, 54, 55, 59, 68, 69, 70, 71, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 93, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[12:27:53] Retaining 58 glyphs
+[12:27:53] head subsetting not needed
+[12:27:53] hhea subsetting not needed
+[12:27:53] maxp subsetting not needed
+[12:27:53] OS/2 subsetting not needed
+[12:27:53] hmtx subsetted
+[12:27:53] cmap subsetted
+[12:27:53] fpgm subsetting not needed
+[12:27:53] prep subsetting not needed
+[12:27:53] cvt  subsetting not needed
+[12:27:53] loca subsetting not needed
+[12:27:53] post subsetted
+[12:27:53] gasp subsetting not needed
+[12:27:53] MATH subsetted
+[12:27:53] GDEF subsetted
+[12:27:53] GPOS subsetted
+[12:27:53] GSUB subsetted
+[12:27:53] name subsetting not needed
+[12:27:53] glyf subsetted
+[12:27:53] head pruned
+[12:27:53] OS/2 Unicode ranges pruned: [0]
+[12:27:53] OS/2 CodePage ranges pruned: [0]
+[12:27:53] glyf pruned
+[12:27:53] GDEF pruned
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] name pruned
+[12:27:53]   saved: nnls_weights_bar.pdf
+[12:27:53]   R² improvement line plot
+[12:27:53] maxp pruned
+[12:27:53] cmap pruned
+[12:27:53] kern dropped
+[12:27:53] post pruned
+[12:27:53] FFTM dropped
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] glyf pruned
+[12:27:53] Added gid0 to subset
+[12:27:53] Added first four glyphs to subset
+[12:27:53] Closing glyph list over 'GSUB': 36 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'C', 'L', 'M', 'a', 'c', 'colon', 'd', 'e', 'f', 'five', 'four', 'g', 'h', 'i', 'l', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'period', 'plus', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'v', 'w', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 14, 17, 19, 20, 21, 22, 23, 24, 25, 29, 38, 47, 48, 68, 70, 71, 72, 73, 74, 75, 76, 79, 81, 82, 83, 85, 86, 87, 88, 89, 90, 93]
+[12:27:53] Closed glyph list over 'GSUB': 41 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'C', 'L', 'M', 'a', 'c', 'colon', 'd', 'e', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'period', 'plus', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 14, 17, 19, 20, 21, 22, 23, 24, 25, 29, 38, 47, 48, 68, 70, 71, 72, 73, 74, 75, 76, 79, 81, 82, 83, 85, 86, 87, 88, 89, 90, 93, 3293, 3294, 3295, 3296, 3297]
+[12:27:53] Closing glyph list over 'glyf': 41 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'C', 'L', 'M', 'a', 'c', 'colon', 'd', 'e', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'period', 'plus', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 14, 17, 19, 20, 21, 22, 23, 24, 25, 29, 38, 47, 48, 68, 70, 71, 72, 73, 74, 75, 76, 79, 81, 82, 83, 85, 86, 87, 88, 89, 90, 93, 3293, 3294, 3295, 3296, 3297]
+[12:27:53] Closed glyph list over 'glyf': 41 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'C', 'L', 'M', 'a', 'c', 'colon', 'd', 'e', 'f', 'fi', 'five', 'fl', 'four', 'g', 'h', 'i', 'l', 'n', 'nonmarkingreturn', 'o', 'one', 'p', 'period', 'plus', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 14, 17, 19, 20, 21, 22, 23, 24, 25, 29, 38, 47, 48, 68, 70, 71, 72, 73, 74, 75, 76, 79, 81, 82, 83, 85, 86, 87, 88, 89, 90, 93, 3293, 3294, 3295, 3296, 3297]
+[12:27:53] Retaining 41 glyphs
+[12:27:53] head subsetting not needed
+[12:27:53] hhea subsetting not needed
+[12:27:53] maxp subsetting not needed
+[12:27:53] OS/2 subsetting not needed
+[12:27:53] hmtx subsetted
+[12:27:53] cmap subsetted
+[12:27:53] fpgm subsetting not needed
+[12:27:53] prep subsetting not needed
+[12:27:53] cvt  subsetting not needed
+[12:27:53] loca subsetting not needed
+[12:27:53] post subsetted
+[12:27:53] gasp subsetting not needed
+[12:27:53] GDEF subsetted
+[12:27:53] GPOS subsetted
+[12:27:53] GSUB subsetted
+[12:27:53] name subsetting not needed
+[12:27:53] glyf subsetted
+[12:27:53] head pruned
+[12:27:53] OS/2 Unicode ranges pruned: [0]
+[12:27:53] OS/2 CodePage ranges pruned: [0]
+[12:27:53] glyf pruned
+[12:27:53] GDEF pruned
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] name pruned
+[12:27:53] maxp pruned
+[12:27:53] cmap pruned
+[12:27:53] kern dropped
+[12:27:53] post pruned
+[12:27:53] FFTM dropped
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] glyf pruned
+[12:27:53] Added gid0 to subset
+[12:27:53] Added first four glyphs to subset
+[12:27:53] Closing glyph list over 'MATH': 45 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'H', 'L', 'M', 'N', 'P', 'R', 'a', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'twosuperior', 'u', 'v', 'w', 'y', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 43, 47, 48, 49, 51, 53, 68, 69, 70, 71, 72, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 116]
+[12:27:53] Closed glyph list over 'MATH': 51 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'H', 'L', 'M', 'N', 'P', 'R', 'a', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'twosuperior', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 43, 47, 48, 49, 51, 53, 68, 69, 70, 71, 72, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 116, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Closing glyph list over 'GSUB': 51 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'H', 'L', 'M', 'N', 'P', 'R', 'a', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'twosuperior', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 43, 47, 48, 49, 51, 53, 68, 69, 70, 71, 72, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 116, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Closed glyph list over 'GSUB': 51 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'H', 'L', 'M', 'N', 'P', 'R', 'a', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'twosuperior', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 43, 47, 48, 49, 51, 53, 68, 69, 70, 71, 72, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 116, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Closing glyph list over 'glyf': 51 glyphs before
+[12:27:53] Glyph names: ['.notdef', '.null', 'H', 'L', 'M', 'N', 'P', 'R', 'a', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'twosuperior', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 43, 47, 48, 49, 51, 53, 68, 69, 70, 71, 72, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 116, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Closed glyph list over 'glyf': 51 glyphs after
+[12:27:53] Glyph names: ['.notdef', '.null', 'H', 'L', 'M', 'N', 'P', 'R', 'a', 'b', 'c', 'colon', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'twosuperior', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'y', 'z', 'zero']
+[12:27:53] Glyph IDs:   [0, 1, 2, 3, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 43, 47, 48, 49, 51, 53, 68, 69, 70, 71, 72, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 92, 93, 116, 2357, 2358, 2359, 2360, 2361, 2362]
+[12:27:53] Retaining 51 glyphs
+[12:27:53] head subsetting not needed
+[12:27:53] hhea subsetting not needed
+[12:27:53] maxp subsetting not needed
+[12:27:53] OS/2 subsetting not needed
+[12:27:53] hmtx subsetted
+[12:27:53] cmap subsetted
+[12:27:53] fpgm subsetting not needed
+[12:27:53] prep subsetting not needed
+[12:27:53] cvt  subsetting not needed
+[12:27:53] loca subsetting not needed
+[12:27:53] post subsetted
+[12:27:53] gasp subsetting not needed
+[12:27:53] MATH subsetted
+[12:27:53] GDEF subsetted
+[12:27:53] GPOS subsetted
+[12:27:53] GSUB subsetted
+[12:27:53] name subsetting not needed
+[12:27:53] glyf subsetted
+[12:27:53] head pruned
+[12:27:53] OS/2 Unicode ranges pruned: [0, 1]
+[12:27:53] OS/2 CodePage ranges pruned: [0]
+[12:27:53] glyf pruned
+[12:27:53] GDEF pruned
+[12:27:53] GPOS pruned
+[12:27:53] GSUB pruned
+[12:27:53] name pruned
+[12:27:53]   saved: r2_improvement_line.pdf
+[12:27:53]   Building comparison table
+[12:27:53]   saved: comparison_table.csv
+[12:27:53] 
+  Ablation baseline disclosure:
+[12:27:53] ✓  'summary' finished in 0.7s
+[12:27:53] ============================================================
+[12:27:53] Checkpoint summary:
+[12:27:53]   ✓ shap (248.6s)
+[12:27:53]   ✓ workload (46.3s)
+[12:27:53]   ✓ uq (64.0s)
+[12:27:53]   ✓ dm (2304.6s)
+[12:27:53]   ✓ hpa (434.5s)
+[12:27:53]   ✓ extra (1952.9s)
+[12:27:53]   ✓ summary (0.7s)
+[12:27:53] 
+All done. Figures in: /root/thesis_figures
+[09:33:09]   Cleared checkpoint for 'extra'
+[09:33:09] Output dir  : /workspace/root/thesis_figures
+[09:33:09] Checkpoint  : /workspace/root/thesis_figures/checkpoints
+[09:34:32]   Cleared checkpoint for 'extra'
+[09:34:32] Output dir  : /workspace/root/thesis_figures
+[09:34:32] Checkpoint  : /workspace/root/thesis_figures/checkpoints
+[09:34:32] Loaded sprint1_v9 from /workspace/sprint1_v9.py
+[09:34:32] Checkpoint summary:
+[09:34:32]   ✓ shap (248.6s)
+[09:34:32]   ✓ uq (64.0s)
+[09:34:32]   ✓ dm (2304.6s)
+[09:34:32]   ✓ hpa (434.5s)
+[09:34:32]   ✓ summary (0.7s)
+[09:34:32]   ✓ workload (45.3s)
+[09:34:32] ⏭  shap skipped (--skip-shap)
+[09:34:32] ⏭  workload skipped (--skip-workload)
+[09:34:32] ⏭  'uq' already done — skipping (use --force uq to re-run)
+[09:34:32] ⏭  dm skipped (--skip-dm)
+[09:34:32] ⏭  hpa skipped (--skip-hpa)
+[09:34:32] ============================================================  PART: EXTRA
+[09:34:33]   Pre-computing feature-engineered test splits for all horizons...
+[09:34:33]     computing rolling cache for 'test'...
+[09:35:06]     rolling cache 'test' ready  [1.2GB]
+[09:35:34] 
+  [10min]
+[09:35:34]   skill=-0.1194  win=17.3%
+[09:36:19] 
+  [30min]
+[09:36:19]   skill=-0.0194  win=31.5%
+[09:36:50] 
+  [60min]
+[09:36:50]   skill=0.0330  win=38.6%
+[09:36:54] 
+  [120min]
+[09:36:54]   skill=0.1111  win=43.5%
+[09:37:55] 
+  saved: stratified_skill.csv
+[09:37:56] maxp pruned
+[09:37:56] cmap pruned
+[09:37:56] kern dropped
+[09:37:56] post pruned
+[09:37:56] FFTM dropped
+[09:37:56] GPOS pruned
+[09:37:56] GSUB pruned
+[09:37:56] glyf pruned
+[09:37:56] Added gid0 to subset
+[09:37:56] Added first four glyphs to subset
+[09:37:56] Closing glyph list over 'MATH': 40 glyphs before
+[09:37:56] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'v', 'y', 'z', 'zero']
+[09:37:56] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255]
+[09:37:56] Closed glyph list over 'MATH': 46 glyphs after
+[09:37:56] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:37:56] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:37:56] Closing glyph list over 'GSUB': 46 glyphs before
+[09:37:56] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:37:56] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:37:56] Closed glyph list over 'GSUB': 46 glyphs after
+[09:37:56] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:37:56] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:37:56] Closing glyph list over 'glyf': 46 glyphs before
+[09:37:56] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:37:56] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:37:56] Closed glyph list over 'glyf': 46 glyphs after
+[09:37:56] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:37:56] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:37:56] Retaining 46 glyphs
+[09:37:56] head subsetting not needed
+[09:37:56] hhea subsetting not needed
+[09:37:56] maxp subsetting not needed
+[09:37:56] OS/2 subsetting not needed
+[09:37:56] hmtx subsetted
+[09:37:56] cmap subsetted
+[09:37:56] fpgm subsetting not needed
+[09:37:56] prep subsetting not needed
+[09:37:56] cvt  subsetting not needed
+[09:37:56] loca subsetting not needed
+[09:37:56] post subsetted
+[09:37:56] gasp subsetting not needed
+[09:37:56] MATH subsetted
+[09:37:56] GDEF subsetted
+[09:37:56] GPOS subsetted
+[09:37:56] GSUB subsetted
+[09:37:56] name subsetting not needed
+[09:37:56] glyf subsetted
+[09:37:56] head pruned
+[09:37:56] OS/2 Unicode ranges pruned: [0, 31, 38]
+[09:37:56] OS/2 CodePage ranges pruned: [0]
+[09:37:56] glyf pruned
+[09:37:56] GDEF pruned
+[09:37:56] GPOS pruned
+[09:37:56] GSUB pruned
+[09:37:56] name pruned
+[09:37:56]   saved: skill_score_by_horizon.pdf
+[09:37:56]   saved: residual_diagnostics.csv
+[09:37:56] 
+  Per-container win-rate scatter
+[09:46:19]   Cleared checkpoint for 'uq'
+[09:46:19] Output dir  : /workspace/root/thesis_figures
+[09:46:19] Checkpoint  : /workspace/root/thesis_figures/checkpoints
+[09:46:19] Loaded sprint1_v9 from /workspace/sprint1_v9.py
+[09:46:19] Checkpoint summary:
+[09:46:19]   ✓ shap (248.6s)
+[09:46:19]   ✓ dm (2304.6s)
+[09:46:19]   ✓ hpa (434.5s)
+[09:46:19]   ✓ summary (0.7s)
+[09:46:19]   ✓ workload (45.3s)
+[09:46:19] ⏭  shap skipped (--skip-shap)
+[09:46:19] ⏭  workload skipped (--skip-workload)
+[09:46:19] ============================================================  PART: UQ
+[09:46:20]   [10min]
+[09:46:20]     computing rolling cache for 'test'...
+[09:46:50]     rolling cache 'test' ready  [1.2GB]
+[09:46:57]   [10min] coverage=0.813 (nominal=0.800) | mean_width=2.9209 | AgACI (Zaffran et al., ICML 2022) — original intervals
+[09:46:57]   [30min]
+[09:47:04]   [30min] coverage=0.816 (nominal=0.800) | mean_width=5.2026 | AgACI (Zaffran et al., ICML 2022) — original intervals
+[09:47:04]   [60min]
+[09:47:11]   [60min] coverage=0.818 (nominal=0.800) | mean_width=6.2668 | AgACI (Zaffran et al., ICML 2022) — original intervals
+[09:47:11]   [120min]
+[09:47:18]   [120min] coverage=0.820 (nominal=0.800) | mean_width=7.1258 | AgACI (Zaffran et al., ICML 2022) — original intervals
+[09:47:19] maxp pruned
+[09:47:19] cmap pruned
+[09:47:19] kern dropped
+[09:47:19] post pruned
+[09:47:19] FFTM dropped
+[09:47:19] GPOS pruned
+[09:47:19] GSUB pruned
+[09:47:19] glyf pruned
+[09:47:19] Added gid0 to subset
+[09:47:19] Added first four glyphs to subset
+[09:47:19] Closing glyph list over 'MATH': 43 glyphs before
+[09:47:19] Glyph names: ['.notdef', '.null', 'A', 'C', 'I', 'P', 'a', 'b', 'c', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'v', 'w', 'zero']
+[09:47:19] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 44, 51, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 2255]
+[09:47:19] Closed glyph list over 'MATH': 49 glyphs after
+[09:47:19] Glyph names: ['.notdef', '.null', 'A', 'C', 'I', 'P', 'a', 'b', 'c', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[09:47:19] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 44, 51, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:47:19] Closing glyph list over 'GSUB': 49 glyphs before
+[09:47:19] Glyph names: ['.notdef', '.null', 'A', 'C', 'I', 'P', 'a', 'b', 'c', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[09:47:19] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 44, 51, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:47:19] Closed glyph list over 'GSUB': 49 glyphs after
+[09:47:19] Glyph names: ['.notdef', '.null', 'A', 'C', 'I', 'P', 'a', 'b', 'c', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[09:47:19] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 44, 51, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:47:19] Closing glyph list over 'glyf': 49 glyphs before
+[09:47:19] Glyph names: ['.notdef', '.null', 'A', 'C', 'I', 'P', 'a', 'b', 'c', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[09:47:19] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 44, 51, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:47:19] Closed glyph list over 'glyf': 49 glyphs after
+[09:47:19] Glyph names: ['.notdef', '.null', 'A', 'C', 'I', 'P', 'a', 'b', 'c', 'd', 'e', 'eight', 'equal', 'five', 'four', 'g', 'h', 'i', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'seven', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[09:47:19] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 36, 38, 44, 51, 68, 69, 70, 71, 72, 74, 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:47:19] Retaining 49 glyphs
+[09:47:19] head subsetting not needed
+[09:47:19] hhea subsetting not needed
+[09:47:19] maxp subsetting not needed
+[09:47:19] OS/2 subsetting not needed
+[09:47:19] hmtx subsetted
+[09:47:19] cmap subsetted
+[09:47:19] fpgm subsetting not needed
+[09:47:19] prep subsetting not needed
+[09:47:19] cvt  subsetting not needed
+[09:47:19] loca subsetting not needed
+[09:47:19] post subsetted
+[09:47:19] gasp subsetting not needed
+[09:47:19] MATH subsetted
+[09:47:19] GDEF subsetted
+[09:47:19] GPOS subsetted
+[09:47:19] GSUB subsetted
+[09:47:19] name subsetting not needed
+[09:47:19] glyf subsetted
+[09:47:19] head pruned
+[09:47:19] OS/2 Unicode ranges pruned: [0, 38]
+[09:47:19] OS/2 CodePage ranges pruned: [0]
+[09:47:19] glyf pruned
+[09:47:19] GDEF pruned
+[09:47:19] GPOS pruned
+[09:47:19] GSUB pruned
+[09:47:19] name pruned
+[09:47:19]   saved: uq_recalibration.pdf
+[09:47:19]   saved: uq_recalibration_table.csv
+[09:47:19] ✓  'uq' finished in 59.7s
+[09:47:19] ⏭  dm skipped (--skip-dm)
+[09:47:19] ⏭  hpa skipped (--skip-hpa)
+[09:47:19] ⏭  extra skipped (--skip-extra)
+[09:47:19] ⏭  summary skipped (--skip-summary)
+[09:47:19] ============================================================
+[09:47:19] Checkpoint summary:
+[09:47:19]   ✓ shap (248.6s)
+[09:47:19]   ✓ dm (2304.6s)
+[09:47:19]   ✓ hpa (434.5s)
+[09:47:19]   ✓ summary (0.7s)
+[09:47:19]   ✓ workload (45.3s)
+[09:47:19]   ✓ uq (59.7s)
+[09:47:19] 
+All done. Figures in: /workspace/root/thesis_figures
+[09:48:06]   Cleared checkpoint for 'extra'
+[09:48:06] Output dir  : /workspace/root/thesis_figures
+[09:48:06] Checkpoint  : /workspace/root/thesis_figures/checkpoints
+[09:48:06] Loaded sprint1_v9 from /workspace/sprint1_v9.py
+[09:48:06] Checkpoint summary:
+[09:48:06]   ✓ shap (248.6s)
+[09:48:06]   ✓ dm (2304.6s)
+[09:48:06]   ✓ hpa (434.5s)
+[09:48:06]   ✓ summary (0.7s)
+[09:48:06]   ✓ workload (45.3s)
+[09:48:06]   ✓ uq (59.7s)
+[09:48:06] ⏭  shap skipped (--skip-shap)
+[09:48:06] ⏭  workload skipped (--skip-workload)
+[09:48:06] ⏭  uq skipped (--skip-uq)
+[09:48:06] ⏭  dm skipped (--skip-dm)
+[09:48:06] ⏭  hpa skipped (--skip-hpa)
+[09:48:06] ============================================================  PART: EXTRA
+[09:48:07]   Pre-computing feature-engineered test splits for all horizons...
+[09:48:07]     computing rolling cache for 'test'...
+[09:48:38]     rolling cache 'test' ready  [1.2GB]
+[09:49:06] 
+  [10min]
+[09:49:06]   skill=-0.1194  win=17.3%
+[09:49:10] 
+  [30min]
+[09:49:10]   skill=-0.0194  win=31.5%
+[09:49:15] 
+  [60min]
+[09:49:15]   skill=0.0330  win=38.6%
+[09:49:19] 
+  [120min]
+[09:49:19]   skill=0.1111  win=43.5%
+[09:49:23] 
+  saved: stratified_skill.csv
+[09:49:24] maxp pruned
+[09:49:24] cmap pruned
+[09:49:24] kern dropped
+[09:49:24] post pruned
+[09:49:24] FFTM dropped
+[09:49:24] GPOS pruned
+[09:49:24] GSUB pruned
+[09:49:24] glyf pruned
+[09:49:24] Added gid0 to subset
+[09:49:24] Added first four glyphs to subset
+[09:49:24] Closing glyph list over 'MATH': 40 glyphs before
+[09:49:24] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'v', 'y', 'z', 'zero']
+[09:49:24] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255]
+[09:49:24] Closed glyph list over 'MATH': 46 glyphs after
+[09:49:24] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:49:24] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:49:24] Closing glyph list over 'GSUB': 46 glyphs before
+[09:49:24] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:49:24] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:49:24] Closed glyph list over 'GSUB': 46 glyphs after
+[09:49:24] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:49:24] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:49:24] Closing glyph list over 'glyf': 46 glyphs before
+[09:49:24] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:49:24] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:49:24] Closed glyph list over 'glyf': 46 glyphs after
+[09:49:24] Glyph names: ['.notdef', '.null', 'L', 'M', 'S', 'a', 'b', 'c', 'e', 'emdash', 'equal', 'five', 'h', 'hyphen', 'i', 'k', 'l', 'm', 'minus', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'p', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'y', 'z', 'zero']
+[09:49:24] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 16, 17, 19, 20, 21, 22, 24, 25, 28, 32, 47, 48, 54, 68, 69, 70, 72, 75, 76, 78, 79, 80, 81, 82, 83, 85, 86, 87, 89, 92, 93, 1922, 2255, 2357, 2358, 2359, 2360, 2361, 2362]
+[09:49:24] Retaining 46 glyphs
+[09:49:24] head subsetting not needed
+[09:49:24] hhea subsetting not needed
+[09:49:24] maxp subsetting not needed
+[09:49:24] OS/2 subsetting not needed
+[09:49:24] hmtx subsetted
+[09:49:24] cmap subsetted
+[09:49:24] fpgm subsetting not needed
+[09:49:24] prep subsetting not needed
+[09:49:24] cvt  subsetting not needed
+[09:49:24] loca subsetting not needed
+[09:49:24] post subsetted
+[09:49:24] gasp subsetting not needed
+[09:49:24] MATH subsetted
+[09:49:24] GDEF subsetted
+[09:49:24] GPOS subsetted
+[09:49:24] GSUB subsetted
+[09:49:24] name subsetting not needed
+[09:49:24] glyf subsetted
+[09:49:24] head pruned
+[09:49:24] OS/2 Unicode ranges pruned: [0, 31, 38]
+[09:49:24] OS/2 CodePage ranges pruned: [0]
+[09:49:24] glyf pruned
+[09:49:24] GDEF pruned
+[09:49:24] GPOS pruned
+[09:49:24] GSUB pruned
+[09:49:24] name pruned
+[09:49:24]   saved: skill_score_by_horizon.pdf
+[09:49:24]   saved: residual_diagnostics.csv
+[09:49:24] 
+  Per-container win-rate scatter
+[10:19:54] maxp pruned
+[10:19:54] cmap pruned
+[10:19:54] kern dropped
+[10:19:54] post pruned
+[10:19:54] FFTM dropped
+[10:19:54] GPOS pruned
+[10:19:54] GSUB pruned
+[10:19:54] glyf pruned
+[10:19:54] Added gid0 to subset
+[10:19:54] Added first four glyphs to subset
+[10:19:54] Closing glyph list over 'MATH': 45 glyphs before
+[10:19:54] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'v', 'w', 'zero']
+[10:19:54] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922]
+[10:19:54] Closed glyph list over 'MATH': 51 glyphs after
+[10:19:54] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[10:19:54] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[10:19:54] Closing glyph list over 'GSUB': 51 glyphs before
+[10:19:54] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'five', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'v', 'w', 'zero']
+[10:19:54] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362]
+[10:19:54] Closed glyph list over 'GSUB': 56 glyphs after
+[10:19:54] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'zero']
+[10:19:54] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:19:54] Closing glyph list over 'glyf': 56 glyphs before
+[10:19:54] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'zero']
+[10:19:54] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:19:54] Closed glyph list over 'glyf': 56 glyphs after
+[10:19:54] Glyph names: ['.notdef', '.null', 'A', 'E', 'L', 'M', 'N', 'P', 'a', 'b', 'c', 'colon', 'comma', 'd', 'e', 'eight', 'emdash', 'equal', 'f', 'fi', 'five', 'fl', 'four', 'hyphen', 'i', 'l', 'm', 'n', 'nine', 'nonmarkingreturn', 'o', 'one', 'parenleft', 'parenright', 'percent', 'period', 'r', 's', 'six', 'space', 't', 'three', 'two', 'u', 'uni239B', 'uni239C', 'uni239D', 'uni239E', 'uni239F', 'uni23A0', 'uniFB00', 'uniFB03', 'uniFB04', 'v', 'w', 'zero']
+[10:19:54] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 32, 36, 40, 47, 48, 49, 51, 68, 69, 70, 71, 72, 73, 76, 79, 80, 81, 82, 85, 86, 87, 88, 89, 90, 1922, 2357, 2358, 2359, 2360, 2361, 2362, 3311, 3312, 3313, 3314, 3315]
+[10:19:54] Retaining 56 glyphs
+[10:19:54] head subsetting not needed
+[10:19:54] hhea subsetting not needed
+[10:19:54] maxp subsetting not needed
+[10:19:54] OS/2 subsetting not needed
+[10:19:54] hmtx subsetted
+[10:19:54] cmap subsetted
+[10:19:54] fpgm subsetting not needed
+[10:19:54] prep subsetting not needed
+[10:19:54] cvt  subsetting not needed
+[10:19:54] loca subsetting not needed
+[10:19:54] post subsetted
+[10:19:54] gasp subsetting not needed
+[10:19:54] MATH subsetted
+[10:19:54] GDEF subsetted
+[10:19:54] GPOS subsetted
+[10:19:54] GSUB subsetted
+[10:19:54] name subsetting not needed
+[10:19:54] glyf subsetted
+[10:19:54] head pruned
+[10:19:54] OS/2 Unicode ranges pruned: [0, 31]
+[10:19:54] OS/2 CodePage ranges pruned: [0]
+[10:19:54] glyf pruned
+[10:19:54] GDEF pruned
+[10:19:54] GPOS pruned
+[10:19:54] GSUB pruned
+[10:19:54] name pruned
+[10:19:54]   saved: per_container_winrate.pdf
+[10:19:54] 
+  CV-stratified skill scores
+[10:50:15]   saved: cv_stratified_skill.csv (20 rows)
+[10:50:15] ✓  'extra' finished in 3729.2s
+[10:50:15] ⏭  summary skipped (--skip-summary)
+[10:50:15] ============================================================
+[10:50:15] Checkpoint summary:
+[10:50:15]   ✓ shap (248.6s)
+[10:50:15]   ✓ dm (2304.6s)
+[10:50:15]   ✓ hpa (434.5s)
+[10:50:15]   ✓ summary (0.7s)
+[10:50:15]   ✓ workload (45.3s)
+[10:50:15]   ✓ uq (59.7s)
+[10:50:15]   ✓ extra (3729.2s)
+[10:50:15] 
+All done. Figures in: /workspace/root/thesis_figures

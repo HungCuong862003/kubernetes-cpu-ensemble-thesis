@@ -1,0 +1,111 @@
+[18:01:54] [worker 60min] cpu=24-35  n_jobs=12  pid=3396
+[18:01:54]   train.parquet  (420.7 MB)
+[18:01:54]   val.parquet  (96.0 MB)
+[18:01:54]   test.parquet  (95.5 MB)
+[18:05:00] [worker 60min] cpu=24-35  n_jobs=12  pid=7288
+[18:05:00]   train.parquet  (56.4 MB)
+[18:05:00]   val.parquet  (12.9 MB)
+[18:05:00]   test.parquet  (13.0 MB)
+[18:05:05]   sizes: train=7,413,073  val=1,692,053  test=1,680,285
+[18:05:05]   temporal ordering: OK
+[18:05:05]   RAM after load: 2.3 GB
+[18:05:05] Building features...
+[18:05:05]     train...
+[18:05:05]     computing rolling cache for 'train'...
+[18:06:35]     rolling cache 'train' ready  [4.2GB]
+[18:15:47]     val...
+[18:15:47]     computing rolling cache for 'val'...
+[18:16:23]     rolling cache 'val' ready  [8.8GB]
+[18:17:22]     test...
+[18:17:22]     computing rolling cache for 'test'...
+[18:17:56]     rolling cache 'test' ready  [10.3GB]
+[18:18:08]   Features: all=79  XGB=34  LGBM=60
+[18:22:25]   Clean: train=7,354,249  val=1,632,833  test=1,621,233  [12.5GB]
+[18:22:25] Extracting arrays...
+[19:07:25]   DFs freed  [18.6GB]
+[19:07:25] 1/14  Naive (CPU + MEM)
+[19:07:25]   CPU  R2=0.7878  MAE=2.208
+[19:07:25]   MEM  R2=0.9775  MAE=1.198
+[19:07:25] 2-3/14  ETS + ARIMA (parallel rolling)...
+[19:07:26]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+[19:07:29] [worker 60min] FAILED: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/venv/main/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 453, in _process_worker
+    call_item = call_queue.get(block=True, timeout=timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: Can't get attribute '_process_one_container' on <module 'joblib.externals.loky.backend.popen_loky_posix' from '/venv/main/lib/python3.12/site-packages/joblib/externals/loky/backend/popen_loky_posix.py'>
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/sprint1_v9.py", line 2672, in _horizon_worker_fn
+    result = train_horizon(horizon_name, train_df, val_df, test_df, ckpt)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sprint1_v9.py", line 1992, in train_horizon
+    stat_res, ets_preds, arima_preds = run_statistical_baselines(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sprint1_v9.py", line 1641, in run_statistical_baselines
+    results = Parallel(n_jobs=cfg.STAT_N_JOBS, backend="loky")(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/venv/main/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/venv/main/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/venv/main/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+
+[04:48:52] [worker 60min] cpu=24-35  n_jobs=12  pid=12724
+[04:48:52]   train.parquet  (56.4 MB)
+[04:48:52]   val.parquet  (12.9 MB)
+[04:48:52]   test.parquet  (13.0 MB)
+[04:48:57]   sizes: train=7,413,073  val=1,692,053  test=1,680,285
+[04:48:57]   temporal ordering: OK
+[04:48:57]   RAM after load: 2.3 GB
+[04:48:57] Building features...
+[04:48:57]     train...
+[04:48:57]     computing rolling cache for 'train'...
+[04:51:24]     rolling cache 'train' ready  [4.1GB]
+[04:53:31]     val...
+[04:53:31]     computing rolling cache for 'val'...
+[04:54:02]     rolling cache 'val' ready  [8.8GB]
+[04:54:07]     test...
+[04:54:07]     computing rolling cache for 'test'...
+[04:54:43]     rolling cache 'test' ready  [10.2GB]
+[04:54:50]   Features: all=79  XGB=34  LGBM=60
+[04:59:07]   Clean: train=7,354,249  val=1,632,833  test=1,621,233  [12.8GB]
+[04:59:07] Extracting arrays...
+[06:08:36]   DFs freed  [18.7GB]
+[06:08:36] 1/14  Naive (CPU + MEM)
+[06:08:36]   CPU  R2=0.7878  MAE=2.208
+[06:08:36]   MEM  R2=0.9775  MAE=1.198
+[06:08:36] 2-3/14  ETS + ARIMA (parallel rolling)...
+[06:08:37]   ETS/ARIMA on 20 containers (parallel, n_jobs=10)
+[06:08:57]   ETS: 20 ok, 420 forecasts, 0 fallback
+[06:24:04]   ARIMA: 20 ok, 420 forecasts, 0 fallback
+[06:24:04]   ETS: R2=0.7875  MAE=2.210
+[06:24:04]   ARIMA: R2=0.7879  MAE=2.209
+[06:24:04] 4/14  Linear Regression (Ridge, solver=lsqr)
+[06:42:15]   R2=0.7925  vs naive: +0.47pp
+[06:42:15] 5/14  XGBoost [GPU]
+[06:42:26]   R2=0.7917  vs naive: +0.39pp  (11.4s)
+[06:42:26] 6/14  LightGBM [GPU]
+[06:46:22]   R2=0.7972  vs naive: +0.94pp
+[06:46:22] 7/14  ExtraTrees (max_depth=25, max_samples=0.3)
+[07:14:12]   R2=0.7997  vs naive: +1.20pp  (1669.5s)
+[07:14:12] 8/14  BiLSTM (Optuna HPO + fast MC Dropout) [BF16]
+[07:14:12]     Optuna: 10 trials, timeout=600s, HyperbandPruner

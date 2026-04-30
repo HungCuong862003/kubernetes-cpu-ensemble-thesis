@@ -1,0 +1,301 @@
+================================================================
+Granite-TTM r2 zero-shot on BITBRAINS  (K=50)
+================================================================
+DATA_ROOT:   /workspace/data/bitbrains
+horizons:    ['10min', '30min', '60min', '120min']
+cadence_min: 5
+out_path:    granite_ttm_k50_bitbrains.json
+TTM repo:    ibm-granite/granite-timeseries-ttm-r2  rev=1024-96-r2
+TTM shapes:  context=1024  prediction=96
+loading /workspace/data/bitbrains/test.parquet ...
+  rows: 203,820   columns: ['container_id', 'time_stamp', 'cpu_util_percent', 'mem_util_percent']
+  containers: 142
+  series length: min=385  median=1713  max=3044
+loading Granite-TTM r2 (revision=1024-96-r2) on cuda...
+  transformers import failed (cannot import name 'TinyTimeMixerForPrediction' from 'transformers' (/workspace/venv-ttm/lib/python3.12/site-packages/transformers/__init__.py)); trying granite-tsfm
+  using tsfm_public.models.tinytimemixer.TinyTimeMixerForPrediction
+  config.context_length    = 1024
+  config.prediction_length = 96
+  TTM loaded (2,964,960 params)
+
+=== 10min  (h_steps=2) ===
+  cadence_min: 5
+  num_origins: 50
+  142 containers usable, 0 skipped (too short)
+  origin 1/50: 142 series in 0.3s (412 series/s)
+  origin 2/50: 142 series in 0.0s (15334 series/s)
+  origin 3/50: 142 series in 0.0s (17765 series/s)
+  origin 4/50: 142 series in 0.0s (17738 series/s)
+  origin 5/50: 142 series in 0.0s (17646 series/s)
+  origin 6/50: 142 series in 0.0s (17614 series/s)
+  origin 7/50: 142 series in 0.0s (10928 series/s)
+  origin 8/50: 142 series in 0.0s (17679 series/s)
+  origin 9/50: 142 series in 0.0s (17783 series/s)
+  origin 10/50: 142 series in 0.0s (17712 series/s)
+  origin 11/50: 142 series in 0.0s (17710 series/s)
+  origin 12/50: 142 series in 0.0s (17757 series/s)
+  origin 13/50: 142 series in 0.0s (17620 series/s)
+  origin 14/50: 142 series in 0.1s (2492 series/s)
+  origin 15/50: 142 series in 0.0s (17627 series/s)
+  origin 16/50: 142 series in 0.0s (17487 series/s)
+  origin 17/50: 142 series in 0.0s (17747 series/s)
+  origin 18/50: 142 series in 0.0s (17571 series/s)
+  origin 19/50: 142 series in 0.0s (17728 series/s)
+  origin 20/50: 142 series in 0.0s (17573 series/s)
+  origin 21/50: 142 series in 0.0s (3034 series/s)
+  origin 22/50: 142 series in 0.0s (17533 series/s)
+  origin 23/50: 142 series in 0.0s (17707 series/s)
+  origin 24/50: 142 series in 0.0s (17387 series/s)
+  origin 25/50: 142 series in 0.0s (17652 series/s)
+  origin 26/50: 142 series in 0.0s (17756 series/s)
+  origin 27/50: 142 series in 0.0s (17582 series/s)
+  origin 28/50: 142 series in 0.1s (2798 series/s)
+  origin 29/50: 142 series in 0.0s (17535 series/s)
+  origin 30/50: 142 series in 0.0s (17893 series/s)
+  origin 31/50: 142 series in 0.0s (18343 series/s)
+  origin 32/50: 142 series in 0.0s (18489 series/s)
+  origin 33/50: 142 series in 0.0s (18447 series/s)
+  origin 34/50: 142 series in 0.0s (18417 series/s)
+  origin 35/50: 142 series in 0.0s (2853 series/s)
+  origin 36/50: 142 series in 0.0s (18328 series/s)
+  origin 37/50: 142 series in 0.0s (18377 series/s)
+  origin 38/50: 142 series in 0.0s (18346 series/s)
+  origin 39/50: 142 series in 0.0s (18481 series/s)
+  origin 40/50: 142 series in 0.0s (18406 series/s)
+  origin 41/50: 142 series in 0.0s (18413 series/s)
+  origin 42/50: 142 series in 0.0s (18487 series/s)
+  origin 43/50: 142 series in 0.1s (2813 series/s)
+  origin 44/50: 142 series in 0.0s (18377 series/s)
+  origin 45/50: 142 series in 0.0s (18443 series/s)
+  origin 46/50: 142 series in 0.0s (18465 series/s)
+  origin 47/50: 142 series in 0.0s (18610 series/s)
+  origin 48/50: 142 series in 0.0s (18581 series/s)
+  origin 49/50: 142 series in 0.0s (18630 series/s)
+  origin 50/50: 142 series in 0.1s (2729 series/s)
+  saved per-point arrays to granite_ttm_perpoint_bitbrains_10min.npz (7,100 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+=== 30min  (h_steps=6) ===
+  cadence_min: 5
+  num_origins: 50
+  142 containers usable, 0 skipped (too short)
+  origin 1/50: 142 series in 0.0s (17547 series/s)
+  origin 2/50: 142 series in 0.0s (17933 series/s)
+  origin 3/50: 142 series in 0.0s (17901 series/s)
+  origin 4/50: 142 series in 0.0s (17989 series/s)
+  origin 5/50: 142 series in 0.0s (17951 series/s)
+  origin 6/50: 142 series in 0.0s (17849 series/s)
+  origin 7/50: 142 series in 0.0s (3271 series/s)
+  origin 8/50: 142 series in 0.0s (17829 series/s)
+  origin 9/50: 142 series in 0.0s (17851 series/s)
+  origin 10/50: 142 series in 0.0s (17828 series/s)
+  origin 11/50: 142 series in 0.0s (17830 series/s)
+  origin 12/50: 142 series in 0.0s (17843 series/s)
+  origin 13/50: 142 series in 0.0s (17733 series/s)
+  origin 14/50: 142 series in 0.1s (2735 series/s)
+  origin 15/50: 142 series in 0.0s (17734 series/s)
+  origin 16/50: 142 series in 0.0s (17659 series/s)
+  origin 17/50: 142 series in 0.0s (17721 series/s)
+  origin 18/50: 142 series in 0.0s (17539 series/s)
+  origin 19/50: 142 series in 0.0s (15968 series/s)
+  origin 20/50: 142 series in 0.0s (19573 series/s)
+  origin 21/50: 142 series in 0.0s (2884 series/s)
+  origin 22/50: 142 series in 0.0s (18407 series/s)
+  origin 23/50: 142 series in 0.0s (18899 series/s)
+  origin 24/50: 142 series in 0.0s (18730 series/s)
+  origin 25/50: 142 series in 0.0s (19150 series/s)
+  origin 26/50: 142 series in 0.0s (19042 series/s)
+  origin 27/50: 142 series in 0.0s (18744 series/s)
+  origin 28/50: 142 series in 0.1s (2715 series/s)
+  origin 29/50: 142 series in 0.0s (19194 series/s)
+  origin 30/50: 142 series in 0.0s (19311 series/s)
+  origin 31/50: 142 series in 0.0s (19987 series/s)
+  origin 32/50: 142 series in 0.0s (20080 series/s)
+  origin 33/50: 142 series in 0.0s (20077 series/s)
+  origin 34/50: 142 series in 0.0s (19701 series/s)
+  origin 35/50: 142 series in 0.1s (2536 series/s)
+  origin 36/50: 142 series in 0.0s (20071 series/s)
+  origin 37/50: 142 series in 0.0s (20142 series/s)
+  origin 38/50: 142 series in 0.0s (20136 series/s)
+  origin 39/50: 142 series in 0.0s (20135 series/s)
+  origin 40/50: 142 series in 0.0s (20181 series/s)
+  origin 41/50: 142 series in 0.0s (20142 series/s)
+  origin 42/50: 142 series in 0.1s (2517 series/s)
+  origin 43/50: 142 series in 0.0s (20322 series/s)
+  origin 44/50: 142 series in 0.0s (20260 series/s)
+  origin 45/50: 142 series in 0.0s (20205 series/s)
+  origin 46/50: 142 series in 0.0s (20271 series/s)
+  origin 47/50: 142 series in 0.0s (20170 series/s)
+  origin 48/50: 142 series in 0.0s (20389 series/s)
+  origin 49/50: 142 series in 0.1s (2537 series/s)
+  origin 50/50: 142 series in 0.0s (20203 series/s)
+  saved per-point arrays to granite_ttm_perpoint_bitbrains_30min.npz (7,100 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+=== 60min  (h_steps=12) ===
+  cadence_min: 5
+  num_origins: 50
+  142 containers usable, 0 skipped (too short)
+  origin 1/50: 142 series in 0.0s (18558 series/s)
+  origin 2/50: 142 series in 0.0s (19445 series/s)
+  origin 3/50: 142 series in 0.0s (19522 series/s)
+  origin 4/50: 142 series in 0.0s (19601 series/s)
+  origin 5/50: 142 series in 0.0s (19468 series/s)
+  origin 6/50: 142 series in 0.0s (2873 series/s)
+  origin 7/50: 142 series in 0.0s (19453 series/s)
+  origin 8/50: 142 series in 0.0s (19468 series/s)
+  origin 9/50: 142 series in 0.0s (19445 series/s)
+  origin 10/50: 142 series in 0.0s (19324 series/s)
+  origin 11/50: 142 series in 0.0s (19446 series/s)
+  origin 12/50: 142 series in 0.0s (19468 series/s)
+  origin 13/50: 142 series in 0.0s (19369 series/s)
+  origin 14/50: 142 series in 0.0s (19298 series/s)
+  origin 15/50: 142 series in 0.0s (17420 series/s)
+  origin 16/50: 142 series in 0.0s (17668 series/s)
+  origin 17/50: 142 series in 0.0s (17550 series/s)
+  origin 18/50: 142 series in 0.0s (17415 series/s)
+  origin 19/50: 142 series in 0.0s (19234 series/s)
+  origin 20/50: 142 series in 0.1s (2568 series/s)
+  origin 21/50: 142 series in 0.0s (19243 series/s)
+  origin 22/50: 142 series in 0.0s (19295 series/s)
+  origin 23/50: 142 series in 0.0s (19317 series/s)
+  origin 24/50: 142 series in 0.0s (19229 series/s)
+  origin 25/50: 142 series in 0.0s (19290 series/s)
+  origin 26/50: 142 series in 0.0s (19301 series/s)
+  origin 27/50: 142 series in 0.1s (2513 series/s)
+  origin 28/50: 142 series in 0.0s (19183 series/s)
+  origin 29/50: 142 series in 0.0s (18955 series/s)
+  origin 30/50: 142 series in 0.0s (19270 series/s)
+  origin 31/50: 142 series in 0.0s (20138 series/s)
+  origin 32/50: 142 series in 0.0s (20093 series/s)
+  origin 33/50: 142 series in 0.0s (20168 series/s)
+  origin 34/50: 142 series in 0.1s (2578 series/s)
+  origin 35/50: 142 series in 0.0s (20072 series/s)
+  origin 36/50: 142 series in 0.0s (20041 series/s)
+  origin 37/50: 142 series in 0.0s (20062 series/s)
+  origin 38/50: 142 series in 0.0s (20168 series/s)
+  origin 39/50: 142 series in 0.0s (20046 series/s)
+  origin 40/50: 142 series in 0.0s (20100 series/s)
+  origin 41/50: 142 series in 0.1s (2493 series/s)
+  origin 42/50: 142 series in 0.0s (20079 series/s)
+  origin 43/50: 142 series in 0.0s (20324 series/s)
+  origin 44/50: 142 series in 0.0s (20190 series/s)
+  origin 45/50: 142 series in 0.0s (20219 series/s)
+  origin 46/50: 142 series in 0.0s (20185 series/s)
+  origin 47/50: 142 series in 0.0s (20255 series/s)
+  origin 48/50: 142 series in 0.1s (2479 series/s)
+  origin 49/50: 142 series in 0.0s (20104 series/s)
+  origin 50/50: 142 series in 0.0s (20189 series/s)
+  saved per-point arrays to granite_ttm_perpoint_bitbrains_60min.npz (7,100 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+=== 120min  (h_steps=24) ===
+  cadence_min: 5
+  num_origins: 50
+  142 containers usable, 0 skipped (too short)
+  origin 1/50: 142 series in 0.0s (18569 series/s)
+  origin 2/50: 142 series in 0.0s (19513 series/s)
+  origin 3/50: 142 series in 0.0s (19554 series/s)
+  origin 4/50: 142 series in 0.0s (19528 series/s)
+  origin 5/50: 142 series in 0.0s (3075 series/s)
+  origin 6/50: 142 series in 0.0s (19483 series/s)
+  origin 7/50: 142 series in 0.0s (19610 series/s)
+  origin 8/50: 142 series in 0.0s (19404 series/s)
+  origin 9/50: 142 series in 0.0s (19429 series/s)
+  origin 10/50: 142 series in 0.0s (19244 series/s)
+  origin 11/50: 142 series in 0.0s (19262 series/s)
+  origin 12/50: 142 series in 0.1s (2769 series/s)
+  origin 13/50: 142 series in 0.0s (19432 series/s)
+  origin 14/50: 142 series in 0.0s (19432 series/s)
+  origin 15/50: 142 series in 0.0s (17407 series/s)
+  origin 16/50: 142 series in 0.0s (17617 series/s)
+  origin 17/50: 142 series in 0.0s (19242 series/s)
+  origin 18/50: 142 series in 0.0s (19298 series/s)
+  origin 19/50: 142 series in 0.1s (2594 series/s)
+  origin 20/50: 142 series in 0.0s (19362 series/s)
+  origin 21/50: 142 series in 0.0s (19330 series/s)
+  origin 22/50: 142 series in 0.0s (19354 series/s)
+  origin 23/50: 142 series in 0.0s (19306 series/s)
+  origin 24/50: 142 series in 0.0s (19210 series/s)
+  origin 25/50: 142 series in 0.0s (17618 series/s)
+  origin 26/50: 142 series in 0.1s (2523 series/s)
+  origin 27/50: 142 series in 0.0s (19167 series/s)
+  origin 28/50: 142 series in 0.0s (19192 series/s)
+  origin 29/50: 142 series in 0.0s (19200 series/s)
+  origin 30/50: 142 series in 0.0s (19176 series/s)
+  origin 31/50: 142 series in 0.0s (20079 series/s)
+  origin 32/50: 142 series in 0.1s (2356 series/s)
+  origin 33/50: 142 series in 0.0s (18229 series/s)
+  origin 34/50: 142 series in 0.0s (18358 series/s)
+  origin 35/50: 142 series in 0.0s (15534 series/s)
+  origin 36/50: 142 series in 0.0s (20085 series/s)
+  origin 37/50: 142 series in 0.0s (20453 series/s)
+  origin 38/50: 142 series in 0.0s (20319 series/s)
+  origin 39/50: 142 series in 0.1s (2683 series/s)
+  origin 40/50: 142 series in 0.0s (20033 series/s)
+  origin 41/50: 142 series in 0.0s (20073 series/s)
+  origin 42/50: 142 series in 0.0s (20149 series/s)
+  origin 43/50: 142 series in 0.0s (20127 series/s)
+  origin 44/50: 142 series in 0.0s (20215 series/s)
+  origin 45/50: 142 series in 0.0s (20117 series/s)
+  origin 46/50: 142 series in 0.1s (2537 series/s)
+  origin 47/50: 142 series in 0.0s (20069 series/s)
+  origin 48/50: 142 series in 0.0s (20253 series/s)
+  origin 49/50: 142 series in 0.0s (20104 series/s)
+  origin 50/50: 142 series in 0.0s (20144 series/s)
+  saved per-point arrays to granite_ttm_perpoint_bitbrains_120min.npz (7,100 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+wrote granite_ttm_k50_bitbrains.json
+
+================================================================
+VERDICT
+================================================================
+
+--- 10min ---
+  n_points              = 7,100
+  Granite-TTM R2 (mean) = 0.7088
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 11.0813
+  same-sample naive R2  = 0.8080  (this run)
+                        = 0.8080  (TimesFM run, sanity)
+      diff = +0.002 pp  [OK]
+  delta TTM vs naive_sub = -9.93 pp
+  ensemble: N/A (per-VM XGB) (no comparison)
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)
+
+--- 30min ---
+  n_points              = 7,100
+  Granite-TTM R2 (mean) = 0.4833
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 16.4872
+  same-sample naive R2  = 0.4926  (this run)
+                        = 0.4926  (TimesFM run, sanity)
+      diff = +0.003 pp  [OK]
+  delta TTM vs naive_sub = -0.93 pp
+  ensemble: N/A (per-VM XGB) (no comparison)
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)
+
+--- 60min ---
+  n_points              = 7,100
+  Granite-TTM R2 (mean) = 0.3396
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 20.1731
+  same-sample naive R2  = 0.1848  (this run)
+                        = 0.1848  (TimesFM run, sanity)
+      diff = +0.002 pp  [OK]
+  delta TTM vs naive_sub = +15.48 pp
+  ensemble: N/A (per-VM XGB) (no comparison)
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)
+
+--- 120min ---
+  n_points              = 7,100
+  Granite-TTM R2 (mean) = 0.2759
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 21.7719
+  same-sample naive R2  = 0.0981  (this run)
+                        = 0.0981  (TimesFM run, sanity)
+      diff = +0.001 pp  [OK]
+  delta TTM vs naive_sub = +17.78 pp
+  ensemble: N/A (per-VM XGB) (no comparison)
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)

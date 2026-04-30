@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Hybrid Ensemble Learning for Proactive Resource Prediction in Kubernetes"
+message: "If you use this work, please cite as below."
+type: software
+authors:
+  - given-names: "Jimmy"
+    family-names: ""
+    affiliation: "International University, VNU-HCM"
+date-released: 2026-06-26
+license: MIT

@@ -1,0 +1,477 @@
+[18:01:48] Health check:
+[18:01:48]   Disk free: 23.7 GB
+[18:01:48]   RAM: 1.2 GB used
+[18:01:48]   GPU: NVIDIA GeForce RTX 5090 (33.7 GB)
+[18:01:48]   TF32: True
+[18:01:48]   XGBoost device: cuda
+[18:01:48]   LightGBM device: gpu
+[18:01:48]   AMP: BF16
+[18:01:48]   CPU cores: 384
+[18:01:48]   OOF subsample: 1.0
+[18:01:48]   ACI buffer size: 2000
+[18:01:48]   BiLSTM batch: 4096  stride: 2
+[18:01:48]   ET max_depth: 25  max_samples: 0.3
+[18:01:48] Running 4 horizons in PARALLEL (4 workers x 12 cores)
+[18:01:54]   10min: FUTURE ERROR -- Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+[18:01:54]   30min: FUTURE ERROR -- Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+[18:01:54]   60min: FUTURE ERROR -- Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+[18:01:54]   120min: FUTURE ERROR -- Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+[18:01:55] WARNING: 4 horizon(s) failed: ['10min', '30min', '60min', '120min']
+[18:01:55] Re-run to resume from checkpoint.
+[18:01:55] Clearing rolling feature cache...
+[18:01:55] Rolling cache cleared (all splits)
+[18:01:55] Results saved to /workspace/results/sprint1
+[18:04:54] Health check:
+[18:04:54]   Disk free: 23.6 GB
+[18:04:54]   RAM: 1.0 GB used
+[18:04:54]   GPU: NVIDIA GeForce RTX 5090 (33.7 GB)
+[18:04:54]   TF32: True
+[18:04:54]   XGBoost device: cuda
+[18:04:54]   LightGBM device: gpu
+[18:04:54]   AMP: BF16
+[18:04:54]   CPU cores: 384
+[18:04:54]   OOF subsample: 1.0
+[18:04:54]   ACI buffer size: 2000
+[18:04:54]   BiLSTM batch: 4096  stride: 2
+[18:04:54]   ET max_depth: 25  max_samples: 0.3
+[18:04:54] Running 4 horizons in PARALLEL (4 workers x 12 cores)
+[19:06:44]   120min: WORKER FAILED -- A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+[19:07:29]   30min: WORKER FAILED -- A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+[19:07:29]   60min: WORKER FAILED -- A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+[19:07:32]   10min: WORKER FAILED -- A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+[19:07:36] WARNING: 4 horizon(s) failed: ['120min', '30min', '60min', '10min']
+[19:07:36] Re-run to resume from checkpoint.
+[19:07:36] Clearing rolling feature cache...
+[19:07:36] Rolling cache cleared (all splits)
+[19:07:36] Results saved to /workspace/results/sprint1
+[04:48:45] Health check:
+[04:48:45]   Disk free: 23.6 GB
+[04:48:45]   RAM: 1.0 GB used
+[04:48:45]   GPU: NVIDIA GeForce RTX 5090 (33.7 GB)
+[04:48:45]   TF32: True
+[04:48:45]   XGBoost device: cuda
+[04:48:45]   LightGBM device: gpu
+[04:48:45]   AMP: BF16
+[04:48:45]   CPU cores: 384
+[04:48:45]   OOF subsample: 1.0
+[04:48:45]   ACI buffer size: 2000
+[04:48:45]   BiLSTM batch: 4096  stride: 2
+[04:48:45]   ET max_depth: 25  max_samples: 0.3
+[04:48:45]   10min: 1 stages complete
+[04:48:45]   30min: 1 stages complete
+[04:48:45]   60min: 1 stages complete
+[04:48:45]   120min: 1 stages complete
+[04:48:45] Running 4 horizons in PARALLEL (4 workers x 12 cores)
+[09:57:08] Health check:
+[09:57:08]   Disk free: 23.4 GB
+[09:57:08]   RAM: 0.9 GB used
+[09:57:08]   GPU: NVIDIA GeForce RTX 5090 (33.7 GB)
+[09:57:08]   TF32: True
+[09:57:08]   XGBoost device: cuda
+[09:57:08]   LightGBM device: gpu
+[09:57:08]   AMP: BF16
+[09:57:08]   CPU cores: 384
+[09:57:08]   OOF subsample: 1.0
+[09:57:08]   ACI buffer size: 2000
+[09:57:08]   BiLSTM batch: 4096  stride: 2
+[09:57:08]   ET max_depth: 25  max_samples: 0.3
+[09:57:08]   10min: 6 stages complete
+[09:57:08]   30min: 6 stages complete
+[09:57:08]   60min: 6 stages complete
+[09:57:08]   120min: 6 stages complete
+[09:57:08] Running horizons SEQUENTIALLY (PARALLEL_HORIZONS=False)
+[09:57:08]   train.parquet  (56.4 MB)
+[09:57:08]   val.parquet  (12.9 MB)
+[09:57:08]   test.parquet  (13.0 MB)
+[09:57:12]   sizes: train=7,413,073  val=1,692,053  test=1,680,285
+[09:57:12]   temporal ordering: OK
+[09:57:12]   RAM after load: 2.2 GB
+[09:57:12] Building features...
+[09:57:12]     train...
+[09:57:12]     computing rolling cache for 'train'...
+[09:57:52]     rolling cache 'train' ready  [4.0GB]
+[09:58:12]     val...
+[09:58:12]     computing rolling cache for 'val'...
+[09:58:43]     rolling cache 'val' ready  [8.6GB]
+[09:58:49]     test...
+[09:58:49]     computing rolling cache for 'test'...
+[09:59:20]     rolling cache 'test' ready  [10.0GB]
+[09:59:25]   Features: all=79  XGB=34  LGBM=60
+[09:59:31]   Clean: train=7,403,269  val=1,682,183  test=1,670,443  [12.6GB]
+[09:59:31] Extracting arrays...
+[09:59:41]   DFs freed  [18.8GB]
+[09:59:41] 1/14  Naive (CPU + MEM)
+[09:59:41]   CPU  R2=0.9188  MAE=0.867
+[09:59:41]   MEM  R2=0.9952  MAE=0.342
+[09:59:41] 2-3/14  ETS + ARIMA: cached
+[09:59:41] 4/14  Linear Regression: cached
+[09:59:41] 5/14  XGBoost: cached
+[09:59:41] 6/14  LightGBM: cached
+[09:59:41] 7/14  ExtraTrees: cached
+[09:59:41] 8/14  BiLSTM (Optuna HPO + fast MC Dropout) [BF16]
+[09:59:41]     Optuna: 10 trials, timeout=600s, HyperbandPruner
+[10:25:38]     best: R2=0.0276  hidden=64  layers=2  dropout=0.20  lr=1.0e-03  batch=4096
+[10:25:38]     Training final BiLSTM...
+[10:27:04]       ep   1/50  train=7.141772  val=7.807003  R2=0.0263 *
+[10:27:36]       ep   2/50  train=7.110451  val=7.801745  R2=0.0269 *
+[10:28:48]       ep   4/50  train=7.098762  val=7.796774  R2=0.0276 *
+[10:29:21]       ep   5/50  train=7.092762  val=7.796560  R2=0.0276 *
+[10:31:00]       ep   8/50  train=7.078571  val=7.792935  R2=0.0280 *
+[10:32:03]       ep  10/50  train=7.055116  val=7.801496  R2=0.0270
+[10:36:32]       early stop at epoch 18
+[10:55:53]       BiLSTM final val R2: 0.0280
+[11:15:08]   R2=0.9212  on 1,670,432 samples  vs naive: +0.25pp
+[11:15:08]     MC Dropout uncertainty (fast path -- LSTM cached)...
+[11:36:11]     MC coverage: 10.2%  width: 0.070
+[11:36:11]     BiLSTM OOF for ensemble...
+[11:36:11]     BiLSTM OOF fold 1/3
+[12:40:50]     BiLSTM OOF fold 2/3
+[13:47:49]     BiLSTM OOF fold 3/3
+[14:43:05]   BiLSTM ERROR: DataLoader worker (pid 87967) is killed by signal: Bus error. It is possible that dataloader's workers are out of shared memory. Please try to raise your shared memory limit.
+[14:43:08] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[14:43:32]     XGB-oof OOF R2: 0.0300  (infilled 1233879)
+[14:45:33]     LGB-oof OOF R2: -0.0000  (infilled 1233879)
+[14:56:59]     ET-oof OOF R2: 0.0452  (infilled 1233879)
+[14:57:00]   R2=0.9213  NNLS: XGB=0.024  LGB=0.000  ET=0.976  (832.0s)
+[14:57:00] 10/14  Hetero Ensemble (CPU)
+[14:57:00]     BiLSTM OOF not available -- fallback to homo
+[14:57:00] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[14:57:23]     XGB-MEM OOF R2: 0.0270  (infilled 1233879)
+[14:59:22]     LGB-MEM OOF R2: -0.0000  (infilled 1233879)
+[15:09:13]     ET-MEM OOF R2: 0.0431  (infilled 1233879)
+[15:09:13]   MEM R2=0.9953  NNLS: XGB=0.082  LGB=0.000  ET=0.918
+[15:09:13] 12/14  Post-processing + ACI uncertainty quantification...
+[21:58:54]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[22:03:18]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[22:11:53]       AgACI coverage: 81.3%  target: 80%  cal_error: 1.3pp  mean_width: 2.902
+[22:11:53]       expert weights: {0.01: 0.257, 0.02: 0.255, 0.05: 0.248, 0.1: 0.239}
+[22:11:53]       per-gamma cov:  {'gamma_0.01': 79.96, 'gamma_0.02': 79.88, 'gamma_0.05': 79.61, 'gamma_0.1': 79.23}
+[22:11:53]       ACI buffer size: 2000 residuals
+[22:11:56] 13/14  Ablation -- CPU...
+[22:14:01] Ablation -- MEM...
+[22:15:57] 14/14  Per-cluster analysis...
+[22:15:57] 10min done in 738.7min  [26.1GB]
+[22:15:59] Building features...
+[22:15:59]     train...
+[22:16:09]     val...
+[22:16:14]     test...
+[22:16:20]   Features: all=79  XGB=34  LGBM=60
+[22:16:26]   Clean: train=7,383,661  val=1,662,443  test=1,650,759  [17.7GB]
+[22:16:26] Extracting arrays...
+[22:16:36]   DFs freed  [23.0GB]
+[22:16:36] 1/14  Naive (CPU + MEM)
+[22:16:36]   CPU  R2=0.8361  MAE=1.717
+[22:16:36]   MEM  R2=0.9872  MAE=0.796
+[22:16:36] 2-3/14  ETS + ARIMA: cached
+[22:16:36] 4/14  Linear Regression: cached
+[22:16:36] 5/14  XGBoost: cached
+[22:16:36] 6/14  LightGBM: cached
+[22:16:36] 7/14  ExtraTrees: cached
+[22:16:36] 8/14  BiLSTM (Optuna HPO + fast MC Dropout) [BF16]
+[22:16:36]     Optuna: 10 trials, timeout=600s, HyperbandPruner
+[22:41:49]     best: R2=0.0263  hidden=64  layers=2  dropout=0.20  lr=1.0e-03  batch=4096
+[22:41:49]     Training final BiLSTM...
+[22:43:11]       ep   1/50  train=14.293173  val=15.611305  R2=0.0230 *
+[22:43:50]       ep   2/50  train=14.221584  val=15.570848  R2=0.0255 *
+[22:45:37]       ep   5/50  train=14.135527  val=15.562340  R2=0.0261 *
+[22:48:24]       ep  10/50  train=13.922295  val=15.643357  R2=0.0210
+[22:51:18]       early stop at epoch 15
+[23:09:55]       BiLSTM final val R2: 0.0261
+[23:28:28]   R2=0.8397  on 1,650,748 samples  vs naive: +0.36pp
+[23:28:28]     MC Dropout uncertainty (fast path -- LSTM cached)...
+[23:49:13]     MC coverage: 9.9%  width: 0.113
+[23:49:13]     BiLSTM OOF for ensemble...
+[23:49:13]     BiLSTM OOF fold 1/3
+[00:54:02]     BiLSTM OOF fold 2/3
+[01:59:04]     BiLSTM OOF fold 3/3
+[03:05:51]     BiLSTM OOF R2: 0.0252
+[03:05:52] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[03:06:18]     XGB-oof OOF R2: 0.0212  (infilled 1230611)
+[03:23:46]     LGB-oof OOF R2: 0.0101  (infilled 1230611)
+[03:33:32]     ET-oof OOF R2: 0.0616  (infilled 1230611)
+[03:33:32]   R2=0.8404  NNLS: XGB=0.053  LGB=0.000  ET=0.947  (1660.8s)
+[03:33:32] 10/14  Hetero Ensemble (CPU)
+[03:33:32]     4-model alignment: 5,537,712 samples
+[03:33:33]     BiLSTM covers 1650748/1650759 samples (offset=11)
+[03:33:34]   R2=0.8404  NNLS: XGB=0.007  LGB=0.045  ET=0.728  BiLSTM=0.220
+[03:33:34]     1,650,748 hetero, 11 fallback
+[03:33:34] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[03:34:00]     XGB-MEM OOF R2: 0.0453  (infilled 1230611)
+[03:47:40]     LGB-MEM OOF R2: 0.0129  (infilled 1230611)
+[03:56:29]     ET-MEM OOF R2: 0.0898  (infilled 1230611)
+[03:56:30]   MEM R2=0.9876  NNLS: XGB=0.000  LGB=0.000  ET=1.000
+[03:56:30] 12/14  Post-processing + ACI uncertainty quantification...
+[06:26:34]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[06:35:29]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[06:48:30]       AgACI coverage: 81.6%  target: 80%  cal_error: 1.6pp  mean_width: 5.172
+[06:48:30]       expert weights: {0.01: 0.263, 0.02: 0.257, 0.05: 0.246, 0.1: 0.233}
+[06:48:30]       per-gamma cov:  {'gamma_0.01': 79.81, 'gamma_0.02': 79.59, 'gamma_0.05': 79.14, 'gamma_0.1': 78.62}
+[06:48:30]       ACI buffer size: 2000 residuals
+[06:48:32] 13/14  Ablation -- CPU...
+[07:00:46] Ablation -- MEM...
+[07:12:49] 14/14  Per-cluster analysis...
+[07:12:49] 30min done in 536.8min  [19.5GB]
+[07:12:49] Building features...
+[07:12:49]     train...
+[07:12:58]     val...
+[07:13:04]     test...
+[07:13:11]   Features: all=79  XGB=34  LGBM=60
+[07:13:16]   Clean: train=7,354,249  val=1,632,833  test=1,621,233  [19.8GB]
+[07:13:16] Extracting arrays...
+[07:13:26]   DFs freed  [25.8GB]
+[07:13:26] 1/14  Naive (CPU + MEM)
+[07:13:26]   CPU  R2=0.7878  MAE=2.208
+[07:13:26]   MEM  R2=0.9775  MAE=1.198
+[07:13:26] 2-3/14  ETS + ARIMA: cached
+[07:13:26] 4/14  Linear Regression: cached
+[07:13:26] 5/14  XGBoost: cached
+[07:13:26] 6/14  LightGBM: cached
+[07:13:26] 7/14  ExtraTrees: cached
+[07:13:26] 8/14  BiLSTM (Optuna HPO + fast MC Dropout) [BF16]
+[07:13:26]     Optuna: 10 trials, timeout=600s, HyperbandPruner
+[07:38:29]     best: R2=0.0590  hidden=64  layers=2  dropout=0.20  lr=1.0e-03  batch=4096
+[07:38:29]     Training final BiLSTM...
+[07:39:50]       ep   1/50  train=18.501004  val=19.889606  R2=0.0542 *
+[07:40:28]       ep   2/50  train=18.281616  val=19.787611  R2=0.0591 *
+[07:41:03]       ep   3/50  train=18.167961  val=19.767328  R2=0.0601 *
+[07:45:08]       ep  10/50  train=17.379158  val=20.055702  R2=0.0463
+[07:46:52]       early stop at epoch 13
+[08:05:07]       BiLSTM final val R2: 0.0601
+[08:23:19]   R2=0.7979  on 1,621,222 samples  vs naive: +1.01pp
+[08:23:19]     MC Dropout uncertainty (fast path -- LSTM cached)...
+[08:43:34]     MC coverage: 13.6%  width: 0.190
+[08:43:34]     BiLSTM OOF for ensemble...
+[08:43:34]     BiLSTM OOF fold 1/3
+[08:57:15]     BiLSTM OOF fold 2/3
+[09:08:08]     BiLSTM OOF fold 3/3
+[09:18:38]     BiLSTM OOF R2: 0.0599
+[09:18:38] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[09:18:55]     XGB-oof OOF R2: 0.0333  (infilled 1225709)
+[09:28:15]     LGB-oof OOF R2: 0.0545  (infilled 1225709)
+[09:33:25]     ET-oof OOF R2: 0.1155  (infilled 1225709)
+[09:33:26]   R2=0.8007  NNLS: XGB=0.000  LGB=0.000  ET=1.000  (887.4s)
+[09:33:26] 10/14  Hetero Ensemble (CPU)
+[09:33:26]     4-model alignment: 5,515,653 samples
+[09:33:26]     BiLSTM covers 1621222/1621233 samples (offset=11)
+[09:33:26]   R2=0.8011  NNLS: XGB=0.000  LGB=0.000  ET=0.784  BiLSTM=0.216
+[09:33:26]     1,621,222 hetero, 11 fallback
+[09:33:27] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[09:33:44]     XGB-MEM OOF R2: 0.0740  (infilled 1225709)
+[09:43:35]     LGB-MEM OOF R2: 0.0278  (infilled 1225709)
+[09:48:31]     ET-MEM OOF R2: 0.1422  (infilled 1225709)
+[09:48:32]   MEM R2=0.9785  NNLS: XGB=0.000  LGB=0.000  ET=1.000
+[09:48:32] 12/14  Post-processing + ACI uncertainty quantification...
+[09:50:43]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[09:55:19]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[10:02:54]       AgACI coverage: 81.8%  target: 80%  cal_error: 1.8pp  mean_width: 6.225
+[10:02:54]       expert weights: {0.01: 0.264, 0.02: 0.257, 0.05: 0.246, 0.1: 0.233}
+[10:02:54]       per-gamma cov:  {'gamma_0.01': 79.74, 'gamma_0.02': 79.48, 'gamma_0.05': 79.03, 'gamma_0.1': 78.49}
+[10:02:54]       ACI buffer size: 2000 residuals
+[10:02:55] 13/14  Ablation -- CPU...
+[10:06:52] Ablation -- MEM...
+[10:10:46] 14/14  Per-cluster analysis...
+[10:10:46] 60min done in 177.9min  [21.7GB]
+[10:10:46] Building features...
+[10:10:46]     train...
+[10:10:52]     val...
+[10:10:56]     test...
+[10:11:00]   Features: all=79  XGB=34  LGBM=60
+[10:11:04]   Clean: train=7,295,425  val=1,573,613  test=1,562,181  [20.6GB]
+[10:11:04] Extracting arrays...
+[10:11:11]   DFs freed  [25.7GB]
+[10:11:11] 1/14  Naive (CPU + MEM)
+[10:11:11]   CPU  R2=0.7178  MAE=2.763
+[10:11:11]   MEM  R2=0.9609  MAE=1.741
+[10:11:11] 2-3/14  ETS + ARIMA: cached
+[10:11:11] 4/14  Linear Regression: cached
+[10:11:11] 5/14  XGBoost: cached
+[10:11:11] 6/14  LightGBM: cached
+[10:11:11] 7/14  ExtraTrees: cached
+[10:11:11] 8/14  BiLSTM (Optuna HPO + fast MC Dropout) [BF16]
+[10:11:11]     Optuna: 10 trials, timeout=600s, HyperbandPruner
+[10:26:22]     best: R2=0.1614  hidden=64  layers=2  dropout=0.20  lr=1.0e-03  batch=4096
+[10:26:22]     Training final BiLSTM...
+[10:27:14]       ep   1/50  train=22.841841  val=23.661715  R2=0.1537 *
+[10:27:40]       ep   2/50  train=22.143511  val=23.530642  R2=0.1584 *
+[10:28:06]       ep   3/50  train=21.837283  val=23.500938  R2=0.1595 *
+[10:28:31]       ep   4/50  train=21.612627  val=23.458679  R2=0.1610 *
+[10:31:15]       ep  10/50  train=20.476977  val=23.829174  R2=0.1477
+[10:33:06]       early stop at epoch 14
+[10:33:49]       BiLSTM final val R2: 0.1610
+[10:34:37]   R2=0.7597  on 1,562,170 samples  vs naive: +4.19pp
+[10:34:37]     MC Dropout uncertainty (fast path -- LSTM cached)...
+[10:36:57]     MC coverage: 14.4%  width: 0.325
+[10:36:57]     BiLSTM OOF for ensemble...
+[10:36:57]     BiLSTM OOF fold 1/3
+[10:42:50]     BiLSTM OOF fold 2/3
+[10:49:46]     BiLSTM OOF fold 3/3
+[10:57:31]     BiLSTM OOF R2: 0.1642
+[10:57:31] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[10:57:49]     XGB-oof OOF R2: 0.0853  (infilled 1215905)
+[11:06:48]     LGB-oof OOF R2: 0.1515  (infilled 1215905)
+[11:11:36]     ET-oof OOF R2: 0.2357  (infilled 1215905)
+[11:11:36]   R2=0.7630  NNLS: XGB=0.000  LGB=0.000  ET=1.000  (845.1s)
+[11:11:36] 10/14  Hetero Ensemble (CPU)
+[11:11:36]     4-model alignment: 5,471,535 samples
+[11:11:37]     BiLSTM covers 1562170/1562181 samples (offset=11)
+[11:11:37]   R2=0.7642  NNLS: XGB=0.000  LGB=0.000  ET=0.759  BiLSTM=0.240
+[11:11:37]     1,562,170 hetero, 11 fallback
+[11:11:37] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[11:11:55]     XGB-MEM OOF R2: 0.0961  (infilled 1215905)
+[11:20:11]     LGB-MEM OOF R2: 0.0438  (infilled 1215905)
+[11:24:54]     ET-MEM OOF R2: 0.2130  (infilled 1215905)
+[11:24:54]   MEM R2=0.9633  NNLS: XGB=0.000  LGB=0.000  ET=1.000
+[11:24:54] 12/14  Post-processing + ACI uncertainty quantification...
+[11:32:37]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[11:35:30]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[11:41:09]       AgACI coverage: 81.9%  target: 80%  cal_error: 1.9pp  mean_width: 7.118
+[11:41:09]       expert weights: {0.01: 0.264, 0.02: 0.258, 0.05: 0.246, 0.1: 0.233}
+[11:41:09]       per-gamma cov:  {'gamma_0.01': 79.71, 'gamma_0.02': 79.46, 'gamma_0.05': 79.0, 'gamma_0.1': 78.45}
+[11:41:09]       ACI buffer size: 2000 residuals
+[11:41:10] 13/14  Ablation -- CPU...
+[11:44:42] Ablation -- MEM...
+[11:48:28] 14/14  Per-cluster analysis...
+[11:48:28] 120min done in 97.7min  [23.0GB]
+[11:48:28] Clearing rolling feature cache...
+[11:48:28] Rolling cache cleared (all splits)
+[11:48:28] Results saved to /workspace/results/sprint1
+[05:57:34] Health check:
+[05:57:34]   RAM: 1.3 GB used
+[05:57:34]   GPU: NVIDIA A100-SXM4-80GB (85.1 GB)
+[05:57:34]   TF32: True
+[05:57:34]   XGBoost device: cuda
+[05:57:34]   LightGBM device: gpu
+[05:57:34]   AMP: BF16
+[05:57:34]   CPU cores: 12
+[05:57:34]   OOF subsample: 1.0
+[05:57:34]   ACI buffer size: 2000
+[05:57:34]   BiLSTM batch: 2048  stride: 2
+[05:57:34]   ET max_depth: 25  max_samples: 0.3
+[05:57:34]   10min: 6 stages complete
+[05:57:34] Running horizons SEQUENTIALLY (PARALLEL_HORIZONS=False)
+[05:57:34]   train.parquet  (56.4 MB)
+[05:57:34]   val.parquet  (12.9 MB)
+[05:57:34]   test.parquet  (13.0 MB)
+[05:57:40]   sizes: train=7,413,073  val=1,692,053  test=1,680,285
+[05:57:40]   temporal ordering: OK
+[05:57:40]   RAM after load: 2.7 GB
+[05:57:40] Building features...
+[05:57:40]     train...
+[05:57:40]     computing rolling cache for 'train'...
+[05:58:25]     rolling cache 'train' ready  [5.2GB]
+[05:58:44]     val...
+[05:58:44]     computing rolling cache for 'val'...
+[05:59:17]     rolling cache 'val' ready  [10.0GB]
+[05:59:25]     test...
+[05:59:25]     computing rolling cache for 'test'...
+[05:59:58]     rolling cache 'test' ready  [11.5GB]
+[06:00:07]   Features: all=79  XGB=34  LGBM=60
+[06:00:18]   Clean: train=7,403,269  val=1,682,183  test=1,670,443  [15.6GB]
+[06:00:18] Extracting arrays...
+[06:00:43]   DFs freed  [19.1GB]
+[06:00:43] 1/14  Naive (CPU + MEM)
+[06:00:43]   CPU  R2=0.9188  MAE=0.867
+[06:00:43]   MEM  R2=0.9952  MAE=0.342
+[06:00:43] 2-3/14  ETS + ARIMA: cached
+[06:00:43] 4/14  Linear Regression: cached
+[06:00:43] 5/14  XGBoost: cached
+[06:00:43] 6/14  LightGBM: cached
+[06:00:43] 7/14  ExtraTrees: cached
+[06:00:43] 8/14  BiLSTM (Optuna HPO + fast MC Dropout) [BF16]
+[06:00:43]     Optuna: 10 trials, timeout=600s, HyperbandPruner
+[06:21:43]     best: R2=0.0297  hidden=64  layers=1  dropout=0.15  lr=2.3e-04  batch=8192
+[06:21:43]     Training final BiLSTM...
+[06:23:13]       ep   1/50  train=7.191075  val=7.833817  R2=0.0229 *
+[06:23:46]       ep   2/50  train=7.125259  val=7.817620  R2=0.0250 *
+[06:24:20]       ep   3/50  train=7.113584  val=7.811958  R2=0.0257 *
+[06:24:54]       ep   4/50  train=7.103846  val=7.800501  R2=0.0271 *
+[06:25:26]       ep   5/50  train=7.103962  val=7.797826  R2=0.0274 *
+[06:26:00]       ep   6/50  train=7.095454  val=7.791464  R2=0.0282 *
+[06:27:43]       ep   9/50  train=7.082738  val=7.785305  R2=0.0290 *
+[06:28:16]       ep  10/50  train=7.082627  val=7.788100  R2=0.0286
+[06:29:22]       ep  12/50  train=7.077781  val=7.785165  R2=0.0290 *
+[06:33:23]       ep  19/50  train=7.061351  val=7.783067  R2=0.0293 *
+[06:33:56]       ep  20/50  train=7.059411  val=7.785609  R2=0.0289
+[06:36:12]       ep  24/50  train=7.049117  val=7.782037  R2=0.0294 *
+[06:39:36]       ep  30/50  train=7.036217  val=7.790606  R2=0.0283
+[06:41:55]       early stop at epoch 34
+[06:42:46]       BiLSTM final val R2: 0.0294
+[06:43:35]   R2=0.9213  on 1,670,432 samples  vs naive: +0.26pp
+[06:43:35]     MC Dropout uncertainty (fast path -- LSTM cached)...
+[06:45:55]     MC coverage: 27.7%  width: 0.183
+[06:45:55]     BiLSTM OOF for ensemble...
+[06:45:55]     BiLSTM OOF fold 1/3
+[06:56:06]     BiLSTM OOF fold 2/3
+[07:13:40]     BiLSTM OOF fold 3/3
+[07:32:26]     BiLSTM OOF R2: 0.0291
+[07:32:26] 9/14  Homo Ensemble: XGB + LGB + ET -> NNLS
+[07:33:07]     XGB-oof OOF R2: 0.0300  (infilled 1233879)
+[07:35:32]     LGB-oof OOF R2: -0.0000  (infilled 1233879)
+[08:37:41]     ET-oof OOF R2: 0.0455  (infilled 1233879)
+[08:37:42]   R2=0.9213  NNLS: XGB=0.016  LGB=0.000  ET=0.984  (3915.4s)
+[08:37:42] 10/14  Hetero Ensemble (CPU)
+[08:37:42]     4-model alignment: 5,552,418 samples
+[08:37:43]     BiLSTM covers 1670432/1670443 samples (offset=11)
+[08:37:43]   R2=0.9214  NNLS: XGB=0.000  LGB=0.000  ET=0.514  BiLSTM=0.485
+[08:37:43]     1,670,432 hetero, 11 fallback
+[08:37:43] 11/14  Homo Ensemble (MEM): XGB + LGB + ET -> NNLS
+[08:38:24]     XGB-MEM OOF R2: 0.0270  (infilled 1233879)
+[08:40:41]     LGB-MEM OOF R2: -0.0000  (infilled 1233879)
+[09:36:25]     ET-MEM OOF R2: 0.0432  (infilled 1233879)
+[09:36:25]   MEM R2=0.9953  NNLS: XGB=0.083  LGB=0.000  ET=0.917
+[09:36:25] 12/14  Post-processing + ACI uncertainty quantification...
+[09:42:05]     Fitting ACI estimator (AgACI, same arch as homo_ensemble)...
+[10:00:14]     ACI calibration (AgACI -- Zaffran et al. ICML 2022)...
+[10:15:17]       AgACI coverage: 81.3%  target: 80%  cal_error: 1.3pp  mean_width: 2.901
+[10:15:17]       expert weights: {0.01: 0.257, 0.02: 0.255, 0.05: 0.248, 0.1: 0.239}
+[10:15:17]       per-gamma cov:  {'gamma_0.01': 79.96, 'gamma_0.02': 79.88, 'gamma_0.05': 79.61, 'gamma_0.1': 79.23}
+[10:15:17]       ACI buffer size: 2000 residuals
+[10:15:19] 13/14  Ablation -- CPU...
+[10:19:18] Ablation -- MEM...
+[10:22:53] 14/14  Per-cluster analysis...
+[10:22:53] 10min done in 265.2min  [26.7GB]
+[10:22:53] Clearing rolling feature cache...
+[10:22:54] Rolling cache cleared (all splits)
+[10:22:54] Results saved to /content/results/sprint1
+[16:37:12] Health check:
+[16:37:12]   RAM: 1.3 GB used
+[16:37:12]   GPU: NVIDIA A100-SXM4-80GB (85.1 GB)
+[16:37:12]   TF32: True
+[16:37:12]   XGBoost device: cuda
+[16:37:12]   LightGBM device: gpu
+[16:37:12]   AMP: BF16
+[16:37:12]   CPU cores: 12
+[16:37:12]   OOF subsample: 1.0
+[16:37:12]   ACI buffer size: 2000
+[16:37:12]   BiLSTM batch: 2048  stride: 2
+[16:37:12]   ET max_depth: 25  max_samples: 0.3
+[16:37:12]   10min: 6 stages complete
+[16:37:12] Running horizons SEQUENTIALLY (PARALLEL_HORIZONS=False)
+[16:37:12]   train.parquet  (56.4 MB)
+[16:37:12]   val.parquet  (12.9 MB)
+[16:37:12]   test.parquet  (13.0 MB)
+[16:37:18]   sizes: train=7,413,073  val=1,692,053  test=1,680,285
+[16:37:18]   temporal ordering: OK
+[16:37:18]   RAM after load: 2.7 GB
+[16:37:18] Building features...
+[16:37:18]     train...
+[16:37:18]     computing rolling cache for 'train'...
+[16:38:03]     rolling cache 'train' ready  [5.2GB]
+[16:38:22]     val...
+[16:38:22]     computing rolling cache for 'val'...
+[16:38:54]     rolling cache 'val' ready  [10.0GB]
+[16:39:02]     test...
+[16:39:02]     computing rolling cache for 'test'...
+[16:39:19] SIGINT -- will stop after current stage
+[16:39:34]     rolling cache 'test' ready  [11.5GB]
+[16:39:42]   Features: all=79  XGB=34  LGBM=60
+[16:39:53]   Clean: train=7,403,269  val=1,682,183  test=1,670,443  [15.6GB]
+[16:39:53] Extracting arrays...
+[16:40:19]   DFs freed  [19.1GB]
+[16:40:19] 1/14  Naive (CPU + MEM)
+[16:40:19]   CPU  R2=0.9188  MAE=0.867
+[16:40:19]   MEM  R2=0.9952  MAE=0.342
+[16:40:19] Clearing rolling feature cache...
+[16:40:19] Rolling cache cleared (all splits)
+[16:40:19] Ended early. Re-run to resume from checkpoint.
+[16:40:19] Results saved to /content/results/sprint1

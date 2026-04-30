@@ -1,0 +1,23 @@
+{
+  "bilstm": {
+    "R2": 0.8397150635719299,
+    "MAE": 1.7646191120147705,
+    "RMSE": 4.346765144106313,
+    "DA": 57.67062774274595,
+    "n_aligned": 1650748,
+    "lookback_offset": 11,
+    "optuna_params": {
+      "hidden": 64,
+      "layers": 2,
+      "dropout": 0.2,
+      "lr": 0.001,
+      "batch_size": 4096
+    },
+    "mc_dropout": {
+      "coverage_80": 9.86467952709923,
+      "mean_width": 0.11327798664569855,
+      "mean_std": 0.04424921050667763,
+      "n_passes": 30
+    }
+  }
+}

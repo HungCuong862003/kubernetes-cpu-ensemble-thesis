@@ -1,0 +1,75 @@
+{
+  "baselines": {
+    "10min": {
+      "naive": 0.91878,
+      "hetero_ens": 0.92129
+    },
+    "30min": {
+      "naive": 0.83611,
+      "hetero_ens": 0.84041
+    },
+    "60min": {
+      "naive": 0.7878,
+      "hetero_ens": 0.8011
+    },
+    "120min": {
+      "naive": 0.7178,
+      "hetero_ens": 0.7642
+    }
+  },
+  "chronos2_zero_shot": {
+    "10min": {
+      "n_points": 14760,
+      "r2_mean": 0.9334251086575329,
+      "r2_p50": 0.9334251086575329,
+      "mae_mean": 1.056801927496705,
+      "mae_p50": 1.056801927496705,
+      "r2_naive_subsample": 0.9353999852481661,
+      "mae_naive_subsample": 0.8852981029810298,
+      "mean_p10": 9.783436043853875,
+      "mean_p90": 12.820491703995314,
+      "pct_inside_p10_p90": 0.8017615176151761
+    },
+    "30min": {
+      "n_points": 14760,
+      "r2_mean": 0.8876827258022238,
+      "r2_p50": 0.8876827258022238,
+      "mae_mean": 1.7418525941889957,
+      "mae_p50": 1.7418525941889957,
+      "r2_naive_subsample": 0.8586827738040463,
+      "mae_naive_subsample": 1.7761517615176152,
+      "mean_p10": 9.145877296857867,
+      "mean_p90": 13.785570490535687,
+      "pct_inside_p10_p90": 0.7615853658536585
+    },
+    "60min": {
+      "n_points": 14757,
+      "r2_mean": 0.8572711318478983,
+      "r2_p50": 0.8572711318478983,
+      "mae_mean": 2.0385739133467045,
+      "mae_p50": 2.0385739133467045,
+      "r2_naive_subsample": 0.809219963928828,
+      "mae_naive_subsample": 2.2781053059564953,
+      "mean_p10": 8.700894972009563,
+      "mean_p90": 14.331435828745303,
+      "pct_inside_p10_p90": 0.7705495696957376
+    },
+    "120min": {
+      "n_points": 14757,
+      "r2_mean": 0.8171581486293638,
+      "r2_p50": 0.8171581486293638,
+      "mae_mean": 2.38763024836515,
+      "mae_p50": 2.38763024836515,
+      "r2_naive_subsample": 0.7270318424151294,
+      "mae_naive_subsample": 2.8278782950464185,
+      "mean_p10": 7.944376443596491,
+      "mean_p90": 15.043624074650236,
+      "pct_inside_p10_p90": 0.7612658399403672
+    }
+  },
+  "num_origins": 3,
+  "batch_size": 512,
+  "min_context": 24,
+  "data_root": "/workspace/k8s-ensemble-forecast/data/alibaba",
+  "test_file": "/workspace/k8s-ensemble-forecast/data/alibaba/test.parquet"
+}

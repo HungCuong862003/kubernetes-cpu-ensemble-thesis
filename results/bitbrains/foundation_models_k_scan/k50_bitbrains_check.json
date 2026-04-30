@@ -1,0 +1,78 @@
+{
+  "dataset": "bitbrains",
+  "cadence_min": 5,
+  "baselines": {
+    "10min": {
+      "naive": 0.8113,
+      "hetero_ens": 0.6344
+    },
+    "30min": {
+      "naive": 0.562,
+      "hetero_ens": 0.3611
+    },
+    "60min": {
+      "naive": 0.3014,
+      "hetero_ens": 0.1199
+    },
+    "120min": {
+      "naive": 0.0306,
+      "hetero_ens": 0.009
+    }
+  },
+  "ens_label": "ML (per-VM median)",
+  "chronos2_zero_shot": {
+    "10min": {
+      "n_points": 7100,
+      "r2_mean": 0.8210231460299855,
+      "r2_p50": 0.8210231460299855,
+      "mae_mean": 5.444385482173571,
+      "mae_p50": 5.444385482173571,
+      "r2_naive_subsample": 0.8114589303885196,
+      "mae_naive_subsample": 5.539025018710485,
+      "mean_p10": 16.356410299757837,
+      "mean_p90": 33.83176446619168,
+      "pct_inside_p10_p90": 0.8209859154929577
+    },
+    "30min": {
+      "n_points": 7100,
+      "r2_mean": 0.49455658008488235,
+      "r2_p50": 0.49455658008488235,
+      "mae_mean": 11.212942916881032,
+      "mae_p50": 11.212942916881032,
+      "r2_naive_subsample": 0.47694232475398746,
+      "mae_naive_subsample": 10.92229163784796,
+      "mean_p10": 11.347547259263589,
+      "mean_p90": 42.41650363116197,
+      "pct_inside_p10_p90": 0.7925352112676056
+    },
+    "60min": {
+      "n_points": 7100,
+      "r2_mean": 0.2179045745667174,
+      "r2_p50": 0.2179045745667174,
+      "mae_mean": 16.73389517874365,
+      "mae_p50": 16.73389517874365,
+      "r2_naive_subsample": 0.19572662158844412,
+      "mae_naive_subsample": 16.123532698939385,
+      "mean_p10": 7.513754296101315,
+      "mean_p90": 47.18914370254731,
+      "pct_inside_p10_p90": 0.7663380281690141
+    },
+    "120min": {
+      "n_points": 7100,
+      "r2_mean": 0.14738551937511457,
+      "r2_p50": 0.14738551937511457,
+      "mae_mean": 17.968834408181653,
+      "mae_p50": 17.968834408181653,
+      "r2_naive_subsample": 0.09141406463637225,
+      "mae_naive_subsample": 17.557101036012174,
+      "mean_p10": 4.355734028077461,
+      "mean_p90": 55.486550662618285,
+      "pct_inside_p10_p90": 0.7588732394366198
+    }
+  },
+  "num_origins": 50,
+  "batch_size": 512,
+  "min_context": 24,
+  "data_root": "/workspace/k8s-ensemble-forecast/data/bitbrains",
+  "test_file": "/workspace/k8s-ensemble-forecast/data/bitbrains/test.parquet"
+}

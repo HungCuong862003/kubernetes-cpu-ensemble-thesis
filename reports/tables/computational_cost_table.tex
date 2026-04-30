@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Computational cost of the full training pipeline. The experiment was conducted on a rented cloud instance (Vast.ai).}
+  \label{tab:computational-cost}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Item} & \textbf{Value} \\
+    \midrule
+    GPU & NVIDIA GeForce RTX 5090 (33.7\,GB VRAM) \\
+    CPU cores & 384 \\
+    Execution mode & 4 horizons in parallel \\
+    Total wall clock & $\sim$12.3 hours \\
+    \midrule
+    \quad 10min horizon & 738.7\,min \\
+    \quad 30min horizon & 536.8\,min \\
+    \quad 60min horizon & 177.9\,min \\
+    \quad 120min horizon & 97.7\,min \\
+    \midrule
+    BiLSTM HPO & 10 Optuna trials/horizon, approx.\ 25--50\,min each \\
+    Tree models & Cached after first fold \\
+    Inference & Sub-millisecond per sample (tree models, CPU) \\
+    \bottomrule
+  \end{tabular}
+\end{table}

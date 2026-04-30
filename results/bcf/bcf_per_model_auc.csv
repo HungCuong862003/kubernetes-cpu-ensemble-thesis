@@ -1,0 +1,5 @@
+model,n_pairs,n_ml_wins,n_predicate_pos,auc,predicate_label_match
+Naive,12,0,6,,0.5
+NNLS,12,9,6,0.8333333333333333,0.75
+Chronos-2,12,11,6,0.7727272727272727,0.5833333333333334
+TimesFM,12,10,6,0.8,0.6666666666666666

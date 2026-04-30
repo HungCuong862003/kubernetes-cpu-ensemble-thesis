@@ -1,0 +1,165 @@
+[09:22:25] Day 1 sanity check: Chronos-2 zero-shot on alibaba
+[09:22:25] DATA_ROOT    = /workspace/data/alibaba
+[09:22:25] dataset      = alibaba  (cadence=5min)
+[09:22:25] Python       = 3.12.13
+[09:22:25] num_origins  = 20
+[09:22:25] batch_size   = 512
+[09:22:25] loading /workspace/data/alibaba/test.parquet
+[09:22:26] loaded 1,680,285 rows, 4,921 unique containers
+[09:22:26] built per-container series dict with 4,921 entries
+[09:22:26] sample container c_10032: length=345, first 5 values=[4. 4. 4. 4. 3.]
+[09:22:28] loading Chronos-2 pipeline on cuda with dtype=torch.bfloat16
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[09:22:30] === 10min (h_steps=2, cadence=5min) ===
+[09:22:30]   4,920 containers usable, 1 skipped (too short)
+/venv/main/lib/python3.12/site-packages/chronos/chronos2/dataset.py:89: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  task_target = torch.from_numpy(task_target)
+[09:22:31]   origin 1/20: 4,920 series in 1.3s (3689 series/s)
+[09:22:32]   origin 2/20: 4,920 series in 0.9s (5498 series/s)
+[09:22:33]   origin 3/20: 4,920 series in 0.9s (5386 series/s)
+[09:22:34]   origin 4/20: 4,920 series in 0.9s (5290 series/s)
+[09:22:35]   origin 5/20: 4,920 series in 1.1s (4670 series/s)
+[09:22:36]   origin 6/20: 4,920 series in 1.0s (5134 series/s)
+[09:22:37]   origin 7/20: 4,920 series in 1.0s (5049 series/s)
+[09:22:38]   origin 8/20: 4,920 series in 1.1s (4394 series/s)
+[09:22:39]   origin 9/20: 4,920 series in 1.0s (4778 series/s)
+[09:22:40]   origin 10/20: 4,919 series in 1.0s (4707 series/s)
+[09:22:41]   origin 11/20: 4,919 series in 1.1s (4605 series/s)
+[09:22:42]   origin 12/20: 4,919 series in 1.2s (3961 series/s)
+[09:22:43]   origin 13/20: 4,919 series in 1.2s (4233 series/s)
+[09:22:45]   origin 14/20: 4,919 series in 1.2s (4106 series/s)
+[09:22:46]   origin 15/20: 4,919 series in 1.4s (3642 series/s)
+[09:22:47]   origin 16/20: 4,919 series in 1.3s (3892 series/s)
+[09:22:48]   origin 17/20: 4,919 series in 1.3s (3817 series/s)
+[09:22:50]   origin 18/20: 4,919 series in 1.3s (3668 series/s)
+[09:22:51]   origin 19/20: 4,919 series in 1.5s (3339 series/s)
+[09:22:53]   origin 20/20: 4,919 series in 1.4s (3568 series/s)
+[09:22:53]   saved per-point arrays to chronos2_perpoint_10min.npz (98,389 points)
+
+=== 10min ===
+  Naive R2 (full test set)   0.9188
+  Naive R2 (same subsample)  0.9201  <-- fair baseline
+  NNLS Ensemble R2         0.9213
+  Chronos-2 R2 (mean)        0.9190
+  Chronos-2 R2 (p50)         0.9190
+  Chronos-2 MAE              1.0393
+  p10-p90 coverage           80.0%
+  n points evaluated         98,389
+  VERDICT: loses to subsample-naive by 0.10pp - investigate
+
+[09:22:53] === 30min (h_steps=6, cadence=5min) ===
+[09:22:53]   4,920 containers usable, 1 skipped (too short)
+[09:22:54]   origin 1/20: 4,920 series in 0.9s (5665 series/s)
+[09:22:55]   origin 2/20: 4,920 series in 1.0s (4903 series/s)
+[09:22:56]   origin 3/20: 4,920 series in 0.9s (5470 series/s)
+[09:22:56]   origin 4/20: 4,920 series in 0.9s (5369 series/s)
+[09:22:57]   origin 5/20: 4,920 series in 0.9s (5267 series/s)
+[09:22:58]   origin 6/20: 4,919 series in 1.1s (4627 series/s)
+[09:22:59]   origin 7/20: 4,919 series in 1.0s (5085 series/s)
+[09:23:00]   origin 8/20: 4,919 series in 1.0s (4945 series/s)
+[09:23:01]   origin 9/20: 4,919 series in 1.0s (4819 series/s)
+[09:23:03]   origin 10/20: 4,919 series in 1.2s (4241 series/s)
+[09:23:04]   origin 11/20: 4,919 series in 1.1s (4604 series/s)
+[09:23:05]   origin 12/20: 4,919 series in 1.1s (4408 series/s)
+[09:23:06]   origin 13/20: 4,919 series in 1.3s (3914 series/s)
+[09:23:07]   origin 14/20: 4,919 series in 1.2s (4213 series/s)
+[09:23:09]   origin 15/20: 4,919 series in 1.2s (3997 series/s)
+[09:23:10]   origin 16/20: 4,919 series in 1.3s (3912 series/s)
+[09:23:11]   origin 17/20: 4,919 series in 1.4s (3491 series/s)
+[09:23:13]   origin 18/20: 4,919 series in 1.3s (3654 series/s)
+[09:23:14]   origin 19/20: 4,919 series in 1.4s (3583 series/s)
+[09:23:15]   origin 20/20: 4,919 series in 1.5s (3246 series/s)
+[09:23:15]   saved per-point arrays to chronos2_perpoint_30min.npz (98,385 points)
+
+=== 30min ===
+  Naive R2 (full test set)   0.8361
+  Naive R2 (same subsample)  0.8324  <-- fair baseline
+  NNLS Ensemble R2         0.8404
+  Chronos-2 R2 (mean)        0.8572
+  Chronos-2 R2 (p50)         0.8572
+  Chronos-2 MAE              1.7297
+  p10-p90 coverage           76.0%
+  n points evaluated         98,385
+  VERDICT: beats NNLS Ensemble by +1.68pp
+
+[09:23:16] === 60min (h_steps=12, cadence=5min) ===
+[09:23:16]   4,919 containers usable, 2 skipped (too short)
+[09:23:16]   origin 1/20: 4,919 series in 0.9s (5509 series/s)
+[09:23:17]   origin 2/20: 4,919 series in 0.9s (5434 series/s)
+[09:23:18]   origin 3/20: 4,919 series in 0.9s (5311 series/s)
+[09:23:19]   origin 4/20: 4,919 series in 1.1s (4664 series/s)
+[09:23:20]   origin 5/20: 4,919 series in 0.9s (5178 series/s)
+[09:23:21]   origin 6/20: 4,919 series in 1.0s (5056 series/s)
+[09:23:22]   origin 7/20: 4,919 series in 1.0s (4989 series/s)
+[09:23:23]   origin 8/20: 4,919 series in 1.1s (4349 series/s)
+[09:23:24]   origin 9/20: 4,919 series in 1.0s (4752 series/s)
+[09:23:25]   origin 10/20: 4,919 series in 1.1s (4672 series/s)
+[09:23:27]   origin 11/20: 4,919 series in 1.2s (4130 series/s)
+[09:23:28]   origin 12/20: 4,919 series in 1.1s (4386 series/s)
+[09:23:29]   origin 13/20: 4,919 series in 1.2s (4270 series/s)
+[09:23:30]   origin 14/20: 4,919 series in 1.2s (4161 series/s)
+[09:23:31]   origin 15/20: 4,919 series in 1.3s (3693 series/s)
+[09:23:33]   origin 16/20: 4,919 series in 1.3s (3918 series/s)
+[09:23:34]   origin 17/20: 4,919 series in 1.3s (3826 series/s)
+[09:23:35]   origin 18/20: 4,918 series in 1.4s (3438 series/s)
+[09:23:37]   origin 19/20: 4,916 series in 1.4s (3609 series/s)
+[09:23:38]   origin 20/20: 4,916 series in 1.4s (3550 series/s)
+[09:23:38]   saved per-point arrays to chronos2_perpoint_60min.npz (98,373 points)
+
+=== 60min ===
+  Naive R2 (full test set)   0.7878
+  Naive R2 (same subsample)  0.7879  <-- fair baseline
+  NNLS Ensemble R2         0.8011
+  Chronos-2 R2 (mean)        0.8241
+  Chronos-2 R2 (p50)         0.8241
+  Chronos-2 MAE              2.0784
+  p10-p90 coverage           76.4%
+  n points evaluated         98,373
+  VERDICT: beats NNLS Ensemble by +2.30pp
+
+[09:23:38] === 120min (h_steps=24, cadence=5min) ===
+[09:23:38]   4,919 containers usable, 2 skipped (too short)
+[09:23:39]   origin 1/20: 4,919 series in 0.9s (5324 series/s)
+[09:23:40]   origin 2/20: 4,919 series in 1.1s (4681 series/s)
+[09:23:41]   origin 3/20: 4,919 series in 0.9s (5207 series/s)
+[09:23:42]   origin 4/20: 4,919 series in 1.0s (5111 series/s)
+[09:23:43]   origin 5/20: 4,919 series in 1.0s (5021 series/s)
+[09:23:44]   origin 6/20: 4,918 series in 1.1s (4448 series/s)
+[09:23:45]   origin 7/20: 4,916 series in 1.0s (4854 series/s)
+[09:23:46]   origin 8/20: 4,916 series in 1.0s (4705 series/s)
+[09:23:48]   origin 9/20: 4,916 series in 1.2s (4196 series/s)
+[09:23:49]   origin 10/20: 4,914 series in 1.1s (4558 series/s)
+[09:23:50]   origin 11/20: 4,914 series in 1.1s (4332 series/s)
+[09:23:51]   origin 12/20: 4,914 series in 1.2s (4255 series/s)
+[09:23:52]   origin 13/20: 4,914 series in 1.3s (3776 series/s)
+[09:23:53]   origin 14/20: 4,914 series in 1.2s (4031 series/s)
+[09:23:55]   origin 15/20: 4,914 series in 1.2s (3936 series/s)
+[09:23:56]   origin 16/20: 4,914 series in 1.3s (3827 series/s)
+[09:23:57]   origin 17/20: 4,914 series in 1.4s (3438 series/s)
+[09:23:59]   origin 18/20: 4,914 series in 1.4s (3607 series/s)
+[09:24:00]   origin 19/20: 4,914 series in 1.4s (3553 series/s)
+[09:24:02]   origin 20/20: 4,914 series in 1.5s (3210 series/s)
+[09:24:02]   saved per-point arrays to chronos2_perpoint_120min.npz (98,315 points)
+
+=== 120min ===
+  Naive R2 (full test set)   0.7178
+  Naive R2 (same subsample)  0.7085  <-- fair baseline
+  NNLS Ensemble R2         0.7642
+  Chronos-2 R2 (mean)        0.7612
+  Chronos-2 R2 (p50)         0.7612
+  Chronos-2 MAE              2.5832
+  p10-p90 coverage           77.5%
+  n points evaluated         98,315
+  VERDICT: beats subsample-naive by +5.26pp, loses to NNLS Ensemble by 0.30pp
+
+
+==============================================================================
+FINAL SUMMARY  dataset=alibaba  cadence=5min
+==============================================================================
+Horizon   Naive(full)  Naive(sub)  NNLS Ensemble  Chronos-2           Verdict
+10min          0.9188      0.9201         0.9213     0.9190    loses to naive
+30min          0.8361      0.8324         0.8404     0.8572    beats NNLS Ens
+60min          0.7878      0.7879         0.8011     0.8241    beats NNLS Ens
+120min         0.7178      0.7085         0.7642     0.7612   beats sub-naive
+[09:24:02] wrote results to k20_alibaba_v3.json

@@ -1,0 +1,5 @@
+Horizon,BB_Naive_R2,BB_ML_R2_median,BB_Delta_pp,BB_Skill_median,BB_Pct_VMs_ML_Wins
+10min,0.811,0.634,-8.68,-0.9575,12.2
+30min,0.562,0.361,-5.46,-0.67,35.9
+60min,0.301,0.12,-0.79,-0.4976,47.4
+120min,0.031,0.009,3.3,-0.4009,51.9

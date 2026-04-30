@@ -1,0 +1,75 @@
+{
+  "baselines": {
+    "10min": {
+      "naive": 0.91878,
+      "hetero_ens": 0.92129
+    },
+    "30min": {
+      "naive": 0.83611,
+      "hetero_ens": 0.84041
+    },
+    "60min": {
+      "naive": 0.7878,
+      "hetero_ens": 0.8011
+    },
+    "120min": {
+      "naive": 0.7178,
+      "hetero_ens": 0.7642
+    }
+  },
+  "chronos2_zero_shot": {
+    "10min": {
+      "n_points": 1860,
+      "r2_mean": 0.936253767520764,
+      "r2_p50": 0.936253767520764,
+      "mae_mean": 1.5268842772049929,
+      "mae_p50": 1.5268842772049929,
+      "r2_naive_subsample": 0.7053043522883368,
+      "mae_naive_subsample": 3.4729142083836497,
+      "mean_p10": 15.439114543955814,
+      "mean_p90": 19.93933604250672,
+      "pct_inside_p10_p90": 0.7865591397849462
+    },
+    "30min": {
+      "n_points": 1860,
+      "r2_mean": 0.9066344104997331,
+      "r2_p50": 0.9066344104997331,
+      "mae_mean": 2.114118365270476,
+      "mae_p50": 2.114118365270476,
+      "r2_naive_subsample": 0.5737072452482405,
+      "mae_naive_subsample": 4.213649713568469,
+      "mean_p10": 15.37617663311702,
+      "mean_p90": 21.098512054771504,
+      "pct_inside_p10_p90": 0.7688172043010753
+    },
+    "60min": {
+      "n_points": 1860,
+      "r2_mean": 0.9087444124113798,
+      "r2_p50": 0.9087444124113798,
+      "mae_mean": 2.1871955612053475,
+      "mae_p50": 2.1871955612053475,
+      "r2_naive_subsample": 0.5687840672431126,
+      "mae_naive_subsample": 4.1225254795363835,
+      "mean_p10": 15.068148967783937,
+      "mean_p90": 21.419864121303764,
+      "pct_inside_p10_p90": 0.7758064516129032
+    },
+    "120min": {
+      "n_points": 1860,
+      "r2_mean": 0.8657159876312273,
+      "r2_p50": 0.8657159876312273,
+      "mae_mean": 2.5871345144766633,
+      "mae_p50": 2.5871345144766633,
+      "r2_naive_subsample": 0.7647191435136664,
+      "mae_naive_subsample": 3.5274290660095793,
+      "mean_p10": 14.589828064621136,
+      "mean_p90": 21.78949197748656,
+      "pct_inside_p10_p90": 0.7736559139784946
+    }
+  },
+  "num_origins": 20,
+  "batch_size": 512,
+  "min_context": 24,
+  "data_root": "/workspace/k8s-ensemble-forecast/data/bytedance",
+  "test_file": "/workspace/k8s-ensemble-forecast/data/bytedance/test.parquet"
+}

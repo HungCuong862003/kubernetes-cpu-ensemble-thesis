@@ -1,0 +1,181 @@
+================================================================
+Granite-TTM r2 zero-shot on ALIBABA  (K=20)
+================================================================
+DATA_ROOT:   /workspace/data/alibaba
+horizons:    ['10min', '30min', '60min', '120min']
+cadence_min: 5
+out_path:    granite_ttm_k20_alibaba.json
+TTM repo:    ibm-granite/granite-timeseries-ttm-r2  rev=main
+TTM shapes:  context=512  prediction=96
+loading /workspace/data/alibaba/test.parquet ...
+  rows: 1,680,285   columns: ['time_stamp', 'container_id', 'machine_id', 'cpu_util_percent', 'mem_util_percent', 'disk_io_percent', 'net_in', 'net_out', 'cluster_id', 'workload_cluster']
+  containers: 4,921
+  series length: min=25  median=343  max=346
+loading Granite-TTM r2 (revision=main) on cuda...
+  transformers import failed (cannot import name 'TinyTimeMixerForPrediction' from 'transformers' (/workspace/venv-ttm/lib/python3.12/site-packages/transformers/__init__.py)); trying granite-tsfm
+  using tsfm_public.models.tinytimemixer.TinyTimeMixerForPrediction
+  config.context_length    = 512
+  config.prediction_length = 96
+  TTM loaded (805,280 params)
+
+=== 10min  (h_steps=2) ===
+  cadence_min: 5
+  num_origins: 20
+  4,920 containers usable, 1 skipped (too short)
+  origin 1/20: 4,920 series in 0.5s (9326 series/s)
+  origin 2/20: 4,920 series in 0.2s (20589 series/s)
+  origin 3/20: 4,920 series in 0.2s (23472 series/s)
+  origin 4/20: 4,920 series in 0.2s (24567 series/s)
+  origin 5/20: 4,920 series in 0.2s (24826 series/s)
+  origin 6/20: 4,920 series in 0.2s (23608 series/s)
+  origin 7/20: 4,920 series in 0.2s (24587 series/s)
+  origin 8/20: 4,920 series in 0.2s (24942 series/s)
+  origin 9/20: 4,919 series in 0.2s (25076 series/s)
+  origin 10/20: 4,919 series in 0.2s (24780 series/s)
+  origin 11/20: 4,919 series in 0.2s (23916 series/s)
+  origin 12/20: 4,919 series in 0.2s (25454 series/s)
+  origin 13/20: 4,919 series in 0.2s (23997 series/s)
+  origin 14/20: 4,919 series in 0.2s (23320 series/s)
+  origin 15/20: 4,919 series in 0.2s (26018 series/s)
+  origin 16/20: 4,919 series in 0.2s (24623 series/s)
+  origin 17/20: 4,919 series in 0.2s (25254 series/s)
+  origin 18/20: 4,919 series in 0.2s (24177 series/s)
+  origin 19/20: 4,919 series in 0.2s (24416 series/s)
+  origin 20/20: 4,919 series in 0.2s (25135 series/s)
+  saved per-point arrays to granite_ttm_perpoint_alibaba_10min.npz (98,388 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+=== 30min  (h_steps=6) ===
+  cadence_min: 5
+  num_origins: 20
+  4,920 containers usable, 1 skipped (too short)
+  origin 1/20: 4,920 series in 0.2s (25298 series/s)
+  origin 2/20: 4,920 series in 0.2s (23090 series/s)
+  origin 3/20: 4,920 series in 0.2s (21628 series/s)
+  origin 4/20: 4,920 series in 0.2s (25430 series/s)
+  origin 5/20: 4,919 series in 0.2s (24043 series/s)
+  origin 6/20: 4,919 series in 0.2s (24295 series/s)
+  origin 7/20: 4,919 series in 0.2s (24787 series/s)
+  origin 8/20: 4,919 series in 0.2s (23571 series/s)
+  origin 9/20: 4,919 series in 0.2s (24224 series/s)
+  origin 10/20: 4,919 series in 0.2s (24384 series/s)
+  origin 11/20: 4,919 series in 0.2s (23992 series/s)
+  origin 12/20: 4,919 series in 0.2s (20877 series/s)
+  origin 13/20: 4,919 series in 0.2s (24573 series/s)
+  origin 14/20: 4,919 series in 0.2s (25079 series/s)
+  origin 15/20: 4,919 series in 0.2s (24966 series/s)
+  origin 16/20: 4,919 series in 0.2s (25100 series/s)
+  origin 17/20: 4,919 series in 0.2s (23949 series/s)
+  origin 18/20: 4,919 series in 0.2s (24103 series/s)
+  origin 19/20: 4,919 series in 0.2s (24752 series/s)
+  origin 20/20: 4,919 series in 0.2s (24002 series/s)
+  saved per-point arrays to granite_ttm_perpoint_alibaba_30min.npz (98,384 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+=== 60min  (h_steps=12) ===
+  cadence_min: 5
+  num_origins: 20
+  4,919 containers usable, 2 skipped (too short)
+  origin 1/20: 4,919 series in 0.2s (22295 series/s)
+  origin 2/20: 4,919 series in 0.2s (24486 series/s)
+  origin 3/20: 4,919 series in 0.2s (24440 series/s)
+  origin 4/20: 4,919 series in 0.2s (24108 series/s)
+  origin 5/20: 4,919 series in 0.2s (24591 series/s)
+  origin 6/20: 4,919 series in 0.2s (24177 series/s)
+  origin 7/20: 4,919 series in 0.2s (24948 series/s)
+  origin 8/20: 4,919 series in 0.2s (25603 series/s)
+  origin 9/20: 4,919 series in 0.2s (23630 series/s)
+  origin 10/20: 4,919 series in 0.2s (24710 series/s)
+  origin 11/20: 4,919 series in 0.2s (21303 series/s)
+  origin 12/20: 4,919 series in 0.2s (24550 series/s)
+  origin 13/20: 4,919 series in 0.2s (23639 series/s)
+  origin 14/20: 4,919 series in 0.2s (23895 series/s)
+  origin 15/20: 4,919 series in 0.2s (24532 series/s)
+  origin 16/20: 4,919 series in 0.2s (23750 series/s)
+  origin 17/20: 4,918 series in 0.2s (25345 series/s)
+  origin 18/20: 4,916 series in 0.2s (24148 series/s)
+  origin 19/20: 4,916 series in 0.2s (23522 series/s)
+  origin 20/20: 4,916 series in 0.2s (21268 series/s)
+  saved per-point arrays to granite_ttm_perpoint_alibaba_60min.npz (98,370 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+=== 120min  (h_steps=24) ===
+  cadence_min: 5
+  num_origins: 20
+  4,919 containers usable, 2 skipped (too short)
+  origin 1/20: 4,919 series in 0.2s (26248 series/s)
+  origin 2/20: 4,919 series in 0.2s (24826 series/s)
+  origin 3/20: 4,919 series in 0.2s (24164 series/s)
+  origin 4/20: 4,919 series in 0.2s (24020 series/s)
+  origin 5/20: 4,918 series in 0.2s (24780 series/s)
+  origin 6/20: 4,916 series in 0.2s (24116 series/s)
+  origin 7/20: 4,916 series in 0.2s (25207 series/s)
+  origin 8/20: 4,916 series in 0.2s (24697 series/s)
+  origin 9/20: 4,914 series in 0.2s (25241 series/s)
+  origin 10/20: 4,914 series in 0.2s (23756 series/s)
+  origin 11/20: 4,914 series in 0.2s (24652 series/s)
+  origin 12/20: 4,914 series in 0.2s (24543 series/s)
+  origin 13/20: 4,914 series in 0.2s (24603 series/s)
+  origin 14/20: 4,914 series in 0.2s (24167 series/s)
+  origin 15/20: 4,914 series in 0.2s (24227 series/s)
+  origin 16/20: 4,914 series in 0.2s (24096 series/s)
+  origin 17/20: 4,914 series in 0.2s (20846 series/s)
+  origin 18/20: 4,914 series in 0.2s (24815 series/s)
+  origin 19/20: 4,914 series in 0.2s (24366 series/s)
+  origin 20/20: 4,914 series in 0.2s (23719 series/s)
+  saved per-point arrays to granite_ttm_perpoint_alibaba_120min.npz (98,310 points)
+  TTM r2 has no native quantile head; quantile sanity skipped (NaN)
+
+wrote granite_ttm_k20_alibaba.json
+
+================================================================
+VERDICT
+================================================================
+
+--- 10min ---
+  n_points              = 98,388
+  Granite-TTM R2 (mean) = 0.8660
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 2.1260
+  same-sample naive R2  = 0.9150  (this run)
+                        = 0.9150  (TimesFM run, sanity)
+      diff = -0.001 pp  [OK]
+  delta TTM vs naive_sub = -4.90 pp
+  delta TTM vs ensemble  = -5.64 pp   (ensemble_sub = 0.9224, label='NNLS Ensemble')
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)
+
+--- 30min ---
+  n_points              = 98,384
+  Granite-TTM R2 (mean) = 0.8089
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 2.6043
+  same-sample naive R2  = 0.8341  (this run)
+                        = 0.8341  (TimesFM run, sanity)
+      diff = +0.001 pp  [OK]
+  delta TTM vs naive_sub = -2.52 pp
+  delta TTM vs ensemble  = -2.86 pp   (ensemble_sub = 0.8375, label='NNLS Ensemble')
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)
+
+--- 60min ---
+  n_points              = 98,370
+  Granite-TTM R2 (mean) = 0.7650
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 2.9380
+  same-sample naive R2  = 0.7893  (this run)
+                        = 0.7893  (TimesFM run, sanity)
+      diff = -0.002 pp  [OK]
+  delta TTM vs naive_sub = -2.43 pp
+  delta TTM vs ensemble  = -3.79 pp   (ensemble_sub = 0.8029, label='NNLS Ensemble')
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)
+
+--- 120min ---
+  n_points              = 98,310
+  Granite-TTM R2 (mean) = 0.6810
+  Granite-TTM R2 (p50)  = N/A (no quantile head)
+  Granite-TTM MAE       = 3.4558
+  same-sample naive R2  = 0.7083  (this run)
+                        = 0.7083  (TimesFM run, sanity)
+      diff = -0.003 pp  [OK]
+  delta TTM vs naive_sub = -2.73 pp
+  delta TTM vs ensemble  = -7.74 pp   (ensemble_sub = 0.7584, label='NNLS Ensemble')
+  p10/p90 coverage    = N/A (TTM r2 has no quantile head)

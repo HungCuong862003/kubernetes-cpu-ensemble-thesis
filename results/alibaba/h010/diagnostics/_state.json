@@ -1,0 +1,26 @@
+{
+  "completed": [
+    "extratrees",
+    "lightgbm",
+    "linear_reg",
+    "naive",
+    "stat_baselines",
+    "xgboost"
+  ],
+  "last_update": "2026-03-25T16:40:19.305843",
+  "timings": {
+    "naive": 0.1,
+    "stat_baselines": 907.5,
+    "linear_reg": 20.5,
+    "xgboost": 9.8,
+    "lightgbm": 44.9,
+    "extratrees": 1846.5,
+    "bilstm": 5502.6,
+    "homo_ensemble": 3915.4,
+    "hetero_ensemble": 1.1,
+    "homo_ensemble_mem": 3522.3,
+    "analysis": 2334.1,
+    "ablation": 453.1,
+    "cluster_analysis": 0.1
+  }
+}

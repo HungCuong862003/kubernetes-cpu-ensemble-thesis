@@ -1,0 +1,35 @@
+{
+  "completed": [
+    "COMPLETE",
+    "ablation",
+    "analysis",
+    "bilstm",
+    "cluster_analysis",
+    "extratrees",
+    "hetero_ensemble",
+    "homo_ensemble",
+    "homo_ensemble_mem",
+    "improvement",
+    "lightgbm",
+    "linear_reg",
+    "naive",
+    "stat_baselines",
+    "xgboost"
+  ],
+  "last_update": "2026-03-13T07:12:49.532145",
+  "timings": {
+    "naive": 0.1,
+    "stat_baselines": 880.8,
+    "linear_reg": 20.6,
+    "xgboost": 11.2,
+    "lightgbm": 309.3,
+    "extratrees": 1895.2,
+    "bilstm": 17355.3,
+    "homo_ensemble": 1660.8,
+    "hetero_ensemble": 1.1,
+    "homo_ensemble_mem": 1376.1,
+    "analysis": 10322.6,
+    "ablation": 1456.3,
+    "cluster_analysis": 0.1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "completed": [
+    "shap",
+    "workload",
+    "uq"
+  ],
+  "times": {
+    "shap": 248.6,
+    "workload": 46.3,
+    "uq": 64.0
+  },
+  "errors": {},
+  "results": {
+    "workload": {
+      "workload_done": true
+    },
+    "uq": {
+      "uq_done": true
+    }
+  }
+}
