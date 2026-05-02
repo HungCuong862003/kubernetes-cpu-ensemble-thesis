@@ -70,6 +70,17 @@ div.stButton > button[kind="secondary"] { width: 100%; }
 </style>
 """, unsafe_allow_html=True)
 
+# Tighten Streamlit's default top padding and render title in a div with margin
+
+# Tighten Streamlit's default top padding and render title in a div with margin
+
+# Tighten Streamlit's default top padding and render title in a div with margin
+
+st.markdown("""
+<style>
+.block-container { padding-top: 2rem !important; }
+</style>
+""", unsafe_allow_html=True)
 st.markdown("# Kubernetes Workload Forecaster")
 st.caption("*Predicts when ML helps, and tells you when it doesn't.*")
 
@@ -140,16 +151,185 @@ c4.metric("ML R² vs Naive R²", f"{meta['et_r2']:.3f} vs {meta['naive_r2']:.3f}
 
 st.markdown("---")
 
-# Piece 1 placeholder chart: just the actual CPU history.
-# Piece 2 will replace this with a Plotly hero plot (ML, naive, CQR band, cursor).
+# === hero plot ===
+# Plot in minutes-from-start space. timestamps are seconds (cadence_min*60 apart),
+# so dividing by 60 gives minutes. t0 is the first history timestamp.
+
 import pandas as pd
-ts = cell["history"]["timestamps"]
-t0 = ts[0]
-hist = pd.DataFrame({
-    "min_from_start": [(t - t0) / 60 for t in ts],
-    "CPU %": cell["history"]["cpu_actual"],
-}).set_index("min_from_start")
-st.line_chart(hist, height=320, x_label="minutes from test-window start", y_label="CPU %")
+import numpy as np
+import plotly.graph_objects as go
+
+ts_hist = cell["history"]["timestamps"]
+t0 = ts_hist[0]
+hist_x = np.array([(t - t0) / 60 for t in ts_hist])
+hist_y = np.array(cell["history"]["cpu_actual"])
+
+pred = cell["predictions"]
+issue_x = np.array([(t - t0) / 60 for t in pred["issue_timestamps"]])
+target_x = np.array([(t - t0) / 60 for t in pred["target_timestamps"]])
+ml_y = np.array(pred["ml_pred"])
+naive_y = np.array(pred["naive_pred"])
+y_true = np.array(pred["y_true"])
+cqr_lo = np.array(pred["cqr_lower"]) if pred.get("cqr_lower") else None
+cqr_hi = np.array(pred["cqr_upper"]) if pred.get("cqr_upper") else None
+
+# default cursor: argmax |ml - naive| within inner 10-80% of window.
+# this lands the demo on the most informative moment without scrubbing.
+n_pred = len(ml_y)
+lo_idx = int(n_pred * 0.10)
+hi_idx = int(n_pred * 0.80)
+diffs = np.abs(ml_y - naive_y)
+default_cursor = lo_idx + int(np.argmax(diffs[lo_idx:hi_idx]))
+
+# threshold default: 1.2x the max history value, but for cells where actual
+# stays under 30% it's silly to draw the threshold at 36 — clamp to a useful range
+default_threshold = float(min(max(hist_y) * 1.2, max(hist_y.max(), ml_y.max()) + 5))
+
+# === sliders ===
+
+s1, s2 = st.columns([3, 2])
+cursor_idx = s1.slider(
+    "Now (cursor scrubs through prediction window)",
+    min_value=0, max_value=n_pred - 1, value=default_cursor,
+    key=f"cursor_{st.session_state.container_id}_{st.session_state.horizon}",
+)
+threshold = s2.slider(
+    "CPU threshold (%)",
+    min_value=0.0,
+    max_value=float(max(hist_y.max(), ml_y.max())) + 10,
+    value=default_threshold,
+    step=1.0,
+)
+
+# === build the figure ===
+
+fig = go.Figure()
+
+# CQR band (drawn first so it sits behind everything else)
+if cqr_lo is not None:
+    fig.add_trace(go.Scatter(
+        x=target_x, y=cqr_hi,
+        line=dict(width=0), showlegend=False, hoverinfo="skip",
+    ))
+    fig.add_trace(go.Scatter(
+        x=target_x, y=cqr_lo,
+        fill="tonexty", fillcolor="rgba(239, 68, 68, 0.15)",
+        line=dict(width=0), name="Empirical ~80% interval",
+        hovertemplate="lower: %{y:.1f}%<extra></extra>",
+    ))
+
+# actual CPU history (the "ground truth" line)
+fig.add_trace(go.Scatter(
+    x=hist_x, y=hist_y,
+    mode="lines", name="Actual CPU",
+    line=dict(color="#2563eb", width=2),
+    hovertemplate="t=%{x:.0f}min  CPU=%{y:.1f}%<extra></extra>",
+))
+
+# naive (persistence) forecast
+fig.add_trace(go.Scatter(
+    x=target_x, y=naive_y,
+    mode="lines", name="Naive forecast",
+    line=dict(color="#9ca3af", width=1.5, dash="dot"),
+    hovertemplate="naive=%{y:.1f}%<extra></extra>",
+))
+
+# ML forecast
+fig.add_trace(go.Scatter(
+    x=target_x, y=ml_y,
+    mode="lines", name="ML forecast",
+    line=dict(color="#dc2626", width=2, dash="dash"),
+    hovertemplate="ml=%{y:.1f}%<extra></extra>",
+))
+
+# threshold line (horizontal)
+fig.add_hline(
+    y=threshold, line=dict(color="#6b7280", width=1, dash="dashdot"),
+    annotation_text=f"threshold {threshold:.0f}%",
+    annotation_position="top right",
+)
+
+# violation shading: where ML upper band exceeds threshold
+if cqr_hi is not None:
+    viol_mask = cqr_hi > threshold
+    if viol_mask.any():
+        # find contiguous regions and shade them
+        in_region = False
+        region_start = None
+        for i in range(len(viol_mask)):
+            if viol_mask[i] and not in_region:
+                region_start = target_x[i]
+                in_region = True
+            elif not viol_mask[i] and in_region:
+                fig.add_vrect(
+                    x0=region_start, x1=target_x[i],
+                    fillcolor="rgba(239, 68, 68, 0.08)",
+                    layer="below", line_width=0,
+                )
+                in_region = False
+        if in_region:
+            fig.add_vrect(
+                x0=region_start, x1=target_x[-1],
+                fillcolor="rgba(239, 68, 68, 0.08)",
+                layer="below", line_width=0,
+            )
+
+# cursor: vertical line at issue time, three markers at target time
+cursor_issue_x = issue_x[cursor_idx]
+cursor_target_x = target_x[cursor_idx]
+fig.add_vline(
+    x=cursor_issue_x, line=dict(color="#1f2937", width=1.5),
+    annotation_text="now", annotation_position="top",
+)
+
+# the three forecast markers at cursor + horizon
+fig.add_trace(go.Scatter(
+    x=[cursor_target_x], y=[ml_y[cursor_idx]],
+    mode="markers", name="ML @ cursor+h",
+    marker=dict(color="#dc2626", size=12, symbol="circle", line=dict(color="white", width=2)),
+    hovertemplate=f"ML at t+h: %{{y:.1f}}%<extra></extra>",
+))
+fig.add_trace(go.Scatter(
+    x=[cursor_target_x], y=[naive_y[cursor_idx]],
+    mode="markers", name="Naive @ cursor+h",
+    marker=dict(color="#6b7280", size=10, symbol="circle", line=dict(color="white", width=2)),
+    hovertemplate=f"Naive at t+h: %{{y:.1f}}%<extra></extra>",
+))
+fig.add_trace(go.Scatter(
+    x=[cursor_target_x], y=[y_true[cursor_idx]],
+    mode="markers", name="Actual @ cursor+h",
+    marker=dict(color="#22c55e", size=14, symbol="star", line=dict(color="white", width=2)),
+    hovertemplate=f"Actual at t+h: %{{y:.1f}}%<extra></extra>",
+))
+
+fig.update_layout(
+    height=480,
+    xaxis_title="minutes from test-window start",
+    yaxis_title="CPU %",
+    hovermode="x unified",
+    legend=dict(
+        orientation="h", yanchor="bottom", y=1.02,
+        xanchor="right", x=1,
+    ),
+    margin=dict(l=40, r=20, t=60, b=40),
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
+# === cursor readout ===
+# small numerical strip showing the cursor moment's actuals so the examiner
+# doesnt have to mouse-hover on the markers
+ml_at = ml_y[cursor_idx]
+naive_at = naive_y[cursor_idx]
+true_at = y_true[cursor_idx]
+ml_err = abs(ml_at - true_at)
+naive_err = abs(naive_at - true_at)
+
+r1, r2, r3, r4 = st.columns(4)
+r1.metric("ML forecast", f"{ml_at:.1f}%", delta=f"err {ml_err:.1f}%", delta_color="inverse")
+r2.metric("Naive forecast", f"{naive_at:.1f}%", delta=f"err {naive_err:.1f}%", delta_color="inverse")
+r3.metric("Actual outcome", f"{true_at:.1f}%")
+r4.metric("ML beats naive by", f"{naive_err - ml_err:+.1f}%")
 
 st.caption(
     f"BCF zone: **{meta['bcf_zone'].upper()}** — {meta['bcf_reason']}"
