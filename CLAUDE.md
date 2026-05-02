@@ -2,7 +2,7 @@
 
 ## What we're building
 
-A new Streamlit page `pages/0_Live_Demo.py` for the existing thesis dashboard. Single live-demo page that lets a viewer:
+a standalone Streamlit app at `app.py` (greenfield — no existing dashboard pages). Single live-demo page that lets a viewer:
 
 - See pre-computed forecasts for 4 curated Alibaba containers across 4 horizons (10/30/60/120min)
 - Compare ML vs naive predictions with CQR uncertainty bands
@@ -11,7 +11,7 @@ A new Streamlit page `pages/0_Live_Demo.py` for the existing thesis dashboard. S
 - See the naive + ML decomposition explicitly
 - Toggle between compare-grid mode (2x2 of all 4 containers) and detail mode (single container)
 
-This page is the FRONT DOOR of the dashboard. The existing 7 research pages become supporting evidence behind it.
+This is the entire demo. There is no separate dashboard.
 
 ## Critical constraints
 
@@ -150,12 +150,12 @@ The CQR bands are EMPIRICALLY ~80% intervals (uncalibrated CQR offsets, not the 
 Don't try to build everything at once. Each piece must render correctly before moving to the next.
 
 ### Piece 1 — Skeleton + data loading + basic chart (1-2 hours)
-- Create `pages/0_Live_Demo.py`
-- Sidebar: container dropdown, horizon radio
+- Create `app.py`
+- Sidebar: 4-tile container picker (color-coded by BCF zone) + 4-button horizon strip
 - Load `index.json` and the selected `cell__*__*.json`
 - Render just one thing: a Streamlit `st.line_chart` of `cpu_actual` for the picked container at the picked horizon
 - Verify all 4 containers x 4 horizons load without errors
-- Verify it appears as page 0 (first) in the sidebar
+- Smoke-test all 16 cells (4 containers × 4 horizons) load without errors
 
 ### Piece 2 — Hero plot with predictions + CQR + cursor (2-3 hours)
 - Replace `st.line_chart` with a Plotly figure
