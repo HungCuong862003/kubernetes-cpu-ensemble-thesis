@@ -1,6 +1,44 @@
-# Kubernetes Workload Forecaster - Live Demo (defense polish pass v4)
+# Kubernetes Workload Forecaster - Live Demo (v5 — dual-fragment architecture)
 # Loads precomputed forecast cells (models/demo/precomputed/*.json) and renders
 # them. No model loading, no inference. See CLAUDE.md for build plan.
+#
+# v5 vs v4 — fixes the cursor-not-moving bug diagnosed via the v4-debug panel.
+# v4 cursor advance: every fragment tick called st.rerun(scope="app"). At ~1Hz
+# this raced the main-pane render — sidebar (lightweight) updated each tick,
+# main pane (Plotly hero + 4-panel HPA + drill-down) couldn't finish a render
+# in <1s on a typical machine, so it got cancelled and the previous chart
+# persisted. Counters showed cursor_adv=802 in 974 ticks (mechanically firing)
+# but visually the cursor stayed still. Architecture cost, not a bug.
+#
+# v5 splits the work into two fragments:
+#   - demo_tick_and_caption: caption + view-advance only. Calls
+#     st.rerun(scope="app") rarely (once per ~14s, at view transitions).
+#   - cursor_block_fragment: owns the cursor-dependent rendering block
+#     (verdict pill, hero plot, cursor readout, info cards). Runs every 1s,
+#     advances cursor in session state, re-renders inline. NEVER calls
+#     st.rerun. The fragment's own re-render is sufficient.
+#
+# Cursor key (cursor_<cid>_<hz>) is shared between the slider and the fragment.
+# When tour is active+unpaused, the slider is hidden (so no widget binding)
+# and the fragment writes the key freely. When tour is off or paused, the
+# slider is visible and owns the key normally. The slider position picks up
+# from wherever the fragment last wrote on resume; manual scrub during pause
+# propagates to the next fragment tick on resume.
+#
+# Layout change: verdict pill moved from above headline metrics to between
+# sliders and hero plot, so the cursor-dependent block is contiguous (the
+# fragment must own a contiguous region).
+#
+# Stripped: pending_cursor_change drain, _slider_version, versioned slider
+# key — all dead with the new architecture. apply_demo_view now writes the
+# cursor key directly when seeding start_pct (it's called from inside the
+# caption fragment but the slider hasn't rendered on a fragment-only tick,
+# so direct write is safe).
+#
+# Kept: pending_view_change drain for the radio (still widget-bound),
+# diagnostic panel (toggle "Show debug" in sidebar) for verifying v5.
+# Counter labels updated: caption_ticks, cursor_ticks (separate fragment),
+# cursor_adv (only counts ticks where tour was active+unpaused), view_adv.
 #
 # v4 vs v3 — fixes from "examine carefully" pass before tackling the cursor:
 # 1. HPA panel now loads hpa_simulation_v2.csv (800 rows, with target_util)
@@ -798,16 +836,100 @@ def section_break():
     st.markdown("<div class='section-break'></div>", unsafe_allow_html=True)
 
 
+# === cursor block (verdict pill + hero + readout + info cards) ===
+# This block is what re-renders during the tour. Static rendering function
+# is shared with the non-tour path; the fragment wrapper adds cursor-advance
+# logic for the tour case.
+
+def render_cursor_block(cell, active_cid, active_hz, threshold):
+    """Render the cursor-dependent UI: verdict pill, hero plot, cursor
+    readout (4 metrics), BCF zone caption, info cards. Called once per
+    full-app render when tour is off/paused, and once per fragment tick
+    via cursor_block_fragment when tour is active+unpaused."""
+    cursor_key = f"cursor_{active_cid}_{active_hz}"
+    cursor_idx = st.session_state.get(cursor_key, 0)
+
+    # verdict pill (cursor-dependent moment text)
+    render_verdict_pill(cell, cursor_idx)
+
+    # hero plot
+    fig = build_hero(cell, cursor_idx, threshold, show_cqr=True)
+    st.plotly_chart(fig, use_container_width=True,
+                    key=f"hero_{active_cid}_{active_hz}")
+
+    # cursor readout (4 metrics)
+    pred = cell["predictions"]
+    ml_at = pred["ml_pred"][cursor_idx]
+    naive_at = pred["naive_pred"][cursor_idx]
+    true_at = pred["y_true"][cursor_idx]
+    ml_err = abs(ml_at - true_at)
+    naive_err = abs(naive_at - true_at)
+
+    r1, r2, r3, r4 = st.columns(4, gap="medium")
+    r1.metric("ML forecast", f"{ml_at:.1f}%",
+              delta=f"err {ml_err:.1f}%", delta_color="inverse")
+    r2.metric("Naive forecast", f"{naive_at:.1f}%",
+              delta=f"err {naive_err:.1f}%", delta_color="inverse")
+    r3.metric("Actual outcome", f"{true_at:.1f}%")
+    r4.metric("ML beats naive by", f"{naive_err - ml_err:+.1f}%")
+
+    meta = cell["metadata"]
+    st.caption(f"BCF zone: **{meta['bcf_zone'].upper()}** - "
+               f"{meta.get('bcf_reason', '')}")
+
+    section_break()
+    render_info_cards(cell, cursor_idx)
+
+
+@st.fragment(run_every="1s")
+def cursor_block_fragment(cell, active_cid, active_hz, threshold):
+    """Tour-active wrapper. Each tick: maybe advance cursor, then render the
+    block. NEVER calls st.rerun — fragment's own re-render is sufficient,
+    avoiding the v4 rerun-per-tick race that froze the main pane.
+
+    Args are captured from the calling context. They refresh on every full
+    app rerun (e.g. when user pauses, when view transitions). Between full
+    reruns, the fragment uses the cell/cid/hz/threshold from its last
+    registration; that's correct because those don't change during a single
+    view's lifetime."""
+    # DEBUG: count cursor fragment entries
+    st.session_state._dbg_cursor_ticks = (
+        st.session_state.get("_dbg_cursor_ticks", 0) + 1
+    )
+
+    # advance cursor if tour is active and not paused. The slider widget is
+    # hidden in this state (see main pane code), so writing the cursor key
+    # is safe — no widget claims it on this tick.
+    if (st.session_state.get("demo_mode")
+            and not st.session_state.get("demo_paused")):
+        cursor_key = f"cursor_{active_cid}_{active_hz}"
+        n_pred = len(cell["predictions"]["ml_pred"])
+        current = st.session_state.get(cursor_key, 0)
+        new_val = current + PLAY_STEPS_PER_TICK
+        if new_val >= n_pred:
+            new_val = 0  # loop back to start of prediction window
+        st.session_state[cursor_key] = new_val
+        st.session_state._dbg_cursor_advances = (
+            st.session_state.get("_dbg_cursor_advances", 0) + 1
+        )
+
+    render_cursor_block(cell, active_cid, active_hz, threshold)
+
+
 # === Demo Mode helpers ===
 
 def apply_demo_view(idx):
-    """Apply a tour view. Routes widget-bound state writes (view, cursor key)
-    through pending_* flags drained at top of next script run, since this
-    function may be called from inside the fragment after the widgets it would
-    write to have already rendered on the same run."""
+    """Apply a tour view. The `view` radio is widget-bound (key="view"), so
+    its write is deferred via pending_view_change and drained at top of next
+    full-app rerun. The cursor key isn't widget-bound at the moment this
+    function is called (we're inside a fragment-only tick; the slider, if
+    visible at all, hasn't re-instantiated on this tick), so writing it
+    directly is safe — and after the view-advance st.rerun the slider may
+    not even render (if tour stays active+unpaused, which it does at view
+    transitions)."""
     v = DEMO_VIEWS[idx]
 
-    # not widget-bound, safe to write directly from any context
+    # plain session_state writes — not widget-bound, always safe
     st.session_state.view_index = idx
     st.session_state.container_id = v["cid"]
     st.session_state.horizon = v["hz"]
@@ -817,15 +939,13 @@ def apply_demo_view(idx):
     # `view` IS bound to the radio (key="view"). Defer.
     st.session_state.pending_view_change = v["view"]
 
-    # cursor_key for this view's container/horizon. seed to start_pct if
-    # this is a Single container view that defines one. Compare-4 views
-    # have start_pct=None and don't seed the cursor.
+    # cursor seed for Single container views with start_pct
     if v["view"] == "Single container" and v.get("start_pct") is not None:
         cursor_key = f"cursor_{v['cid']}_{v['hz']}"
-        cell = load_cell(v["cid"], v["hz"])  # cached, free after first call
+        cell = load_cell(v["cid"], v["hz"])  # cached
         n_pred = len(cell["predictions"]["ml_pred"])
         start_idx = int(v["start_pct"] * n_pred)
-        st.session_state.pending_cursor_change = (cursor_key, start_idx)
+        st.session_state[cursor_key] = start_idx
 
 
 def pause_demo_if_active():
@@ -837,15 +957,18 @@ def pause_demo_if_active():
 
 @st.fragment(run_every="1s")
 def demo_tick_and_caption():
-    """Combined tour ticker. Each tick:
-       1. If tour off, return.
-       2. Render caption first (so it appears every tick regardless of what
-          comes next).
-       3. If view's duration has elapsed and not paused, advance to next view.
-       4. Else if Single container view and not paused, advance cursor.
-    Both 3 and 4 set pending_* flags and call st.rerun(scope="app")."""
+    """Caption renderer + view-advance only. Runs every 1s. Calls
+    st.rerun(scope='app') only on view transitions (every ~14s), not per-tick.
+    Cursor advance lives in cursor_block_fragment to avoid the rerun-per-tick
+    race that froze the main pane in v4."""
     if not st.session_state.get("demo_mode"):
         return
+
+    # DEBUG: count fragment entries and timestamp this tick
+    st.session_state._dbg_caption_ticks = (
+        st.session_state.get("_dbg_caption_ticks", 0) + 1
+    )
+    st.session_state._dbg_last_tick_at = time.time()
 
     idx = st.session_state.get("view_index", 0)
     v = DEMO_VIEWS[idx]
@@ -856,6 +979,12 @@ def demo_tick_and_caption():
         elapsed = st.session_state.get("view_elapsed_at_pause", 0.0)
     else:
         elapsed = time.time() - st.session_state.get("view_started_at", time.time())
+
+    # DEBUG: snapshot the fragment's view of the world
+    st.session_state._dbg_last_elapsed = elapsed
+    st.session_state._dbg_last_paused = paused
+    st.session_state._dbg_last_idx = idx
+    st.session_state._dbg_last_view_str = v["view"]
 
     # --- step 2: render caption FIRST so it lands on every tick. previous
     # versions rendered the caption at the bottom of the function, but the
@@ -885,23 +1014,19 @@ def demo_tick_and_caption():
     )
 
     # --- step 3: time-based view advance ---
+    # Only path that calls st.rerun. Fires at most once per ~14s. Far from
+    # the v4 problem of rerun-per-tick.
     if not paused and elapsed >= duration:
+        st.session_state._dbg_view_advances = (
+            st.session_state.get("_dbg_view_advances", 0) + 1
+        )
         next_idx = (idx + 1) % len(DEMO_VIEWS)
         apply_demo_view(next_idx)
         st.rerun(scope="app")
         return
 
-    # --- step 4: cursor advance (Single container, not paused) ---
-    if not paused and v["view"] == "Single container":
-        cursor_key = f"cursor_{v['cid']}_{v['hz']}"
-        cell = load_cell(v["cid"], v["hz"])  # cached
-        n_pred = len(cell["predictions"]["ml_pred"])
-        current = st.session_state.get(cursor_key, 0)
-        new_val = current + PLAY_STEPS_PER_TICK
-        if new_val >= n_pred:
-            new_val = 0  # loop back to start of prediction window
-        st.session_state.pending_cursor_change = (cursor_key, new_val)
-        st.rerun(scope="app")
+    # cursor advance lives in cursor_block_fragment — see render_cursor_block
+    # and cursor_block_fragment below.
 
 
 # === page setup ===
@@ -1073,32 +1198,32 @@ for k, v in [
     ("view_elapsed_at_pause", 0.0),
     ("show_keymap", False),
     ("pending_view_change", None),
-    ("pending_cursor_change", None),
+    # diagnostic counters / state snapshots — see header comment
+    ("_dbg_show", False),
+    ("_dbg_caption_ticks", 0),
+    ("_dbg_cursor_ticks", 0),
+    ("_dbg_cursor_advances", 0),
+    ("_dbg_view_advances", 0),
+    ("_dbg_last_tick_at", 0.0),
+    ("_dbg_last_elapsed", 0.0),
+    ("_dbg_last_paused", False),
+    ("_dbg_last_idx", 0),
+    ("_dbg_last_view_str", "?"),
 ]:
     if k not in st.session_state:
         st.session_state[k] = v
 
-# === pending_* drains ===
-# The fragment may have set these on its last tick. Apply them BEFORE the
-# corresponding widgets render. This is the load-bearing safety guarantee:
-# both `view` (radio key) and `cursor_<cid>_<hz>` (slider key) are
-# widget-bound, so direct writes are only safe before instantiation.
+# === pending_view_change drain ===
+# The radio's `view` key is widget-bound, so writes from inside the caption
+# fragment (during view-advance) are deferred via pending_view_change and
+# applied here, BEFORE the radio re-instantiates. v5 dropped the analogous
+# pending_cursor_change drain — the cursor key is no longer widget-bound
+# during active tour (slider hidden), so the cursor fragment writes it
+# directly with no race.
 
 if st.session_state.pending_view_change is not None:
     st.session_state.view = st.session_state.pending_view_change
     st.session_state.pending_view_change = None
-
-if st.session_state.pending_cursor_change is not None:
-    pkey, pval = st.session_state.pending_cursor_change
-    st.session_state[pkey] = pval
-    st.session_state.pending_cursor_change = None
-    # bump slider version so the cursor slider re-instantiates with a new key
-    # on this run, picking up the new value via value=. without this, the
-    # slider keeps its old internal state and the drain write has no visible
-    # effect (drain writes session_state[cursor_key] but the slider has its
-    # own widget state under whatever its key was last render).
-    st.session_state._slider_version = st.session_state.get("_slider_version", 0) + 1
-    # v4: removed the `_last_drain` debug write here.
 
 
 with st.sidebar:
@@ -1190,6 +1315,87 @@ with st.sidebar:
         st.session_state.show_keymap = not st.session_state.show_keymap
         st.rerun()
 
+    # === DIAGNOSTIC PANEL (off by default; not shown at defense) ===
+    if st.button(
+        "Hide debug" if st.session_state._dbg_show else "Show debug",
+        key="dbg_toggle", use_container_width=True,
+    ):
+        st.session_state._dbg_show = not st.session_state._dbg_show
+        st.rerun()
+
+    if st.session_state._dbg_show:
+        cid = st.session_state.container_id
+        hz = st.session_state.horizon
+        cursor_key = f"cursor_{cid}_{hz}"
+        cur_val = st.session_state.get(cursor_key, "—")
+
+        last_tick_at = st.session_state._dbg_last_tick_at
+        if last_tick_at > 0:
+            tick_age = f"{time.time() - last_tick_at:.1f}s"
+        else:
+            tick_age = "never"
+
+        # expected counts after t seconds of tour at default 14s/view duration:
+        #   caption_ticks ≈ t       (caption fragment, 1Hz)
+        #   cursor_ticks ≈ t        (cursor fragment, 1Hz, only registered
+        #                            when tour active+unpaused on Single view)
+        #   cursor_advances ≈ t × (Single-view share, ~80% across DEMO_VIEWS)
+        #   view_advances ≈ t / 14
+        expected_note = (
+            "expected at t=30s: caption≈30, cursor≈24, "
+            "cursor_adv≈24, views≈2"
+        )
+
+        cap_ticks = st.session_state._dbg_caption_ticks
+        cur_ticks = st.session_state._dbg_cursor_ticks
+        c_adv = st.session_state._dbg_cursor_advances
+        v_adv = st.session_state._dbg_view_advances
+        last_idx = st.session_state._dbg_last_idx
+        last_elapsed = st.session_state._dbg_last_elapsed
+        last_paused = st.session_state._dbg_last_paused
+        last_view_str = st.session_state._dbg_last_view_str
+
+        pend_view = st.session_state.pending_view_change
+
+        st.markdown(
+            f"<div style='font-family:ui-monospace,Menlo,Consolas,monospace;"
+            f"font-size:11px;line-height:1.5;padding:10px 12px;"
+            f"background:#0f172a;color:#e2e8f0;border-radius:6px;"
+            f"margin-top:6px;border:1px solid #334155'>"
+            f"<div style='color:#fbbf24;font-weight:700;letter-spacing:0.5px;"
+            f"margin-bottom:6px'>FRAGMENTS</div>"
+            f"caption_ticks: <b style='color:#86efac'>{cap_ticks}</b><br>"
+            f"cursor_ticks:&nbsp; <b style='color:#86efac'>{cur_ticks}</b><br>"
+            f"cursor_adv:&nbsp;&nbsp; <b style='color:#86efac'>{c_adv}</b><br>"
+            f"view_adv:&nbsp;&nbsp;&nbsp;&nbsp; <b style='color:#86efac'>{v_adv}</b><br>"
+            f"last_idx:&nbsp;&nbsp;&nbsp;&nbsp; {last_idx} ({last_view_str})<br>"
+            f"last_elap:&nbsp;&nbsp;&nbsp; {last_elapsed:.1f}s<br>"
+            f"last_paus:&nbsp;&nbsp;&nbsp; {last_paused}<br>"
+            f"tick_age:&nbsp;&nbsp;&nbsp;&nbsp; {tick_age}<br>"
+            f"<div style='color:#94a3b8;font-size:10px;margin-top:4px'>"
+            f"{expected_note}</div>"
+            f"<div style='color:#fbbf24;font-weight:700;letter-spacing:0.5px;"
+            f"margin-top:10px;margin-bottom:6px'>MAIN PANE</div>"
+            f"view_idx (ss):&nbsp; {st.session_state.view_index}<br>"
+            f"container:&nbsp;&nbsp;&nbsp;&nbsp; {cid}<br>"
+            f"horizon:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {hz}<br>"
+            f"view (radio):&nbsp; {st.session_state.view}<br>"
+            f"cursor[k]:&nbsp;&nbsp;&nbsp;&nbsp; {cur_val}<br>"
+            f"<div style='color:#fbbf24;font-weight:700;letter-spacing:0.5px;"
+            f"margin-top:10px;margin-bottom:6px'>PENDING</div>"
+            f"view: {pend_view}"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
+
+        if st.button("Reset counters", key="dbg_reset",
+                     use_container_width=True):
+            st.session_state._dbg_caption_ticks = 0
+            st.session_state._dbg_cursor_ticks = 0
+            st.session_state._dbg_cursor_advances = 0
+            st.session_state._dbg_view_advances = 0
+            st.rerun()
+
 if HAS_SHORTCUTS:
     streamlit_shortcuts.add_shortcuts(
         sel_A="a", sel_B="b", sel_C="c", sel_D="d",
@@ -1248,18 +1454,13 @@ if view == "Single container":
     cursor_key = f"cursor_{active_cid}_{active_hz}"
     threshold_key = f"thr_{active_cid}_{active_hz}"
 
-    # seed if missing. drain has already applied any pending tour seed at
-    # the top of this run, so reading .get() here is correct.
+    # seed if missing
     if cursor_key not in st.session_state:
         st.session_state[cursor_key] = default_cursor
     if threshold_key not in st.session_state:
         st.session_state[threshold_key] = default_threshold
 
-    cursor_idx = st.session_state[cursor_key]
-
-    # --- block 1: verdict + headline metrics + coverage ---
-    render_verdict_pill(cell, cursor_idx)
-
+    # --- static block: headline metrics + coverage badge ---
     c1, c2, c3, c4 = st.columns(4, gap="medium")
     c1.metric("Container", meta["container_id"])
     c2.metric("Horizon", meta["horizon"])
@@ -1272,60 +1473,52 @@ if view == "Single container":
 
     section_break()
 
-    # --- block 2: cursor controls + hero plot ---
-    # The slider uses a VERSIONED key. Each tour-driven cursor advance
-    # increments _slider_version, which changes the slider's key and forces
-    # Streamlit to re-instantiate it as a new widget. The new widget reads
-    # value=cursor_idx fresh, displaying the new position.
-    slider_version = st.session_state.get("_slider_version", 0)
-    versioned_slider_key = f"cursor_{active_cid}_{active_hz}_v{slider_version}"
-
-    s1, s2 = st.columns([3, 2], gap="medium")
-    user_cursor = s1.slider(
-        "Now (cursor scrubs through prediction window — auto-advances during tour)",
-        min_value=0, max_value=n_pred - 1,
-        value=cursor_idx,
-        key=versioned_slider_key,
+    # --- sliders: cursor (hidden during active tour) + threshold ---
+    # When tour is active+unpaused, cursor slider hides and the cursor
+    # fragment owns the cursor key. When tour is off or paused, slider
+    # renders normally with key=cursor_key (no version trick — v5 doesn't
+    # need it because the fragment doesn't call st.rerun anymore).
+    tour_active_unpaused = (
+        st.session_state.get("demo_mode")
+        and not st.session_state.get("demo_paused")
     )
-    if user_cursor != cursor_idx:
-        st.session_state[cursor_key] = user_cursor
-        cursor_idx = user_cursor
 
-    s2.slider(
-        "CPU threshold (%)",
-        min_value=0.0,
-        max_value=float(max(hist_y.max(), ml_y.max())) + 10,
-        step=1.0,
-        key=threshold_key,
-    )
+    if tour_active_unpaused:
+        st.caption(
+            "▶ Cursor auto-advancing during tour — click **Pause** in the "
+            "sidebar to scrub manually."
+        )
+        st.slider(
+            "CPU threshold (%)",
+            min_value=0.0,
+            max_value=float(max(hist_y.max(), ml_y.max())) + 10,
+            step=1.0,
+            key=threshold_key,
+        )
+    else:
+        s1, s2 = st.columns([3, 2], gap="medium")
+        s1.slider(
+            "Now (cursor scrubs through prediction window)",
+            min_value=0, max_value=n_pred - 1,
+            key=cursor_key,
+        )
+        s2.slider(
+            "CPU threshold (%)",
+            min_value=0.0,
+            max_value=float(max(hist_y.max(), ml_y.max())) + 10,
+            step=1.0,
+            key=threshold_key,
+        )
 
     threshold = st.session_state[threshold_key]
 
-    # v4: show_cqr hardcoded True at call site (was an unused session state).
-    fig = build_hero(cell, cursor_idx, threshold, show_cqr=True)
-    st.plotly_chart(fig, use_container_width=True,
-                    key=f"hero_{active_cid}_{active_hz}")
-
-    # --- block 3: cursor readout ---
-    ml_at = ml_y[cursor_idx]
-    naive_at = naive_y[cursor_idx]
-    true_at = y_true[cursor_idx]
-    ml_err = abs(ml_at - true_at)
-    naive_err = abs(naive_at - true_at)
-
-    r1, r2, r3, r4 = st.columns(4, gap="medium")
-    r1.metric("ML forecast", f"{ml_at:.1f}%",
-              delta=f"err {ml_err:.1f}%", delta_color="inverse")
-    r2.metric("Naive forecast", f"{naive_at:.1f}%",
-              delta=f"err {naive_err:.1f}%", delta_color="inverse")
-    r3.metric("Actual outcome", f"{true_at:.1f}%")
-    r4.metric("ML beats naive by", f"{naive_err - ml_err:+.1f}%")
-
-    st.caption(f"BCF zone: **{meta['bcf_zone'].upper()}** - {meta['bcf_reason']}")
-
-    section_break()
-
-    render_info_cards(cell, cursor_idx)
+    # --- cursor block: fragment when tour active+unpaused, static otherwise ---
+    # Both paths share render_cursor_block. The fragment wrapper adds the
+    # 1Hz tick + cursor advance; the static path just renders once.
+    if tour_active_unpaused:
+        cursor_block_fragment(cell, active_cid, active_hz, threshold)
+    else:
+        render_cursor_block(cell, active_cid, active_hz, threshold)
 
     section_break()
 
