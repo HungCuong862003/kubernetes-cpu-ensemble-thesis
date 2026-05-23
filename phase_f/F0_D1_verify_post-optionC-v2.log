@@ -1,0 +1,289 @@
+======================================================================
+verify_foundation.py  --  Phase F0 Day 1 verification (v3 extended)
+======================================================================
+Loading /mnt/project/thesis_numbers.json
+
+[1] ALIBABA R²: thesis_numbers.json vs comparison_table.csv
+  PASS    Alibaba 10min Naive_R2: 0.9188 (expected 0.9188)
+  PASS    Alibaba 10min Hetero_R2: 0.9213 (expected 0.9213)
+  PASS    Alibaba 10min Homo_R2: 0.9213 (expected 0.9213)
+  PASS    Alibaba 10min ET_R2: 0.9212 (expected 0.9212)
+  PASS    Alibaba 10min BiLSTM_R2: 0.9212 (expected 0.9212)
+  PASS    Alibaba 10min Delta_pp: 0.2518 (expected 0.2500)
+  PASS    Alibaba 30min Naive_R2: 0.8361 (expected 0.8361)
+  PASS    Alibaba 30min Hetero_R2: 0.8404 (expected 0.8404)
+  PASS    Alibaba 30min Homo_R2: 0.8404 (expected 0.8404)
+  PASS    Alibaba 30min ET_R2: 0.8402 (expected 0.8402)
+  PASS    Alibaba 30min BiLSTM_R2: 0.8397 (expected 0.8397)
+  PASS    Alibaba 30min Delta_pp: 0.4299 (expected 0.4300)
+  PASS    Alibaba 60min Naive_R2: 0.7878 (expected 0.7878)
+  PASS    Alibaba 60min Hetero_R2: 0.8011 (expected 0.8011)
+  PASS    Alibaba 60min Homo_R2: 0.8007 (expected 0.8007)
+  PASS    Alibaba 60min ET_R2: 0.7997 (expected 0.7997)
+  PASS    Alibaba 60min BiLSTM_R2: 0.7979 (expected 0.7979)
+  PASS    Alibaba 60min Delta_pp: 1.3286 (expected 1.3300)
+  PASS    Alibaba 120min Naive_R2: 0.7178 (expected 0.7178)
+  PASS    Alibaba 120min Hetero_R2: 0.7642 (expected 0.7642)
+  PASS    Alibaba 120min Homo_R2: 0.7630 (expected 0.7630)
+  PASS    Alibaba 120min ET_R2: 0.7624 (expected 0.7624)
+  PASS    Alibaba 120min BiLSTM_R2: 0.7597 (expected 0.7597)
+  PASS    Alibaba 120min Delta_pp: 4.6376 (expected 4.6400)
+
+[2] ALIBABA MAE / SKILL / WIN_RATE: thesis_numbers.json vs stratified_skill.csv
+  PASS    Alibaba 10min MAE_naive: 0.8669 (expected 0.8669)
+  PASS    Alibaba 10min MAE_ensemble: 0.9704 (expected 0.9704)
+  PASS    Alibaba 10min Skill_score: -0.1194 (expected -0.1194)
+  PASS    Alibaba 10min Win_rate_pct: 17.2600 (expected 17.2600)
+  PASS    Alibaba 30min MAE_naive: 1.7173 (expected 1.7173)
+  PASS    Alibaba 30min MAE_ensemble: 1.7505 (expected 1.7505)
+  PASS    Alibaba 30min Skill_score: -0.0194 (expected -0.0194)
+  PASS    Alibaba 30min Win_rate_pct: 31.5300 (expected 31.5300)
+  PASS    Alibaba 60min MAE_naive: 2.2077 (expected 2.2077)
+  PASS    Alibaba 60min MAE_ensemble: 2.1348 (expected 2.1348)
+  PASS    Alibaba 60min Skill_score: 0.0330 (expected 0.0330)
+  PASS    Alibaba 60min Win_rate_pct: 38.6400 (expected 38.6400)
+  PASS    Alibaba 120min MAE_naive: 2.7634 (expected 2.7634)
+  PASS    Alibaba 120min MAE_ensemble: 2.4565 (expected 2.4565)
+  PASS    Alibaba 120min Skill_score: 0.1111 (expected 0.1111)
+  PASS    Alibaba 120min Win_rate_pct: 43.4500 (expected 43.4500)
+
+[3] BITBRAINS CROSS-DATASET: thesis_numbers.json vs bitbrains_summary_corrected.csv
+  PASS    Bitbrains 10min BB_Naive_R2: 0.8113 (expected 0.8113)
+  PASS    Bitbrains 10min BB_ML_R2: 0.6344 (expected 0.6344)
+  PASS    Bitbrains 10min BB_Delta_pp: -8.6800 (expected -8.6800)
+  PASS    Bitbrains 10min BB_Win_pct: 12.2000 (expected 12.2000)
+  PASS    Bitbrains 30min BB_Naive_R2: 0.5620 (expected 0.5620)
+  PASS    Bitbrains 30min BB_ML_R2: 0.3611 (expected 0.3611)
+  PASS    Bitbrains 30min BB_Delta_pp: -5.4600 (expected -5.4600)
+  PASS    Bitbrains 30min BB_Win_pct: 35.9000 (expected 35.9000)
+  PASS    Bitbrains 60min BB_Naive_R2: 0.3014 (expected 0.3014)
+  PASS    Bitbrains 60min BB_ML_R2: 0.1199 (expected 0.1199)
+  PASS    Bitbrains 60min BB_Delta_pp: -0.7900 (expected -0.7900)
+  PASS    Bitbrains 60min BB_Win_pct: 47.4000 (expected 47.4000)
+  PASS    Bitbrains 120min BB_Naive_R2: 0.0306 (expected 0.0306)
+  PASS    Bitbrains 120min BB_ML_R2: 0.0090 (expected 0.0090)
+  PASS    Bitbrains 120min BB_Delta_pp: 3.3000 (expected 3.3000)
+  PASS    Bitbrains 120min BB_Win_pct: 51.9000 (expected 51.9000)
+
+[4] CHRONOS-BOLT (V1-ERA, STALE): thesis_numbers.json vs chronos_benchmark_results.csv
+  NOTE: this section in thesis_numbers.json predates leaderboard_v3.
+  After v3 sync, replace with leaderboard_v3_wide.csv winner-tally checks.
+  PASS    Chronos-Bolt Alibaba 10min ens_r2: 0.9214 (expected 0.9214)
+  PASS    Chronos-Bolt Alibaba 10min chr_r2: 0.9192 (expected 0.9192)
+  PASS    Chronos-Bolt Alibaba 30min ens_r2: 0.8404 (expected 0.8404)
+  PASS    Chronos-Bolt Alibaba 30min chr_r2: 0.8654 (expected 0.8654)
+  PASS    Chronos-Bolt Alibaba 60min ens_r2: 0.8011 (expected 0.8011)
+  PASS    Chronos-Bolt Alibaba 60min chr_r2: 0.8315 (expected 0.8315)
+  PASS    Chronos-Bolt Alibaba 120min ens_r2: 0.7642 (expected 0.7642)
+  PASS    Chronos-Bolt Alibaba 120min chr_r2: 0.7541 (expected 0.7541)
+  PASS    Chronos-Bolt Bitbrains 10min ens_r2: -0.0084 (expected -0.0084)
+  PASS    Chronos-Bolt Bitbrains 10min chr_r2: 0.8146 (expected 0.8146)
+  PASS    Chronos-Bolt Bitbrains 30min ens_r2: -0.1638 (expected -0.1638)
+  PASS    Chronos-Bolt Bitbrains 30min chr_r2: 0.5681 (expected 0.5681)
+  PASS    Chronos-Bolt Bitbrains 60min ens_r2: -0.3373 (expected -0.3373)
+  PASS    Chronos-Bolt Bitbrains 60min chr_r2: 0.3894 (expected 0.3894)
+  PASS    Chronos-Bolt Bitbrains 120min ens_r2: -0.5006 (expected -0.5006)
+  PASS    Chronos-Bolt Bitbrains 120min chr_r2: 0.2308 (expected 0.2308)
+  PASS    Chronos-Bolt ByteDance 10min ens_r2: 0.8549 (expected 0.8549)
+  PASS    Chronos-Bolt ByteDance 10min chr_r2: 0.8855 (expected 0.8855)
+  PASS    Chronos-Bolt ByteDance 30min ens_r2: 0.8014 (expected 0.8014)
+  PASS    Chronos-Bolt ByteDance 30min chr_r2: 0.8590 (expected 0.8590)
+  PASS    Chronos-Bolt ByteDance 60min ens_r2: 0.7629 (expected 0.7629)
+  PASS    Chronos-Bolt ByteDance 60min chr_r2: 0.8580 (expected 0.8580)
+  PASS    Chronos-Bolt ByteDance 120min ens_r2: 0.7601 (expected 0.7601)
+  PASS    Chronos-Bolt ByteDance 120min chr_r2: 0.8379 (expected 0.8379)
+
+[5] BYTEDANCE: thesis_numbers.json self-consistency
+  PASS  ByteDance 10min: naive=0.7852 < het=0.8549 < et=0.9097
+  PASS  ByteDance 30min: naive=0.7462 < het=0.8014 < et=0.8741
+  PASS  ByteDance 60min: naive=0.7019 < het=0.7629 < et=0.8585
+  PASS  ByteDance 120min: naive=0.6471 < het=0.7601 < et=0.8353
+
+[6] FRIEDMAN TESTS: thesis_numbers.json vs friedman_table.csv
+  PASS    Friedman 10min chi2: 38386.5564 (expected 38386.6000)
+  PASS    Friedman 10min p_value: 0.0000 (expected 0.0000)
+  PASS    Friedman 10min n_containers: 4921.0000 (expected 4921.0000)
+  PASS    Friedman 30min chi2: 21922.7082 (expected 21922.7000)
+  PASS    Friedman 30min p_value: 0.0000 (expected 0.0000)
+  PASS    Friedman 30min n_containers: 4921.0000 (expected 4921.0000)
+  PASS    Friedman 60min chi2: 7967.8477 (expected 7967.8000)
+  PASS    Friedman 60min p_value: 0.0000 (expected 0.0000)
+  PASS    Friedman 60min n_containers: 4921.0000 (expected 4921.0000)
+  PASS    Friedman 120min chi2: 7601.2492 (expected 7601.2000)
+  PASS    Friedman 120min p_value: 0.0000 (expected 0.0000)
+  PASS    Friedman 120min n_containers: 4920.0000 (expected 4920.0000)
+
+[7] SHAP FEATURE IMPORTANCE: thesis_numbers.json vs shap_importance.csv
+  PASS    SHAP 10min hour_sin+cos pct: 21.0301 (expected 21.0000)
+  PASS    SHAP 10min cluster_id pct: 4.3726 (expected 4.4000)
+  PASS    SHAP 30min hour_sin+cos pct: 36.3986 (expected 36.4000)
+  PASS    SHAP 30min cluster_id pct: 6.6091 (expected 6.6000)
+  PASS    SHAP 60min hour_sin+cos pct: 42.7488 (expected 42.7000)
+  PASS    SHAP 60min cluster_id pct: 7.6037 (expected 7.6000)
+  PASS    SHAP 120min hour_sin+cos pct: 45.0420 (expected 45.0000)
+  PASS    SHAP 120min cluster_id pct: 6.9100 (expected 6.9000)
+
+[8] UQ RECALIBRATION: internal consistency in thesis_numbers.json
+  PASS    UQ 10min Coverage_Gap_pp (vs nominal=0.80): 1.7200 (expected 1.7200)
+  PASS    UQ 30min Coverage_Gap_pp (vs nominal=0.80): 7.1400 (expected 7.1400)
+  PASS    UQ 60min Coverage_Gap_pp (vs nominal=0.80): 10.4600 (expected 10.4600)
+  PASS    UQ 120min Coverage_Gap_pp (vs nominal=0.80): 10.9400 (expected 10.9400)
+
+[9] HPA SIMULATION: thesis_numbers.json vs hpa_simulation_v2.csv
+  PASS    HPA total_rows: 800.0000 (expected 800.0000)
+  PASS  HPA target_util_values: [0.5, 0.6, 0.7, 0.8]
+  PASS    HPA 10min reactive_rows: 160.0000 (expected 160.0000)
+  PASS    HPA 10min ml_rows: 40.0000 (expected 40.0000)
+  PASS    HPA 30min reactive_rows: 160.0000 (expected 160.0000)
+  PASS    HPA 30min ml_rows: 40.0000 (expected 40.0000)
+  PASS    HPA 60min reactive_rows: 160.0000 (expected 160.0000)
+  PASS    HPA 60min ml_rows: 40.0000 (expected 40.0000)
+  PASS    HPA 120min reactive_rows: 160.0000 (expected 160.0000)
+  PASS    HPA 120min ml_rows: 40.0000 (expected 40.0000)
+
+[10] META-LEARNER COMPARISON: thesis_numbers.json vs CSVs
+  PASS    total_rows: 20.0000 (expected 20.0000)
+  PASS    10min NNLS R2: 0.9212 (expected 0.9212)
+  PASS    10min Simple Average R2: 0.9206 (expected 0.9206)
+  PASS    10min Ridge R2: 0.9212 (expected 0.9212)
+  PASS    10min Bates-Granger R2: 0.9206 (expected 0.9206)
+  PASS    30min NNLS R2: 0.8401 (expected 0.8401)
+  PASS    30min Simple Average R2: 0.8395 (expected 0.8395)
+  PASS    30min Ridge R2: 0.8402 (expected 0.8402)
+  PASS    30min Bates-Granger R2: 0.8395 (expected 0.8395)
+  PASS    60min NNLS R2: 0.8007 (expected 0.8007)
+  PASS    60min Simple Average R2: 0.7992 (expected 0.7992)
+  PASS    60min Ridge R2: 0.8007 (expected 0.8007)
+  PASS    60min Bates-Granger R2: 0.7992 (expected 0.7992)
+  PASS    120min NNLS R2: 0.7636 (expected 0.7636)
+  PASS    120min Simple Average R2: 0.7584 (expected 0.7584)
+  PASS    120min Ridge R2: 0.7637 (expected 0.7637)
+  PASS    120min Bates-Granger R2: 0.7588 (expected 0.7588)
+  PASS    10min Mean_Err_Corr: 0.9901 (expected 0.9901)
+  PASS    10min Best_Individual: LGB
+  PASS    30min Mean_Err_Corr: 0.9906 (expected 0.9906)
+  PASS    30min Best_Individual: LGB
+  PASS    60min Mean_Err_Corr: 0.9830 (expected 0.9830)
+  PASS    60min Best_Individual: LGB
+  PASS    120min Mean_Err_Corr: 0.9569 (expected 0.9569)
+  PASS    120min Best_Individual: LGB
+
+[11] BOUNDARY CONDITION TABLE: thesis_numbers.json vs boundary_condition_table_corrected.csv
+  PASS    BCF Alibaba 2018 CV: 0.3730 (expected 0.3730)
+  PASS    BCF Alibaba 2018 ACF_24h: 0.3160 (expected 0.3160)
+  PASS    BCF Alibaba 2018 delta_30min: +0.43pp
+  PASS    BCF Alibaba 2018 delta_120min: +4.64pp
+  PASS    BCF Alibaba 2018 verdict: ML dominates 60min+
+  PASS    BCF Bitbrains CV: 1.0600 (expected 1.0600)
+  PASS    BCF Bitbrains ACF_24h: 0.1160 (expected 0.1160)
+  FAIL    BCF Bitbrains delta_30min: expected='-5.46pp' actual='+1.53pp'
+  FAIL    BCF Bitbrains delta_120min: expected='+3.30pp' actual='-2.81pp'
+  FAIL    BCF Bitbrains verdict: expected='ML wins only @120min' actual='NEW pool, per-VM median: h10=-16.66, h30=+1.53, h60=-1.99, h120=-2.81pp. %VMs NEW>naive: h30=61%, h120=35%. Compare OLD pool per-VM medians in bitbrains_summary_corrected.csv (h30=-5.46pp, h120=+3.30pp).'
+  PASS    BCF DSB CV: >2.0
+  PASS    BCF DSB ACF_24h: ~0.00
+  PASS    BCF DSB delta_30min: both NaN
+  PASS    BCF DSB delta_120min: -83pp
+  PASS    BCF DSB verdict: naive wins all
+
+[12] OMEGA SUMMARY: thesis_numbers.json vs omega_summary.csv
+  available datasets in omega_summary.csv: ['Bitbrains', 'Alibaba', 'ByteDance IaaS']
+  PASS    Omega Bitbrains N_series: 156.0000 (expected 156.0000)
+  PASS    Omega Bitbrains CV_median: 1.0560 (expected 1.0560)
+  PASS    Omega Bitbrains Omega_median: 0.4360 (expected 0.4360)
+  PASS    Omega Alibaba N_series: 4902.0000 (expected 4902.0000)
+  PASS    Omega Alibaba CV_median: 0.3730 (expected 0.3730)
+  PASS    Omega Alibaba Omega_median: 0.3460 (expected 0.3460)
+  PASS    Omega ByteDance IaaS N_series: 93.0000 (expected 93.0000)
+  PASS    Omega ByteDance IaaS CV_median: 0.1230 (expected 0.1230)
+  PASS    Omega ByteDance IaaS Omega_median: 0.3510 (expected 0.3510)
+
+[13] BCF POOLED RESULTS: bcf_pooled_3model.json self-check
+  keys present: ['predicate', 'pool', 'excluded', 'n_pooled_pairs', 'n_ml_wins', 'n_predicate_pos', 'tp', 'fp', 'tn', 'fn', 'sensitivity', 'specificity', 'pooled_auc', 'ci_method', 'ci_95_lo', 'ci_95_hi', 'permutation_p', 'permutation_method', 'n_boot', 'n_perm', 'seed', 'source', 'cell_records', 'caveats']
+  predicate: (ACF@24h > 0.2) AND (horizon >= 30min)
+  pooled_auc: 0.8
+  CI (percentile (binary classifier; BCa degenerate)): [0.7097, 0.8871]
+  p_value (permutation_p): 0.0097
+  PASS    BCF pooled_auc: 0.8000 (expected 0.8000)
+  PASS    BCF CI lower: 0.7097 (expected 0.7097)
+  PASS    BCF CI upper: 0.8871 (expected 0.8871)
+  PASS    BCF n_pooled_pairs: 36.0000 (expected 36.0000)
+  PASS    BCF permutation_p: 0.0097 (expected 0.0097)
+
+[14-pre] RESIDUAL DIAGNOSTICS: residual_diagnostics.csv values (for manuscript section)
+Horizon  Bias_naive  Bias_ensemble  ACF1_naive  ACF1_ensemble  LjungBox_p_naive  LjungBox_p_ens
+  10min     -0.0117        -0.0041      0.4138         0.3866               0.0             0.0
+  30min     -0.0301         0.0083      0.7486         0.7343               0.0             0.0
+  60min     -0.0473        -0.0107      0.8197         0.8028               0.0             0.0
+ 120min     -0.0696        -0.0849      0.8696         0.8375               0.0             0.0
+  Bias_ensemble range: [-0.0849, +0.0083]
+  ACF1_ensemble range: [0.3866, 0.8375]
+
+[14] V3 LEADERBOARD: leaderboard_v3_wide.csv + leaderboard_v3_winners.csv
+  wide.csv shape: (12, 12)
+  wide.csv columns: ['dataset', 'horizon', 'naive_sub', 'naive_full', 'NNLS Ensemble_r2', 'NNLS Ensemble_delta_sub_pp', 'Chronos-2_r2', 'Chronos-2_delta_sub_pp', 'TimesFM-2.5_r2', 'TimesFM-2.5_delta_sub_pp', 'Toto-Open-Base_r2', 'Toto-Open-Base_delta_sub_pp']
+  winners.csv shape: (12, 10)
+  winners.csv columns: ['dataset', 'horizon', 'winner', 'winner_r2', 'runner_up', 'runner_up_r2', 'margin_pp', 'naive_sub', 'naive_full', 'note']
+  winner tally from CSV: {'Chronos-2': 6, 'TimesFM-2.5': 3, 'NNLS Ensemble': 2, 'Toto-Open-Base': 1}
+  PASS    v3 winner tally Chronos-2: 6.0000 (expected 6.0000)
+  PASS    v3 winner tally TimesFM-2.5: 3.0000 (expected 3.0000)
+  PASS    v3 winner tally NNLS Ensemble: 2.0000 (expected 2.0000)
+  PASS    v3 winner tally Toto-Open-Base: 1.0000 (expected 1.0000)
+
+  HEADLINE CELLS (Bitbrains):
+  Bitbrains 10min: winner=Toto-Open-Base r2=0.8805 (expected Toto-Open-Base 0.8805) [MATCH]
+  PASS    v3 cell Bitbrains 10min winner_r2: 0.8805 (expected 0.8805)
+  Bitbrains 60min: winner=NNLS Ensemble r2=0.3205 (expected NNLS Ensemble 0.3205) [MATCH]
+  PASS    v3 cell Bitbrains 60min winner_r2: 0.3205 (expected 0.3205)
+  Bitbrains 120min: winner=TimesFM-2.5 r2=0.2366 (expected TimesFM-2.5 0.2366) [MATCH]
+  PASS    v3 cell Bitbrains 120min winner_r2: 0.2366 (expected 0.2366)
+
+[15] V3 DIVERSITY DIAGNOSTIC: results/bcf_v2/c2_correlations_per_cell.csv
+  shape: (11, 12)
+  columns: ['dataset', 'horizon', 'n_rows', 'n_containers', 'rho_et_nhits', 'rho_et_chronos2', 'rho_nhits_chronos2', 'rho_bar', 'ci_lo', 'ci_hi', 'n_boot_valid', 'verdict']
+  head:
+  dataset horizon  n_rows  n_containers  rho_et_nhits  rho_et_chronos2  rho_nhits_chronos2  rho_bar  ci_lo  ci_hi  n_boot_valid verdict
+  alibaba   10min 7403269          4902        0.8373           0.9051              0.7876   0.8434 0.8403 0.8466          1000 PARTIAL
+  alibaba  120min 7295425          4902        0.6849           0.7608              0.6861   0.7106 0.7061 0.7150          1000   HOLDS
+  alibaba   30min 7383661          4902        0.7284           0.8366              0.6680   0.7443 0.7398 0.7494          1000   HOLDS
+  alibaba   60min 7354249          4902        0.6869           0.8022              0.6474   0.7122 0.7062 0.7176          1000   HOLDS
+bitbrains   10min  708328           142        0.7271           0.7422              0.7446   0.7380 0.7203 0.7592          1000   HOLDS
+  pooled median rho_bar: 0.6915
+  pooled mean   rho_bar: 0.6440
+  pooled range: [0.4357, 0.8434]
+  PASS  v3 pooled rho-bar per-cell aggregations in sanity range [0.55, 0.75] (canonical 0.6562 from container-clustered bootstrap, not reproducible from this CSV)
+  per-trace medians: {'alibaba': 0.7282500000000001, 'bitbrains': 0.6724, 'bytedance': 0.4666}
+  PASS  per-trace median ByteDance: 0.4666 in [0.44, 0.48]
+  PASS  per-trace median Alibaba: 0.7283 in [0.71, 0.84]
+  PASS  per-trace median Bitbrains: 0.6724 in [0.61, 0.74]
+
+[16] V3 LOO ABLATION: results/bcf_v2/loo_ablation_new_pool_v2.csv
+  SKIP  v3_loo: file not found at /mnt/project/results/bcf_v2/loo_ablation_new_pool_v2.csv
+        run rclone sync to bring it from Vast.ai before retrying.
+
+[17] V3 D4 STATISTICAL VALIDATION: results/bcf_v2/d4_*.csv
+  loaded /mnt/project/results/bcf_v2/d4_dm_pairwise_TEST.csv
+  shape: (44, 15)
+  columns: ['dataset', 'horizon', 'method_a', 'method_b', 'n_rows', 'n_containers', 'mean_d', 'mean_d_normalized', 'ci_lo', 'ci_hi', 'p_value_raw', 'raw_winner', 'p_value_holm', 'significant_holm', 'winner_final']
+  head:
+dataset horizon method_a method_b  n_rows  n_containers     mean_d  mean_d_normalized      ci_lo      ci_hi  p_value_raw raw_winner  p_value_holm  significant_holm winner_final
+alibaba   10min  ens_new    naive 1670443          4921  -0.655423            -0.0684  -0.735627  -0.578535          0.0    ens_new           0.0                 1      ens_new
+alibaba   10min  ens_new       et 1670443          4921  -0.366426            -0.0394  -0.433149  -0.303760          0.0    ens_new           0.0                 1      ens_new
+alibaba   10min  ens_new    nhits 1670443          4921  -0.792019            -0.0815  -0.885198  -0.703229          0.0    ens_new           0.0                 1      ens_new
+alibaba   10min  ens_new chronos2 1670443          4921  -0.330753            -0.0357  -0.394177  -0.268338          0.0    ens_new           0.0                 1      ens_new
+alibaba  120min  ens_new    naive 1562181          4921 -10.910946            -0.3309 -11.762367 -10.105548          0.0    ens_new           0.0                 1      ens_new
+  schema detected: winner_final + significant_holm
+  winner_final tally: {'ens_new': 38, 'tie': 3, 'chronos2': 2, 'nhits': 1}
+  decomposed: wins=38, ties=3, losses=3, total=44
+  PASS    D4 total tests: 44.0000 (expected 44.0000)
+  PASS    D4 wins: 38.0000 (expected 38.0000)
+  PASS    D4 ties: 3.0000 (expected 3.0000)
+  PASS    D4 losses: 3.0000 (expected 3.0000)
+
+======================================================================
+TOTAL: 184 PASS, 3 FAIL
+======================================================================
+
+FAILURES:
+  FAIL    BCF Bitbrains delta_30min: expected='-5.46pp' actual='+1.53pp'
+  FAIL    BCF Bitbrains delta_120min: expected='+3.30pp' actual='-2.81pp'
+  FAIL    BCF Bitbrains verdict: expected='ML wins only @120min' actual='NEW pool, per-VM median: h10=-16.66, h30=+1.53, h60=-1.99, h120=-2.81pp. %VMs NEW>naive: h30=61%, h120=35%. Compare OLD pool per-VM medians in bitbrains_summary_corrected.csv (h30=-5.46pp, h120=+3.30pp).'

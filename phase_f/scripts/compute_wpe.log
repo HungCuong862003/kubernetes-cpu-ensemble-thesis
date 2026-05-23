@@ -1,0 +1,64 @@
+============================================================
+BITBRAINS
+============================================================
+  reading parquets from data/processed/bitbrains/...
+  combined rows: 1,157,802  series: 142
+  computed: 142 series in 18.0s
+  WPE  min=0.5572  median=0.7276  max=0.9489
+  saved: phase_f/data/wpe_bitbrains.csv
+
+============================================================
+BYTEDANCE
+============================================================
+  reading parquets from data/processed/bytedance/...
+  combined rows: 321,408  series: 93
+  computed: 93 series in 5.0s
+  WPE  min=0.3804  median=0.9545  max=0.9935
+  saved: phase_f/data/wpe_bytedance.csv
+
+============================================================
+ALIBABA
+============================================================
+  reading parquets from data/processed/alibaba/...
+  combined rows: 10,785,411  series: 5000
+  ... 500/5000 containers in 20s (39.8ms each)
+  ... 1000/5000 containers in 36s (36.1ms each)
+  ... 1500/5000 containers in 53s (35.3ms each)
+  ... 2000/5000 containers in 69s (34.5ms each)
+  ... 2500/5000 containers in 85s (34.2ms each)
+  ... 3000/5000 containers in 102s (34.0ms each)
+  ... 3500/5000 containers in 118s (33.8ms each)
+  ... 4000/5000 containers in 135s (33.6ms each)
+  ... 4500/5000 containers in 151s (33.5ms each)
+  ... 5000/5000 containers in 167s (33.5ms each)
+  computed: 5000 series in 167.5s
+  WPE  min=0.2405  median=0.5661  max=0.7332
+  saved: phase_f/data/wpe_alibaba.csv
+
+============================================================
+Sanity: WPE vs ACF@24h correlation (expect negative)
+============================================================
+Traceback (most recent call last):
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/compute_wpe.py", line 109, in <module>
+    bb_merged = all_results["bitbrains"].merge(
+        bb_omega.rename(columns={omega_id: ID_COL})[[ID_COL, "acf_24h", "cv", "hurst"]],
+        on=ID_COL, how="inner"
+    )
+  File "/venv/main/lib/python3.14/site-packages/pandas/core/frame.py", line 12900, in merge
+    return merge(
+        self,
+    ...<10 lines>...
+        validate=validate,
+    )
+  File "/venv/main/lib/python3.14/site-packages/pandas/core/reshape/merge.py", line 385, in merge
+    op = _MergeOperation(
+        left_df,
+    ...<10 lines>...
+        validate=validate,
+    )
+  File "/venv/main/lib/python3.14/site-packages/pandas/core/reshape/merge.py", line 1031, in __init__
+    self._maybe_coerce_merge_keys()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/venv/main/lib/python3.14/site-packages/pandas/core/reshape/merge.py", line 1835, in _maybe_coerce_merge_keys
+    raise ValueError(msg)
+ValueError: You are trying to merge on str and int64 columns for key 'container_id'. If you wish to proceed you should use pd.concat

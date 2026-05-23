@@ -1,0 +1,49 @@
+============================================================
+ID type inspection (debug)
+============================================================
+BB  WPE container_id: ['bb_1005', 'bb_1007']  dtype=str
+BB  omega vm_id:      [1005, 1007]  dtype=int64
+BYT WPE container_id: ['bd_instance_1', 'bd_instance_10']  dtype=str
+BYT stats columns:    ['instance_id', 'n_points', 'hurst', 'acf_1h', 'acf_24h']
+BYT stats instance_id: ['instance_1', 'instance_10']  dtype=str
+ALI WPE container_id: ['c_10032', 'c_10036']  dtype=str
+ALI omega container_id: ['c_52834', 'c_28985']  dtype=str
+
+============================================================
+Bitbrains
+============================================================
+  merged: 142 VMs
+  WPE vs ACF@24h: r = 0.8744
+  WPE vs CV:      r = -0.2460
+  WPE vs Hurst:   r = 0.3455
+
+============================================================
+ByteDance
+============================================================
+  merged: 93 instances
+  WPE vs ACF@24h: r = 0.1838
+  WPE vs Hurst:   r = 0.3911
+
+============================================================
+Alibaba
+============================================================
+  merged: 4902 containers
+  WPE vs ACF@24h: r = 0.1303
+  WPE vs CV:      r = -0.3188
+  WPE vs Hurst:   r = 0.1806
+
+============================================================
+Cross-dataset WPE summary
+============================================================
+  Bitbrains   n= 142  WPE median=0.7276  ACF@24h median=0.1090
+  ByteDance   n=  93  WPE median=0.9545  ACF@24h median=0.4894
+  Alibaba     n=4902  WPE median=0.5667  ACF@24h median=0.3158
+
+Done.
+
+============================================================
+Spearman (rank-based) correlations
+============================================================
+  Bitbrains   WPE-ACF: rho=+0.7553  WPE-Hurst: rho=+0.5173  WPE-CV: rho=-0.0620
+  ByteDance   WPE-ACF: rho=+0.2801  WPE-Hurst: rho=+0.1838
+  Alibaba     WPE-ACF: rho=+0.1231  WPE-Hurst: rho=+0.1022  WPE-CV: rho=-0.1854
