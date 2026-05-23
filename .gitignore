@@ -40,3 +40,5 @@ __pycache__/
 .venv/
 
 *.bak
+
+rclone.conf.txt
