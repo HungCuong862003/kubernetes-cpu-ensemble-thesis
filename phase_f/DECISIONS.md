@@ -1,3 +1,4 @@
+---
 # DECISIONS.md
 
 **Project:** kubernetes-cpu-ensemble-thesis
@@ -187,3 +188,29 @@ pdftotext -layout Ensemble_*.pdf - | grep -iE 'BCa|bias[- ]?corrected[- ]?accele
 - README directing supersession: `results/bcf_v2/README_HPA_CANONICAL.md`
 
 **Y-statement:** In the context of the HPA simulation's headline figure being saturation-confounded and the pre-registered gate failing in all eleven cells, facing the choice between cosmetic number-swap and full retirement, we decided to retire 533/640 entirely with a dual-metric substitution and explicit gate disclosure to achieve defensible operational framing, accepting a ~200 word expansion in Ch6 §6.1.
+## DECISION-009 — WPE implementation choice for F2 (Fadlallah weighted PE, m=4, tau=1)
+
+**Date:** 2026-05-26
+**Status:** IMPLEMENTED (Day 4)
+
+**Context:** Pre-registration commits to "F2 partial-R²(WPE | ACF@24h) ≥ 0.3" but does not specify which permutation entropy variant. "WPE" in the literature is ambiguous between (a) Bandt-Pompe Weighted Permutation Entropy per Fadlallah, Avolio & Mohamed (2013), where motifs are amplitude-weighted by variance, and (b) plain Permutation Entropy per Bandt & Pompe (2002), where motifs are unweighted. Embedding dimension m and lag tau also need to be chosen.
+
+**Decision:** Use Fadlallah's weighted PE with m=4 and tau=1.
+
+**Rationale:**
+- Fadlallah's variance weighting handles cloud workload amplitude jumps better than unweighted PE (large spikes get the weight they merit).
+- m=4 is the standard middle-ground in the WPE literature: m=3 is too coarse (only 6 ordinal patterns), m=5+ needs much longer series for stable estimates (5!=120 patterns, sparse coverage on short series).
+- tau=1 is appropriate because cloud workloads have autocorrelation at every lag; no need to decimate.
+- Implementation reproduces Fadlallah's formula directly (no external library) and was sanity-checked against expected behaviour (constant series → NaN; cross-dataset distributions interpretable in the context of dataset cadence).
+
+**Alternatives considered:**
+- *Plain (unweighted) Bandt-Pompe PE.* Rejected because amplitude information is signal in cloud traces — a flat-low motif and a sharp-spike motif have very different operational meaning even if they share an ordinal pattern.
+- *m=3 or m=5.* m=3 rejected for coarseness; m=5 rejected because ByteDance series are short (~3,500 points) and Bitbrains is shorter still — 120 patterns would be undersampled.
+- *Larger tau (e.g. tau=12 = 1 hour).* Considered but rejected — would conflate WPE with hour-scale predictability that ACF@1h already captures; the point of WPE for F2 is to add information beyond what existing predictability metrics provide.
+
+**Consequences:**
+- Within-Bitbrains, WPE and ACF@24h are highly correlated (Spearman rho=+0.76). WPE will add little partial-R² on Bitbrains specifically.
+- On Alibaba (rho=+0.12) and ByteDance (rho=+0.28), WPE is closer to orthogonal — F2 has a real chance of clearing the 0.3 threshold there.
+- Cross-dataset cadence asymmetry (ByteDance 10-min vs others 5-min) means WPE measures slightly different time scales. Document this disclosure in the F2 chapter when D5 work produces the partial-R² number.
+
+**Y-statement:** In the context of computing a permutation-entropy-based predictability metric for F2, facing literature ambiguity about which PE variant "WPE" denotes, we decided to use Fadlallah's amplitude-weighted PE with m=4 and tau=1 to capture amplitude information relevant to cloud workloads while keeping estimates stable on the shortest series, accepting that the choice locks in a specific definition that the F2 results section must disclose explicitly.

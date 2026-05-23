@@ -1,6 +1,6 @@
 # THESIS_STATE.md
 
-**Last updated:** 2026-05-25 (F0-D3 close)
+**Last updated:** 2026-05-26 (F0-D4 close)
 **Project:** kubernetes-cpu-ensemble-thesis
 **Defence:** ~October 2026 (one-semester delay accepted)
 
@@ -8,26 +8,27 @@
 
 ## Where we are
 
-- **Phase:** F0 (lockdown opening), day 3 of 10
-- **Phase F overall:** day 3 of ~135
-- **Days until defence:** ~133
+- **Phase:** F0 (lockdown opening), day 4 of 10
+- **Phase F overall:** day 4 of ~135
+- **Days until defence:** ~132
 
 ## Today's headline
 
-**Today completed (Day 3):**
-- Q-008 closed: extracted dominance + gate definitions from `task_c3_hpa_rebuild_v4.py` and `README_HPA_CANONICAL.md`. Two distinct dominance metrics — `reactive_dominated_pct` (out of 160 reactive points per cell) and `ml_strict_dominance_pct` (out of 40 ML configurations per cell). Gate at line 279: `passes_gate = (reactive_dominated_pct >= 80%)`. All eleven cells fail the gate; highest single-cell rate is ByteDance h30 at 78.12%.
-- Q-009 closed: ERRATA-011 opened (Branch 1 — gate is a pre-registered production-readiness criterion, not exploratory diagnostic).
-- DECISION-008 logged: full retirement of the 533/640 headline figure (not just per-horizon swap) with dual-metric (reactive_dominated + ml_strict_dominance) framing in the substitution.
-- ERRATA-001 through 010 applied to Overleaf in a single batched commit; ERRATA-011 disclosure embedded in the ERRATA-010 substitution paragraph (no separate footnote).
-- Ch4 Table 4.13 substituted with dual-metric per-cell format plus gate column.
-- ERRATA.md updated: D2 update applied (ERRATA-010 BLOCKED → PENDING then APPLIED), Day 2 audit note section added at bottom, ERRATA-011 row added, schema extended with `Applied` column, all 11 rows transitioned PENDING → APPLIED with date `2026-05-25`.
-- Bibliography audit begun per DECISION-004 reinvestment: ~40 entries inventoried in `phase_f/journal/biblio_audit_d3_notes.md`. *[Adjust count to actual before commit.]*
+**Today completed (Day 4):**
+- F2 prep: WPE (Bandt-Pompe weighted PE per Fadlallah et al. 2013, m=4, tau=1) computed for all 3 datasets — Alibaba (5000 containers), Bitbrains (142 VMs), ByteDance (93 instances). Reads `data/processed/<ds>/{train,val,test}.parquet` and concatenates train+val+test per series. Outputs at `phase_f/data/wpe_{alibaba,bitbrains,bytedance}.csv`.
+- WPE distribution: Alibaba lowest (median 0.567), Bitbrains middle (0.728), ByteDance highest (0.955). Note ByteDance is at 10-min cadence while the others are at 5-min, so motif covers different time scales cross-dataset.
+- Pearson + Spearman sanity check vs ACF@24h, CV, Hurst. Headline: WPE vs ACF@24h is POSITIVE in all 3 datasets (not negative as initially predicted). WPE measures short-scale (20–40 min) ordinal regularity; ACF@24h measures long-scale periodicity. Orthogonality is what F2's partial-R² target needs.
+- Within-Bitbrains WPE-ACF Spearman rho=+0.7553 — genuinely strong, not a Pearson artefact (Pearson +0.87 was only modestly inflated from rank-based +0.76). WPE adds little beyond ACF@24h on Bitbrains specifically. Alibaba (+0.12) and ByteDance (+0.28) show near-orthogonality, encouraging for F2.
+- 3 stranded F0 D1 verify logs (`F0_D1_verify_{post-optionC,post-optionC-v2,pre-sync}.log`) caught up to Drive — they never made it during D1 close.
+- Q-007 reopened — earlier "stale literal" diagnosis was wrong. Actual situation is a metric-scope mismatch: verifier expects OLD pool per-VM medians (-5.46, +3.30); data is NEW pool per-VM medians (-16.66, +1.53, -1.99, -2.81). Proper rewrite is 4 literal updates + verdict text rewrite, ~45–60 min, deferred to D5.
+- Bibliography audit deferred — user pivoted away from manuscript work today.
+- Casual journal entry at `phase_f/journal/d4_wpe_prep.md`. No formal D4 handoff written (casual mode; journal serves the purpose).
+- Commit `843c16f` on `feature/live-demo` — 11 files, 6646 insertions.
 
-**Tomorrow planned (Day 4, F0-D4):**
-- Continue bibliography audit; close out remaining .bib entries.
-- Apply `.bib` corrections for the FABRICATED_REPLACE_ENTRY cluster.
-- Queue prose-level errata (ERRATA-012+) for any citation whose correction changes meaning in-chapter.
-- Optional / time-permitting: Q-007 verifier anchor maintenance (would clear audit to 214/0).
+**Tomorrow planned (Day 5, F0-D5):**
+- F2 partial-R²(WPE | ACF@24h) regression against `delta_pp` from `bcf_pairs.csv`. Pre-reg threshold ≥0.3. Decision needed at execution time: report (a) pooled across all 11 cells, (b) per-dataset, or (c) pooled with dataset fixed effects. Bitbrains' high within-dataset WPE-ACF correlation will pull pooled estimate down; honest disclosure preferred if pooled fails while per-dataset succeeds.
+- Q-007 proper rewrite — 4 literal updates (h10/h30/h60/h120) + verdict text change in `verify_foundation.py`. Possibly also regenerate `bitbrains_summary_corrected.csv` under NEW pool semantics.
+- Optional / time-permitting: resume biblio audit, or start F1 router preliminary work (router needs WPE + ACF@24h + delta_pp features all in place; D5 F2 work generates the feature matrix F1 will use).
 
 ## Active open questions
 
@@ -35,7 +36,7 @@
 |---|---|---|---|---|
 | Q-002 | Vast.ai C.37124280 fate | No | Jimmy | Check Vast.ai web UI when convenient |
 | Q-003 | Public + MIT repo — supervisor approval | No (cheap to reverse) | Jimmy | Raise with Dr. Ho at next meeting |
-| Q-007 | verify_foundation 3 stale BCF Bitbrains anchors | No | Jimmy | Day 4 afternoon or later |
+| Q-007 | verify_foundation Bitbrains BCF anchors — REOPENED with broader scope (metric migration, not literal swap) | No | Jimmy | D5 — 4-literal + verdict rewrite |
 
 Q-001 / Q-004 / Q-006 closed D2. Q-008 / Q-009 closed D3.
 
@@ -60,10 +61,11 @@ Q-001 / Q-004 / Q-006 closed D2. Q-008 / Q-009 closed D3.
 | Toto Alibaba results | `results/foundation_comparison/toto_k20_alibaba.json` | (none) |
 | Error correlations | `results/bcf_v2/c2_*.csv` | (none) |
 | LOO ablation | `results/bcf_v2/loo_ablation_new_pool_v2.csv` | (missing — Q deferred) |
+| **WPE per-series (F2 prep)** | **`phase_f/data/wpe_{alibaba,bitbrains,bytedance}.csv`** | **(new D4)** |
 
 ## Pending Overleaf edits (full detail in ERRATA.md)
 
-11 of 11 edits applied. No edits pending. Next manuscript edits will come from the bibliography audit; queued as ERRATA-012+ if biblio findings require in-prose changes rather than `.bib`-only fixes.
+11 of 11 edits applied. No edits pending. Next manuscript edits will come from the bibliography audit (deferred) or D5+ Q-007 work if the metric-scope rewrite changes any in-prose claim about Bitbrains per-VM behaviour.
 
 ## Pre-registration thresholds (Dr. Ho written acceptance 2026-05-22)
 
@@ -78,20 +80,20 @@ Q-001 / Q-004 / Q-006 closed D2. Q-008 / Q-009 closed D3.
 
 | Resource | State | Notes |
 |---|---|---|
-| Vast.ai instance C.37423026 | Stopped (EOD) | Started for Q-008 SSH read; stopped after `hpa_v4_dominance_per_dataset.csv` paste returned. `/mnt/project` symlink tree intact. |
+| Vast.ai instance C.37423026 | Stopped (EOD) | Used today for WPE compute on all 3 datasets (~3 min total). `scipy 1.17.1` newly installed in `/venv/main/`. `/mnt/project` symlink tree intact. |
 | Vast.ai rclone (gdrive:) | Configured | Service-account JSON |
 | Local Windows rclone (gdrive:) | Configured | OAuth, working |
-| Thesis git repo | Active | Today's commits: ERRATA.md, DECISIONS.md, handoffs/2026-05-25_d3-close.md, phase_f/journal/biblio_audit_d3_notes.md, THESIS_STATE.md refresh |
+| Thesis git repo | Active | Today's commit: `843c16f` (Phase F Day 4 — F2 WPE prep). 11 files / 6646 insertions. |
 | Dashboard repo | Separate, not synced | Unchanged |
-| Drive: phase_f/ | Synced | Mirror of git phase_f/ except data_snapshots/ |
-| Overleaf | 1 commit today | "Apply ERRATA-001..011 — see ERRATA.md for source-of-truth substitutions, Phase F D3 (2026-05-25)" |
+| Drive: phase_f/ | Synced | Mirror of git phase_f/ except data_snapshots/. `__pycache__/` purged from scripts/ at EOD. |
+| Overleaf | No commit today | Casual mode, no manuscript edits |
 
 ## Memory state
 
 - **Slots used:** 30/30
-- **Last memory snapshot:** memory_snapshots/memory_snapshot_2026-05-23.md
+- **Last memory snapshot:** `memory_snapshots/memory_snapshot_2026-05-23.md`
 - **Next snapshot due:** Sunday 2026-05-31 (weekly cadence). No `memory_user_edits` calls today.
 
 ## Update protocol
 
-This file is refreshed at every day-close, not appended to. Replace stale sections with current state. Historical record lives in handoffs/ and DECISIONS.md.
+This file is refreshed at every day-close, not appended to. Replace stale sections with current state. Historical record lives in `handoffs/` and `DECISIONS.md`.
