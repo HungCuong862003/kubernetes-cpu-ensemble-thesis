@@ -1,0 +1,87 @@
+{
+  "predicate": "(ACF@24h > 0.2) AND (horizon >= 30min)",
+  "nnls_bitbrains_agg": "per_vm_median",
+  "acf_24h_used": {
+    "Alibaba": 0.316,
+    "Bitbrains": 0.116,
+    "ByteDance": 0.489
+  },
+  "n_pooled_pairs": 48,
+  "n_ml_wins": 36,
+  "n_predicate_pos": 24,
+  "pooled_auc": 0.6666666666666666,
+  "bca_95_ci_lo": 0.4861111111111111,
+  "bca_95_ci_hi": 0.7926829268292683,
+  "bca_z0": -0.04463279763869187,
+  "bca_a_hat": -0.03548934008435985,
+  "permutation_p": 0.051094890510948905,
+  "permutation_method": "Phipson-Smyth (count_ge + 1) / (n_perm + 1)",
+  "n_boot": 10000,
+  "n_perm": 10000,
+  "excluded": [
+    "Naive (all ml_wins=0 by construction)"
+  ],
+  "sources": {
+    "nnls_alibaba_bytedance": {
+      "path": "/content/bcf_stage/chronos_benchmark_results.csv",
+      "mtime": 1777564692.4533758,
+      "bytes": 1816
+    },
+    "nnls_bitbrains": {
+      "path": "/content/bcf_stage/bitbrains_per_vm.csv",
+      "mtime": 1777564692.7783754,
+      "bytes": 45923
+    },
+    "chronos2_alibaba": {
+      "path": "/content/bcf_stage/k20_alibaba_v2.json",
+      "mtime": 1777564693.4843743,
+      "bytes": 2276
+    },
+    "chronos2_bitbrains": {
+      "path": "/content/bcf_stage/k50_bitbrains_check.json",
+      "mtime": 1777565389.8523946,
+      "bytes": 2284
+    },
+    "chronos2_bytedance": {
+      "path": "/content/bcf_stage/k50_bytedance_check.json",
+      "mtime": 1777565389.8683944,
+      "bytes": 2275
+    },
+    "timesfm_alibaba": {
+      "path": "/content/bcf_stage/timesfm_k20_alibaba.json",
+      "mtime": 1777564694.3873732,
+      "bytes": 2056
+    },
+    "timesfm_bitbrains": {
+      "path": "/content/bcf_stage/timesfm_k50_bitbrains.json",
+      "mtime": 1777564694.8693724,
+      "bytes": 2062
+    },
+    "timesfm_bytedance": {
+      "path": "/content/bcf_stage/timesfm_k50_bytedance.json",
+      "mtime": 1777564695.4323716,
+      "bytes": 2057
+    },
+    "ttm_alibaba": {
+      "path": "/content/bcf_stage/ttm_k20_alibaba.json",
+      "mtime": 1777564695.4353716,
+      "bytes": 1827
+    },
+    "ttm_bitbrains": {
+      "path": "/content/bcf_stage/ttm_k50_bitbrains.json",
+      "mtime": 1777564695.9433708,
+      "bytes": 1845
+    },
+    "ttm_bytedance": {
+      "path": "/content/bcf_stage/ttm_k50_bytedance.json",
+      "mtime": 1777564696.3193703,
+      "bytes": 1837
+    }
+  },
+  "caveats": [
+    "NNLS and foundation models use different naive references (NNLS: full-test pooled naive from chronos_benchmark_results.csv; foundation models: k20/k50 same-subsample naive from sanity JSONs). Each delta is internally consistent (model vs naive on identical points) but reference sets differ across models.",
+    "NNLS Bitbrains uses median of per-VM deltas (NNLS_BITBRAINS_AGG='per_vm_median') to match boundary_condition_table_corrected.csv. Pooled scoring flips Bitbrains-120min from win to loss and shifts pooled AUC by ~0.03.",
+    "48 pooled pairs = 12 (dataset, horizon) cells under 4 models. Pairs are not iid; CI and p-value are pair-level and overstate precision relative to cluster-aware inference at n=12.",
+    "BCa CI precision is illusory beyond 2 decimals; ~200 unique AUC values in the bootstrap distribution. Report CI rounded."
+  ]
+}

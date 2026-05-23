@@ -1,0 +1,17 @@
+[12:47:33] converting toto_k20_alibaba.json  ->  toto_k20_alibaba_npz.npz  (dataset=alibaba)
+[12:47:33]   horizons in JSON: ['10min', '30min', '60min', '120min']
+[12:47:33]   wrote 47 keys (4 horizons) to /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/toto_k20_alibaba_npz.npz
+[12:47:33]   sanity check vs memory #23 anchor (tol +/- 0.005):
+[12:47:33]     10min: got=0.9173  anchor=0.9173  diff=-0.0000  [OK]
+[12:47:33]     30min: got=0.8513  anchor=0.8513  diff=+0.0000  [OK]
+[12:47:33]     60min: got=0.8205  anchor=0.8205  diff=+0.0000  [OK]
+[12:47:33]     120min: got=0.7586  anchor=0.7586  diff=-0.0000  [OK]
+[12:47:33] converting toto_k20_bitbrains.json  ->  toto_k20_bitbrains_npz.npz  (dataset=bitbrains)
+[12:47:33]   horizons in JSON: ['10min', '30min', '60min', '120min']
+[12:47:33]   wrote 47 keys (4 horizons) to /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/toto_k20_bitbrains_npz.npz
+[12:47:33] converting toto_k20_bytedance.json  ->  toto_k20_bytedance_npz.npz  (dataset=bytedance)
+[12:47:33]   horizons in JSON: ['10min', '30min', '60min', '120min']
+[12:47:33]   WARN unexpected extra horizons in JSON: ['10min']
+[12:47:33]   wrote 47 keys (4 horizons) to /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/toto_k20_bytedance_npz.npz
+[12:47:33] 
+[12:47:33] summary: 3 converted, 0 skipped/failed

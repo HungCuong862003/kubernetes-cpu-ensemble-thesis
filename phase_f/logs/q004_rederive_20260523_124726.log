@@ -1,0 +1,58 @@
+[12:47:26] Q-004 v4 per-horizon ML strict-dominance re-derivation
+[12:47:26] ============================================================
+[12:47:26] 
+[12:47:26] === alibaba ===
+[12:47:26]   rows: 800
+[12:47:26]   horizons present:   ['10min', '120min', '30min', '60min']
+[12:47:26]   strategies present: ['ML-Proactive', 'Reactive']
+[12:47:26]   10min : ML strict-dominates 0/40 (0.0%)
+[12:47:26]   30min : ML strict-dominates 0/40 (0.0%)
+[12:47:26]   60min : ML strict-dominates 0/40 (0.0%)
+[12:47:26]   120min: ML strict-dominates 0/40 (0.0%)
+[12:47:26] 
+[12:47:26] === bitbrains ===
+[12:47:26]   rows: 800
+[12:47:26]   horizons present:   ['10min', '120min', '30min', '60min']
+[12:47:26]   strategies present: ['ML-Proactive', 'Reactive']
+[12:47:26]   10min : ML strict-dominates 0/40 (0.0%)
+[12:47:26]   30min : ML strict-dominates 0/40 (0.0%)
+[12:47:26]   60min : ML strict-dominates 0/40 (0.0%)
+[12:47:26]   120min: ML strict-dominates 0/40 (0.0%)
+[12:47:26] 
+[12:47:26] === bytedance ===
+[12:47:26]   rows: 600
+[12:47:26]   horizons present:   ['120min', '30min', '60min']
+[12:47:26]   strategies present: ['ML-Proactive', 'Reactive']
+[12:47:26]   30min : ML strict-dominates 27/40 (67.5%)
+[12:47:26]   60min : ML strict-dominates 25/40 (62.5%)
+[12:47:26]   120min: ML strict-dominates 18/40 (45.0%)
+[12:47:26] 
+[12:47:26] === sanity check vs memory recent_updates (2026-05-23 anchor) ===
+[12:47:26]   alibaba    10min  expected= 40  got=  0/40   [MISMATCH]
+[12:47:26]   alibaba    30min  expected= 35  got=  0/40   [MISMATCH]
+[12:47:26]   alibaba    60min  expected= 15  got=  0/40   [MISMATCH]
+[12:47:26]   alibaba    120min expected=  1  got=  0/40   [MISMATCH]
+[12:47:26]   bitbrains  10min  expected= 40  got=  0/40   [MISMATCH]
+[12:47:26]   bitbrains  30min  expected=  0  got=  0/40   [OK]
+[12:47:26]   bitbrains  60min  expected=  0  got=  0/40   [OK]
+[12:47:26]   bitbrains  120min expected=  0  got=  0/40   [OK]
+[12:47:26]   bytedance  30min  expected= 33  got= 27/40   [MISMATCH]
+[12:47:26]   bytedance  60min  expected= 32  got= 25/40   [MISMATCH]
+[12:47:26]   bytedance  120min expected= 29  got= 18/40   [MISMATCH]
+[12:47:26] 
+[12:47:26] Overall: FAIL -- investigate before updating ERRATA-010
+[12:47:26] 
+[12:47:26] === ERRATA-010 substitution proposal ===
+[12:47:26] old (from submitted PDF, superseded hpa_simulation_v2.csv):
+[12:47:26]     128 / 156 / 157 / 92  (sum 533/640)
+[12:47:26] new (Alibaba v4, hpa_simulation_alibaba_v4.csv):
+[12:47:26]     0 / 0 / 0 / 0  (Alibaba sum = 0/160)
+[12:47:26] 11-cell grand total: 70 ML-strict (memory says 225)
+[12:47:26] 
+[12:47:26] NOTE: the original ERRATA-010 row claimed 'total 533/640 sum unchanged'.
+[12:47:26] That claim is incorrect. The v4 sum is fundamentally different from the
+[12:47:26] v1-sprint sum because the underlying grids encode different replica caps
+[12:47:26] (v1: max_replicas=100, saturating 12-40% of cells; v4: max_replicas=1000).
+[12:47:26] ERRATA-010 must drop the 'sum unchanged' parenthetical and acknowledge
+[12:47:26] that Ch6 narrative 'rises to peak at h30, declines through h60/h120' is
+[12:47:26] reversed under v4: monotonic decline 40 -> 35 -> 15 -> 1.

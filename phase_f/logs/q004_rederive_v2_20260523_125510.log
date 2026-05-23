@@ -1,0 +1,65 @@
+[12:55:11] Q-004 v4 per-horizon ML strict-dominance re-derivation (v2, corrected definition)
+[12:55:11] ================================================================================
+[12:55:11] 
+[12:55:11] === alibaba ===
+[12:55:11]   rows: 800
+[12:55:11]   horizons present:   ['10min', '120min', '30min', '60min']
+[12:55:11]   strategies present: ['ML-Proactive', 'Reactive']
+[12:55:11]   10min : ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs =   4/160 (  2.5%)
+[12:55:11]   30min : ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs =   0/160 (  0.0%)
+[12:55:11]   60min : ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs =   0/160 (  0.0%)
+[12:55:11]   120min: ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs =   0/160 (  0.0%)
+[12:55:11] 
+[12:55:11] === bitbrains ===
+[12:55:11]   rows: 800
+[12:55:11]   horizons present:   ['10min', '120min', '30min', '60min']
+[12:55:11]   strategies present: ['ML-Proactive', 'Reactive']
+[12:55:11]   10min : ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs =  40/160 ( 25.0%)
+[12:55:11]   30min : ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs = 160/160 (100.0%)
+[12:55:11]   60min : ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs = 160/160 (100.0%)
+[12:55:11]   120min: ML strict-dom cells =   0/40  (  0.0%)   Reactive-dom pairs = 160/160 (100.0%)
+[12:55:11] 
+[12:55:11] === bytedance ===
+[12:55:11]   rows: 600
+[12:55:11]   horizons present:   ['120min', '30min', '60min']
+[12:55:11]   strategies present: ['ML-Proactive', 'Reactive']
+[12:55:11]   30min : ML strict-dom cells =  27/40  ( 67.5%)   Reactive-dom pairs =   0/160 (  0.0%)
+[12:55:11]   60min : ML strict-dom cells =  25/40  ( 62.5%)   Reactive-dom pairs =   0/160 (  0.0%)
+[12:55:11]   120min: ML strict-dom cells =  18/40  ( 45.0%)   Reactive-dom pairs =   0/160 (  0.0%)
+[12:55:11] 
+[12:55:11] === sanity check vs memory recent_updates (cell-level ML strict, /40) ===
+[12:55:11]   alibaba    10min   cell  expected= 40  got=    0  [MISMATCH]
+[12:55:11]   alibaba    30min   cell  expected= 35  got=    0  [MISMATCH]
+[12:55:11]   alibaba    60min   cell  expected= 15  got=    0  [MISMATCH]
+[12:55:11]   alibaba    120min  cell  expected=  1  got=    0  [MISMATCH]
+[12:55:11]   bitbrains  10min   cell  expected= 40  got=    0  [MISMATCH]
+[12:55:11]   bitbrains  30min   cell  expected=  0  got=    0  [OK]
+[12:55:11]   bitbrains  60min   cell  expected=  0  got=    0  [OK]
+[12:55:11]   bitbrains  120min  cell  expected=  0  got=    0  [OK]
+[12:55:11]   bytedance  30min   cell  expected= 33  got=   27  [MISMATCH]
+[12:55:11]   bytedance  60min   cell  expected= 32  got=   25  [MISMATCH]
+[12:55:11]   bytedance  120min  cell  expected= 29  got=   18  [MISMATCH]
+[12:55:11] 
+[12:55:11] === sanity check vs memory recent_updates (pair-level Reactive dom, /160) ===
+[12:55:11]   alibaba    10min   pair  expected~=120  got=    4  [MISMATCH]
+[12:55:11]   alibaba    30min   pair  expected~= 55  got=    0  [MISMATCH]
+[12:55:11]   alibaba    60min   pair  expected~= 21  got=    0  [MISMATCH]
+[12:55:11]   alibaba    120min  pair  expected~=  1  got=    0  [OK]
+[12:55:11]   bitbrains  10min   pair  expected~=117  got=   40  [MISMATCH]
+[12:55:11]   bitbrains  30min   pair  expected~=  0  got=  160  [MISMATCH]
+[12:55:11]   bitbrains  60min   pair  expected~=  0  got=  160  [MISMATCH]
+[12:55:11]   bitbrains  120min  pair  expected~=  0  got=  160  [MISMATCH]
+[12:55:11]   bytedance  30min   pair  expected~=125  got=    0  [MISMATCH]
+[12:55:11]   bytedance  60min   pair  expected~=124  got=    0  [MISMATCH]
+[12:55:11]   bytedance  120min  pair  expected~=112  got=    0  [MISMATCH]
+[12:55:11] 
+[12:55:11] === 11-cell grand totals (memory says 225 ML strict / 675 react dom) ===
+[12:55:11]   ML strict cells:  70/440  (memory: 225)
+[12:55:11]   Reactive-dom pairs: 524/1760  (memory: 675)
+[12:55:11] 
+[12:55:11] Cell anchors:  FAIL
+[12:55:11] Pair anchors:  FAIL
+[12:55:11] 
+[12:55:11] Cell anchors did not pass. Do NOT update ERRATA-010 until investigated.
+[12:55:11] Likely next step: cat results/bcf_v2/hpa_v4_dominance_per_dataset.csv to
+[12:55:11] see what the canonical file's dominance definition actually is.

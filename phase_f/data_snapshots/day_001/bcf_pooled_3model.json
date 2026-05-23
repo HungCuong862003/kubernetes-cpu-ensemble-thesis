@@ -1,0 +1,289 @@
+{
+  "predicate": "(ACF@24h > 0.2) AND (horizon >= 30min)",
+  "pool": [
+    "NNLS",
+    "Chronos-2",
+    "TimesFM"
+  ],
+  "excluded": [
+    "Naive",
+    "Granite-TTM"
+  ],
+  "n_pooled_pairs": 36,
+  "n_ml_wins": 30,
+  "n_predicate_pos": 18,
+  "tp": 18,
+  "fp": 0,
+  "tn": 6,
+  "fn": 12,
+  "sensitivity": 0.6,
+  "specificity": 1.0,
+  "pooled_auc": 0.8,
+  "ci_method": "percentile (binary classifier; BCa degenerate)",
+  "ci_95_lo": 0.7096774193548387,
+  "ci_95_hi": 0.8870967741935484,
+  "permutation_p": 0.0096990300969903,
+  "permutation_method": "Phipson-Smyth (count_ge + 1) / (n_perm + 1)",
+  "n_boot": 10000,
+  "n_perm": 10000,
+  "seed": 42,
+  "source": "results/bcf/bcf_pairs.csv",
+  "cell_records": [
+    {
+      "model": "NNLS",
+      "dataset": "Alibaba",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Bitbrains",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 0
+    },
+    {
+      "model": "NNLS",
+      "dataset": "ByteDance",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Alibaba",
+      "horizon": "30min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Bitbrains",
+      "horizon": "30min",
+      "predicate": 0,
+      "ml_wins": 0
+    },
+    {
+      "model": "NNLS",
+      "dataset": "ByteDance",
+      "horizon": "30min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Alibaba",
+      "horizon": "60min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Bitbrains",
+      "horizon": "60min",
+      "predicate": 0,
+      "ml_wins": 0
+    },
+    {
+      "model": "NNLS",
+      "dataset": "ByteDance",
+      "horizon": "60min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Alibaba",
+      "horizon": "120min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "Bitbrains",
+      "horizon": "120min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "NNLS",
+      "dataset": "ByteDance",
+      "horizon": "120min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Alibaba",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 0
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Alibaba",
+      "horizon": "30min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Alibaba",
+      "horizon": "60min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Alibaba",
+      "horizon": "120min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Bitbrains",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Bitbrains",
+      "horizon": "30min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Bitbrains",
+      "horizon": "60min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "Bitbrains",
+      "horizon": "120min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "ByteDance",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "ByteDance",
+      "horizon": "30min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "ByteDance",
+      "horizon": "60min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "Chronos-2",
+      "dataset": "ByteDance",
+      "horizon": "120min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Alibaba",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 0
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Alibaba",
+      "horizon": "30min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Alibaba",
+      "horizon": "60min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Alibaba",
+      "horizon": "120min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Bitbrains",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 0
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Bitbrains",
+      "horizon": "30min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Bitbrains",
+      "horizon": "60min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "Bitbrains",
+      "horizon": "120min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "ByteDance",
+      "horizon": "10min",
+      "predicate": 0,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "ByteDance",
+      "horizon": "30min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "ByteDance",
+      "horizon": "60min",
+      "predicate": 1,
+      "ml_wins": 1
+    },
+    {
+      "model": "TimesFM",
+      "dataset": "ByteDance",
+      "horizon": "120min",
+      "predicate": 1,
+      "ml_wins": 1
+    }
+  ],
+  "caveats": [
+    "Bitbrains NNLS rows use per-VM XGBoost surrogate (global ensemble fails to generalise on Bitbrains).",
+    "BCa CI degenerates on a binary classifier with two distinct AUC values per resample; we report percentile bounds."
+  ]
+}
