@@ -159,4 +159,31 @@ pdftotext -layout Ensemble_*.pdf - | grep -iE 'BCa|bias[- ]?corrected[- ]?accele
 
 ---
 
-(future decisions appended below)
+---
+
+## DECISION-008 — Full retirement of v1-sprint 533/640 figure with dual-metric replacement
+
+**Date:** 2026-05-25
+**Status:** IMPLEMENTED (Day 3 ERRATA batch)
+
+**Context:** Q-008/Q-009 closure on Day 3 surfaced that the submitted PDF's headline figure "ML-Proactive Pareto-dominates the matched reactive in 533/640 cell-matched comparisons" derives from `hpa_simulation_v2.csv` at `max_replicas=100`, whose 12–40% grid-saturation rate (diagnosed in `c3_saturation_verdict.md`) inflated long-horizon dominance counts asymmetrically. Direct same-metric v1-sprint→v4 comparison on Alibaba shows the per-horizon counts moved 128→120, 156→55, 157→21, 92→1 (totals 533/640 → 197/640, a 45 pp drop). The v4 protocol at `max_replicas=1000` also reports a second metric, `ml_strict_dominance_pct`, that the submitted PDF did not use; and a pre-registered gate at 80% reactive-dominated coverage that fails in all eleven cells.
+
+**Decision:** Retire the 533/640 figure entirely in ERRATA-010, not just the per-horizon breakdown. Replace with a dual-metric paragraph that reports both `reactive_dominated_pct` (the same metric the original used, now at v4 scope) and `ml_strict_dominance_pct` (the complementary axis), discloses `passes_gate=False` everywhere (this is ERRATA-011), names the saturation diagnosis as the reason the v1-sprint figure is irrecoverable, and ties the cross-dataset arc to the BCF predicate via the ACF@24h ordering (ByteDance 0.489 > Alibaba 0.316 > Bitbrains 0.116).
+
+**Alternatives considered:**
+- *Swap numbers, keep framing.* Replace 533/640 and 128/156/157/92 with v4 equivalents (197/640 and 120/55/21/1) and leave the rest of the paragraph alone. Rejected because the original implies population-level dominance, the v4 numbers say the gate isn't crossed anywhere, and reporting just one metric makes the discrepancy invisible. Defence-time the gap between 533/640's implication and `passes_gate=False` would surface eventually.
+- *Switch to ml_strict_dominance only (40/35/15/1).* Cleaner narrative ("monotonic decline") but the metric isn't the same as the original's, and a careful reader will notice the silent unit-of-measurement shift (from 160 reactive points to 40 ML configs). Honest substitution requires naming the shift.
+- *Drop the dominance claim entirely.* Most conservative but loses the systems contribution Dr. Ho explicitly prioritises.
+
+**Consequences:**
+- Ch6 §6.1 paragraph grows from ~80 words to ~280 words. Ch4 Table 4.13 gains a `passes_gate` column. ERRATA-011 row added to track the gate disclosure separately for audit traceability, even though the disclosure prose is embedded in ERRATA-010's substitution.
+- Manuscript's strongest systems claim is now qualified rather than headline-grade. The honest framing is consistent with the negative-results pattern adopted elsewhere in the thesis (per memory: foundation models winning 11/12, BiLSTM non-diversity, per-VM Bitbrains sign reversal, imputation rates above 5%).
+- Defence preparation must include a clear answer to "if `passes_gate=False` everywhere, what is the operational claim?" Suggested answer: "ML-Proactive secures local Pareto improvements at specific operating points in high-ACF@24h cells, particularly at horizons where the BCF predicate is positive; it does not yet sweep the reactive cloud at the 80% saturation level that would warrant unqualified replacement of reactive HPA."
+
+**Source files:**
+- Canonical numbers: `results/bcf_v2/hpa_v4_dominance_per_dataset.csv`
+- Gate + dominance definitions: `task_c3_hpa_rebuild_v4.py` lines 256–280
+- Saturation diagnosis: `results/bcf_v2/c3_saturation_verdict.md`
+- README directing supersession: `results/bcf_v2/README_HPA_CANONICAL.md`
+
+**Y-statement:** In the context of the HPA simulation's headline figure being saturation-confounded and the pre-registered gate failing in all eleven cells, facing the choice between cosmetic number-swap and full retirement, we decided to retire 533/640 entirely with a dual-metric substitution and explicit gate disclosure to achieve defensible operational framing, accepting a ~200 word expansion in Ch6 §6.1.
