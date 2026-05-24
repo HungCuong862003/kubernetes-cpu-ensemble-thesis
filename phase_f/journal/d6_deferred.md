@@ -16,8 +16,8 @@ Carry to D10:
 - ERRATA.md row 012 status PENDING → APPLIED on D10 (after Overleaf commit).
 - Biblio audit candidate ERRATA-013+ rows opened D7+ also batched at D10.
 
-Today's actual work continues into D7 block (biblio audit + F2 chapter
-outline) per the D6-D8 sequence plan.
+Today's actual work continues into D7 block (F2 chapter outline begin)
+per the D6-D8 sequence plan.
 
 ## time
 

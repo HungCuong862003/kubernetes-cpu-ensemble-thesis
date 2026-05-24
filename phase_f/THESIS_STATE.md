@@ -1,6 +1,6 @@
 # THESIS_STATE.md
 
-**Last updated:** 2026-05-29 (F0-D7 close)
+**Last updated:** 2026-05-30 (F0-D8 close)
 **Project:** kubernetes-cpu-ensemble-thesis
 **Defence:** ~October 2026 (one-semester delay accepted)
 
@@ -8,20 +8,20 @@
 
 ## Where we are
 
-- **Phase:** F0 (lockdown opening), day 7 of 10
-- **Phase F overall:** day 7 of ~135
-- **Days until defence:** ~129
+- **Phase:** F0 (lockdown opening), day 8 of 10
+- **Phase F overall:** day 8 of ~135
+- **Days until defence:** ~128
 
 ## Today's headline
 
-**Today completed (Day 7):**
-- D7 produced the F2 chapter outline sketch at `phase_f/journal/f2_chapter_outline.md` (v3.1, eight sections, one-line claim + data/file anchor per section, no prose). Refined through four self-examination passes producing a 5 / 3 / 1 / 0 substantive-issue diminishing-returns curve. Final v3.1 carries seven flagged D8-open-item TBV verifications: §2 resample count, §2 Bitbrains clustering scheme, §3 CI method (percentile assertion may not transfer from BCF context), §5 cross-dataset ML-benefit ordering at h10, §5 WPE median by dataset, §5 h30 double-monotonicity question, §5 M4-literature prior citation. Each is a 5–10 min script read or web search at D8.
-- D6 paperwork (ERRATA-012 Overleaf application + biblio audit resume) deferred to D10 F0-close batch per `phase_f/journal/d6_deferred.md`. Rationale: both items are paperwork (manuscript .tex edit + .bib field verification) and batch well with D10's existing Overleaf batch slot. ERRATA-012 substitution text already fully specified; D10 applies in one commit alongside any ERRATA-013+ rows accumulated.
-- D7 Task A (biblio audit continuation) also deferred to D10 by symmetry — same paperwork-batches-well rationale. No Overleaf commit D6 or D7.
+**Today completed (Day 8):**
+- D8 Task A — F2 chapter outline promoted from D7 sketch v3.1 to D8 defensible-structure v4 at `phase_f/journal/f2_chapter_outline.md`. Two TBV items cleared at D8 (§5 h10 ordering via `bcf_pairs.csv` NNLS rows showing monotonic ByteDance > Alibaba > Bitbrains at all four horizons; §5 M4-literature citation resolved to Pennekamp et al. 2019 Ecological Monographs + Ponce-Flores et al. 2020 Entropy 22(1):89). Five TBV items remain, all method-detail or supporting-numeric, deferred to D11+ source reads. Critical scope correction in §5: h30 monotonicity exception (Bitbrains > Alibaba) is at NEW pool full-test aggregation (`cross_dataset_headline_v2.csv`), NOT F2's input scope (`bcf_pairs.csv`); v3.1 conflated these. v4 discloses both aggregations explicitly. Single strongest claim named: §5 WPE-ACF partial substitution finding. Single weakest claim named: §6 limitation 1, CI degeneracy at k=3 (uncertainty problem, not magnitude problem; bounds the headline statistical claim).
+- D8 Task B — F1 router design lock at `phase_f/journal/f1_prep_scope.md`. Four-feature classifier (ACF@24h, horizon_min, CV, ACF@1h) at cell-level granularity. Training: 12 NNLS cells from `bcf_pairs.csv` with labels from `leaderboard_v1.csv` winner tally (Chronos-2:6, TimesFM:3, Granite-TTM:2, NNLS:1). Evaluation: LOO-cell CV with macro-F1 ≥ 0.55 per DECISION-005. Baseline: always-predict-Chronos-2 yields macro-F1 = 0.167 (hand-computed; comfortably below the 0.55 threshold; the D6-D8 prompt's "baseline may exceed 0.55" concern not realised under macro-F1). Classifier architecture intentionally deferred to F1 implementation (D11+) among multinomial logistic regression with L2, k-NN with k=3, shallow decision tree (depth ≤ 3). Locked as DECISION-012.
+- D6 paperwork (ERRATA-012 Overleaf + biblio audit) and D7 biblio audit continuation remain deferred to D10 F0-close batch per `d6_deferred.md`.
 
-**Tomorrow planned (Day 8, F0-D8):**
-- D8 Task A — promote F2 outline from D7 sketch to defensible structure. Clear the seven TBV open items by reading `f2_partial_r2.py` source and the `wpe_*.csv` files. Name single strongest + single weakest claim. No prose yet.
-- D8 Task B — F1 prep scope, design only, no implementation. Lock feature set (drop WPE per F2 implication; argue both sides for ACF@24h, horizon_min, CV, Hurst, ACF@1h). Identify training data scope (12 cells from `bcf_pairs.csv`, per-cell label = winner foundation model from `leaderboard_v1.csv`). Identify evaluation (LOO-cell CV, macro-F1 ≥ 0.55 per DECISION-005). Baseline (always-predict-Chronos-2). Output: `phase_f/journal/f1_prep_scope.md`. Lock as DECISION-012 if scope firm.
+**Tomorrow planned (Day 9, F0-D9, Sunday 2026-05-31):**
+- Memory snapshot per weekly cadence. Capture F2 null + DECISION-012 F1 design lock + the §5 scope distinction.
+- Light day otherwise; no compute, no manuscript edits.
 
 ## Active open questions
 
@@ -58,7 +58,8 @@ No new questions opened today.
 | F2 WPE per series | `phase_f/data/wpe_{alibaba,bitbrains,bytedance}.csv` (D4 outputs) | (none) |
 | F2 partial-R² results | `phase_f/data/f2_partial_r2_results.csv` (D5) | (none) |
 | F2 Bitbrains per-VM panel | `phase_f/data/per_series_deltas_bitbrains.csv` (D5 intermediate) | (none) |
-| **F2 chapter outline (sketch)** | `phase_f/journal/f2_chapter_outline.md` (D7, v3.1 sketch, 7 TBV items) | (none) |
+| F2 chapter outline (D8 finalised) | `phase_f/journal/f2_chapter_outline.md` (v4 D8, 5 D11+ TBV items) | v3.1 D7 sketch |
+| **F1 design lock** | `phase_f/journal/f1_prep_scope.md` (D8, DECISION-012) | (none) |
 | Verifier expected anchors | `reports/tables/thesis_numbers.json` (NEW pool Bitbrains BCF as of D5) | prior OLD pool version (Q-007) |
 
 ## Pending Overleaf edits (full detail in ERRATA.md)
@@ -69,8 +70,8 @@ No new questions opened today.
 
 | Phase | Metric | Threshold | Status |
 |---|---|---|---|
-| F1 | macro-F1 | ≥ 0.55 | not yet tested (D8 prep scope; full test starts ~D11) |
-| F2 | partial-R²(WPE \| ACF@24h) | ≥ 0.30 | **BELOW (headline 0.079, Bitbrains per-VM 0.056). Null reported per DECISION-005. Chapter outline at sketch quality D7.** |
+| F1 | macro-F1 | ≥ 0.55 | design locked D8 per DECISION-012; baseline 0.167; implementation starts D11+ |
+| F2 | partial-R²(WPE \| ACF@24h) | ≥ 0.30 | **BELOW (headline 0.079, Bitbrains per-VM 0.056). Null reported per DECISION-005. Chapter outline at D8 defensible-structure quality, 5 method-detail TBVs deferred to D11+.** |
 | F3 | Spearman ρ | ≥ 0.6 | not yet tested |
 | F3 | \|DFL−Pinball−τ\| | ≤ 5% | not yet tested |
 
@@ -78,19 +79,19 @@ No new questions opened today.
 
 | Resource | State | Notes |
 |---|---|---|
-| Vast.ai instance C.37423026 | Stopped (untouched D6, D7) | No D6 or D7 compute. statsmodels 0.14.6 + scipy 1.17.1 still installed from D4/D5. Disk preserved. |
+| Vast.ai instance C.37423026 | Stopped (untouched D6–D8) | Three consecutive no-compute days. statsmodels 0.14.6 + scipy 1.17.1 still installed from D4/D5. Disk preserved. |
 | Vast.ai rclone (gdrive:) | Configured | Service-account JSON |
 | Local Windows rclone (gdrive:) | Configured | OAuth, working |
-| Thesis git repo | Active | D7 commit (planned) covers D6-light + D7 journals + F2 outline + this state file. No off-scope edits; SYNC_PROTOCOL Revision 4 staging pattern not invoked. Branch `feature/live-demo`. |
+| Thesis git repo | Active | D8-close commit (planned) covers combined D6-light + D7 + D8 batch: 7 files in `phase_f/`. No off-scope edits; SYNC_PROTOCOL Revision 4 staging pattern not invoked. Branch `feature/live-demo`. |
 | Dashboard repo | Separate, not synced | Unchanged |
 | Drive: phase_f/ | Synced | Mirror of git phase_f/ except data_snapshots/. |
-| Overleaf | No commit D6 or D7 | ERRATA-012 deferred to D10 F0-close batch per `phase_f/journal/d6_deferred.md`. No D7 manuscript work (D7 produced phase_f/ artefacts only). |
+| Overleaf | No commit D6, D7, or D8 | ERRATA-012 deferred to D10 F0-close batch per `phase_f/journal/d6_deferred.md`. No D6-D8 manuscript work. |
 
 ## Memory state
 
 - **Slots used:** 30/30
 - **Last memory snapshot:** `memory_snapshots/memory_snapshot_2026-05-23.md`
-- **Next snapshot due:** Sunday 2026-05-31 (D9, weekly cadence). No `memory_user_edits` calls today.
+- **Next snapshot due:** Sunday 2026-05-31 (D9, weekly cadence, **tomorrow**). Snapshot should capture F2 null + DECISION-012 F1 design lock + §5 scope distinction. No `memory_user_edits` calls today.
 
 ## Update protocol
 

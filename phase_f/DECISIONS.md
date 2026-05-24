@@ -377,3 +377,159 @@ pool per-VM medians to achieve verifier 214/0 with the post-Phase-B
 canonical scope intact, accepting that the submitted manuscript's
 Bitbrains BCF row now disagrees with the verifier and requires
 manuscript-side correction via ERRATA-012.
+---
+
+## DECISION-012 — F1 router design lock (D8)
+
+**Date:** 2026-05-30
+**Status:** LOCKED (Day 8); implementation D11+
+
+**Context:** F1 is the second of three pre-registered Phase F tests
+(DECISION-005, Dr. Ho written acceptance 2026-05-22), threshold
+macro-F1 ≥ 0.55. F2's D5 null (partial-R²(WPE | ACF@24h, horizon) =
+0.0790 at headline, well below 0.30) actively informs F1 design by
+ruling out WPE as a useful router feature on this corpus. D8 Task B
+(per the D6-D8 sequence plan) locks the F1 design BEFORE implementation
+begins, to enforce pre-registration discipline analogous to DECISION-010
+for F2.
+
+**Decision:** F1 router operates at cell-level granularity (cell =
+(dataset, horizon) pair). Four input features:
+1. ACF@24h (continuous, dataset-median, 3 distinct values across 12 cells)
+2. horizon_min (continuous or one-hot, 4 distinct values: 10/30/60/120)
+3. CV (continuous, dataset-median, 3 distinct values)
+4. ACF@1h (continuous, dataset-median, 3 distinct values)
+
+Training data: 12 NNLS cells from `results/bcf/bcf_pairs.csv` (includes
+ByteDance h10 at delta_pp +6.97 per D5 close handoff lesson #4).
+Per-cell label = winner foundation model from
+`results/foundation_comparison/leaderboard_v1.csv` (winner tally
+Chronos-2:6, TimesFM:3, Granite-TTM:2, NNLS:1).
+
+Evaluation: LOO-cell cross-validation (12 folds, each holding one cell
+out), aggregating per-cell predictions into a single 4×4 confusion
+matrix, computing macro-averaged F1. Pre-registered threshold:
+macro-F1 ≥ 0.55 per DECISION-005. Baseline: always-predict-Chronos-2
+yields macro-F1 = 0.167 (computed: per-class F1 = [0, 0.667, 0, 0],
+macro-average = 0.167; the D6-D8 prompt's worry that the baseline
+might exceed 0.55 is not realised under macro-F1).
+
+Classifier architecture deliberately unlocked at D8; locked at F1
+implementation (D11+) among default candidates: multinomial logistic
+regression with L2 regularisation, k-NN with k=3, shallow decision
+tree (depth ≤ 3). NOT deep neural networks or gradient boosting
+(over-parameterised for n=12 training points).
+
+LOO-dataset CV (3 folds, 4 cells held out per fold) reserved as
+post-hoc robustness check IF LOO-cell clears 0.55. Not part of the
+pre-registered threshold.
+
+**Rationale:**
+
+*Feature selection.*
+- **ACF@24h IN.** Load-bearing F1 feature. BCF predicate uses ACF@24h
+  (AUC 0.80, p=0.0097, n=36, predicate ACF@24h > 0.2 AND h ≥ 30).
+  Demonstrated cell-level ordering of ML benefit at h ≥ 60.
+- **horizon_min IN.** Free input; router knows what horizon it is
+  routing for. Horizon dominates F2's R²_reduced (0.903 with ACF +
+  horizon).
+- **CV IN.** cv_stratified_skill.csv shows container-level ML win rate
+  varies by CV bin (best at CV 0.3–0.5 at h120: 62.3% win rate). Cell
+  level granularity collapses to dataset-median but signal persists.
+- **ACF@1h IN.** Provides discriminative power ACF@24h does not.
+  Bitbrains has HIGH ACF@1h (0.748) and LOW ACF@24h (0.116), the
+  cross-dataset pattern the router must detect (Bitbrains is the
+  dataset where ML benefit is small and unstable).
+- **WPE OUT.** F2 null implies WPE adds no marginal signal beyond
+  ACF@24h + horizon at the cell level. Per F2 outline §7 implication.
+- **Hurst OUT.** Low cross-dataset variance (Alibaba 0.775, Bitbrains
+  0.997, ByteDance 0.956, range 0.22) gives no discriminative signal
+  beyond ACF@24h. Collinear with ACF@24h within-dataset.
+
+*Evaluation protocol.* LOO-cell over k-fold because k=12 is small.
+LOO is the small-n classification default. Macro-F1 over accuracy
+because the 6/3/2/1 class imbalance makes accuracy a weak baseline
+(always-predict-Chronos-2 gets accuracy 0.50 vs macro-F1 0.167); the
+gap-to-threshold (0.55 - 0.167 = 0.38) is more discriminative than
+accuracy gap (0.55 - 0.50 = 0.05) would be.
+
+*Classifier architecture deferral.* Architecture choice is an
+implementation question that depends on what the actual training data
+looks like in practice (variance structure, feature-target relationships
+not fully visible until features are computed for all 12 cells).
+Pre-locking the architecture risks the over-engineering the D5+D7
+self-examinations flagged. Defaults named (logistic regression, k-NN,
+shallow tree) constrain implementation to small-n-appropriate models.
+
+**Alternatives considered:**
+
+- *Include Hurst.* Rejected for low cross-dataset variance + collinearity
+  with ACF@24h. Would add a parameter dimension without informative
+  signal.
+- *Include WPE.* Rejected per F2 null + DECISION-010 framing implication.
+- *Use accuracy not macro-F1.* Rejected because always-predict-Chronos-2
+  accuracy is 0.50, making the 0.55 threshold a marginal test.
+  Macro-F1 makes the test informative.
+- *Use LOO-dataset for pre-reg threshold.* Rejected because LOO-dataset
+  with k=3 folds (4 cells held out per fold, training on 8) tests a
+  harder generalisation question than the pre-registered scope.
+  Reserve as robustness check.
+- *Lock classifier architecture at D8.* Rejected — implementation-level
+  choice better made at D11+ with visibility into actual feature matrix
+  properties.
+- *Defer DECISION-012 until F1 implementation start (D11+).* Rejected.
+  Locking the design pre-implementation enforces pre-registration
+  discipline analogous to DECISION-010 for F2. Defending the F1 design
+  post-implementation would invite the same "could have been chosen to
+  fit the data" concern that pre-registration is designed to prevent.
+
+**Consequences:**
+
+- F1 implementation can begin D11+ with scope clear; no further design
+  questions to answer at implementation time other than classifier
+  architecture (constrained to the three named defaults).
+- F2's structural concern carries over: n=12 training points with 3
+  of 4 features dataset-constant at cell level means F1 essentially
+  learns a function of (dataset_fixed_effect, horizon). Honest F1
+  outcome expectation range: macro-F1 ∈ [0.30, 0.65]. If F1 nulls in
+  [0.30, 0.55], the chapter contribution is structural ("dataset-constant
+  features dominate; router signal limited by n=12"), analogous to F2's
+  "ACF saturates the predictability axis".
+- Baseline computation (always-predict-Chronos-2 = macro-F1 0.167) is
+  locked. F1 implementation result reports both macro-F1 against
+  threshold and uplift over this baseline.
+- LOO-cell vs LOO-dataset distinction is locked in the chapter at
+  defence: LOO-cell is pre-registered; LOO-dataset is post-hoc
+  robustness. Both numbers reported if they diverge.
+- F1 implementation produces, at minimum:
+  - `phase_f/scripts/f1_router.py` (training + LOO-cell CV)
+  - `phase_f/data/f1_router_predictions.csv` (per-fold predictions)
+  - `phase_f/data/f1_router_results.csv` (per-class F1, macro-F1,
+    architecture used)
+  - `phase_f/journal/d11_f1_implementation.md` or similar
+
+**Source files:**
+
+- Created: `phase_f/journal/f1_prep_scope.md` (D8 Task B output, full
+  design rationale)
+- Modified: `phase_f/DECISIONS.md` (this entry), `phase_f/THESIS_STATE.md`
+  (D8-close refresh)
+- Referenced unchanged: `results/bcf/bcf_pairs.csv` (training data
+  identification), `results/foundation_comparison/leaderboard_v1.csv`
+  (labels), `omega_summary.csv` (feature values — ACF@24h, ACF@1h, CV,
+  Hurst dataset-medians; verify exact path at file save),
+  `phase_f/journal/f2_chapter_outline.md` (F2 implication anchor)
+
+**Y-statement:** In the context of pre-registered F1 threshold
+macro-F1 ≥ 0.55 (DECISION-005), F2's structural null at D5 ruling out
+WPE as a router feature, and n=12 cells with three of four candidate
+features dataset-constant at cell level, facing the choice between
+locking the design pre-implementation (mirror DECISION-010 for F2) or
+deferring decisions to implementation start (D11+), we decided to lock
+the 4-feature LOO-cell macro-F1 design with classifier architecture
+deferred among three named small-n-appropriate defaults, to achieve
+pre-registration discipline and disclosable design rationale at
+defence, accepting that F1 may report null in the [0.30, 0.55] range
+for sample-size and feature-constancy reasons rather than feature-set
+reasons, and that the structural null finding would itself be the
+chapter contribution.
