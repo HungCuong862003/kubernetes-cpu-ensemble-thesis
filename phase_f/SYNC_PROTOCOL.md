@@ -226,3 +226,132 @@ the underlying problem — state files absent from Vast.ai workspace root
 — was missed until EOD. Recommended automation: a
 `phase_f/scripts/phase_f_session_start.sh` wrapper that does steps 3–6
 of the existing Vast.ai session-start flow non-interactively.
+## Revision 6 (2026-05-27)
+
+**Codifies the Local-first state-file workflow** used for the D4 handoff
+post-hoc add and going forward. This is a refinement of "Local-first
+EOD flow", not a replacement — it specifies the human-loop sequence
+when state-file content is being generated in chat rather than typed
+directly into a local editor.
+
+### When to use this workflow
+
+For any human-authored `.md` file under `phase_f/` whose content is
+being drafted by Claude in chat:
+- Handoffs (`handoffs/*.md`)
+- Journals (`journal/*.md`)
+- THESIS_STATE.md refresh
+- DECISIONS.md amendments
+- ERRATA.md additions
+- SYNC_PROTOCOL.md revisions (like this one)
+
+For compute artefacts produced on Vast.ai (scripts, data CSVs, run
+logs), the existing "Standard EOD flow" still applies — those stay
+Vast.ai-first.
+
+### Sequence
+
+1. **Claude provides the complete file content** as a single fenced
+   markdown block in chat. For wholesale replacements, the full file;
+   for append-only files (DECISIONS, ERRATA, SYNC_PROTOCOL), only the
+   new section.
+
+2. **User: create or edit on Local Windows.** Open the file in notepad
+   or VS Code, paste content, save at the correct path under
+   `E:\thesis\kubernetes-cpu-ensemble-thesis\phase_f\<file>`.
+
+3. **User: upload same content to Vast.ai.** Path destination:
+   - State files (`THESIS_STATE.md`, `DECISIONS.md`, `ERRATA.md`) and
+     `SYNC_PROTOCOL.md`: maintain the workspace-root asymmetry per the
+     §"Three environments" rule — these live at workspace root on
+     Vast.ai.
+   - `handoffs/*.md` and `journal/*.md`: may live at `phase_f/handoffs/`
+     or `phase_f/journal/` on Vast.ai (aligned with Local + Drive). The
+     workspace-root asymmetry for `./handoffs/` is preserved as
+     legacy convention but is not load-bearing — no existing script
+     reads files in `./handoffs/`, so the deviation is tolerated.
+     If a workspace-root copy is wanted for consistency, the next
+     Vast.ai session-start can pull from Drive `phase_f/handoffs/`
+     to `./handoffs/`.
+
+4. **Local → Drive**: from Local PowerShell:
+```powershell
+   rclone copy .\phase_f\<file> gdrive:kubernetes-cpu-ensemble-thesis/phase_f/<destination>/
+```
+   (Use the bulk directory form `rclone copy .\phase_f\ gdrive:.../phase_f/`
+   for multi-file pushes; single-file destinations must include the
+   parent path on Drive.)
+
+5. **Md5 verification across all populated layers.** Single-file
+   `rclone check` fails with "is a file not a directory"; use
+   hashsum diff instead:
+
+```powershell
+   # Local
+   $localMd5 = (Get-FileHash .\phase_f\<file> -Algorithm MD5).Hash.ToLower()
+   # Drive
+   $driveMd5 = (rclone hashsum md5 gdrive:.../phase_f/<file>).Split(' ')[0]
+```
+```bash
+   # Vast.ai SSH
+   md5sum phase_f/<file>   # or ./<file> if state file at workspace root
+```
+
+   All populated layers must print the same 32-char hex. Mismatch
+   means re-push the divergent layer from the canonical source
+   (Local in this workflow).
+
+6. **Git commit + push from Local.** Always from Local PowerShell
+   (git lives nowhere else):
+
+```powershell
+   git add phase_f/<file>
+   git diff --cached --name-only
+
+   @"
+   <commit subject and body — ASCII hyphens OR Encoding UTF8 below>
+   "@ | Out-File -Encoding UTF8 -NoNewline -FilePath .\_commit_msg.txt
+
+   git commit -F .\_commit_msg.txt
+   Remove-Item .\_commit_msg.txt
+
+   git push origin feature/live-demo
+
+   # Verify push landed
+   $localHead = git rev-parse HEAD
+   git fetch origin feature/live-demo
+   $remoteHead = git rev-parse origin/feature/live-demo
+   if ($localHead -ne $remoteHead) { Write-Warning "Divergence" } else { Write-Host "OK pushed: $localHead" }
+```
+
+### Commit message encoding (corrects D4-era bug)
+
+`Out-File -Encoding ASCII` silently strips non-ASCII characters from
+commit messages — the em-dash `—` in commit `f2bf193`'s subject became
+`?` in `git log`. Always use `-Encoding UTF8 -NoNewline` for commit
+message files. Past commits not amended (cosmetic only); going
+forward this is the rule.
+
+### Single-file rclone gotchas (re-anchored)
+
+Two failure modes observed at D4 + D5 close, important enough to
+restate here even though Revision 5 mentioned them:
+
+1. `rclone copy gdrive:path/file.md ./` (single-file source, current
+   directory destination) silently no-ops on some rclone versions —
+   returns successfully without producing the file. Workaround:
+   use directory copy `rclone copy gdrive:path/ ./` with filters, or
+   `rclone copyto gdrive:path/file.md ./file.md` for explicit file
+   copy.
+
+2. `rclone check` fails with "is a file not a directory" when given
+   single-file source or destination. Workaround: hashsum diff via
+   `rclone hashsum md5` on both sides as in step 5 above.
+
+### Vast.ai stop discipline (unchanged but worth restating)
+
+When Vast.ai work concludes for the day, stop the instance via the
+web UI's **Stop** button (not Destroy). Stop preserves disk and
+installed packages; Destroy wipes everything. Confirm the instance
+status shows "stopped" before closing the browser. D4 close added
+scipy 1.17.1 to `/venv/main/` which would be lost on Destroy.
