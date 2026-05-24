@@ -203,3 +203,26 @@ else {
 ```
 
 Expected output:
+## Revision 4 (2026-05-27)
+
+Surgical patches to canonical project files outside `phase_f/` (e.g.,
+`reports/tables/`, `results/`, `src/`) can be committed alongside
+`phase_f/` when they are the direct output of Phase F work documented
+in `DECISIONS.md`. Stage these per-file: `git add path/to/file`. Never
+use `git add -A`.
+
+Example: DECISION-011 (Q-007 Anchor A) modified
+`reports/tables/thesis_numbers.json`. The D5 commit staged this file
+explicitly via `git add reports/tables/thesis_numbers.json` alongside
+`git add phase_f/`, and the commit message named the off-scope file so
+it traces back to the originating decision.
+
+## Revision 5 (2026-05-27, proposed by D5 retrospective — not yet enforced)
+
+Session-start checklist must include an explicit pull-state-files block
+before any other work begins, not just a verify. Today (D5) the verify
+step alone surfaced the broken-rclone-hashsum-on-single-files issue, but
+the underlying problem — state files absent from Vast.ai workspace root
+— was missed until EOD. Recommended automation: a
+`phase_f/scripts/phase_f_session_start.sh` wrapper that does steps 3–6
+of the existing Vast.ai session-start flow non-interactively.

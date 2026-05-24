@@ -214,3 +214,166 @@ pdftotext -layout Ensemble_*.pdf - | grep -iE 'BCa|bias[- ]?corrected[- ]?accele
 - Cross-dataset cadence asymmetry (ByteDance 10-min vs others 5-min) means WPE measures slightly different time scales. Document this disclosure in the F2 chapter when D5 work produces the partial-R² number.
 
 **Y-statement:** In the context of computing a permutation-entropy-based predictability metric for F2, facing literature ambiguity about which PE variant "WPE" denotes, we decided to use Fadlallah's amplitude-weighted PE with m=4 and tau=1 to capture amplitude information relevant to cloud workloads while keeping estimates stable on the shortest series, accepting that the choice locks in a specific definition that the F2 results section must disclose explicitly.
+## DECISION-010 — F2 regression framing: per-cell headline + Bitbrains per-VM robustness
+
+**Date:** 2026-05-27
+**Status:** IMPLEMENTED (Day 5)
+
+**Context:** Pre-registration (Dr. Ho written acceptance 2026-05-22) commits
+to "F2 partial-R²(WPE | ACF@24h) ≥ 0.3" but does not specify regression
+granularity. Three valid framings exist: per-cell pooled (n=12), per-series
+pooled (n ≈ 5235), per-dataset (3 separate regressions). D4's WPE-ACF
+Spearman finding (Bitbrains +0.7553, Alibaba +0.1231, ByteDance +0.2801) is
+post-pre-reg and reveals that pooled and per-dataset framings will give
+substantively different answers.
+
+**Decision:** Headline test is per-cell pooled, n=12, using NNLS rows from
+`bcf_pairs.csv` as outcome (`delta_pp`) joined to dataset-median WPE and
+dataset-median ACF@24h, with `horizon_min` as a covariate. Robustness test
+is Bitbrains per-VM pooled, n=568 (142 VMs × 4 horizons), using
+`r2_delta * 100` from `bitbrains_per_vm.csv` as outcome with per-VM WPE
+and per-VM ACF@24h. Both use cluster-bootstrap 95% percentile CI
+(cluster = dataset for headline, cluster = vm_id for Bitbrains). Alibaba
+and ByteDance per-series robustness deferred to a future Vast.ai session
+pending per-container R² extraction.
+
+**Rationale:**
+- Per-cell granularity matches the BCF predicate, which is itself cell-
+  level (`ACF@24h > 0.2 AND h ≥ 30min` evaluated at cell granularity).
+  Partial-R² at the same granularity is the predictive complement of the
+  BCF predicate test.
+- Per-series headline was rejected because the per-container R² artefacts
+  required for Alibaba and ByteDance do not exist locally — only Bitbrains
+  has a per-VM R² file. Headlining at a granularity only one dataset can
+  meet would create scope-asymmetry at defence.
+- Bitbrains per-VM robustness uses the data that IS local and gives a
+  legitimate per-series partial-R² for that one dataset, closing the
+  cadence-asymmetry concern at least for the dataset where WPE-ACF
+  redundancy (Spearman +0.7553) is most acute.
+
+**Alternatives considered:**
+- *Per-series pooled headline (n ≈ 5235).* Rejected — requires Vast.ai
+  compute to extract per-container Alibaba/ByteDance R²; would also
+  conflate three datasets at three cadences (Bitbrains/Alibaba 5-min,
+  ByteDance 10-min).
+- *Per-dataset (3 regressions).* Rejected as headline (multiple-testing
+  problem with 3 separate threshold tests); the per-dataset breakdown is
+  present implicitly in the residual diagnostics step of the script.
+- *Pooled with dataset fixed effects.* Rejected — would absorb the
+  between-dataset variation that is the only source of WPE+ACF variation
+  in the per-cell design, leaving zero usable predictor variance.
+
+**Consequences:**
+- F2 reports null under both framings: headline partial-R² = 0.0790
+  (CI [0.0000, 0.0790]), Bitbrains per-VM partial-R² = 0.0558
+  (CI [0.0007, 0.2126]). Both decisively below 0.30.
+- Structural diagnosis: R²_reduced (ACF + horizon, no WPE) = 0.903 in the
+  headline. ACF@24h + horizon already explain 90% of cell-level delta_pp
+  variance — WPE has nothing left to predict on this corpus.
+- WPE coefficient is positive cross-dataset, inverting the M4-literature
+  prior that PE captures noise ACF misses. Interpretation for the F2
+  chapter: WPE and ACF@24h are partial substitutes on this corpus, not
+  complements.
+- ByteDance h10 IS in the n=12 design (D2-close incidental finding; the
+  "11 cells minus ByteDance h10" framing from earlier planning notes was
+  carried wrong into the preflight).
+- Bitbrains delta_pp scope in bcf_pairs.csv is OLD pool per-VM median,
+  matching the canonical BCF table aggregation rule. If a future scope
+  rationalisation regenerates bcf_pairs.csv at NEW pool, F2 numbers
+  shift quantitatively but the verdict (both framings well below 0.30)
+  is robust.
+- F2 null actively informs F1 design: drop WPE as a candidate router
+  feature without loss.
+
+**Source files:**
+- Outcome: `bcf_pairs.csv` (headline) and `bitbrains_per_vm.csv` (robustness)
+- Predictors: `phase_f/data/wpe_{alibaba,bitbrains,bytedance}.csv`,
+  `omega_{alibaba,bitbrains}.csv`, `bytedance_per_instance_stats.csv`
+- Script: `phase_f/scripts/f2_partial_r2.py`
+- Outputs: `phase_f/data/f2_partial_r2_results.csv`,
+  `phase_f/data/per_series_deltas_bitbrains.csv`
+
+**Y-statement:** In the context of pre-registered F2 partial-R² testing
+without specified granularity, facing a post-pre-reg discovery that
+WPE-ACF correlation varies sharply across datasets, we decided to
+headline per-cell at n=12 (matching the cell-level BCF predicate) with
+Bitbrains per-VM robustness as a within-dataset sensitivity test, to
+achieve a defensible primary number at the same granularity as the
+construct F2 is meant to predict, accepting that the per-cell design's
+low effective rank produces a degenerate cluster-bootstrap CI and that
+the headline reports a null result under the pre-reg threshold.
+
+---
+
+## DECISION-011 — Q-007 Anchor A: verifier expected updated to NEW pool per-VM medians
+
+**Date:** 2026-05-27
+**Status:** IMPLEMENTED (Day 5)
+
+**Context:** `verify_foundation.py` audit stuck at 211/3 since the Phase B
+pool transition. The 3 FAILs are in `check_section_11_boundary` (Bitbrains
+BCF row), where the verifier's `actual` side (read from
+`boundary_condition_table_corrected.csv`) was updated to NEW pool per-VM
+medians at some prior session, but the `expected` side (read from
+`reports/tables/thesis_numbers.json`) still carries OLD pool literals.
+The D4 journal misdiagnosed this as "computed live by verifier"; the BCF
+section is in fact a static CSV-vs-JSON comparison, and the CSV had
+already been migrated to NEW pool.
+
+**Decision:** Update three keys in `reports/tables/thesis_numbers.json` to
+match the CSV's NEW pool values:
+- `"Section 11: Boundary Conditions.Bitbrains.delta_30min"`: `"-5.46pp"` → `"+1.53pp"`
+- `"Section 11: Boundary Conditions.Bitbrains.delta_120min"`: `"+3.30pp"` → `"-2.81pp"`
+- `"Section 11: Boundary Conditions.Bitbrains.verdict"`: `"ML wins only @120min"` → the full descriptive NEW-pool string already present in the CSV.
+
+**Rationale:**
+- The CSV is the canonical artefact (anchored to the canonical post-Phase-B
+  pipeline output). The JSON is a downstream anchor file for the verifier.
+  Aligning JSON to CSV preserves a single canonical scope.
+- Per-VM median NEW pool is the production-relevant aggregation per
+  documented project norms (memory: "must report BOTH in §5"). Anchor A
+  locks the verifier to this scope.
+- Alternatives — regenerating the CSV back to OLD pool, or extending the
+  verifier to check both pools — were rejected as scope-regression and
+  audit-noise respectively.
+
+**Alternatives considered:**
+- *Restore CSV to OLD pool, leave JSON as is.* Rejected — undoes a prior
+  canonical-scope migration; the post-Phase-B pipeline produces NEW pool
+  by default.
+- *Switch verifier to read directly from canonical NEW pool source files
+  (cross_dataset_headline_v2.csv etc.).* Cleaner but bigger refactor than
+  Q-007 scope warrants. Queue for future verifier rationalisation.
+- *Keep audit at 211/3, defer indefinitely.* Rejected — 3 stale anchors
+  create noise in every audit run and obscure new real failures.
+
+**Consequences:**
+- Audit clears 211/3 → 214/0.
+- bcf_pairs.csv (BCF canonical input, source for F2 today) is still OLD
+  pool per-VM median for Bitbrains — Section 2 verifier and bcf_pairs.csv
+  remain internally consistent at OLD pool. Q-007 does NOT touch them
+  today.
+- Submitted manuscript Ch4 BCF prose + Table 4.10 Bitbrains row still
+  cite OLD pool (-5.46/+3.30, "ML wins only at h=120"). ERRATA-012 added
+  for D6+ Overleaf application.
+- No source-code change to verify_foundation.py. No CSV regeneration.
+- File-staging convention: the JSON edit is outside `phase_f/` scope.
+  Per SYNC_PROTOCOL Revision 4 (proposed today), surgical patches to
+  canonical project files outside `phase_f/` can be committed alongside
+  `phase_f/` when they are the direct output of a documented Phase F
+  decision. Staged explicitly via `git add reports/tables/thesis_numbers.json`.
+
+**Source files:**
+- Modified: `reports/tables/thesis_numbers.json` (3 keys)
+- Unchanged: `verify_foundation.py`, `boundary_condition_table_corrected.csv`,
+  `bitbrains_summary_corrected.csv`, `bcf_pairs.csv`
+
+**Y-statement:** In the context of a 211/3 verifier audit with the FAILs
+concentrated on stale OLD-pool literals in `thesis_numbers.json` (while
+the corresponding CSV had already migrated to NEW pool), facing the
+choice between aligning the JSON forward to match the CSV or reverting
+the CSV backward to match the JSON, we decided to update the JSON to NEW
+pool per-VM medians to achieve verifier 214/0 with the post-Phase-B
+canonical scope intact, accepting that the submitted manuscript's
+Bitbrains BCF row now disagrees with the verifier and requires
+manuscript-side correction via ERRATA-012.

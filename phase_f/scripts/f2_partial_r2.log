@@ -1,0 +1,162 @@
+F2 partial-R^2(WPE | ACF@24h) test
+Pre-reg threshold: >= 0.30  (Dr. Ho written acceptance 2026-05-22)
+DECISION-010 (2026-05-27): per-cell headline + Bitbrains per-VM robustness
+seed=20260527  n_boot=5000
+
+====================================================================
+HEADLINE: per-cell pooled, n=12
+====================================================================
+
+[1] loading bcf_pairs.csv ...
+    total rows: 60
+    models present: ['Chronos-2', 'Granite-TTM', 'NNLS', 'Naive', 'TimesFM']
+    NNLS rows: 12
+    NNLS by dataset: {'Alibaba': 4, 'Bitbrains': 4, 'ByteDance': 4}
+    ByteDance h10 present? True  (D2 incidental finding; expected True)
+
+[2] per-dataset WPE medians (from D4 outputs) ...
+    wpe_alibaba   cols=['container_id', 'n_points', 'wpe']  rows=5000
+    wpe_bitbrains cols=['container_id', 'n_points', 'wpe']  rows=142
+    wpe_bytedance cols=['container_id', 'n_points', 'wpe']  rows=93
+    WPE medians: {'Alibaba': 0.5660542060778957, 'Bitbrains': 0.7276080207333089, 'ByteDance': 0.9544525492648208}
+    sanity Alibaba: got 0.5661 vs D4 journal 0.5667 [OK]
+    sanity Bitbrains: got 0.7276 vs D4 journal 0.7276 [OK]
+    sanity ByteDance: got 0.9545 vs D4 journal 0.9545 [OK]
+
+[3] per-dataset ACF@24h medians (from omega/stats files) ...
+    omega_alibaba                 rows=4902
+    omega_bitbrains               rows=156
+    bytedance_per_instance_stats  rows=93
+    ACF@24h medians: {'Alibaba': 0.31579848338611605, 'Bitbrains': 0.11646456380401685, 'ByteDance': 0.4893850882830081}
+
+[4] joining into per-cell design matrix ...
+    final design matrix: 12 rows
+  dataset horizon  horizon_min  delta_pp      wpe  acf_24h
+  Alibaba   10min           10  0.257566 0.566054 0.315798
+  Alibaba   30min           30  0.429917 0.566054 0.315798
+  Alibaba   60min           60  1.328611 0.566054 0.315798
+  Alibaba  120min          120  4.637649 0.566054 0.315798
+Bitbrains   10min           10 -8.683550 0.727608 0.116465
+Bitbrains   30min           30 -5.463550 0.727608 0.116465
+Bitbrains   60min           60 -0.786950 0.727608 0.116465
+Bitbrains  120min          120  3.295600 0.727608 0.116465
+ByteDance   10min           10  6.967314 0.954453 0.489385
+ByteDance   30min           30  5.521322 0.954453 0.489385
+ByteDance   60min           60  6.093947 0.954453 0.489385
+ByteDance  120min          120 11.307128 0.954453 0.489385
+
+[4b] cross-dataset gut check:
+    Alibaba: wpe=0.5661  acf24h=0.3158  mean(delta_pp)=+1.66
+    Bitbrains: wpe=0.7276  acf24h=0.1165  mean(delta_pp)=-2.91
+    ByteDance: wpe=0.9545  acf24h=0.4894  mean(delta_pp)=+7.47
+
+[5] regression — full vs reduced ...
+    R^2 full (WPE + ACF + horizon):     0.9110
+    R^2 reduced (ACF + horizon):        0.9034
+    coef(WPE) in full model:            +3.4524
+    sign of WPE coef:                   POSITIVE — higher entropy -> more ML benefit (inverts the predictability story; disclose)
+    partial-R^2(WPE | ACF, horizon):    0.0790
+    pre-reg threshold:                  0.3
+    passes pre-reg?                     NO
+
+[5b] sensitivity — drop horizon covariate ...
+    partial-R^2(WPE | ACF, no horizon): 0.0214
+    coef(WPE) in this model:            +3.4524
+
+[6] VIF (collinearity diagnostic) ...
+    VIF(wpe) = 1.43  [OK]
+    VIF(acf_24h) = 1.43  [OK]
+    VIF(horizon_min) = 1.00  [OK]
+    NOTE: n=12 with WPE and ACF varying only across 3 datasets
+    means high VIF is structural, not a bug. It is the reason
+    partial-R^2 is bounded by the between-dataset variance.
+
+[7] cluster-bootstrap 95% CI (n_boot=5000, cluster=dataset, k=3) ...
+    failed resamples: 0 / 5000
+    95% percentile CI: [-0.0000, 0.0790]
+    NOTE: k=3 clusters means many resamples will repeat one or
+    two datasets; CI is correspondingly wide.
+
+[8] residual diagnostics (per-dataset bias) ...
+    Alibaba: mean(resid)=-0.000  sd(resid)=1.202  max|resid|=1.501
+    Bitbrains: mean(resid)=-0.000  sd(resid)=2.336  max|resid|=2.867
+    ByteDance: mean(resid)=-0.000  sd(resid)=1.723  max|resid|=2.402
+
+====================================================================
+ROBUSTNESS: Bitbrains per-VM pooled
+====================================================================
+
+[1] loading bitbrains_per_vm.csv ...
+    rows: 624
+    unique VMs: 156
+    horizons: ['10min', '120min', '30min', '60min']
+    delta_pp summary (pp): min=-1100.00 med=-6.13 max=+222.10
+
+[2] loading wpe_bitbrains.csv ...
+    rows: 142  cols: ['vm_id', 'n_points', 'wpe']
+
+[3] loading omega_bitbrains.csv ...
+    rows: 156  cols: ['vm_id', 'n_points', 'mean_cpu', 'cv', 'hurst', 'acf_1h', 'acf_24h', 'omega']
+
+[4] joining per-VM predictors (inner join) ...
+    VMs with both WPE and ACF: 142
+    (expected ~142 per D4 journal)
+
+[5] joining design matrix ...
+    final panel rows: 568  (should be 142 VMs x 4 horizons)
+    head:
+ vm_id horizon  horizon_min  delta_pp      wpe  acf_24h
+   183   10min           10   -1100.0 0.864229 0.454209
+   183   30min           30    -100.0 0.864229 0.454209
+   183   60min           60    -100.0 0.864229 0.454209
+   183  120min          120    -100.0 0.864229 0.454209
+   184   10min           10   -1100.0 0.870114 0.448478
+   184   30min           30   -1100.0 0.870114 0.448478
+   184   60min           60   -1100.0 0.870114 0.448478
+   184  120min          120   -1100.0 0.870114 0.448478
+    saved: phase_f/data/per_series_deltas_bitbrains.csv
+
+[6] regression — full vs reduced ...
+    R^2 full:                           0.1864
+    R^2 reduced:                        0.1383
+    coef(WPE):                          +1354.6260
+    partial-R^2(WPE | ACF, horizon):    0.0558
+    passes pre-reg (>= 0.30)?           NO
+
+[6b] sensitivity — drop horizon covariate ...
+    partial-R^2(WPE | ACF, no horizon): 0.0558
+    coef(WPE) in this model:            +1354.6260
+
+[7] VIF (per-VM design has real cross-VM variation) ...
+    VIF(wpe) = 4.25  [OK]
+    VIF(acf_24h) = 4.25  [OK]
+    VIF(horizon_min) = 1.00  [OK]
+    NOTE: D4 within-Bitbrains Spearman(WPE, ACF) = +0.7553,
+    so high VIF on these two is expected and bounds partial-R^2.
+
+[8] cluster-bootstrap by vm_id (n_boot=5000) ...
+    failed resamples: 0 / 5000
+    95% percentile CI: [0.0007, 0.2126]
+
+====================================================================
+WRITING RESULTS
+====================================================================
+
+saved: phase_f/data/f2_partial_r2_results.csv
+                   framing   n  partial_r2        ci_low  ci_high  passes_threshold  r2_full  r2_reduced    coef_wpe  partial_r2_nohorizon  vif_wpe  vif_acf_24h
+         headline_per_cell  12    0.078960 -9.151168e-16 0.078960             False 0.910982    0.903351    3.452433              0.021413 1.430200     1.430200
+robustness_bitbrains_pervm 568    0.055843  6.619637e-04 0.212578             False 0.186389    0.138267 1354.626040              0.055830 4.248059     4.248059
+
+====================================================================
+F2 VERDICT
+====================================================================
+  Headline (per-cell, n=12):  partial-R^2 = 0.0790  CI [-0.0000, 0.0790]  => BELOW THRESHOLD
+  Bitbrains per-VM (n=568):  partial-R^2 = 0.0558  CI [0.0007, 0.2126]  => BELOW THRESHOLD
+
+  Headline below 0.30 threshold. F2 reports a null result
+  under the pre-registered design. Discussion section frames
+  the negative result honestly per DECISION-005 ('If any
+  phase misses threshold, result reported honestly as null /
+  below-threshold (no post-hoc adjustment)').
+
+done.
