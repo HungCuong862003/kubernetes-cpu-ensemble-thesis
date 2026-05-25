@@ -1,0 +1,314 @@
+
+========================================================================
+[A] Bitbrains ensemble files at h30 / h60 / h120
+========================================================================
+
+-- bitbrains h010 -- (/workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/h010/predictions)
+   .npy files (22):
+     oof_chronos2.npy
+     oof_ensemble_v2.npy
+     oof_et.npy
+     oof_lgbm.npy
+     oof_nhits.npy
+     oof_xgb.npy
+     test_arima.npy
+     test_chronos2.npy
+     test_ensemble_homo.npy
+     test_ensemble_homo_mem.npy
+     test_ensemble_v2.npy
+     test_ensemble_v3.npy
+     test_et.npy
+     test_ets.npy
+     test_lgbm.npy
+     test_linreg.npy
+     test_naive.npy
+     test_naive_mem.npy
+     test_nhits.npy
+     test_xgb.npy
+     y_naive.npy
+     y_true.npy
+   inspection (mean / min / max / n_nan):
+     y_true.npy                   shape=(203536,) mean=30.395 min=0.000 max=106.183 n_nan=0 first5=['18.73', '19.05', '23.62', '30.58', '31.02']
+     y_naive.npy                  shape=(203536,) mean=30.399 min=0.000 max=106.183 n_nan=0 first5=['18.90', '18.35', '18.73', '19.05', '23.62']
+     test_ensemble_hetero.npy     MISSING
+     test_ensemble_homo.npy       shape=(203536,) mean=31.190 min=-46.306 max=139.695 n_nan=0 first5=['11.35', '10.56', '11.69', '11.98', '16.84']
+     test_ensemble_v2.npy         shape=(203536,) mean=-11.274 min=-95.688 max=54.698 n_nan=0 first5=['-12.00', '-11.71', '-9.60', '-6.73', '-7.85']
+     test_ensemble_v3.npy         shape=(203536,) mean=-0.310 min=-60.166 max=55.017 n_nan=0 first5=['-5.10', '-5.01', '-2.76', '0.22', '0.72']
+     test_xgb.npy                 shape=(203536,) mean=30.745 min=-34.544 max=134.406 n_nan=0 first5=['12.14', '11.59', '11.97', '14.40', '19.41']
+     test_et.npy                  shape=(203536,) mean=30.492 min=-44.326 max=144.870 n_nan=0 first5=['14.74', '13.99', '15.97', '18.22', '23.40']
+
+-- bitbrains h030 -- (/workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/h030/predictions)
+   .npy files (23):
+     oof_chronos2.npy
+     oof_ensemble_v2.npy
+     oof_et.npy
+     oof_lgbm.npy
+     oof_nhits.npy
+     oof_xgb.npy
+     test_arima.npy
+     test_chronos2.npy
+     test_ensemble_hetero.npy
+     test_ensemble_homo.npy
+     test_ensemble_homo_mem.npy
+     test_ensemble_v2.npy
+     test_ensemble_v3.npy
+     test_et.npy
+     test_ets.npy
+     test_lgbm.npy
+     test_linreg.npy
+     test_naive.npy
+     test_naive_mem.npy
+     test_nhits.npy
+     test_xgb.npy
+     y_naive.npy
+     y_true.npy
+   inspection (mean / min / max / n_nan):
+     y_true.npy                   shape=(202968,) mean=30.372 min=0.000 max=106.183 n_nan=0 first5=['31.02', '30.23', '29.13', '29.02', '21.87']
+     y_naive.npy                  shape=(202968,) mean=30.370 min=0.000 max=106.183 n_nan=0 first5=['18.90', '18.35', '18.73', '19.05', '23.62']
+     test_ensemble_hetero.npy     shape=(1650759,) mean=10.280 min=-9.010 max=100.892 n_nan=0 first5=['3.94', '3.94', '3.95', '3.96', '2.96']
+     test_ensemble_homo.npy       shape=(202968,) mean=31.759 min=-46.412 max=132.064 n_nan=0 first5=['1.07', '1.13', '6.67', '9.36', '17.79']
+     test_ensemble_v2.npy         shape=(202968,) mean=0.399 min=-84.456 max=86.714 n_nan=0 first5=['-7.60', '-8.51', '-4.04', '-3.67', '-2.81']
+     test_ensemble_v3.npy         shape=(202968,) mean=0.645 min=-84.222 max=86.917 n_nan=0 first5=['-7.35', '-8.27', '-3.79', '-3.42', '-2.56']
+     test_xgb.npy                 shape=(202968,) mean=31.222 min=-42.158 max=142.035 n_nan=0 first5=['4.20', '3.65', '4.03', '4.35', '8.92']
+     test_et.npy                  shape=(202968,) mean=31.149 min=-71.177 max=176.815 n_nan=0 first5=['12.01', '10.45', '15.07', '16.08', '21.54']
+
+-- bitbrains h060 -- (/workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/h060/predictions)
+   .npy files (23):
+     oof_chronos2.npy
+     oof_ensemble_v2.npy
+     oof_et.npy
+     oof_lgbm.npy
+     oof_nhits.npy
+     oof_xgb.npy
+     test_arima.npy
+     test_chronos2.npy
+     test_ensemble_hetero.npy
+     test_ensemble_homo.npy
+     test_ensemble_homo_mem.npy
+     test_ensemble_v2.npy
+     test_ensemble_v3.npy
+     test_et.npy
+     test_ets.npy
+     test_lgbm.npy
+     test_linreg.npy
+     test_naive.npy
+     test_naive_mem.npy
+     test_nhits.npy
+     test_xgb.npy
+     y_naive.npy
+     y_true.npy
+   inspection (mean / min / max / n_nan):
+     y_true.npy                   shape=(202116,) mean=30.337 min=0.000 max=106.183 n_nan=0 first5=['20.45', '21.60', '21.75', '21.08', '21.50']
+     y_naive.npy                  shape=(202116,) mean=30.270 min=0.000 max=106.183 n_nan=0 first5=['18.90', '18.35', '18.73', '19.05', '23.62']
+     test_ensemble_hetero.npy     shape=(1621233,) mean=10.282 min=-9.554 max=104.091 n_nan=0 first5=['3.80', '3.81', '3.82', '3.88', '2.88']
+     test_ensemble_homo.npy       shape=(202116,) mean=32.494 min=-39.820 max=162.339 n_nan=0 first5=['1.37', '1.32', '5.60', '8.24', '17.64']
+     test_ensemble_v2.npy         shape=(202116,) mean=1.250 min=-80.449 max=96.534 n_nan=0 first5=['-5.90', '-5.11', '-3.67', '-1.31', '-0.41']
+     test_ensemble_v3.npy         shape=(202116,) mean=1.662 min=-80.098 max=96.882 n_nan=0 first5=['-5.48', '-4.69', '-3.25', '-0.90', '0.00']
+     test_xgb.npy                 shape=(202116,) mean=31.254 min=-38.463 max=133.710 n_nan=0 first5=['16.83', '16.28', '16.67', '16.98', '21.55']
+     test_et.npy                  shape=(202116,) mean=31.895 min=-73.882 max=158.731 n_nan=0 first5=['13.51', '13.43', '15.00', '17.74', '23.44']
+
+-- bitbrains h120 -- (/workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/h120/predictions)
+   .npy files (23):
+     oof_chronos2.npy
+     oof_ensemble_v2.npy
+     oof_et.npy
+     oof_lgbm.npy
+     oof_nhits.npy
+     oof_xgb.npy
+     test_arima.npy
+     test_chronos2.npy
+     test_ensemble_hetero.npy
+     test_ensemble_homo.npy
+     test_ensemble_homo_mem.npy
+     test_ensemble_v2.npy
+     test_ensemble_v3.npy
+     test_et.npy
+     test_ets.npy
+     test_lgbm.npy
+     test_linreg.npy
+     test_naive.npy
+     test_naive_mem.npy
+     test_nhits.npy
+     test_xgb.npy
+     y_naive.npy
+     y_true.npy
+   inspection (mean / min / max / n_nan):
+     y_true.npy                   shape=(200412,) mean=30.465 min=0.000 max=106.183 n_nan=0 first5=['27.52', '27.23', '26.90', '27.47', '25.07']
+     y_naive.npy                  shape=(200412,) mean=30.142 min=0.000 max=106.183 n_nan=0 first5=['18.90', '18.35', '18.73', '19.05', '23.62']
+     test_ensemble_hetero.npy     shape=(1562181,) mean=10.315 min=-11.805 max=104.941 n_nan=0 first5=['4.12', '4.10', '4.11', '4.10', '3.09']
+     test_ensemble_homo.npy       shape=(200412,) mean=34.195 min=-57.660 max=176.918 n_nan=0 first5=['53.85', '59.52', '66.89', '70.75', '81.30']
+     test_ensemble_v2.npy         shape=(200412,) mean=1.889 min=-96.219 max=102.757 n_nan=0 first5=['39.68', '45.32', '49.89', '52.53', '53.20']
+     test_ensemble_v3.npy         shape=(200412,) mean=2.234 min=-95.925 max=103.144 n_nan=0 first5=['40.00', '45.64', '50.21', '52.85', '53.51']
+     test_xgb.npy                 shape=(200412,) mean=32.748 min=-31.123 max=140.929 n_nan=0 first5=['55.03', '54.48', '54.86', '55.18', '59.75']
+     test_et.npy                  shape=(200412,) mean=32.453 min=-83.068 max=181.525 n_nan=0 first5=['62.71', '67.79', '72.60', '75.60', '81.09']
+
+========================================================================
+[B] ByteDance Granite-TTM .npz — where are the outliers?
+========================================================================
+
+-- bytedance h030 granite_ttm --
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps', 'dataset']
+     y_true         shape=(4650,) mean=18.13 min=0.000 max=100.000 p1=0.27 p99=100.00 n_nan=0
+     y_pred_mean    shape=(4650,) mean=21.48 min=0.352 max=123.988 p1=0.52 p99=118.55 n_nan=0
+     y_pred_p50     shape=(4650,) all-NaN
+     y_naive        shape=(4650,) mean=18.12 min=0.000 max=100.000 p1=0.28 p99=100.00 n_nan=0
+   worst 5 (cid, y_true, y_pred_mean, sq_err):
+     bd_instance_38 y_true=    0.00 y_pred_mean=       85.83 sq_err=7.37e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       87.21 sq_err=7.61e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       91.59 sq_err=8.39e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       96.24 sq_err=9.26e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=      104.91 sq_err=1.10e+04
+
+-- bytedance h060 granite_ttm --
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps', 'dataset']
+     y_true         shape=(4650,) mean=18.08 min=0.000 max=100.000 p1=0.28 p99=100.00 n_nan=0
+     y_pred_mean    shape=(4650,) mean=22.41 min=0.342 max=130.468 p1=0.58 p99=123.53 n_nan=0
+     y_pred_p50     shape=(4650,) all-NaN
+     y_naive        shape=(4650,) mean=18.30 min=0.000 max=100.000 p1=0.26 p99=100.00 n_nan=0
+   worst 5 (cid, y_true, y_pred_mean, sq_err):
+     bd_instance_38 y_true=    0.00 y_pred_mean=       90.78 sq_err=8.24e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       96.51 sq_err=9.31e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       99.34 sq_err=9.87e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=      103.11 sq_err=1.06e+04
+     bd_instance_38 y_true=    0.00 y_pred_mean=      104.09 sq_err=1.08e+04
+
+-- bytedance h120 granite_ttm --
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps', 'dataset']
+     y_true         shape=(4650,) mean=18.23 min=0.000 max=100.000 p1=0.29 p99=100.00 n_nan=0
+     y_pred_mean    shape=(4650,) mean=23.01 min=0.420 max=132.327 p1=0.64 p99=125.90 n_nan=0
+     y_pred_p50     shape=(4650,) all-NaN
+     y_naive        shape=(4650,) mean=18.06 min=0.000 max=100.000 p1=0.26 p99=100.00 n_nan=0
+   worst 5 (cid, y_true, y_pred_mean, sq_err):
+     bd_instance_38 y_true=  100.00 y_pred_mean=       25.10 sq_err=5.61e+03
+     bd_instance_38 y_true=  100.00 y_pred_mean=       24.60 sq_err=5.68e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       76.88 sq_err=5.91e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=       78.21 sq_err=6.12e+03
+     bd_instance_38 y_true=    0.00 y_pred_mean=      103.15 sq_err=1.06e+04
+
+========================================================================
+[C] bitbrains_per_vm_results.csv schema + ID format
+========================================================================
+path: /workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/diagnostics/bitbrains_per_vm_results.csv
+   rows: 624
+   columns: ['vm_id', 'horizon', 'naive_r2', 'ml_r2', 'r2_delta', 'naive_mae', 'ml_mae', 'ml_wins']
+   head:
+   vm_id horizon  naive_r2     ml_r2  r2_delta  naive_mae    ml_mae  ml_wins
+0   1005   10min  0.055860  0.738136  0.682275   0.043064  0.021413        1
+1   1005   30min -0.154731  0.605161  0.759891   0.049586  0.027897        1
+2   1005   60min -0.059104  0.471773  0.530877   0.045942  0.034482        1
+3   1005  120min -0.181755  0.339158  0.520913   0.049666  0.039894        1
+4   1007   10min -0.308981  0.142072  0.451053   0.007475  0.006339        1
+
+   horizon values: ['10min', '120min', '30min', '60min']
+   vm_id format: first 5 = ['1005', '1007', '183', '184', '185']
+   vm_id unique count: 156
+
+bitbrains h030 chronos2 container_ids format:
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/h030/foundation_models/chronos2_perpoint.npz
+   unique cids: 142
+   first 5: [np.str_('bb_1005'), np.str_('bb_1007'), np.str_('bb_183'), np.str_('bb_184'), np.str_('bb_185')]
+   last 5:  [np.str_('bb_735'), np.str_('bb_812'), np.str_('bb_826'), np.str_('bb_827'), np.str_('bb_846')]
+
+bitbrains test.parquet container_id format:
+   path: /workspace/kubernetes-cpu-ensemble-thesis/data/processed/bitbrains/test.parquet
+   unique ids: 142
+   first 5: ['bb_1005', 'bb_1007', 'bb_183', 'bb_184', 'bb_185']
+   last 5:  ['bb_735', 'bb_812', 'bb_826', 'bb_827', 'bb_846']
+
+========================================================================
+[D] leaderboard_v1.csv — nnls_pool / nnls_agg_method per cell
+========================================================================
+path: /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/leaderboard_v1.csv
+   rows: 12
+   columns: ['dataset', 'horizon', 'n_points', 'naive_r2', 'nnls_ensemble_r2', 'chronos2_r2', 'timesfm_r2', 'granite_ttm_r2', 'delta_nnls_naive_pp', 'delta_chronos2_naive_pp', 'delta_timesfm_naive_pp', 'delta_ttm_naive_pp', 'nnls_agg_method', 'nnls_pool']
+
+   full table (selected cols):
+      dataset horizon  naive_r2  nnls_ensemble_r2  chronos2_r2  timesfm_r2  granite_ttm_r2 nnls_agg_method                  nnls_pool
+0     alibaba   10min    0.9201          0.925400       0.9190      0.8989          0.8660          pooled  NEW (ET+N-HiTS+Chronos-2)
+1     alibaba   30min    0.8324          0.866100       0.8572      0.8535          0.8089          pooled  NEW (ET+N-HiTS+Chronos-2)
+2     alibaba   60min    0.7879          0.846500       0.8241      0.8309          0.7650          pooled  NEW (ET+N-HiTS+Chronos-2)
+3     alibaba  120min    0.7085          0.809300       0.7612      0.7726          0.6810          pooled  NEW (ET+N-HiTS+Chronos-2)
+4   bitbrains   10min    0.8115          0.634410       0.8210      0.7264          0.7088   per_vm_median    OLD (XGB+LGB+ET+BiLSTM)
+5   bitbrains   30min    0.4769          0.361124       0.4946      0.5291          0.4833   per_vm_median    OLD (XGB+LGB+ET+BiLSTM)
+6   bitbrains   60min    0.1957          0.119913       0.2179      0.2873          0.3396   per_vm_median    OLD (XGB+LGB+ET+BiLSTM)
+7   bitbrains  120min    0.0914          0.009030       0.1474      0.2366          0.2759   per_vm_median    OLD (XGB+LGB+ET+BiLSTM)
+8   bytedance   10min    0.7829          0.854800       0.9546      0.8408          0.7989          pooled    OLD (XGB+LGB+ET+BiLSTM)
+9   bytedance   30min    0.7450          0.944400       0.9423      0.8731          0.7661          pooled  NEW (ET+N-HiTS+Chronos-2)
+10  bytedance   60min    0.6949          0.930500       0.9265      0.8880          0.7131          pooled  NEW (ET+N-HiTS+Chronos-2)
+11  bytedance  120min    0.6532          0.911400       0.9103      0.8834          0.6961          pooled  NEW (ET+N-HiTS+Chronos-2)
+
+   per-cell winner (argmax across nnls / chronos2 / timesfm / granite_ttm):
+      dataset horizon      _winner  nnls_ensemble_r2  chronos2_r2  timesfm_r2  granite_ttm_r2
+0     alibaba   10min         nnls          0.925400       0.9190      0.8989          0.8660
+1     alibaba   30min         nnls          0.866100       0.8572      0.8535          0.8089
+2     alibaba   60min         nnls          0.846500       0.8241      0.8309          0.7650
+3     alibaba  120min         nnls          0.809300       0.7612      0.7726          0.6810
+4   bitbrains   10min     chronos2          0.634410       0.8210      0.7264          0.7088
+5   bitbrains   30min      timesfm          0.361124       0.4946      0.5291          0.4833
+6   bitbrains   60min  granite_ttm          0.119913       0.2179      0.2873          0.3396
+7   bitbrains  120min  granite_ttm          0.009030       0.1474      0.2366          0.2759
+8   bytedance   10min     chronos2          0.854800       0.9546      0.8408          0.7989
+9   bytedance   30min         nnls          0.944400       0.9423      0.8731          0.7661
+10  bytedance   60min         nnls          0.930500       0.9265      0.8880          0.7131
+11  bytedance  120min         nnls          0.911400       0.9103      0.8834          0.6961
+
+   tally:
+_winner
+nnls           7
+chronos2       2
+granite_ttm    2
+timesfm        1
+
+========================================================================
+[E] Pooled R² sanity check — Alibaba NNLS h120
+========================================================================
+Canonical: comparison_table.csv reports Alibaba NNLS h120 R² = 0.7642 (CPU scale, pooled)
+
+   pooled R² on chronos2 K=20 spine (98315 points):
+     y_true mean / range: 10.143 / [0.00, 100.00]
+     
+     hetero (test_ensemble_hetero.npy):
+       y_pred mean / range:   10.270 / [-4.69, 103.91]
+       pooled R²:             0.7584
+       expected canonical:    0.7642 (full-test scope; may differ on K=20 subset)
+     
+     v3 (test_ensemble_v3.npy, residual scale):
+       y_pred mean / range:   -0.116 / [-80.54, 50.88]
+       pooled R²:             -1.0298  (negative = residual scale mismatch)
+
+========================================================================
+[F] Pooled R² test — Bitbrains hetero h030 (the broken cell)
+========================================================================
+   chronos2 c_ids first 5: [np.str_('bb_1005'), np.str_('bb_1007'), np.str_('bb_183'), np.str_('bb_184'), np.str_('bb_185')]
+   test.parquet ids first 5: ['bb_1005', 'bb_1007', 'bb_183', 'bb_184', 'bb_185']
+   direct match: 7100/7100
+
+   y_true (chronos2 spine, full test):
+     mean=23.924 range=[0.00, 106.18]
+
+   test_ensemble_hetero.npy (aligned):
+     mean=10.042 range=[-3.98, 92.27]
+
+   first 10 (y_true, y_pred_hetero, y_naive):
+     [  0] cid=bb_1005    origin=23   y_true=  29.23  y_pred=   5.86  y_naive=  27.73
+     [  1] cid=bb_1007    origin=23   y_true=  16.84  y_pred=   6.10  y_naive=  17.38
+     [  2] cid=bb_183     origin=23   y_true=   0.49  y_pred=   4.02  y_naive=   0.50
+     [  3] cid=bb_184     origin=23   y_true=   0.36  y_pred=   8.42  y_naive=   0.37
+     [  4] cid=bb_185     origin=23   y_true=   0.46  y_pred=  22.30  y_naive=   0.62
+     [  5] cid=bb_186     origin=23   y_true=   0.46  y_pred=  16.11  y_naive=   0.47
+     [  6] cid=bb_187     origin=23   y_true=   0.58  y_pred=  12.92  y_naive=   0.73
+     [  7] cid=bb_188     origin=23   y_true=   0.78  y_pred=  11.98  y_naive=   0.85
+     [  8] cid=bb_189     origin=23   y_true=   0.51  y_pred=   5.87  y_naive=   0.50
+     [  9] cid=bb_190     origin=23   y_true=   0.88  y_pred=   6.18  y_naive=   0.85
+
+   pooled R² (hetero):  -0.2145
+   pooled R² (naive):   0.4769
+   test_ensemble_homo.npy       mean=28.779  range=[-22.23, 129.10]  pooled R² vs y_true = 0.4894
+   test_ensemble_v2.npy         mean=1.150  range=[-47.39, 70.94]  pooled R² vs y_true = -0.5519
+   test_ensemble_v3.npy         mean=1.397  range=[-47.15, 71.15]  pooled R² vs y_true = -0.5441
+   test_xgb.npy                 mean=27.924  range=[-24.45, 125.90]  pooled R² vs y_true = 0.4973
+   test_et.npy                  mean=27.920  range=[-34.74, 173.77]  pooled R² vs y_true = 0.4542
+
+========================================================================
+END OF DIAGNOSTIC
+========================================================================

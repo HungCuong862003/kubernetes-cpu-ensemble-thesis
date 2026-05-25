@@ -1,0 +1,46 @@
+======================================================================
+f3_probe_v2.py — direct chronos-forecasting probe
+======================================================================
+
+[1] Torch / CUDA:
+    torch:        2.9.1+cu128
+    cuda avail:   True
+    device:       NVIDIA RTX A4000
+    bfloat16 ok:  True
+
+[2] Importing transformers and chronos...
+    transformers: 4.57.6
+    chronos:      2.2.2
+    BaseChronosPipeline imports OK
+
+[3] Loading Chronos-2 from HuggingFace (may download ~500 MB on first call)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+    loaded in 3s
+    pipeline class: Chronos2Pipeline
+    underlying model: Chronos2Model
+
+[4] Building synthetic context: 10 series, 100 timesteps each...
+    context shape: torch.Size([10, 100])
+    future shape:  (10, 6)
+
+[5] Running zero-shot inference, prediction_length=6, num_samples=20...
+    predict() with num_samples failed: Chronos2Pipeline.predict() missing 1 required positional argument: 'inputs'
+    trying predict_quantiles()...
+    PREDICT FAILED: TypeError: Chronos2Pipeline.predict_quantiles() missing 1 required positional argument: 'inputs'
+Traceback (most recent call last):
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/f3_probe_v2.py", line 105, in <module>
+    preds = pipe.predict(
+            ^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: Chronos2Pipeline.predict() missing 1 required positional argument: 'inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/f3_probe_v2.py", line 119, in <module>
+    quantile_preds, mean_preds = pipe.predict_quantiles(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Chronos2Pipeline.predict_quantiles() missing 1 required positional argument: 'inputs'

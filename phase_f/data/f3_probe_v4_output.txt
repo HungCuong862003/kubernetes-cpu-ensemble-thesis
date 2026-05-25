@@ -1,0 +1,62 @@
+======================================================================
+f3_probe_v4.py — 3D input + list output
+======================================================================
+
+[1] Loading Chronos-2...
+    pipeline class: Chronos2Pipeline
+
+[2] Building synthetic 3D context: (n_series=10, n_variates=1, n_context=100)...
+    context_3d shape: torch.Size([10, 1, 100])
+
+[3] Calling predict_quantiles(context_3d, prediction_length=6, quantile_levels=[0.5,0.7,0.8,0.9,0.95])...
+
+[4] Output structure:
+    type(result):     tuple
+    len(result):      2
+    result[0] type: list
+      list len:       10
+      first elem:     torch.Tensor, shape (1, 6, 5), dtype torch.float32
+      last elem:      torch.Tensor, shape (1, 6, 5)
+    result[1] type: list
+      list len:       10
+      first elem:     torch.Tensor, shape (1, 6), dtype torch.float32
+      last elem:      torch.Tensor, shape (1, 6)
+
+    quantile_preds_list: 10 tensors
+    mean_preds_list:     10 tensors
+
+[5] Pinball loss per quantile (averaged across 10 series × 6 timesteps):
+    inspecting first series quantile tensor: shape (1, 6, 5)
+    stacked quantile tensor: (10, 1, 6, 5)
+    stacked mean tensor:     (10, 1, 6)
+    quantile axis in stacked tensor: 3
+    squeezing n_variates axis...
+    reordered shape (n_q, n_series, n_future): (5, 10, 6)
+      tau=0.50: pinball= 0.8223
+      tau=0.70: pinball= 0.7500
+      tau=0.80: pinball= 0.6030
+      tau=0.90: pinball= 0.3560
+      tau=0.95: pinball= 0.2171
+
+[6] First series, all 6 future timesteps, predicted vs true:
+       t |  true   |  q50    q70    q80    q90    q95
+      0  |   39.00 |  38.25  39.25  39.75  40.50  41.00
+      1  |   36.04 |  36.50  37.50  38.00  38.50  39.25
+      2  |   35.17 |  35.00  36.00  36.50  37.00  38.00
+      3  |   35.91 |  34.25  34.75  35.25  36.00  36.75
+      4  |   33.45 |  33.25  34.25  34.50  35.00  35.75
+      5  |   33.09 |  32.00  33.00  33.50  34.50  35.00
+
+======================================================================
+PROBE v4 SUCCESS — production-ready calling convention locked.
+
+Calling convention for production:
+  # input shape: (n_series, 1, n_context_obs), float32
+  quantile_preds_list, mean_preds_list = pipe.predict_quantiles(
+      context_3d,                       # 3D tensor, dtype=float32
+      prediction_length=H,
+      quantile_levels=[0.5, 0.7, 0.8, 0.9, 0.95],
+  )
+  # Each element of quantile_preds_list is a per-series tensor.
+  # Stack and reorder to (n_quantiles, n_series, n_future) for pinball loss.
+======================================================================

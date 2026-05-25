@@ -1,0 +1,202 @@
+========================================================================
+par_features.py
+========================================================================
+pycatch22 ver: ?
+nolds     ver: ?
+antropy   ver: 0.2.2
+WPE m=4, tau=1
+
+========================================================================
+DATASET: alibaba
+========================================================================
+  loading test.parquet...
+  rows=1680285, id_col=container_id
+  collecting chronos2 spine container_ids across 4 horizons...
+    4920 unique containers in any spine
+  filtered rows: 1680260
+  computing features for 4920 containers...
+    50/4920  elapsed=2s  rate=23.03 series/s  ETA(ds)=212s
+    100/4920  elapsed=4s  rate=24.23 series/s  ETA(ds)=199s
+    150/4920  elapsed=6s  rate=24.50 series/s  ETA(ds)=195s
+    200/4920  elapsed=8s  rate=24.81 series/s  ETA(ds)=190s
+    250/4920  elapsed=10s  rate=24.97 series/s  ETA(ds)=187s
+    300/4920  elapsed=12s  rate=25.07 series/s  ETA(ds)=184s
+    350/4920  elapsed=14s  rate=25.11 series/s  ETA(ds)=182s
+    400/4920  elapsed=16s  rate=25.15 series/s  ETA(ds)=180s
+    450/4920  elapsed=18s  rate=25.09 series/s  ETA(ds)=178s
+    500/4920  elapsed=20s  rate=25.12 series/s  ETA(ds)=176s
+    550/4920  elapsed=22s  rate=25.08 series/s  ETA(ds)=174s
+    600/4920  elapsed=24s  rate=25.09 series/s  ETA(ds)=172s
+    650/4920  elapsed=26s  rate=25.03 series/s  ETA(ds)=171s
+    700/4920  elapsed=28s  rate=25.05 series/s  ETA(ds)=168s
+    750/4920  elapsed=30s  rate=25.06 series/s  ETA(ds)=166s
+    800/4920  elapsed=32s  rate=25.05 series/s  ETA(ds)=164s
+    850/4920  elapsed=34s  rate=25.09 series/s  ETA(ds)=162s
+    900/4920  elapsed=36s  rate=25.07 series/s  ETA(ds)=160s
+    950/4920  elapsed=38s  rate=25.11 series/s  ETA(ds)=158s
+    1000/4920  elapsed=40s  rate=25.14 series/s  ETA(ds)=156s
+    1050/4920  elapsed=42s  rate=25.18 series/s  ETA(ds)=154s
+    1100/4920  elapsed=44s  rate=25.19 series/s  ETA(ds)=152s
+    1150/4920  elapsed=46s  rate=25.23 series/s  ETA(ds)=149s
+    1200/4920  elapsed=48s  rate=25.25 series/s  ETA(ds)=147s
+    1250/4920  elapsed=49s  rate=25.29 series/s  ETA(ds)=145s
+    1300/4920  elapsed=51s  rate=25.31 series/s  ETA(ds)=143s
+    1350/4920  elapsed=53s  rate=25.32 series/s  ETA(ds)=141s
+    1400/4920  elapsed=55s  rate=25.33 series/s  ETA(ds)=139s
+    1450/4920  elapsed=58s  rate=25.19 series/s  ETA(ds)=138s
+    1500/4920  elapsed=60s  rate=25.06 series/s  ETA(ds)=136s
+    1550/4920  elapsed=62s  rate=24.92 series/s  ETA(ds)=135s
+    1600/4920  elapsed=64s  rate=24.83 series/s  ETA(ds)=134s
+    1650/4920  elapsed=67s  rate=24.71 series/s  ETA(ds)=132s
+    1700/4920  elapsed=69s  rate=24.61 series/s  ETA(ds)=131s
+    1750/4920  elapsed=71s  rate=24.52 series/s  ETA(ds)=129s
+    1800/4920  elapsed=74s  rate=24.42 series/s  ETA(ds)=128s
+    1850/4920  elapsed=76s  rate=24.34 series/s  ETA(ds)=126s
+    1900/4920  elapsed=78s  rate=24.25 series/s  ETA(ds)=125s
+    1950/4920  elapsed=81s  rate=24.17 series/s  ETA(ds)=123s
+    2000/4920  elapsed=83s  rate=24.10 series/s  ETA(ds)=121s
+    2050/4920  elapsed=85s  rate=24.03 series/s  ETA(ds)=119s
+    2100/4920  elapsed=88s  rate=23.99 series/s  ETA(ds)=118s
+    2150/4920  elapsed=90s  rate=23.95 series/s  ETA(ds)=116s
+    2200/4920  elapsed=92s  rate=23.91 series/s  ETA(ds)=114s
+    2250/4920  elapsed=94s  rate=23.87 series/s  ETA(ds)=112s
+    2300/4920  elapsed=96s  rate=23.84 series/s  ETA(ds)=110s
+    2350/4920  elapsed=99s  rate=23.80 series/s  ETA(ds)=108s
+    2400/4920  elapsed=101s  rate=23.77 series/s  ETA(ds)=106s
+    2450/4920  elapsed=103s  rate=23.74 series/s  ETA(ds)=104s
+    2500/4920  elapsed=105s  rate=23.72 series/s  ETA(ds)=102s
+    2550/4920  elapsed=108s  rate=23.68 series/s  ETA(ds)=100s
+    2600/4920  elapsed=110s  rate=23.66 series/s  ETA(ds)=98s
+    2650/4920  elapsed=112s  rate=23.64 series/s  ETA(ds)=96s
+    2700/4920  elapsed=114s  rate=23.61 series/s  ETA(ds)=94s
+    2750/4920  elapsed=117s  rate=23.59 series/s  ETA(ds)=92s
+    2800/4920  elapsed=119s  rate=23.56 series/s  ETA(ds)=90s
+    2850/4920  elapsed=121s  rate=23.54 series/s  ETA(ds)=88s
+    2900/4920  elapsed=123s  rate=23.52 series/s  ETA(ds)=86s
+    2950/4920  elapsed=126s  rate=23.50 series/s  ETA(ds)=84s
+    3000/4920  elapsed=128s  rate=23.49 series/s  ETA(ds)=82s
+    3050/4920  elapsed=130s  rate=23.51 series/s  ETA(ds)=80s
+    3100/4920  elapsed=132s  rate=23.55 series/s  ETA(ds)=77s
+    3150/4920  elapsed=134s  rate=23.58 series/s  ETA(ds)=75s
+    3200/4920  elapsed=136s  rate=23.61 series/s  ETA(ds)=73s
+    3250/4920  elapsed=137s  rate=23.65 series/s  ETA(ds)=71s
+    3300/4920  elapsed=139s  rate=23.68 series/s  ETA(ds)=68s
+    3350/4920  elapsed=141s  rate=23.70 series/s  ETA(ds)=66s
+    3400/4920  elapsed=143s  rate=23.73 series/s  ETA(ds)=64s
+    3450/4920  elapsed=145s  rate=23.76 series/s  ETA(ds)=62s
+    3500/4920  elapsed=147s  rate=23.79 series/s  ETA(ds)=60s
+    3550/4920  elapsed=149s  rate=23.81 series/s  ETA(ds)=58s
+    3600/4920  elapsed=151s  rate=23.84 series/s  ETA(ds)=55s
+    3650/4920  elapsed=153s  rate=23.86 series/s  ETA(ds)=53s
+    3700/4920  elapsed=155s  rate=23.89 series/s  ETA(ds)=51s
+    3750/4920  elapsed=157s  rate=23.91 series/s  ETA(ds)=49s
+    3800/4920  elapsed=159s  rate=23.94 series/s  ETA(ds)=47s
+    3850/4920  elapsed=161s  rate=23.96 series/s  ETA(ds)=45s
+    3900/4920  elapsed=163s  rate=23.98 series/s  ETA(ds)=43s
+    3950/4920  elapsed=165s  rate=24.00 series/s  ETA(ds)=40s
+    4000/4920  elapsed=167s  rate=24.02 series/s  ETA(ds)=38s
+    4050/4920  elapsed=168s  rate=24.05 series/s  ETA(ds)=36s
+    4100/4920  elapsed=170s  rate=24.06 series/s  ETA(ds)=34s
+    4150/4920  elapsed=173s  rate=24.05 series/s  ETA(ds)=32s
+    4200/4920  elapsed=175s  rate=24.05 series/s  ETA(ds)=30s
+    4250/4920  elapsed=177s  rate=24.07 series/s  ETA(ds)=28s
+    4300/4920  elapsed=178s  rate=24.09 series/s  ETA(ds)=26s
+    4350/4920  elapsed=180s  rate=24.11 series/s  ETA(ds)=24s
+    4400/4920  elapsed=182s  rate=24.13 series/s  ETA(ds)=22s
+    4450/4920  elapsed=184s  rate=24.14 series/s  ETA(ds)=19s
+    4500/4920  elapsed=186s  rate=24.17 series/s  ETA(ds)=17s
+    4550/4920  elapsed=188s  rate=24.18 series/s  ETA(ds)=15s
+    4600/4920  elapsed=190s  rate=24.20 series/s  ETA(ds)=13s
+    4650/4920  elapsed=192s  rate=24.21 series/s  ETA(ds)=11s
+    4700/4920  elapsed=194s  rate=24.22 series/s  ETA(ds)=9s
+    4750/4920  elapsed=196s  rate=24.23 series/s  ETA(ds)=7s
+    4800/4920  elapsed=198s  rate=24.24 series/s  ETA(ds)=5s
+    4850/4920  elapsed=200s  rate=24.25 series/s  ETA(ds)=3s
+    4900/4920  elapsed=202s  rate=24.26 series/s  ETA(ds)=1s
+    4920/4920  elapsed=203s  rate=24.27 series/s  ETA(ds)=0s
+  alibaba done in 203s
+
+========================================================================
+DATASET: bitbrains
+========================================================================
+  loading test.parquet...
+  rows=203820, id_col=container_id
+  collecting chronos2 spine container_ids across 4 horizons...
+    142 unique containers in any spine
+  filtered rows: 203820
+  computing features for 142 containers...
+    50/142  elapsed=6s  rate=8.84 series/s  ETA(ds)=10s
+    100/142  elapsed=16s  rate=6.14 series/s  ETA(ds)=7s
+    142/142  elapsed=25s  rate=5.63 series/s  ETA(ds)=0s
+  bitbrains done in 25s
+
+========================================================================
+DATASET: bytedance
+========================================================================
+  loading test.parquet...
+  rows=64356, id_col=container_id
+  collecting chronos2 spine container_ids across 4 horizons...
+    93 unique containers in any spine
+  filtered rows: 64356
+  computing features for 93 containers...
+    50/93  elapsed=4s  rate=11.99 series/s  ETA(ds)=4s
+    93/93  elapsed=8s  rate=11.89 series/s  ETA(ds)=0s
+  bytedance done in 8s
+
+========================================================================
+SUMMARY
+========================================================================
+Total series:  5155
+Total elapsed: 238s
+
+Per-dataset counts:
+dataset
+alibaba      4920
+bitbrains     142
+bytedance      93
+
+NaN counts per feature (sorted; only features with any NaN):
+DFA           279
+catch22_2     279
+catch22_1     279
+catch22_5     279
+catch22_6     279
+SampEn        279
+catch22_16    279
+catch22_19    279
+catch22_15    279
+catch22_14    279
+catch22_12    279
+catch22_13    279
+catch22_11    279
+catch22_9     279
+catch22_8     279
+catch22_7     279
+catch22_21    279
+catch22_20    279
+catch22_17    279
+catch22_18    279
+catch22_22    279
+cv            272
+LZC             1
+catch22_4       1
+WPE             1
+catch22_3       1
+catch22_10      1
+
+Median of key features per dataset:
+           n_test_points     mean      std      cv     DFA     LZC  SampEn     WPE
+dataset                                                                           
+alibaba            343.0   7.4561   2.7187  0.3461  1.1914  0.3710  0.2776  0.5354
+bitbrains         1713.0  30.9948  42.0705  1.2667  1.1410  0.3256  0.0711  0.7046
+bytedance          692.0  17.9784   0.8316  0.1233  0.9119  0.7090  1.0090  0.9401
+
+Range of WPE per dataset (predictability proxy):
+            count    mean     std     min     25%     50%     75%     max
+dataset                                                                  
+alibaba    4919.0  0.5074  0.1398  0.0000  0.4847  0.5354  0.5807  0.7640
+bitbrains   142.0  0.7048  0.0724  0.5053  0.6581  0.7046  0.7315  0.9657
+bytedance    93.0  0.9034  0.0996  0.3777  0.8656  0.9401  0.9613  0.9946
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_features.parquet
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_features.csv

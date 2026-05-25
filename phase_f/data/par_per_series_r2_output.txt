@@ -1,0 +1,226 @@
+
+======================================================================
+DATASET: alibaba
+======================================================================
+  loading test.parquet (/workspace/kubernetes-cpu-ensemble-thesis/data/processed/alibaba/test.parquet)...
+    rows=1680285, columns=['time_stamp', 'container_id', 'machine_id', 'cpu_util_percent', 'mem_util_percent', 'disk_io_percent']..., elapsed 0.1s
+    detected id_col=container_id
+  sorting by [container_id, time_stamp]...
+    sorted; elapsed 0.6s
+
+-- alibaba h010 --
+    chronos2    : n_containers=4920, median R²=0.6362, median naive=0.6686 (pred_key=y_pred_mean, n_points_total=98389)
+    timesfm     : n_containers=4920, median R²=0.4945, median naive=0.6514 (pred_key=y_pred_mean, n_points_total=98388)
+    granite_ttm : n_containers=4920, median R²=0.2900, median naive=0.6514 (pred_key=y_pred_mean, n_points_total=98388)
+    toto        : n_containers=4920, median R²=0.4863, median naive=0.6686 (pred_key=y_pred_p50, n_points_total=98389)
+    nnls        : building container starts for h_steps=2...
+                  4921 containers in test.parquet
+                  ID match: 4920/4920 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 98389/98389, y_true mismatches: 0
+    nnls        : n_containers=4920, median R²=0.6720, median naive=0.6686
+
+-- alibaba h030 --
+    chronos2    : n_containers=4920, median R²=0.1702, median naive=0.1261 (pred_key=y_pred_mean, n_points_total=98385)
+    timesfm     : n_containers=4920, median R²=0.1553, median naive=0.1211 (pred_key=y_pred_mean, n_points_total=98384)
+    granite_ttm : n_containers=4920, median R²=-0.0127, median naive=0.1211 (pred_key=y_pred_mean, n_points_total=98384)
+    toto        : n_containers=4920, median R²=0.1241, median naive=0.1261 (pred_key=y_pred_p50, n_points_total=98385)
+    nnls        : building container starts for h_steps=6...
+                  4921 containers in test.parquet
+                  ID match: 4920/4920 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 98385/98385, y_true mismatches: 0
+    nnls        : n_containers=4920, median R²=0.1238, median naive=0.1261
+
+-- alibaba h060 --
+    chronos2    : n_containers=4919, median R²=0.0220, median naive=-0.1026 (pred_key=y_pred_mean, n_points_total=98373)
+    timesfm     : n_containers=4919, median R²=0.0299, median naive=-0.0990 (pred_key=y_pred_mean, n_points_total=98370)
+    granite_ttm : n_containers=4919, median R²=-0.1762, median naive=-0.0990 (pred_key=y_pred_mean, n_points_total=98370)
+    toto        : n_containers=4919, median R²=-0.0140, median naive=-0.1026 (pred_key=y_pred_p50, n_points_total=98373)
+    nnls        : building container starts for h_steps=12...
+                  4921 containers in test.parquet
+                  ID match: 4919/4919 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 98373/98373, y_true mismatches: 0
+    nnls        : n_containers=4919, median R²=-0.0969, median naive=-0.1026
+
+-- alibaba h120 --
+    chronos2    : n_containers=4919, median R²=-0.1230, median naive=-0.2998 (pred_key=y_pred_mean, n_points_total=98315)
+    timesfm     : n_containers=4919, median R²=-0.1097, median naive=-0.3155 (pred_key=y_pred_mean, n_points_total=98310)
+    granite_ttm : n_containers=4919, median R²=-0.3289, median naive=-0.3155 (pred_key=y_pred_mean, n_points_total=98310)
+    toto        : n_containers=4919, median R²=-0.1392, median naive=-0.2998 (pred_key=y_pred_p50, n_points_total=98315)
+    nnls        : building container starts for h_steps=24...
+                  4921 containers in test.parquet
+                  ID match: 4919/4919 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 98315/98315, y_true mismatches: 0
+    nnls        : n_containers=4919, median R²=-0.2614, median naive=-0.2998
+
+======================================================================
+DATASET: bitbrains
+======================================================================
+  loading test.parquet (/workspace/kubernetes-cpu-ensemble-thesis/data/processed/bitbrains/test.parquet)...
+    rows=203820, columns=['container_id', 'time_stamp', 'cpu_util_percent', 'mem_util_percent']..., elapsed 0.0s
+    detected id_col=container_id
+  sorting by [container_id, time_stamp]...
+    sorted; elapsed 0.0s
+
+-- bitbrains h010 --
+    chronos2    : n_containers=142, median R²=0.7572, median naive=0.7476 (pred_key=y_pred_mean, n_points_total=7100)
+    timesfm     : n_containers=142, median R²=0.6181, median naive=0.7330 (pred_key=y_pred_mean, n_points_total=7100)
+    granite_ttm : n_containers=142, median R²=0.5863, median naive=0.7330 (pred_key=y_pred_mean, n_points_total=7100)
+    toto        : n_containers=142, median R²=0.5765, median naive=0.7476 (pred_key=y_pred_p50, n_points_total=7100)
+    nnls        : building container starts for h_steps=2...
+                  142 containers in test.parquet
+                  ID match: 142/142 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_homo.npy
+                  aligned 7100/7100, y_true mismatches: 0
+    nnls        : n_containers=142, median R²=0.7463, median naive=0.7476
+
+-- bitbrains h030 --
+    chronos2    : n_containers=142, median R²=0.3162, median naive=0.2902 (pred_key=y_pred_mean, n_points_total=7100)
+    timesfm     : n_containers=142, median R²=0.3706, median naive=0.3264 (pred_key=y_pred_mean, n_points_total=7100)
+    granite_ttm : n_containers=142, median R²=0.2948, median naive=0.3264 (pred_key=y_pred_mean, n_points_total=7100)
+    toto        : n_containers=142, median R²=0.3187, median naive=0.2902 (pred_key=y_pred_p50, n_points_total=7100)
+    nnls        : building container starts for h_steps=6...
+                  142 containers in test.parquet
+                  ID match: 142/142 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 7100/7100, y_true mismatches: 0
+    nnls        : n_containers=142, median R²=-0.3816, median naive=0.2902
+
+-- bitbrains h060 --
+    chronos2    : n_containers=142, median R²=0.0146, median naive=-0.0119 (pred_key=y_pred_mean, n_points_total=7100)
+    timesfm     : n_containers=142, median R²=0.0685, median naive=-0.0431 (pred_key=y_pred_mean, n_points_total=7100)
+    granite_ttm : n_containers=142, median R²=0.1276, median naive=-0.0431 (pred_key=y_pred_mean, n_points_total=7100)
+    toto        : n_containers=142, median R²=-0.0092, median naive=-0.0119 (pred_key=y_pred_p50, n_points_total=7100)
+    nnls        : building container starts for h_steps=12...
+                  142 containers in test.parquet
+                  ID match: 142/142 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 7100/7100, y_true mismatches: 0
+    nnls        : n_containers=142, median R²=-0.3875, median naive=-0.0119
+
+-- bitbrains h120 --
+    chronos2    : n_containers=142, median R²=-0.0495, median naive=-0.2203 (pred_key=y_pred_mean, n_points_total=7100)
+    timesfm     : n_containers=142, median R²=0.0427, median naive=-0.1431 (pred_key=y_pred_mean, n_points_total=7100)
+    granite_ttm : n_containers=142, median R²=0.0770, median naive=-0.1431 (pred_key=y_pred_mean, n_points_total=7100)
+    toto        : n_containers=142, median R²=-0.0605, median naive=-0.2203 (pred_key=y_pred_p50, n_points_total=7100)
+    nnls        : building container starts for h_steps=24...
+                  142 containers in test.parquet
+                  ID match: 142/142 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 7100/7100, y_true mismatches: 0
+    nnls        : n_containers=142, median R²=-0.4500, median naive=-0.2203
+
+======================================================================
+DATASET: bytedance
+======================================================================
+  loading test.parquet (/workspace/kubernetes-cpu-ensemble-thesis/data/processed/bytedance/test.parquet)...
+    rows=64356, columns=['cpu_util_percent', 'container_id', 'time_stamp', 'mem_util_percent', 'disk_io_percent', 'cluster_id']..., elapsed 0.0s
+    detected id_col=container_id
+  sorting by [container_id, time_stamp]...
+    sorted; elapsed 0.0s
+
+-- bytedance h030 --
+    chronos2    : n_containers=93, median R²=0.4338, median naive=-0.1698 (pred_key=y_pred_mean, n_points_total=4650)
+    timesfm     : n_containers=93, median R²=0.1450, median naive=-0.1730 (pred_key=y_pred_mean, n_points_total=4650)
+    granite_ttm : n_containers=93, median R²=-2.0571, median naive=-0.1730 (pred_key=y_pred_mean, n_points_total=4650)
+    toto        : n_containers=93, median R²=0.0925, median naive=-0.1698 (pred_key=y_pred_p50, n_points_total=4650)
+    nnls        : building container starts for h_steps=3...
+                  93 containers in test.parquet
+                  ID match: 93/93 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 4650/4650, y_true mismatches: 0
+    nnls        : n_containers=93, median R²=-0.1307, median naive=-0.1698
+
+-- bytedance h060 --
+    chronos2    : n_containers=93, median R²=0.3760, median naive=-0.5498 (pred_key=y_pred_mean, n_points_total=4650)
+    timesfm     : n_containers=93, median R²=0.1098, median naive=-0.5507 (pred_key=y_pred_mean, n_points_total=4650)
+    granite_ttm : n_containers=93, median R²=-3.7674, median naive=-0.5507 (pred_key=y_pred_mean, n_points_total=4650)
+    toto        : n_containers=93, median R²=0.0655, median naive=-0.5498 (pred_key=y_pred_p50, n_points_total=4650)
+    nnls        : building container starts for h_steps=6...
+                  93 containers in test.parquet
+                  ID match: 93/93 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 4650/4650, y_true mismatches: 0
+    nnls        : n_containers=93, median R²=-0.5179, median naive=-0.5498
+
+-- bytedance h120 --
+    chronos2    : n_containers=93, median R²=0.1474, median naive=-0.6216 (pred_key=y_pred_mean, n_points_total=4650)
+    timesfm     : n_containers=93, median R²=0.0466, median naive=-0.3769 (pred_key=y_pred_mean, n_points_total=4650)
+    granite_ttm : n_containers=93, median R²=-4.4738, median naive=-0.3769 (pred_key=y_pred_mean, n_points_total=4650)
+    toto        : n_containers=93, median R²=-0.0232, median naive=-0.6216 (pred_key=y_pred_p50, n_points_total=4650)
+    nnls        : building container starts for h_steps=12...
+                  93 containers in test.parquet
+                  ID match: 93/93 chronos2 containers present in test.parquet
+                  ensemble file: test_ensemble_hetero.npy
+                  aligned 4650/4650, y_true mismatches: 0
+    nnls        : n_containers=93, median R²=-0.4092, median naive=-0.6216
+
+======================================================================
+SUMMARY
+======================================================================
+Total rows: 102625, total elapsed: 4.4s
+
+Container count per (dataset, horizon, model):
+model              chronos2  granite_ttm  nnls  timesfm  toto
+dataset   horizon                                            
+alibaba   h010         4920         4920  4920     4920  4920
+          h030         4920         4920  4920     4920  4920
+          h060         4919         4919  4919     4919  4919
+          h120         4919         4919  4919     4919  4919
+bitbrains h010          142          142   142      142   142
+          h030          142          142   142      142   142
+          h060          142          142   142      142   142
+          h120          142          142   142      142   142
+bytedance h030           93           93    93       93    93
+          h060           93           93    93       93    93
+          h120           93           93    93       93    93
+
+Median R² per (dataset, horizon, model):
+model              chronos2  granite_ttm    nnls  timesfm    toto
+dataset   horizon                                                
+alibaba   h010       0.6362       0.2900  0.6720   0.4945  0.4863
+          h030       0.1702      -0.0127  0.1238   0.1553  0.1241
+          h060       0.0220      -0.1762 -0.0969   0.0299 -0.0140
+          h120      -0.1230      -0.3289 -0.2614  -0.1097 -0.1392
+bitbrains h010       0.7572       0.5863  0.7463   0.6181  0.5765
+          h030       0.3162       0.2948 -0.3816   0.3706  0.3187
+          h060       0.0146       0.1276 -0.3875   0.0685 -0.0092
+          h120      -0.0495       0.0770 -0.4500   0.0427 -0.0605
+bytedance h030       0.4338      -2.0571 -0.1307   0.1450  0.0925
+          h060       0.3760      -3.7674 -0.5179   0.1098  0.0655
+          h120       0.1474      -4.4738 -0.4092   0.0466 -0.0232
+
+Median (R² − naive_r2) in pp per (dataset, horizon, model):
+model              chronos2  granite_ttm   nnls  timesfm   toto
+dataset   horizon                                              
+alibaba   h010        -0.29       -22.24   0.30    -3.66  -5.22
+          h030         2.54       -13.74   1.34     2.47   0.00
+          h060         7.62       -12.16   3.29    11.12   4.25
+          h120        13.53        -8.31  10.79    18.80  10.12
+bitbrains h010         0.26       -12.92  -0.80   -10.03 -16.69
+          h030         2.18        -2.12 -79.00     6.31   1.57
+          h060         4.44        13.01 -53.33     9.89   3.04
+          h120        10.83        18.30 -36.91    18.36   6.87
+bytedance h030        64.28      -157.71   1.58    32.13  30.48
+          h060        74.53      -320.90   2.28    57.11  54.67
+          h120        73.27      -347.94   8.61    46.36  57.26
+
+Per-cell winner tally (argmax R² across {nnls, c2, tfm, granite}, per container, then majority per cell):
+dataset    horizon
+alibaba    h010              nnls
+           h030              nnls
+           h060              nnls
+           h120              nnls
+bitbrains  h010          chronos2
+           h030           timesfm
+           h060       granite_ttm
+           h120       granite_ttm
+bytedance  h030          chronos2
+           h060          chronos2
+           h120          chronos2
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_per_series_r2.parquet
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_per_series_r2.csv

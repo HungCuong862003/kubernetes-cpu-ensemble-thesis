@@ -1,0 +1,169 @@
+==============================================================================
+par_f2_series.py — per-series F2 partial-R² test
+==============================================================================
+
+[1] Loading par_features.parquet...
+    rows=5155, cols=32
+
+[2] Loading par_per_series_r2.parquet...
+    rows=102625
+    nnls rows: 20525, after drop NaN ml_benefit: 19212
+
+[3] Loading per-series ACF@24h from omega files...
+  found alibaba: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/omega_alibaba.csv
+  found bitbrains: /workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains/omega_bitbrains.csv
+  found bytedance: /workspace/kubernetes-cpu-ensemble-thesis/results/bytedance/diagnostics/bytedance_per_instance_stats.csv
+  ID format checks:
+    alibaba omega container_id sample: ['c_52834', 'c_28985', 'c_9142']
+    bitbrains omega container_id sample: ['bb_1005', 'bb_1007', 'bb_183']
+    bytedance container_id sample: ['bd_instance_instance_1', 'bd_instance_instance_10', 'bd_instance_instance_11']
+    acf_df rows: 5151 (alibaba=4902, bitbrains=156, bytedance=93)
+
+[4] Merging...
+    merged rows: 19212
+    per-dataset:
+dataset
+alibaba      18368
+bitbrains      568
+bytedance      276
+
+[5] Distribution checks for analysis variables:
+   ml_benefit   n_nan=    0  mean=-25.6793  std=1863.0200  min=-217006.5245  p25=0.0044  p50=0.0986  p75=0.4190  max=540.8744
+   acf_24h      n_nan= 1746  mean=0.3785  std=0.3368  min=-0.2729  p25=0.0560  p50=0.3213  p75=0.7145  max=0.9806
+   WPE          n_nan=    1  mean=0.5491  std=0.0834  min=-0.0000  p25=0.5003  p50=0.5448  p75=0.5911  max=0.9946
+   SampEn       n_nan=    1  mean=0.2839  std=0.1552  min=0.0005  p25=0.1984  p50=0.2770  p75=0.3549  max=1.9595
+   LZC          n_nan=    1  mean=0.3983  std=0.1393  min=0.0114  p25=0.2946  p50=0.3919  p75=0.4923  max=1.0771
+   DFA          n_nan=    1  mean=1.1952  std=0.1646  min=0.0773  p25=1.0936  p50=1.1884  p75=1.3025  max=1.7159
+
+==============================================================================
+PRE-REGISTERED PRIMARY TEST
+==============================================================================
+
+[primary_WPE_pooled]
+  feature: WPE, controls: ['acf_24h', 'horizon_min']
+  n_obs: 17465, n_clusters: 4385
+  R²(reduced)=0.0000, R²(full)=0.0007, partial-R²=0.0007
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 6s
+  95% CI: [0.0004, 0.0131]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+==============================================================================
+SENSITIVITY ANALYSES (not pre-registered)
+==============================================================================
+
+[sens_WPE_with_dataset_dummies]
+  feature: WPE, controls: ['acf_24h', 'horizon_min', 'dataset_bitbrains', 'dataset_bytedance']
+  n_obs: 17465, n_clusters: 4385
+  R²(reduced)=0.0068, R²(full)=0.0068, partial-R²=0.0001
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 7s
+  95% CI: [0.0000, 0.0031]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+[sens_WPE_alibaba]
+  feature: WPE, controls: ['acf_24h', 'horizon_min']
+  n_obs: 16897, n_clusters: 4243
+  R²(reduced)=0.0048, R²(full)=0.0099, partial-R²=0.0051
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 6s
+  95% CI: [0.0026, 0.0098]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+[sens_WPE_bitbrains]
+  feature: WPE, controls: ['acf_24h', 'horizon_min']
+  n_obs: 568, n_clusters: 142
+  R²(reduced)=0.0050, R²(full)=0.0089, partial-R²=0.0039
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 2s
+  95% CI: [0.0002, 0.0607]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+[sens_WPE_bytedance]
+  feature: WPE, controls: ['acf_24h', 'horizon_min']
+  n_obs: 0, n_clusters: 0
+  too few observations or clusters; skipping
+
+[sens_SampEn_pooled]
+  feature: SampEn, controls: ['acf_24h', 'horizon_min']
+  n_obs: 17465, n_clusters: 4385
+  R²(reduced)=0.0000, R²(full)=0.0011, partial-R²=0.0011
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 6s
+  95% CI: [0.0007, 0.0039]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+[sens_LZC_pooled]
+  feature: LZC, controls: ['acf_24h', 'horizon_min']
+  n_obs: 17465, n_clusters: 4385
+  R²(reduced)=0.0000, R²(full)=0.0019, partial-R²=0.0019
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 6s
+  95% CI: [0.0009, 0.0068]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+[sens_DFA_pooled]
+  feature: DFA, controls: ['acf_24h', 'horizon_min']
+  n_obs: 17465, n_clusters: 4385
+  R²(reduced)=0.0000, R²(full)=0.0013, partial-R²=0.0013
+  cluster bootstrap (1000 resamples)...
+      bootstrap 200/1000  (n_fail=0)
+      bootstrap 400/1000  (n_fail=0)
+      bootstrap 600/1000  (n_fail=0)
+      bootstrap 800/1000  (n_fail=0)
+      bootstrap 1000/1000  (n_fail=0)
+  bootstrap: 1000 valid samples in 6s
+  95% CI: [0.0000, 0.0038]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+=== combined partial-R² (WPE + SampEn + LZC + DFA together) ===
+  n_obs=17465, R²(red)=0.0000, R²(full)=0.0057, partial-R²=0.0057
+
+==============================================================================
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_f2_series_results.json
+==============================================================================
+
+FINAL SUMMARY
+------------------------------------------------------------------------------
+PRIMARY (pre-registered):
+  partial-R²(WPE | ACF@24h, horizon) = 0.0007 [0.0004, 0.0131]
+  VERDICT: F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)
+
+Sensitivity point estimates (no bootstrap printed for brevity):
+  sens_WPE_with_dataset_dummies              partial-R² = 0.0001  (n=17465)
+  sens_WPE_alibaba                           partial-R² = 0.0051  (n=16897)
+  sens_WPE_bitbrains                         partial-R² = 0.0039  (n=568)
+  sens_SampEn_pooled                         partial-R² = 0.0011  (n=17465)
+  sens_LZC_pooled                            partial-R² = 0.0019  (n=17465)
+  sens_DFA_pooled                            partial-R² = 0.0013  (n=17465)
+  sens_all_4_features_combined               partial-R² = 0.0057  (n=17465)

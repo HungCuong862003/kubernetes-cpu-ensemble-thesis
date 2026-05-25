@@ -1,0 +1,325 @@
+loading: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_features.parquet
+   rows = 5155, cols = 32
+
+==============================================================================
+[A] Schema
+==============================================================================
+Columns:
+  container_id           str        n_nan = 0
+  dataset                str        n_nan = 0
+  n_test_points          int64      n_nan = 0
+  mean                   float64    n_nan = 0
+  std                    float64    n_nan = 0
+  cv                     float64    n_nan = 272
+  DFA                    float64    n_nan = 279
+  LZC                    float64    n_nan = 1
+  SampEn                 float64    n_nan = 279
+  WPE                    float64    n_nan = 1
+  catch22_1              float64    n_nan = 279
+  catch22_2              float64    n_nan = 279
+  catch22_3              float64    n_nan = 1
+  catch22_4              float64    n_nan = 1
+  catch22_5              float64    n_nan = 279
+  catch22_6              float64    n_nan = 279
+  catch22_7              float64    n_nan = 279
+  catch22_8              float64    n_nan = 279
+  catch22_9              float64    n_nan = 279
+  catch22_10             float64    n_nan = 1
+  catch22_11             float64    n_nan = 279
+  catch22_12             float64    n_nan = 279
+  catch22_13             float64    n_nan = 279
+  catch22_14             float64    n_nan = 279
+  catch22_15             float64    n_nan = 279
+  catch22_16             float64    n_nan = 279
+  catch22_17             float64    n_nan = 279
+  catch22_18             float64    n_nan = 279
+  catch22_19             float64    n_nan = 279
+  catch22_20             float64    n_nan = 279
+  catch22_21             float64    n_nan = 279
+  catch22_22             float64    n_nan = 279
+
+==============================================================================
+[B] Per-dataset percentiles for key features
+==============================================================================
+
+  n_test_points:
+              count      mean      std      min       5%       25%       50%       75%       95%       max
+dataset                                                                                                   
+alibaba   4920.0000  341.5163  13.0645  34.0000 335.0000  341.0000  343.0000  345.0000  346.0000  346.0000
+bitbrains  142.0000 1435.3521 566.9040 385.0000 386.0500 1711.0000 1713.0000 1716.0000 1728.0000 3044.0000
+bytedance   93.0000  692.0000   0.0000 692.0000 692.0000  692.0000  692.0000  692.0000  692.0000  692.0000
+
+  mean:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4920.0000  10.3056   9.5293   0.0000   0.0000   3.1647   7.4561  15.1549  28.5144 100.0000
+bitbrains  142.0000  25.9949  16.0933   0.2842   2.2958   4.5402  30.9948  37.6020  44.5573  77.4139
+bytedance   93.0000  18.0885  18.3379   0.5730   0.8925   4.2381  17.9784  24.0185  37.9308  99.9151
+
+  std:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4920.0000   3.7912   3.6150   0.0000   0.0000   0.9592   2.7187   5.6511  10.9774  31.9809
+bitbrains  142.0000  31.5320  16.7377   0.0434   2.5720  10.8164  42.0705  44.7400  46.1171  46.7912
+bytedance   93.0000   4.1183   7.7325   0.1086   0.2034   0.3911   0.8316   1.9615  21.2080  46.5367
+
+  cv:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4648.0000   0.5405   1.1891   0.0000   0.1775   0.2665   0.3461   0.4643   1.0682  18.5742
+bitbrains  142.0000   1.6960   1.2594   0.0215   0.3257   1.1337   1.2667   1.7658   3.9714  10.6079
+bytedance   93.0000   0.2472   0.2870   0.0071   0.0099   0.0438   0.1233   0.3379   0.7815   1.3919
+
+  DFA:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4641.0000   1.1981   0.1634   0.4486   0.9398   1.0956   1.1914   1.3063   1.4691   1.7159
+bitbrains  142.0000   1.1491   0.1236   0.6787   0.9839   1.0770   1.1410   1.2471   1.3018   1.4459
+bytedance   93.0000   0.8757   0.2788   0.0773   0.3391   0.6923   0.9119   1.0755   1.2088   1.5983
+
+  LZC:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4919.0000   0.3722   0.1515   0.0488   0.0493   0.2714   0.3710   0.4887   0.6124   0.7612
+bitbrains  142.0000   0.3805   0.1906   0.0114   0.1570   0.2819   0.3256   0.4193   0.8251   1.0417
+bytedance   93.0000   0.6940   0.2221   0.0273   0.3436   0.5863   0.7090   0.8589   0.9953   1.0771
+
+  SampEn:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4641.0000   0.2760   0.1107   0.0000   0.0847   0.2025   0.2776   0.3530   0.4556   0.6727
+bitbrains  142.0000   0.0797   0.0709   0.0020   0.0134   0.0254   0.0711   0.1170   0.1566   0.5803
+bytedance   93.0000   1.0366   0.4823   0.0118   0.2369   0.7125   1.0090   1.4270   1.8222   1.9595
+
+  WPE:
+              count     mean      std      min       5%      25%      50%      75%      95%      max
+dataset                                                                                             
+alibaba   4919.0000   0.5074   0.1398   0.0000   0.0000   0.4847   0.5354   0.5807   0.6375   0.7640
+bitbrains  142.0000   0.7048   0.0724   0.5053   0.6047   0.6581   0.7046   0.7315   0.8579   0.9657
+bytedance   93.0000   0.9034   0.0996   0.3777   0.7068   0.8656   0.9401   0.9613   0.9876   0.9946
+
+==============================================================================
+[C] NaN pattern analysis
+==============================================================================
+Distribution of n_nan per series (across all 28 feature cols):
+_n_nan
+0     4876
+21       6
+22     272
+26       1
+
+Per-dataset breakdown of n_nan:
+              mean   median  max  count
+dataset                                
+alibaba     1.2500   0.0000   26   4920
+bitbrains   0.0000   0.0000    0    142
+bytedance   0.0000   0.0000    0     93
+
+Series with > 5 NaN features — what do they look like?
+  count: 279
+  per dataset: {'alibaba': 279}
+
+  n_test_points percentiles (these are the suspect series):
+count   279.0000
+mean    339.3700
+std      30.6400
+min      34.0000
+5%      335.0000
+25%     341.0000
+50%     343.0000
+75%     345.0000
+95%     346.0000
+max     346.0000
+
+  mean percentiles (are they zero-mean / idle?):
+count   279.0000
+mean      0.4275
+std       6.0446
+min       0.0000
+5%        0.0000
+25%       0.0000
+50%       0.0000
+75%       0.0000
+95%       0.0000
+max     100.0000
+
+  std percentiles (are they constant?):
+count   279.0000
+mean      0.0028
+std       0.0466
+min       0.0000
+5%        0.0000
+25%       0.0000
+50%       0.0000
+75%       0.0000
+95%       0.0000
+max       0.7787
+
+  Sample of 10 such series:
+container_id dataset  n_test_points     mean      std      WPE      LZC  _n_nan
+     c_10483 alibaba            344   0.0000   0.0000   0.0000   0.0490      22
+     c_10870 alibaba            344   0.0000   0.0000   0.0000   0.0490      22
+     c_10995 alibaba            344   0.0000   0.0000   0.0000   0.0490      22
+     c_11125 alibaba            341   0.0000   0.0000   0.0000   0.0493      22
+     c_11517 alibaba            344   0.0000   0.0000   0.0000   0.0490      22
+     c_11739 alibaba            339   0.0000   0.0000   0.0000   0.0496      22
+     c_11812 alibaba            345   0.0000   0.0000   0.0000   0.0489      22
+      c_1304 alibaba            338   0.0000   0.0000   0.0000   0.0497      22
+      c_1306 alibaba            345   0.0000   0.0000   0.0000   0.0489      22
+     c_13131 alibaba            343   0.0000   0.0000   0.0000   0.0491      22
+
+==============================================================================
+[D] Sample rows — head per dataset (basic features only)
+==============================================================================
+
+  --- alibaba head ---
+container_id dataset  n_test_points     mean      std       cv      DFA      LZC   SampEn      WPE
+     c_10032 alibaba            345   2.9159   1.0138   0.3477   1.3161   0.3177   0.1040   0.4872
+     c_10036 alibaba            344  17.0145  11.3592   0.6676   1.4273   0.2449   0.1252   0.5633
+      c_1005 alibaba            345  11.3913   4.2386   0.3721   1.3113   0.4154   0.3983   0.4854
+     c_10065 alibaba            345   0.4812   0.4996   1.0384   1.1112   0.4643   0.1303   0.4650
+     c_10076 alibaba            340  10.9000   3.9245   0.3600   1.0316   0.6431   0.4673   0.5648
+
+  --- bitbrains head ---
+container_id   dataset  n_test_points     mean      std       cv      DFA      LZC   SampEn      WPE
+     bb_1005 bitbrains           1728  18.9479   6.1612   0.3252   1.1387   0.4232   0.5803   0.9269
+     bb_1007 bitbrains           1728  16.9078   1.4379   0.0850   0.9921   0.4792   0.4304   0.8732
+      bb_183 bitbrains            388   4.4029  10.9142   2.4789   1.0347   0.4876   0.0387   0.7597
+      bb_184 bitbrains            388   4.4875  10.7838   2.4031   1.0335   0.5320   0.0389   0.7849
+      bb_185 bitbrains            387   4.9418  12.6715   2.5642   0.9964   0.3776   0.0420   0.7510
+
+  --- bytedance head ---
+  container_id   dataset  n_test_points     mean      std       cv      DFA      LZC   SampEn      WPE
+ bd_instance_1 bytedance            692  31.3913   1.7040   0.0543   1.1082   0.8180   1.8415   0.9669
+bd_instance_10 bytedance            692   3.4793   0.3688   0.1060   0.9585   0.8589   1.4881   0.9792
+bd_instance_11 bytedance            692  20.4237   0.6045   0.0296   0.6320   0.9407   0.3108   0.8290
+bd_instance_12 bytedance            692   0.5793   0.3553   0.6134   1.0207   0.3817   0.5562   0.9468
+bd_instance_13 bytedance            692  15.5761   7.5295   0.4834   0.3410   0.5317   0.8666   0.8523
+
+==============================================================================
+[E] WPE extremes — does WPE pass the eye test?
+==============================================================================
+
+  --- alibaba ---
+  lowest WPE (most structured ordinally):
+container_id      WPE     mean      std  cv  DFA      LZC
+     c_10483   0.0000   0.0000   0.0000 NaN  NaN   0.0490
+     c_10870   0.0000   0.0000   0.0000 NaN  NaN   0.0490
+     c_10995   0.0000   0.0000   0.0000 NaN  NaN   0.0490
+  highest WPE (most random ordinally):
+container_id      WPE     mean      std       cv      DFA      LZC
+     c_60521   0.7640  34.7500  11.1460   0.3207   1.1642   0.3184
+     c_26135   0.7554  12.0029   5.7269   0.4771   1.2623   0.2721
+     c_23299   0.7349  18.4897  10.2290   0.5532   1.0609   0.6198
+
+  --- bitbrains ---
+  lowest WPE (most structured ordinally):
+container_id      WPE     mean      std       cv      DFA      LZC
+      bb_257   0.5053  46.6027  26.1425   0.5610   1.3151   0.0439
+      bb_245   0.5269  77.4139  28.0933   0.3629   1.3562   0.0501
+      bb_598   0.5590  30.3190  42.8739   1.4141   1.4459   0.5602
+  highest WPE (most random ordinally):
+container_id      WPE     mean      std       cv      DFA      LZC
+      bb_735   0.9657  33.8637  22.8302   0.6742   1.3164   0.4829
+      bb_812   0.9616  18.6161  14.6475   0.7868   1.2688   0.1820
+     bb_1005   0.9269  18.9479   6.1612   0.3252   1.1387   0.4232
+
+  --- bytedance ---
+  lowest WPE (most structured ordinally):
+  container_id      WPE     mean      std       cv      DFA      LZC
+bd_instance_38   0.3777  33.4328  46.5367   1.3919   0.9362   0.1500
+bd_instance_59   0.5785  99.9151   0.9378   0.0094   0.6923   0.0273
+bd_instance_45   0.6102  37.8551  12.7894   0.3379   1.1575   0.9407
+  highest WPE (most random ordinally):
+  container_id      WPE     mean      std       cv      DFA      LZC
+bd_instance_92   0.9946  24.0185   1.8809   0.0783   1.0785   0.8862
+bd_instance_74   0.9916   4.3043   0.9146   0.2125   1.2232   0.5045
+bd_instance_50   0.9910   2.2541   0.4825   0.2141   1.1087   0.6544
+
+==============================================================================
+[F] Inter-feature correlations (per dataset) — orthogonality check
+==============================================================================
+
+  --- alibaba ---
+             cv      DFA      LZC   SampEn      WPE
+cv       1.0000  -0.2240  -0.2170  -0.3280  -0.2200
+DFA     -0.2240   1.0000  -0.3990  -0.0650  -0.0600
+LZC     -0.2170  -0.3990   1.0000   0.3580   0.1870
+SampEn  -0.3280  -0.0650   0.3580   1.0000   0.3570
+WPE     -0.2200  -0.0600   0.1870   0.3570   1.0000
+
+  --- bitbrains ---
+             cv      DFA      LZC   SampEn      WPE
+cv       1.0000  -0.3830   0.5360  -0.4760  -0.2410
+DFA     -0.3830   1.0000  -0.3590  -0.1020  -0.1980
+LZC      0.5360  -0.3590   1.0000  -0.1930  -0.0080
+SampEn  -0.4760  -0.1020  -0.1930   1.0000   0.4070
+WPE     -0.2410  -0.1980  -0.0080   0.4070   1.0000
+
+  --- bytedance ---
+             cv      DFA      LZC   SampEn      WPE
+cv       1.0000  -0.1310  -0.3780  -0.2380  -0.3420
+DFA     -0.1310   1.0000  -0.0740   0.0120   0.3370
+LZC     -0.3780  -0.0740   1.0000   0.4520   0.3850
+SampEn  -0.2380   0.0120   0.4520   1.0000   0.5470
+WPE     -0.3420   0.3370   0.3850   0.5470   1.0000
+
+==============================================================================
+[G] Cross-dataset WPE story — does it match macro-ACF inversion claim?
+==============================================================================
+
+Memory says:
+  ACF@24h:   bytedance(0.489) > alibaba(0.316) > bitbrains(0.116)
+  ML benefit-by-ACF@24h holds at h60/h120 but inverts at h30 (bitbrains > alibaba)
+
+WPE story from this run:
+  WPE median: bytedance(0.94) > bitbrains(0.70) > alibaba(0.54)
+  (inverted from ACF@24h, except bitbrains/alibaba swap)
+
+   Dataset       n_series   WPE_med   SampEn_med   LZC_med   ACF@24h_canon
+   alibaba           4920   0.5354   0.2776      0.3710    0.316
+   bitbrains          142   0.7046   0.0711      0.3256    0.116
+   bytedance           93   0.9401   1.0090      0.7090    0.489
+
+  rank correlation (n=3 datasets — descriptive only):
+    WPE ranks      : [1.0, 2.0, 3.0]
+    SampEn ranks   : [2.0, 1.0, 3.0]
+    LZC ranks      : [2.0, 1.0, 3.0]
+    ACF@24h ranks  : [2.0, 1.0, 3.0]
+
+==============================================================================
+[H] catch22 feature std per dataset — which features are informative?
+==============================================================================
+   (22 catch22 features)
+            std_alibaba  std_bitbrains  std_bytedance
+catch22_1        0.5420         0.6320         0.6320
+catch22_2        0.5450         0.4460         0.6760
+catch22_3       16.1070        35.5350        12.6260
+catch22_4       40.3260        60.6050        17.9480
+catch22_5        0.3140         0.2210         0.1550
+catch22_6        0.3680         0.4260         0.6490
+catch22_7        0.0510         0.1350         0.1730
+catch22_8       50.3850       211.5700        37.5460
+catch22_9        0.0590         0.0480         0.0490
+catch22_10      30.2510       117.3280        31.1800
+catch22_11       0.2270         0.1360         0.1120
+catch22_12      14.3810        12.9510         6.6920
+catch22_13       0.0820         0.0590         0.3610
+catch22_14       0.3830         0.4600         0.2030
+catch22_15       0.2690         0.2170         0.1540
+catch22_16       0.1290         0.1360         0.2330
+catch22_17       0.5650         4.2020         1.6920
+catch22_18       0.3180         0.3600         0.3450
+catch22_19       0.3030         0.2250         0.2280
+catch22_20       0.2460         0.3230         0.1780
+catch22_21       0.1730         0.1170         0.7610
+catch22_22       0.2390         0.2150         0.2200
+
+  catch22 features with constant value (std=0) per dataset:
+    alibaba     : 0 constant features (none)
+    bitbrains   : 0 constant features (none)
+    bytedance   : 0 constant features (none)
+
+==============================================================================
+END OF INSPECTION
+==============================================================================

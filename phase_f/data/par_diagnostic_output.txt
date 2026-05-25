@@ -1,0 +1,111 @@
+======================================================================
+PAR STEP 0 DIAGNOSTIC
+======================================================================
+
+[1/5] Path resolution via _paths.P
+----------------------------------------------------------------------
+  imported _paths.P OK
+
+  KEY            STATUS     PATH
+  -------------- ---------- ----------------------------------------
+  thesis         EXISTS     /workspace/kubernetes-cpu-ensemble-thesis
+  phase_f        EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/phase_f
+  data           EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data
+  results        EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/results
+  bcf            EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/results/bcf
+  bcf_v2         EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/results/bcf_v2
+  foundation     EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison
+  src            EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/src
+  reports        EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/reports
+
+  Extra phase_f subdirs:
+  phase_f/data         EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data
+  phase_f/scripts      EXISTS     /workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts
+
+[2/5] Library availability
+----------------------------------------------------------------------
+
+  LIBRARY        STATUS     VERSION
+  -------------- ---------- --------------------
+  antropy        OK         0.2.2
+  pycatch22      OK         unknown
+  ordpy          MISSING    —
+  nolds          OK         unknown
+  statsmodels    MISSING    —
+  xgboost        MISSING    —
+  sklearn        OK         1.8.0
+  numpy          OK         2.4.3
+  pandas         MISSING    —
+  scipy          OK         1.17.1
+
+  sklearn version check (>= 1.5): OK (1.8.0)
+
+[3/5] Raw time-series data locations
+----------------------------------------------------------------------
+
+  Dataset: Alibaba
+    /workspace/kubernetes-cpu-ensemble-thesis/data/alibaba  MISSING
+    /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba  EXISTS  parquet=4  csv=5
+      example parquets: ['spine_alibaba_60min.parquet', 'spine_alibaba_120min.parquet', 'spine_alibaba_10min.parquet']
+      example csvs: ['b6_test_headline.csv', 'results_summary_alibaba.csv', 'omega_alibaba.csv']
+
+  Dataset: Bitbrains
+    /workspace/kubernetes-cpu-ensemble-thesis/data/bitbrains  MISSING
+    /workspace/kubernetes-cpu-ensemble-thesis/results/bitbrains  EXISTS  parquet=4  csv=18
+      example parquets: ['spine_bitbrains_60min.parquet', 'spine_bitbrains_120min.parquet', 'spine_bitbrains_10min.parquet']
+      example csvs: ['bitbrains_summary.csv', 'omega_bitbrains.csv', 'results_summary.csv']
+
+  Dataset: ByteDance
+    /workspace/kubernetes-cpu-ensemble-thesis/data/bytedance  MISSING
+    /workspace/kubernetes-cpu-ensemble-thesis/results/bytedance  EXISTS  parquet=3  csv=4
+      example parquets: ['spine_bytedance_60min.parquet', 'spine_bytedance_120min.parquet', 'spine_bytedance_30min.parquet']
+      example csvs: ['results_summary.csv', 'bytedance_per_instance_stats.csv', 'b6_test_headline.csv']
+
+  Project-wide backstop search (top-level + 1 level deep):
+    *alibaba*  matches=0
+    *bitbrains*  matches=0
+    *bytedance*  matches=0
+
+[4/5] Per-series performance files (for labels)
+----------------------------------------------------------------------
+
+  Bitbrains per-VM R² (known):
+    MISSING (none of the candidate paths exist)
+
+  Alibaba per-container R²:
+    MISSING (none of the candidate paths exist)
+
+  ByteDance per-instance R²:
+    MISSING (none of the candidate paths exist)
+
+  Wildcard glob backstop (*per_container*, *per_vm*, *per_instance*, *per_series*):
+    *per_container*         matches=0
+    *per_vm*                matches=3
+      bitbrains_per_vm_new_pool.py
+      logs/bitbrains_per_vm_new.log
+      update_bcf_table_v3_per_vm.py
+    *per_instance*          matches=0
+    *per_series*            matches=0
+
+[5/5] SUMMARY TABLE
+----------------------------------------------------------------------
+
+  ITEM                             STATUS                  
+  -------------------------------- ------------------------
+  library: antropy                 v0.2.2
+  library: pycatch22               vunknown
+  library: ordpy                   MISSING
+  library: nolds                   vunknown
+  library: statsmodels             MISSING
+  library: xgboost                 MISSING
+  library: sklearn                 v1.8.0
+  raw data: Alibaba                FOUND (pq=4 csv=5)
+  raw data: Bitbrains              FOUND (pq=4 csv=18)
+  raw data: ByteDance              FOUND (pq=3 csv=4)
+  per-series: Bitbrains per-VM     MISSING
+  per-series: Alibaba per-containe MISSING
+  per-series: ByteDance per-instan MISSING
+
+======================================================================
+END OF DIAGNOSTIC
+======================================================================

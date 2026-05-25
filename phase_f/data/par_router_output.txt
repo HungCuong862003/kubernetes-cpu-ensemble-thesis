@@ -1,0 +1,178 @@
+==============================================================================
+par_router.py — PAR Step 5: classifier test (LODO 3-fold CV)
+==============================================================================
+
+[1] Loading + merging labels and features...
+    loaded: 19231 rows, after dropna: 19230
+    n features: 30
+    sample features: ['mean', 'std', 'cv', 'DFA', 'LZC', 'SampEn', 'WPE', 'catch22_1']...
+
+[2] Per-dataset label distribution:
+label      nnls  chronos2  timesfm  granite_ttm
+dataset                                        
+alibaba    9802      3431     3647         1505
+bitbrains   100       160      152          156
+bytedance   138        93       46            0
+
+    overall n = 19230
+
+==============================================================================
+[3] LODO 3-fold CV — Shrinkage LDA
+==============================================================================
+
+  --- lda_holdout_alibaba ---
+    train: n=845 ({'bitbrains': 568, 'bytedance': 277})
+    test:  n=18385  (alibaba)
+    train label dist: {'chronos2': np.int64(253), 'granite_ttm': np.int64(156), 'nnls': np.int64(238), 'timesfm': np.int64(198)}
+    test  label dist: {'chronos2': np.int64(3431), 'granite_ttm': np.int64(1505), 'nnls': np.int64(9802), 'timesfm': np.int64(3647)}
+    inner 3-fold CV (4 hyperparameter candidates)...
+    best inner params (inner macro-F1=0.4581): {'shrinkage': 0.1}
+    inner CV took 0s
+    training final lda on full training set...
+    final fit took 0s
+    macro-F1:    0.2517   (baseline 0.2232)
+    accuracy:    0.3817   (baseline 0.4029)
+    mean regret: nan   (baseline nan)
+    per-class F1: chronos2=0.312, granite_ttm=0.000, nnls=0.541, timesfm=0.154
+    confusion matrix (rows=true, cols=pred), classes=[np.str_('chronos2'), np.str_('granite_ttm'), np.str_('nnls'), np.str_('timesfm')]:
+      chronos2    : [2188, 0, 1001, 242]
+      granite_ttm : [1261, 0, 171, 73]
+      nnls        : [4952, 0, 4467, 383]
+      timesfm     : [2199, 0, 1085, 363]
+
+  --- lda_holdout_bitbrains ---
+    train: n=18662 ({'alibaba': 18385, 'bytedance': 277})
+    test:  n=568  (bitbrains)
+    train label dist: {'chronos2': np.int64(3524), 'granite_ttm': np.int64(1505), 'nnls': np.int64(9940), 'timesfm': np.int64(3693)}
+    test  label dist: {'chronos2': np.int64(160), 'granite_ttm': np.int64(156), 'nnls': np.int64(100), 'timesfm': np.int64(152)}
+    inner 3-fold CV (4 hyperparameter candidates)...
+    best inner params (inner macro-F1=0.2651): {'shrinkage': 0.5}
+    inner CV took 0s
+    training final lda on full training set...
+    final fit took 0s
+    macro-F1:    0.1821   (baseline 0.0749)
+    accuracy:    0.2165   (baseline 0.1761)
+    mean regret: 882.6981   (baseline 900.6235)
+    per-class F1: chronos2=0.326, granite_ttm=0.095, nnls=0.257, timesfm=0.051
+    confusion matrix (rows=true, cols=pred), classes=[np.str_('chronos2'), np.str_('granite_ttm'), np.str_('nnls'), np.str_('timesfm')]:
+      chronos2    : [57, 34, 68, 1]
+      granite_ttm : [46, 11, 99, 0]
+      nnls        : [42, 7, 51, 0]
+      timesfm     : [45, 24, 79, 4]
+
+  --- lda_holdout_bytedance ---
+    train: n=18953 ({'alibaba': 18385, 'bitbrains': 568})
+    test:  n=277  (bytedance)
+    train label dist: {'chronos2': np.int64(3591), 'granite_ttm': np.int64(1661), 'nnls': np.int64(9902), 'timesfm': np.int64(3799)}
+    test  label dist: {'chronos2': np.int64(93), 'nnls': np.int64(138), 'timesfm': np.int64(46)}
+    inner 3-fold CV (4 hyperparameter candidates)...
+    best inner params (inner macro-F1=0.2916): {'shrinkage': 0.5}
+    inner CV took 0s
+    training final lda on full training set...
+    final fit took 0s
+    macro-F1:    0.1486   (baseline 0.2217)
+    accuracy:    0.2022   (baseline 0.4982)
+    mean regret: 0.2418   (baseline nan)
+    per-class F1: chronos2=0.325, granite_ttm=0.000, nnls=0.066, timesfm=0.203
+    confusion matrix (rows=true, cols=pred), classes=[np.str_('chronos2'), np.str_('granite_ttm'), np.str_('nnls'), np.str_('timesfm')]:
+      chronos2    : [32, 9, 5, 47]
+      granite_ttm : [0, 0, 0, 0]
+      nnls        : [52, 6, 5, 75]
+      timesfm     : [20, 4, 3, 19]
+
+==============================================================================
+[4] LODO 3-fold CV — XGBoost
+==============================================================================
+
+  --- xgb_holdout_alibaba ---
+    train: n=845 ({'bitbrains': 568, 'bytedance': 277})
+    test:  n=18385  (alibaba)
+    train label dist: {'chronos2': np.int64(253), 'granite_ttm': np.int64(156), 'nnls': np.int64(238), 'timesfm': np.int64(198)}
+    test  label dist: {'chronos2': np.int64(3431), 'granite_ttm': np.int64(1505), 'nnls': np.int64(9802), 'timesfm': np.int64(3647)}
+    inner 3-fold CV (4 hyperparameter candidates)...
+    best inner params (inner macro-F1=0.5430): {'max_depth': 5, 'n_estimators': 300, 'learning_rate': 0.05}
+    inner CV took 7s
+    training final xgb on full training set...
+    final fit took 1s
+    macro-F1:    0.1773   (baseline 0.2232)
+    accuracy:    0.2262   (baseline 0.4029)
+    mean regret: nan   (baseline nan)
+    per-class F1: chronos2=0.280, granite_ttm=0.008, nnls=0.127, timesfm=0.296
+    confusion matrix (rows=true, cols=pred), classes=[np.str_('chronos2'), np.str_('granite_ttm'), np.str_('nnls'), np.str_('timesfm')]:
+      chronos2    : [1850, 16, 258, 1307]
+      granite_ttm : [733, 6, 125, 641]
+      nnls        : [5466, 27, 707, 3602]
+      timesfm     : [1754, 15, 283, 1595]
+
+  --- xgb_holdout_bitbrains ---
+    train: n=18662 ({'alibaba': 18385, 'bytedance': 277})
+    test:  n=568  (bitbrains)
+    train label dist: {'chronos2': np.int64(3524), 'granite_ttm': np.int64(1505), 'nnls': np.int64(9940), 'timesfm': np.int64(3693)}
+    test  label dist: {'chronos2': np.int64(160), 'granite_ttm': np.int64(156), 'nnls': np.int64(100), 'timesfm': np.int64(152)}
+    inner 3-fold CV (4 hyperparameter candidates)...
+    best inner params (inner macro-F1=0.3178): {'max_depth': 7, 'n_estimators': 200, 'learning_rate': 0.05}
+    inner CV took 13s
+    training final xgb on full training set...
+    final fit took 2s
+    macro-F1:    0.2376   (baseline 0.0749)
+    accuracy:    0.2729   (baseline 0.1761)
+    mean regret: 541.2084   (baseline 900.6235)
+    per-class F1: chronos2=0.347, granite_ttm=0.000, nnls=0.281, timesfm=0.322
+    confusion matrix (rows=true, cols=pred), classes=[np.str_('chronos2'), np.str_('granite_ttm'), np.str_('nnls'), np.str_('timesfm')]:
+      chronos2    : [71, 0, 67, 22]
+      granite_ttm : [78, 0, 64, 14]
+      nnls        : [47, 1, 47, 5]
+      timesfm     : [53, 6, 56, 37]
+
+  --- xgb_holdout_bytedance ---
+    train: n=18953 ({'alibaba': 18385, 'bitbrains': 568})
+    test:  n=277  (bytedance)
+    train label dist: {'chronos2': np.int64(3591), 'granite_ttm': np.int64(1661), 'nnls': np.int64(9902), 'timesfm': np.int64(3799)}
+    test  label dist: {'chronos2': np.int64(93), 'nnls': np.int64(138), 'timesfm': np.int64(46)}
+    inner 3-fold CV (4 hyperparameter candidates)...
+    best inner params (inner macro-F1=0.3482): {'max_depth': 7, 'n_estimators': 200, 'learning_rate': 0.05}
+    inner CV took 13s
+    training final xgb on full training set...
+    final fit took 2s
+    macro-F1:    0.2310   (baseline 0.2217)
+    accuracy:    0.2419   (baseline 0.4982)
+    mean regret: nan   (baseline nan)
+    per-class F1: chronos2=0.366, granite_ttm=0.000, nnls=0.103, timesfm=0.223
+    confusion matrix (rows=true, cols=pred), classes=[np.str_('chronos2'), np.str_('granite_ttm'), np.str_('nnls'), np.str_('timesfm')]:
+      chronos2    : [37, 0, 6, 50]
+      granite_ttm : [0, 0, 0, 0]
+      nnls        : [51, 0, 8, 79]
+      timesfm     : [21, 0, 3, 22]
+
+==============================================================================
+AGGREGATE — per model type
+==============================================================================
+
+[LDA]
+  per-fold macro-F1:    [0.2517, 0.1821, 0.1486]  mean=0.1941
+  per-fold baseline F1: [0.2232, 0.0749, 0.2217]  mean=0.1733
+  per-fold mean regret: [nan, 882.6981, 0.2418]  mean=nan
+  per-fold baseline reg: [nan, 900.6235, nan]  mean=nan
+  VERDICT: STRUCTURAL SATURATION DEEPENS: per-series routing fails (mean macro-F1 = 0.1941 < 0.2)
+
+[XGB]
+  per-fold macro-F1:    [0.1773, 0.2376, 0.231]  mean=0.2153
+  per-fold baseline F1: [0.2232, 0.0749, 0.2217]  mean=0.1733
+  per-fold mean regret: [nan, 541.2084, nan]  mean=nan
+  per-fold baseline reg: [nan, 900.6235, nan]  mean=nan
+  VERDICT: PARTIAL POSITIVE: per-series routing adds value (0.2 ≤ 0.2153 < 0.55)
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_router_results.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_router_predictions.csv
+
+==============================================================================
+FINAL SUMMARY
+==============================================================================
+
+[LDA] mean macro-F1 = 0.1941
+  per fold: [0.2516722823613641, 0.18210605951874476, 0.14857670453983676]
+  VERDICT: STRUCTURAL SATURATION DEEPENS: per-series routing fails (mean macro-F1 = 0.1941 < 0.2)
+
+[XGB] mean macro-F1 = 0.2153
+  per fold: [0.17733821000272199, 0.23759113006049132, 0.2309708979740286]
+  VERDICT: PARTIAL POSITIVE: per-series routing adds value (0.2 ≤ 0.2153 < 0.55)

@@ -1,0 +1,178 @@
+{
+  "primary_WPE_pooled": {
+    "feature": "WPE",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 17741,
+    "n_clusters": 4477,
+    "r2_reduced": 2.5597593636406124e-05,
+    "r2_full": 0.00046938235227800273,
+    "partial_r2_point": 0.0004437961187543019,
+    "ci_lower_95": 0.00019318461993572106,
+    "ci_upper_95": 0.009058951669478812,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_WPE_with_dataset_dummies": {
+    "feature": "WPE",
+    "controls": [
+      "acf_24h",
+      "horizon_min",
+      "dataset_bitbrains",
+      "dataset_bytedance"
+    ],
+    "n_obs": 17741,
+    "n_clusters": 4477,
+    "r2_reduced": 0.006771243914157066,
+    "r2_full": 0.006840747797129398,
+    "partial_r2_point": 6.997771917743951e-05,
+    "ci_lower_95": 1.1744046073801571e-05,
+    "ci_upper_95": 0.003005322082261895,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_WPE_alibaba": {
+    "feature": "WPE",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 16897,
+    "n_clusters": 4243,
+    "r2_reduced": 0.004824277120463627,
+    "r2_full": 0.00986029204118688,
+    "partial_r2_point": 0.005060427826908365,
+    "ci_lower_95": 0.002565540245987431,
+    "ci_upper_95": 0.009843791595495765,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_WPE_bitbrains": {
+    "feature": "WPE",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 568,
+    "n_clusters": 142,
+    "r2_reduced": 0.004980968844041311,
+    "r2_full": 0.008883807904283225,
+    "partial_r2_point": 0.0039223762943587205,
+    "ci_lower_95": 0.0001715932896447646,
+    "ci_upper_95": 0.06069548230953289,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_WPE_bytedance": {
+    "feature": "WPE",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 276,
+    "n_clusters": 92,
+    "r2_reduced": 0.09513763482100845,
+    "r2_full": 0.13427482533178137,
+    "partial_r2_point": 0.04325209227044287,
+    "ci_lower_95": 0.012957694976362592,
+    "ci_upper_95": 0.12161153786375425,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 BORDERLINE (point estimate < 0.10 but 95% CI overlaps threshold)"
+  },
+  "sens_SampEn_pooled": {
+    "feature": "SampEn",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 17741,
+    "n_clusters": 4477,
+    "r2_reduced": 2.5597593636406124e-05,
+    "r2_full": 0.0006134823898923392,
+    "partial_r2_point": 0.0005878998450772662,
+    "ci_lower_95": 0.0003862605050385585,
+    "ci_upper_95": 0.0022202163419943965,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_LZC_pooled": {
+    "feature": "LZC",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 17741,
+    "n_clusters": 4477,
+    "r2_reduced": 2.5597593636406124e-05,
+    "r2_full": 0.0017073394001930753,
+    "partial_r2_point": 0.001681784856202002,
+    "ci_lower_95": 0.0008441850082583222,
+    "ci_upper_95": 0.005932998221631806,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_DFA_pooled": {
+    "feature": "DFA",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 17741,
+    "n_clusters": 4477,
+    "r2_reduced": 2.5597593636406124e-05,
+    "r2_full": 0.001109897193481646,
+    "partial_r2_point": 0.001084327356016268,
+    "ci_lower_95": 1.1370445988580923e-05,
+    "ci_upper_95": 0.003258219578950858,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_WPE_winsorised": {
+    "feature": "WPE",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 17741,
+    "n_clusters": 4477,
+    "r2_reduced": 0.050557765889117756,
+    "r2_full": 0.06120091793921667,
+    "partial_r2_point": 0.011209899525973621,
+    "ci_lower_95": 0.006162661294463693,
+    "ci_upper_95": 0.017538041250758408,
+    "n_bootstrap_valid": 1000,
+    "verdict": "F2 NULL DEEPENS at series scope (point estimate < 0.10 and 95% CI upper < 0.10)"
+  },
+  "sens_all_4_features_combined": {
+    "feature": "WPE+SampEn+LZC+DFA",
+    "controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "n_obs": 17741,
+    "r2_reduced": 2.5597593636406124e-05,
+    "r2_full": 0.005317511337275649,
+    "partial_r2_point": 0.005292049207364357,
+    "note": "point estimate only; no bootstrap (descriptive)"
+  },
+  "metadata": {
+    "pre_registration": "DECISION-005, D5 close",
+    "primary_feature": "WPE",
+    "primary_controls": [
+      "acf_24h",
+      "horizon_min"
+    ],
+    "outcome": "ml_benefit = NNLS_R\u00b2 - naive_R\u00b2 per (series, horizon)",
+    "decision_threshold_high": 0.3,
+    "decision_threshold_low": 0.1,
+    "n_bootstrap_iterations": 1000,
+    "bootstrap_clustering": "container_id",
+    "bootstrap_seed": 42,
+    "cell_level_F2_result": {
+      "partial_r2_pooled_n12": 0.079,
+      "verdict": "NULL at cell scope (DECISION-009/010)"
+    }
+  }
+}

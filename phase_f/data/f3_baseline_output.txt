@@ -1,0 +1,181 @@
+/venv/main/lib/python3.12/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+==============================================================================
+f3_baseline_chronos2.py — Phase F3 zero-shot baseline
+==============================================================================
+
+[1] Environment...
+    torch:    2.9.1+cu128
+    cuda:     True
+    device:   NVIDIA RTX A4000
+    GPU mem:  16.6 / 16.8 GB free
+
+[2] Loading Chronos-2 (amazon/chronos-2)...
+    loaded in 0.6s, class=Chronos2Pipeline
+
+[3] Loading datasets...
+    alibaba: 5000 containers, concat(train+val+test), cpu_col=cpu_util_percent
+      length stats: min=429, median=2296, mean=2157, max=2304
+    bitbrains: 142 containers, concat(train+val+test), cpu_col=cpu_util_percent
+      length stats: min=7285, median=8615, mean=8153, max=9945
+    bytedance: 93 containers, concat(train+val+test), cpu_col=cpu_util_percent
+      length stats: min=3456, median=3456, mean=3456, max=3456
+
+[4] Running zero-shot inference + pinball loss per (dataset, horizon, tau)...
+
+    --- alibaba h=10 min (2 obs) ---
+      valid containers: 4999 (skipped 1 for length < 514)
+      context tensor: (4999, 1, 512)
+      target array:   (4999, 2)
+      inference took 3.8s, output (5, 4999, 2)
+      tau=0.50: pinball=0.397639
+      tau=0.70: pinball=0.354505
+      tau=0.80: pinball=0.310665
+      tau=0.90: pinball=0.237120
+      tau=0.95: pinball=0.169965
+
+    --- alibaba h=30 min (6 obs) ---
+      valid containers: 4998 (skipped 2 for length < 518)
+      context tensor: (4998, 1, 512)
+      target array:   (4998, 6)
+      inference took 3.4s, output (5, 4998, 6)
+      tau=0.50: pinball=0.610668
+      tau=0.70: pinball=0.553762
+      tau=0.80: pinball=0.478926
+      tau=0.90: pinball=0.347370
+      tau=0.95: pinball=0.237896
+
+    --- alibaba h=60 min (12 obs) ---
+      valid containers: 4998 (skipped 2 for length < 524)
+      context tensor: (4998, 1, 512)
+      target array:   (4998, 12)
+      inference took 3.4s, output (5, 4998, 12)
+      tau=0.50: pinball=0.719371
+      tau=0.70: pinball=0.689776
+      tau=0.80: pinball=0.608203
+      tau=0.90: pinball=0.446603
+      tau=0.95: pinball=0.305030
+
+    --- alibaba h=120 min (24 obs) ---
+      valid containers: 4998 (skipped 2 for length < 536)
+      context tensor: (4998, 1, 512)
+      target array:   (4998, 24)
+      inference took 3.3s, output (5, 4998, 24)
+      tau=0.50: pinball=0.745172
+      tau=0.70: pinball=0.738836
+      tau=0.80: pinball=0.654606
+      tau=0.90: pinball=0.473945
+      tau=0.95: pinball=0.320329
+
+    --- bitbrains h=10 min (2 obs) ---
+      valid containers: 142 (skipped 0 for length < 514)
+      context tensor: (142, 1, 512)
+      target array:   (142, 2)
+      inference took 0.1s, output (5, 142, 2)
+      tau=0.50: pinball=3.405835
+      tau=0.70: pinball=3.447439
+      tau=0.80: pinball=2.676793
+      tau=0.90: pinball=1.535303
+      tau=0.95: pinball=0.871878
+
+    --- bitbrains h=30 min (6 obs) ---
+      valid containers: 142 (skipped 0 for length < 518)
+      context tensor: (142, 1, 512)
+      target array:   (142, 6)
+      inference took 0.1s, output (5, 142, 6)
+      tau=0.50: pinball=8.380225
+      tau=0.70: pinball=5.484678
+      tau=0.80: pinball=3.859344
+      tau=0.90: pinball=2.121677
+      tau=0.95: pinball=1.277542
+
+    --- bitbrains h=60 min (12 obs) ---
+      valid containers: 142 (skipped 0 for length < 524)
+      context tensor: (142, 1, 512)
+      target array:   (142, 12)
+      inference took 0.1s, output (5, 142, 12)
+      tau=0.50: pinball=11.425036
+      tau=0.70: pinball=9.997474
+      tau=0.80: pinball=7.513688
+      tau=0.90: pinball=4.858964
+      tau=0.95: pinball=3.906372
+
+    --- bitbrains h=120 min (24 obs) ---
+      valid containers: 142 (skipped 0 for length < 536)
+      context tensor: (142, 1, 512)
+      target array:   (142, 24)
+      inference took 0.1s, output (5, 142, 24)
+      tau=0.50: pinball=13.055067
+      tau=0.70: pinball=13.756292
+      tau=0.80: pinball=12.006669
+      tau=0.90: pinball=8.015288
+      tau=0.95: pinball=4.791495
+
+    --- bytedance h=10 min (1 obs) ---
+      valid containers: 93 (skipped 0 for length < 513)
+      context tensor: (93, 1, 512)
+      target array:   (93, 1)
+      inference took 0.1s, output (5, 93, 1)
+      tau=0.50: pinball=0.657637
+      tau=0.70: pinball=0.669045
+      tau=0.80: pinball=0.569356
+      tau=0.90: pinball=0.383004
+      tau=0.95: pinball=0.231959
+
+    --- bytedance h=30 min (3 obs) ---
+      valid containers: 93 (skipped 0 for length < 515)
+      context tensor: (93, 1, 512)
+      target array:   (93, 3)
+      inference took 0.1s, output (5, 93, 3)
+      tau=0.50: pinball=0.809003
+      tau=0.70: pinball=0.737779
+      tau=0.80: pinball=0.593535
+      tau=0.90: pinball=0.396275
+      tau=0.95: pinball=0.261864
+
+    --- bytedance h=60 min (6 obs) ---
+      valid containers: 93 (skipped 0 for length < 518)
+      context tensor: (93, 1, 512)
+      target array:   (93, 6)
+      inference took 0.1s, output (5, 93, 6)
+      tau=0.50: pinball=1.016015
+      tau=0.70: pinball=0.909941
+      tau=0.80: pinball=0.715953
+      tau=0.90: pinball=0.459408
+      tau=0.95: pinball=0.278298
+
+    --- bytedance h=120 min (12 obs) ---
+      valid containers: 93 (skipped 0 for length < 524)
+      context tensor: (93, 1, 512)
+      target array:   (93, 12)
+      inference took 0.1s, output (5, 93, 12)
+      tau=0.50: pinball=1.108737
+      tau=0.70: pinball=0.949205
+      tau=0.80: pinball=0.760724
+      tau=0.90: pinball=0.479588
+      tau=0.95: pinball=0.280177
+
+    total inference time: 14s
+
+[5] F3 pre-registered success criterion (locked before any fine-tune):
+    PRIMARY: pinball loss at tau=0.9, h=60 min
+    averaged across ['alibaba', 'bitbrains', 'bytedance']
+    SUCCESS: >= 5.0% improvement over zero-shot
+    PARTIAL: >= 2.0% improvement
+    FAILURE: <  2.0% improvement -> triggers DECISION-015
+
+    BASELINE primary metric (mean across datasets at h=60, tau=0.9):
+      1.921658
+      F3 SUCCESS threshold (5% better): 1.825576
+      F3 PARTIAL threshold (2% better): 1.883225
+
+[6] Saving outputs...
+    wrote /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_zero_shot_baseline.json
+    wrote /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_zero_shot_baseline.csv
+    wrote /workspace/kubernetes-cpu-ensemble-thesis/phase_f/f3_design.md
+
+==============================================================================
+F3 Day 1 complete. Zero-shot baseline locked.
+Next: write f3_chronos2_lora_finetune.py to train LoRA adapters with
+asymmetric pinball loss against this baseline.
+==============================================================================

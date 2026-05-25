@@ -1,0 +1,645 @@
+{
+  "lda_holdout_alibaba": {
+    "model_type": "lda",
+    "holdout_dataset": "alibaba",
+    "n_train": 845,
+    "n_test": 18385,
+    "best_params": {
+      "shrinkage": 0.1
+    },
+    "inner_cv_macro_f1": 0.4581452344020453,
+    "inner_cv_all_results": [
+      {
+        "params": {
+          "shrinkage": "auto"
+        },
+        "inner_f1": 0.4580118699436874
+      },
+      {
+        "params": {
+          "shrinkage": 0.1
+        },
+        "inner_f1": 0.4581452344020453
+      },
+      {
+        "params": {
+          "shrinkage": 0.3
+        },
+        "inner_f1": 0.452295538933253
+      },
+      {
+        "params": {
+          "shrinkage": 0.5
+        },
+        "inner_f1": 0.44896105348597476
+      }
+    ],
+    "macro_f1": 0.2516722823613641,
+    "accuracy": 0.3817242317106337,
+    "mean_regret": NaN,
+    "total_regret": NaN,
+    "per_class_f1": {
+      "chronos2": 0.31188083529327915,
+      "granite_ttm": 0.0,
+      "nnls": 0.5406026866755416,
+      "timesfm": 0.1542056074766355
+    },
+    "baseline_macro_f1": 0.22322162607491636,
+    "baseline_accuracy": 0.40288278487897744,
+    "baseline_mean_regret": NaN,
+    "confusion_matrix": [
+      [
+        2188,
+        0,
+        1001,
+        242
+      ],
+      [
+        1261,
+        0,
+        171,
+        73
+      ],
+      [
+        4952,
+        0,
+        4467,
+        383
+      ],
+      [
+        2199,
+        0,
+        1085,
+        363
+      ]
+    ],
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ]
+  },
+  "lda_holdout_bitbrains": {
+    "model_type": "lda",
+    "holdout_dataset": "bitbrains",
+    "n_train": 18662,
+    "n_test": 568,
+    "best_params": {
+      "shrinkage": 0.5
+    },
+    "inner_cv_macro_f1": 0.2650620047995292,
+    "inner_cv_all_results": [
+      {
+        "params": {
+          "shrinkage": "auto"
+        },
+        "inner_f1": 0.20389972555085767
+      },
+      {
+        "params": {
+          "shrinkage": 0.1
+        },
+        "inner_f1": 0.20114640861838487
+      },
+      {
+        "params": {
+          "shrinkage": 0.3
+        },
+        "inner_f1": 0.2197178774648635
+      },
+      {
+        "params": {
+          "shrinkage": 0.5
+        },
+        "inner_f1": 0.2650620047995292
+      }
+    ],
+    "macro_f1": 0.18210605951874476,
+    "accuracy": 0.21654929577464788,
+    "mean_regret": 882.6980851127147,
+    "total_regret": 501372.51234402193,
+    "per_class_f1": {
+      "chronos2": 0.32571428571428573,
+      "granite_ttm": 0.09482758620689655,
+      "nnls": 0.25692695214105793,
+      "timesfm": 0.050955414012738856
+    },
+    "baseline_macro_f1": 0.0748502994011976,
+    "baseline_accuracy": 0.176056338028169,
+    "baseline_mean_regret": 900.6234849464038,
+    "confusion_matrix": [
+      [
+        57,
+        34,
+        68,
+        1
+      ],
+      [
+        46,
+        11,
+        99,
+        0
+      ],
+      [
+        42,
+        7,
+        51,
+        0
+      ],
+      [
+        45,
+        24,
+        79,
+        4
+      ]
+    ],
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ]
+  },
+  "lda_holdout_bytedance": {
+    "model_type": "lda",
+    "holdout_dataset": "bytedance",
+    "n_train": 18953,
+    "n_test": 277,
+    "best_params": {
+      "shrinkage": 0.5
+    },
+    "inner_cv_macro_f1": 0.29160991196816016,
+    "inner_cv_all_results": [
+      {
+        "params": {
+          "shrinkage": "auto"
+        },
+        "inner_f1": 0.24203559594317237
+      },
+      {
+        "params": {
+          "shrinkage": 0.1
+        },
+        "inner_f1": 0.24704216737239468
+      },
+      {
+        "params": {
+          "shrinkage": 0.3
+        },
+        "inner_f1": 0.2667399552679196
+      },
+      {
+        "params": {
+          "shrinkage": 0.5
+        },
+        "inner_f1": 0.29160991196816016
+      }
+    ],
+    "macro_f1": 0.14857670453983676,
+    "accuracy": 0.20216606498194944,
+    "mean_regret": 0.2417974837643001,
+    "total_regret": 66.97790300271113,
+    "per_class_f1": {
+      "chronos2": 0.3248730964467005,
+      "granite_ttm": 0.0,
+      "nnls": 0.06622516556291391,
+      "timesfm": 0.20320855614973263
+    },
+    "baseline_macro_f1": 0.2216867469879518,
+    "baseline_accuracy": 0.4981949458483754,
+    "baseline_mean_regret": NaN,
+    "confusion_matrix": [
+      [
+        32,
+        9,
+        5,
+        47
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        52,
+        6,
+        5,
+        75
+      ],
+      [
+        20,
+        4,
+        3,
+        19
+      ]
+    ],
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ]
+  },
+  "xgb_holdout_alibaba": {
+    "model_type": "xgb",
+    "holdout_dataset": "alibaba",
+    "n_train": 845,
+    "n_test": 18385,
+    "best_params": {
+      "max_depth": 5,
+      "n_estimators": 300,
+      "learning_rate": 0.05
+    },
+    "inner_cv_macro_f1": 0.5429737419327362,
+    "inner_cv_all_results": [
+      {
+        "params": {
+          "max_depth": 3,
+          "n_estimators": 150,
+          "learning_rate": 0.1
+        },
+        "inner_f1": 0.5103324031251316
+      },
+      {
+        "params": {
+          "max_depth": 5,
+          "n_estimators": 150,
+          "learning_rate": 0.1
+        },
+        "inner_f1": 0.5365252588463798
+      },
+      {
+        "params": {
+          "max_depth": 5,
+          "n_estimators": 300,
+          "learning_rate": 0.05
+        },
+        "inner_f1": 0.5429737419327362
+      },
+      {
+        "params": {
+          "max_depth": 7,
+          "n_estimators": 200,
+          "learning_rate": 0.05
+        },
+        "inner_f1": 0.5360785135337536
+      }
+    ],
+    "macro_f1": 0.17733821000272199,
+    "accuracy": 0.22616263258090835,
+    "mean_regret": NaN,
+    "total_regret": NaN,
+    "per_class_f1": {
+      "chronos2": 0.27958289254949376,
+      "granite_ttm": 0.0076481835564053535,
+      "nnls": 0.1265324384787472,
+      "timesfm": 0.29558932542624167
+    },
+    "baseline_macro_f1": 0.22322162607491636,
+    "baseline_accuracy": 0.40288278487897744,
+    "baseline_mean_regret": NaN,
+    "confusion_matrix": [
+      [
+        1850,
+        16,
+        258,
+        1307
+      ],
+      [
+        733,
+        6,
+        125,
+        641
+      ],
+      [
+        5466,
+        27,
+        707,
+        3602
+      ],
+      [
+        1754,
+        15,
+        283,
+        1595
+      ]
+    ],
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ]
+  },
+  "xgb_holdout_bitbrains": {
+    "model_type": "xgb",
+    "holdout_dataset": "bitbrains",
+    "n_train": 18662,
+    "n_test": 568,
+    "best_params": {
+      "max_depth": 7,
+      "n_estimators": 200,
+      "learning_rate": 0.05
+    },
+    "inner_cv_macro_f1": 0.3178156344862602,
+    "inner_cv_all_results": [
+      {
+        "params": {
+          "max_depth": 3,
+          "n_estimators": 150,
+          "learning_rate": 0.1
+        },
+        "inner_f1": 0.23419955439901907
+      },
+      {
+        "params": {
+          "max_depth": 5,
+          "n_estimators": 150,
+          "learning_rate": 0.1
+        },
+        "inner_f1": 0.296062751471356
+      },
+      {
+        "params": {
+          "max_depth": 5,
+          "n_estimators": 300,
+          "learning_rate": 0.05
+        },
+        "inner_f1": 0.29722031292326545
+      },
+      {
+        "params": {
+          "max_depth": 7,
+          "n_estimators": 200,
+          "learning_rate": 0.05
+        },
+        "inner_f1": 0.3178156344862602
+      }
+    ],
+    "macro_f1": 0.23759113006049132,
+    "accuracy": 0.272887323943662,
+    "mean_regret": 541.2083792777098,
+    "total_regret": 307406.3594297392,
+    "per_class_f1": {
+      "chronos2": 0.3471882640586797,
+      "granite_ttm": 0.0,
+      "nnls": 0.281437125748503,
+      "timesfm": 0.3217391304347826
+    },
+    "baseline_macro_f1": 0.0748502994011976,
+    "baseline_accuracy": 0.176056338028169,
+    "baseline_mean_regret": 900.6234849464038,
+    "confusion_matrix": [
+      [
+        71,
+        0,
+        67,
+        22
+      ],
+      [
+        78,
+        0,
+        64,
+        14
+      ],
+      [
+        47,
+        1,
+        47,
+        5
+      ],
+      [
+        53,
+        6,
+        56,
+        37
+      ]
+    ],
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ]
+  },
+  "xgb_holdout_bytedance": {
+    "model_type": "xgb",
+    "holdout_dataset": "bytedance",
+    "n_train": 18953,
+    "n_test": 277,
+    "best_params": {
+      "max_depth": 7,
+      "n_estimators": 200,
+      "learning_rate": 0.05
+    },
+    "inner_cv_macro_f1": 0.34821906971062017,
+    "inner_cv_all_results": [
+      {
+        "params": {
+          "max_depth": 3,
+          "n_estimators": 150,
+          "learning_rate": 0.1
+        },
+        "inner_f1": 0.27855811992234236
+      },
+      {
+        "params": {
+          "max_depth": 5,
+          "n_estimators": 150,
+          "learning_rate": 0.1
+        },
+        "inner_f1": 0.32866323554036775
+      },
+      {
+        "params": {
+          "max_depth": 5,
+          "n_estimators": 300,
+          "learning_rate": 0.05
+        },
+        "inner_f1": 0.32910934309556
+      },
+      {
+        "params": {
+          "max_depth": 7,
+          "n_estimators": 200,
+          "learning_rate": 0.05
+        },
+        "inner_f1": 0.34821906971062017
+      }
+    ],
+    "macro_f1": 0.2309708979740286,
+    "accuracy": 0.24187725631768953,
+    "mean_regret": NaN,
+    "total_regret": NaN,
+    "per_class_f1": {
+      "chronos2": 0.36633663366336633,
+      "granite_ttm": 0.0,
+      "nnls": 0.1032258064516129,
+      "timesfm": 0.2233502538071066
+    },
+    "baseline_macro_f1": 0.2216867469879518,
+    "baseline_accuracy": 0.4981949458483754,
+    "baseline_mean_regret": NaN,
+    "confusion_matrix": [
+      [
+        37,
+        0,
+        6,
+        50
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        51,
+        0,
+        8,
+        79
+      ],
+      [
+        21,
+        0,
+        3,
+        22
+      ]
+    ],
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ]
+  },
+  "lda_aggregate": {
+    "mean_macro_f1": 0.19411834880664855,
+    "mean_regret": NaN,
+    "mean_baseline_macro_f1": 0.17325289082135523,
+    "mean_baseline_regret": NaN,
+    "per_fold_macro_f1": [
+      0.2516722823613641,
+      0.18210605951874476,
+      0.14857670453983676
+    ],
+    "per_fold_regret": [
+      NaN,
+      882.6980851127147,
+      0.2417974837643001
+    ],
+    "verdict": "STRUCTURAL SATURATION DEEPENS: per-series routing fails (mean macro-F1 = 0.1941 < 0.2)"
+  },
+  "xgb_aggregate": {
+    "mean_macro_f1": 0.21530007934574727,
+    "mean_regret": NaN,
+    "mean_baseline_macro_f1": 0.17325289082135523,
+    "mean_baseline_regret": NaN,
+    "per_fold_macro_f1": [
+      0.17733821000272199,
+      0.23759113006049132,
+      0.2309708979740286
+    ],
+    "per_fold_regret": [
+      NaN,
+      541.2083792777098,
+      NaN
+    ],
+    "verdict": "PARTIAL POSITIVE: per-series routing adds value (0.2 \u2264 0.2153 < 0.55)"
+  },
+  "metadata": {
+    "pre_registration": "DECISION-013",
+    "thresholds": {
+      "headline": 0.55,
+      "partial": 0.2
+    },
+    "cv": "LODO 3-fold outer + StratifiedKFold 3-fold inner",
+    "classifiers": [
+      "shrinkage_lda",
+      "xgboost"
+    ],
+    "lda_grid": [
+      {
+        "shrinkage": "auto"
+      },
+      {
+        "shrinkage": 0.1
+      },
+      {
+        "shrinkage": 0.3
+      },
+      {
+        "shrinkage": 0.5
+      }
+    ],
+    "xgb_grid": [
+      {
+        "max_depth": 3,
+        "n_estimators": 150,
+        "learning_rate": 0.1
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 150,
+        "learning_rate": 0.1
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 300,
+        "learning_rate": 0.05
+      },
+      {
+        "max_depth": 7,
+        "n_estimators": 200,
+        "learning_rate": 0.05
+      }
+    ],
+    "n_features": 30,
+    "feature_cols": [
+      "mean",
+      "std",
+      "cv",
+      "DFA",
+      "LZC",
+      "SampEn",
+      "WPE",
+      "catch22_1",
+      "catch22_2",
+      "catch22_3",
+      "catch22_4",
+      "catch22_5",
+      "catch22_6",
+      "catch22_7",
+      "catch22_8",
+      "catch22_9",
+      "catch22_10",
+      "catch22_11",
+      "catch22_12",
+      "catch22_13",
+      "catch22_14",
+      "catch22_15",
+      "catch22_16",
+      "catch22_17",
+      "catch22_18",
+      "catch22_19",
+      "catch22_20",
+      "catch22_21",
+      "catch22_22",
+      "horizon_min"
+    ],
+    "n_obs_total": 19230,
+    "n_classes": 4,
+    "class_order": [
+      "chronos2",
+      "granite_ttm",
+      "nnls",
+      "timesfm"
+    ],
+    "random_seed": 42,
+    "baseline": "always-pick-most-common-label-per-horizon (from training set)",
+    "primary_metric": "macro-F1",
+    "secondary_metric": "regret = best_r2 \u2212 r2_of_predicted_label per test row"
+  }
+}

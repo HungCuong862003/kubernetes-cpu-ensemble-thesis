@@ -533,3 +533,121 @@ defence, accepting that F1 may report null in the [0.30, 0.55] range
 for sample-size and feature-constancy reasons rather than feature-set
 reasons, and that the structural null finding would itself be the
 chapter contribution.
+## DECISION-013 — PAR pivot: demote F1 cell-level + F3 quantile FT; adopt unified per-series PAR
+
+**Date:** 2026-06-07 (D16)
+**Status:** IMPLEMENTED (Dr. Ho Long Van verbal confirmation 2026-06-07)
+
+**Context:**
+
+F1 pre-registered cell-level router (n=12, 4-class, macro-F1 threshold 0.55) returned
+NULL at 0.2532 (D12). F2 pre-registered WPE partial-R² test returned NULL at 0.079
+(D5). Deep research synthesis (D15/D16) identified a single root cause for both nulls:
+cloud workloads sit on an ACF-saturated predictability manifold where all complexity
+metrics (WPE, CV, ACF@1h, ACF@24h) collapse to one dimension. This was independently
+confirmed by Şen et al. (2024, Methods in Ecology and Evolution) for the WPE-ACF
+substitution mechanism, and by Wang et al. (2025, arXiv:2511.08884) for the foundation-
+model threshold behaviour. Dr. Ho Long Van confirmed acceptance of the new direction.
+
+**Decision:**
+
+Replace the original F1 cell-level classifier and standalone F3 quantile fine-tuning
+with a unified Predictability-Aware Router (PAR) operating at per-series granularity.
+
+Specifically:
+1. F1 pre-reg result (NULL, 0.2532) stays in the thesis as the pre-registered finding.
+   The cell-level router work is complete and documented. No further cell-level work.
+2. PAR is a new post-hoc experiment motivated by the F1+F2 structural diagnosis.
+   It implements the per-series routing the original F1 plan (§4) always intended,
+   now with corrected features (catch22 + DFA + LZC replacing dataset-level medians).
+3. F3 (cost-asymmetric quantile FT of Chronos-2) is demoted from standalone
+   contribution to optional ablation within PAR. F3 GPU compute is reallocated to
+   PAR per-series feature computation + HPA integration.
+4. The unified chapter framing is: BCF (established) + HPA simulation (established)
+   + ACF-saturation structural finding (F1+F2 reframed) + PAR (new experiment).
+
+**PAR specification:**
+- Per-series features: catch22 (22 features) + DFA/Hurst + Lempel-Ziv Complexity
+  + Sample Entropy; computed on all ~5,150 series (Alibaba ~4,900 + Bitbrains 156
+  + ByteDance 93)
+- Router: shrinkage-LDA (Ledoit-Wolf, sklearn) + XGBoost; trained on per-series
+  (series × horizon) pairs, n ≈ 20,600
+- Evaluation: Leave-One-Dataset-Out CV (3 folds); regret-based metric (MASE selected
+  − MASE oracle) as primary; macro-F1 as secondary
+- HPA integration: compare 4 policies — reactive baseline, BCF binary, always-C2, PAR
+- Feature library: antropy (DFA, LZC, SampEn), pycatch22
+- Timeline: Weeks 1–13 of revised plan (see THESIS_STATE.md)
+
+**Alternatives considered:**
+- Re-run F1 cell-level with better classifiers (shrinkage-LDA, NearestCentroid):
+  Rejected. Root cause is structural — n=12 with ACF-saturated features cannot support
+  4-class discrimination regardless of classifier. Produces another null.
+- Keep F3 as standalone contribution: Rejected. Orthogonal to routing story; lower
+  marginal value than per-series PAR; 120 GPU-hours better spent on PAR.
+- Maintain original F1+F2+F3+F4 plan: Rejected. Both pre-reg tests nulled; continuing
+  on the same granularity (dataset cells) while the root cause is per-series granularity
+  would produce further nulls with no new insight.
+
+**Consequences:**
+- F1 and F2 null results are retained and reframed as the "ACF-saturation structural
+  finding" — a positive structural contribution following Karl et al. (ICML 2024)
+  NMNR criteria.
+- PAR is labelled explicitly as post-hoc (motivated by F1+F2 diagnosis) in the chapter.
+- F3 quantile FT ablation runs within PAR if GPU budget permits after Week 9.
+- F4 integration evaluation (§7 of original plan) retains its structure but evaluates
+  PAR instead of F1 cell-level router.
+- Grade estimate unchanged: 9.0–9.4 realistic, 9.5+ possible if PAR LODO macro-F1
+  exceeds 0.40 AND BCF external validation (Wang et al. 2025) is cited correctly.
+
+**Y-statement:** In the context of two consecutive pre-registered nulls sharing a single
+root cause (ACF saturation on cloud workloads), Dr. Ho's confirmation that the new
+direction is acceptable, and the research synthesis identifying per-series features as
+the correct granularity for model routing, facing the choice between re-running failed
+designs at cell level vs. pivoting to the per-series granularity the original F1 plan
+always intended, we decided to adopt the unified PAR approach to achieve a coherent
+contribution narrative (BCF + HPA + structural diagnosis + PAR) that is defensible
+regardless of PAR outcome, accepting that F3 is demoted and the original four-
+contribution structure becomes a three-and-a-half-contribution structure.
+# DECISIONS.md — additions from 2026-05-25 F3 Day 1
+
+Append to `phase_f/DECISIONS.md`. Decision IDs continue from D14 (locked 2026-05-25 in prior session).
+
+---
+
+## DECISION-015 (PLACEHOLDER, locks at F3.5)
+
+**Status:** OPEN. Will lock when F3 evaluation (F3.5) completes.
+
+**Trigger condition:** F3 fine-tune evaluation produces SUCCESS / PARTIAL / FAILURE per pre-registered primary metric.
+
+**Possible outcomes:**
+
+- **SUCCESS** (mean pinball at h=60, τ=0.9 ≤ 1.825576, i.e., ≥5% improvement): F3 becomes empirical headline of revised thesis. Chapter 4 = F3 results chapter.
+- **PARTIAL** (1.825576 < mean pinball ≤ 1.883225, i.e., ≥2% but <5%): F3 reported as marginal positive. Chapter 4 framing more cautious.
+- **FAILURE** (mean pinball > 1.883225, i.e., <2% improvement): F3 downgrades to supporting chapter. Thesis framing pivots to "Why even fine-tuned foundation models cannot break the boundary condition" — consistent with Toner ICLR-W 2025 (foundation models underperform on cloud data) and with BCF + Structural Saturation as primary headline.
+
+All three paths give a defensible thesis. Decision logic chosen 2026-05-25 in advance to prevent post-hoc rationalisation.
+
+---
+
+## DECISION-016 — Secondary metric for F3 (OPEN, recommendation Option C)
+
+**Status:** RECOMMENDATION made 2026-05-25; LOCK pending next session.
+
+**Context:** F3.1 baseline disclosed (2026-05-25) that Bitbrains contributes 84% of the unweighted-mean primary metric due to ~10× larger absolute CPU values across datasets. Pinball loss is not scale-invariant. The pre-registered primary criterion has this design flaw.
+
+**Options:**
+
+- **Option A** — Keep pre-reg as is, accept artifact. Disclose Bitbrains dominance in writeup. Risk: defence committee challenges meaningfulness of an unweighted mean.
+- **Option B** — Renegotiate pre-reg with Dr Ho Long Van before fine-tune. Risk: opening pre-reg looks like p-hacking. NOT RECOMMENDED.
+- **Option C (RECOMMENDED)** — Keep pre-reg primary, ADD secondary = geometric mean of per-dataset % improvements at h=60, τ=0.9, same SUCCESS/PARTIAL/FAILURE thresholds (5%/2%). Both reported. Primary stays the official decision rule.
+
+**To lock Option C in next session:** Append the secondary-metric block to `phase_f/f3_design.md` BEFORE writing the fine-tune script. Document the addition in `phase_f/DECISIONS.md` as DECISION-016 LOCKED.
+
+**To lock Option A in next session:** Document in `phase_f/DECISIONS.md` as DECISION-016 LOCKED with rationale "pre-registration integrity > scale-invariance for thesis defence."
+
+---
+
+## No other decisions locked 2026-05-25
+
+F3 Day 1 was pure execution. No methodology changes, no framing changes, no errata applied. The Chronos-2 calling-convention reverse-engineering is permanent technical knowledge captured in `phase_f/journal/2026-05-25_f3-day1.md` but does not warrant a separate DECISION entry — it's a how-to artefact, not a methodology choice.

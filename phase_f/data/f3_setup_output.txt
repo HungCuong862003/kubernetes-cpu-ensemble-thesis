@@ -1,0 +1,18 @@
+==============================================================================
+f3_chronos2_finetune_setup.py — Phase F3 Day 1
+  Environment + zero-shot Chronos-2 baseline + F3 pre-registration
+==============================================================================
+
+[1] Environment verification...
+    Python: 3.12.13
+    CUDA available: 1 device(s)
+      device 0: NVIDIA RTX A4000, 15.6 GB
+    autogluon.timeseries: 1.5.0
+Traceback (most recent call last):
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/f3_chronos2_finetune_setup.py", line 534, in <module>
+    main()
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/f3_chronos2_finetune_setup.py", line 440, in main
+    check_autogluon()
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/f3_chronos2_finetune_setup.py", line 130, in check_autogluon
+    from autogluon.timeseries.models.presets import MODEL_TYPES
+ModuleNotFoundError: No module named 'autogluon.timeseries.models.presets'

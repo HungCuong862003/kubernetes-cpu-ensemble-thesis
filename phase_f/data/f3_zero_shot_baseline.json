@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "date": "2026-05-25",
+    "sprint": "Phase F3 Day 1",
+    "model": "amazon/chronos-2",
+    "datasets": [
+      "alibaba",
+      "bitbrains",
+      "bytedance"
+    ],
+    "horizons": [
+      10,
+      30,
+      60,
+      120
+    ],
+    "quantiles": [
+      0.5,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "n_context": 512,
+    "batch_size": 256,
+    "pre_registration": {
+      "primary_tau": 0.9,
+      "primary_horizon": 60,
+      "success_pct": 5.0,
+      "partial_pct": 2.0,
+      "baseline_primary": 1.9216584364573162
+    }
+  },
+  "results": [
+    {
+      "dataset": "alibaba",
+      "horizon_min": 10,
+      "horizon_obs": 2,
+      "interval_min": 5,
+      "n_containers_valid": 4999,
+      "n_containers_skipped": 1,
+      "n_predictions": 9998,
+      "pinball_loss": {
+        "0.50": 0.39763885736465454,
+        "0.70": 0.35450536012649536,
+        "0.80": 0.31066542863845825,
+        "0.90": 0.23711954057216644,
+        "0.95": 0.16996465623378754
+      }
+    },
+    {
+      "dataset": "alibaba",
+      "horizon_min": 30,
+      "horizon_obs": 6,
+      "interval_min": 5,
+      "n_containers_valid": 4998,
+      "n_containers_skipped": 2,
+      "n_predictions": 29988,
+      "pinball_loss": {
+        "0.50": 0.6106677055358887,
+        "0.70": 0.5537621974945068,
+        "0.80": 0.4789261519908905,
+        "0.90": 0.34736955165863037,
+        "0.95": 0.237896129488945
+      }
+    },
+    {
+      "dataset": "alibaba",
+      "horizon_min": 60,
+      "horizon_obs": 12,
+      "interval_min": 5,
+      "n_containers_valid": 4998,
+      "n_containers_skipped": 2,
+      "n_predictions": 59976,
+      "pinball_loss": {
+        "0.50": 0.7193706631660461,
+        "0.70": 0.6897755265235901,
+        "0.80": 0.6082034111022949,
+        "0.90": 0.44660264253616333,
+        "0.95": 0.3050299286842346
+      }
+    },
+    {
+      "dataset": "alibaba",
+      "horizon_min": 120,
+      "horizon_obs": 24,
+      "interval_min": 5,
+      "n_containers_valid": 4998,
+      "n_containers_skipped": 2,
+      "n_predictions": 119952,
+      "pinball_loss": {
+        "0.50": 0.7451724410057068,
+        "0.70": 0.7388356328010559,
+        "0.80": 0.654606282711029,
+        "0.90": 0.473944753408432,
+        "0.95": 0.3203285336494446
+      }
+    },
+    {
+      "dataset": "bitbrains",
+      "horizon_min": 10,
+      "horizon_obs": 2,
+      "interval_min": 5,
+      "n_containers_valid": 142,
+      "n_containers_skipped": 0,
+      "n_predictions": 284,
+      "pinball_loss": {
+        "0.50": 3.4058351516723633,
+        "0.70": 3.447439193725586,
+        "0.80": 2.676793336868286,
+        "0.90": 1.5353025197982788,
+        "0.95": 0.8718778491020203
+      }
+    },
+    {
+      "dataset": "bitbrains",
+      "horizon_min": 30,
+      "horizon_obs": 6,
+      "interval_min": 5,
+      "n_containers_valid": 142,
+      "n_containers_skipped": 0,
+      "n_predictions": 852,
+      "pinball_loss": {
+        "0.50": 8.38022518157959,
+        "0.70": 5.484677791595459,
+        "0.80": 3.859344005584717,
+        "0.90": 2.1216769218444824,
+        "0.95": 1.2775423526763916
+      }
+    },
+    {
+      "dataset": "bitbrains",
+      "horizon_min": 60,
+      "horizon_obs": 12,
+      "interval_min": 5,
+      "n_containers_valid": 142,
+      "n_containers_skipped": 0,
+      "n_predictions": 1704,
+      "pinball_loss": {
+        "0.50": 11.425036430358887,
+        "0.70": 9.99747371673584,
+        "0.80": 7.513688087463379,
+        "0.90": 4.858964443206787,
+        "0.95": 3.9063720703125
+      }
+    },
+    {
+      "dataset": "bitbrains",
+      "horizon_min": 120,
+      "horizon_obs": 24,
+      "interval_min": 5,
+      "n_containers_valid": 142,
+      "n_containers_skipped": 0,
+      "n_predictions": 3408,
+      "pinball_loss": {
+        "0.50": 13.05506706237793,
+        "0.70": 13.756292343139648,
+        "0.80": 12.006669044494629,
+        "0.90": 8.015288352966309,
+        "0.95": 4.791495323181152
+      }
+    },
+    {
+      "dataset": "bytedance",
+      "horizon_min": 10,
+      "horizon_obs": 1,
+      "interval_min": 10,
+      "n_containers_valid": 93,
+      "n_containers_skipped": 0,
+      "n_predictions": 93,
+      "pinball_loss": {
+        "0.50": 0.657637357711792,
+        "0.70": 0.6690449118614197,
+        "0.80": 0.5693562626838684,
+        "0.90": 0.38300439715385437,
+        "0.95": 0.23195931315422058
+      }
+    },
+    {
+      "dataset": "bytedance",
+      "horizon_min": 30,
+      "horizon_obs": 3,
+      "interval_min": 10,
+      "n_containers_valid": 93,
+      "n_containers_skipped": 0,
+      "n_predictions": 279,
+      "pinball_loss": {
+        "0.50": 0.8090025186538696,
+        "0.70": 0.7377793788909912,
+        "0.80": 0.5935350656509399,
+        "0.90": 0.3962746262550354,
+        "0.95": 0.2618635594844818
+      }
+    },
+    {
+      "dataset": "bytedance",
+      "horizon_min": 60,
+      "horizon_obs": 6,
+      "interval_min": 10,
+      "n_containers_valid": 93,
+      "n_containers_skipped": 0,
+      "n_predictions": 558,
+      "pinball_loss": {
+        "0.50": 1.0160149335861206,
+        "0.70": 0.9099411368370056,
+        "0.80": 0.7159534096717834,
+        "0.90": 0.4594082236289978,
+        "0.95": 0.27829796075820923
+      }
+    },
+    {
+      "dataset": "bytedance",
+      "horizon_min": 120,
+      "horizon_obs": 12,
+      "interval_min": 10,
+      "n_containers_valid": 93,
+      "n_containers_skipped": 0,
+      "n_predictions": 1116,
+      "pinball_loss": {
+        "0.50": 1.1087366342544556,
+        "0.70": 0.9492047429084778,
+        "0.80": 0.7607238292694092,
+        "0.90": 0.4795880615711212,
+        "0.95": 0.28017687797546387
+      }
+    }
+  ]
+}

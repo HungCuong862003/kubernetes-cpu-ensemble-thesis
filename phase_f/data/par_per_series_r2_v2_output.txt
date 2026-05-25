@@ -1,0 +1,208 @@
+========================================================================
+par_per_series_r2_v2.py
+========================================================================
+========================================================================
+PRE-FLIGHT SANITY CHECKS
+========================================================================
+
+[Alibaba h120 NEW pool (y_naive + v3) pooled R²]
+   expected source: leaderboard_v1.csv Alibaba h120 nnls_ensemble_r2
+   pooled R² actual   = 0.8098
+   pooled R² expected = 0.8093
+   delta = 0.0005, tolerance = 0.02
+   n_aligned = 98315
+   PASS
+
+[Bitbrains h30 test_xgb pooled R²]
+   expected source: par_diagnose_issues.py Section F (verified)
+   pooled R² actual   = 0.4973
+   pooled R² expected = 0.4973
+   delta = 0.0000, tolerance = 0.005
+   n_aligned = 7100
+   PASS
+
+All sanity checks PASSED. Proceeding with full regen.
+
+
+========================================================================
+DATASET: alibaba  (NNLS method = v3_plus_naive)
+========================================================================
+  loading + sorting test.parquet...
+    sorted, id_col=container_id, n_rows=1680285
+
+-- alibaba h010 --
+    chronos2    : n=4920, median R²=0.6362, pred_key=y_pred_mean
+    timesfm     : n=4920, median R²=0.4945, pred_key=y_pred_mean
+    granite_ttm : n=4920, median R²=0.2900, pred_key=y_pred_mean
+    toto        : n=4920, median R²=0.4863, pred_key=y_pred_p50
+    nnls        : n=4920, median R²=0.6726, median naive=0.6686, method=v3_plus_naive
+
+-- alibaba h030 --
+    chronos2    : n=4920, median R²=0.1702, pred_key=y_pred_mean
+    timesfm     : n=4920, median R²=0.1553, pred_key=y_pred_mean
+    granite_ttm : n=4920, median R²=-0.0127, pred_key=y_pred_mean
+    toto        : n=4920, median R²=0.1241, pred_key=y_pred_p50
+    nnls        : n=4920, median R²=0.2268, median naive=0.1261, method=v3_plus_naive
+
+-- alibaba h060 --
+    chronos2    : n=4919, median R²=0.0220, pred_key=y_pred_mean
+    timesfm     : n=4919, median R²=0.0299, pred_key=y_pred_mean
+    granite_ttm : n=4919, median R²=-0.1762, pred_key=y_pred_mean
+    toto        : n=4919, median R²=-0.0140, pred_key=y_pred_p50
+    nnls        : n=4919, median R²=0.1012, median naive=-0.1026, method=v3_plus_naive
+
+-- alibaba h120 --
+    chronos2    : n=4919, median R²=-0.1230, pred_key=y_pred_mean
+    timesfm     : n=4919, median R²=-0.1097, pred_key=y_pred_mean
+    granite_ttm : n=4919, median R²=-0.3289, pred_key=y_pred_mean
+    toto        : n=4919, median R²=-0.1392, pred_key=y_pred_p50
+    nnls        : n=4919, median R²=-0.0080, median naive=-0.2998, method=v3_plus_naive
+
+========================================================================
+DATASET: bitbrains  (NNLS method = test_xgb)
+========================================================================
+  loading + sorting test.parquet...
+    sorted, id_col=container_id, n_rows=203820
+
+-- bitbrains h010 --
+    chronos2    : n=142, median R²=0.7572, pred_key=y_pred_mean
+    timesfm     : n=142, median R²=0.6181, pred_key=y_pred_mean
+    granite_ttm : n=142, median R²=0.5863, pred_key=y_pred_mean
+    toto        : n=142, median R²=0.5765, pred_key=y_pred_p50
+    nnls        : n=142, median R²=0.7444, median naive=0.7476, method=test_xgb
+
+-- bitbrains h030 --
+    chronos2    : n=142, median R²=0.3162, pred_key=y_pred_mean
+    timesfm     : n=142, median R²=0.3706, pred_key=y_pred_mean
+    granite_ttm : n=142, median R²=0.2948, pred_key=y_pred_mean
+    toto        : n=142, median R²=0.3187, pred_key=y_pred_p50
+    nnls        : n=142, median R²=0.3062, median naive=0.2902, method=test_xgb
+
+-- bitbrains h060 --
+    chronos2    : n=142, median R²=0.0146, pred_key=y_pred_mean
+    timesfm     : n=142, median R²=0.0685, pred_key=y_pred_mean
+    granite_ttm : n=142, median R²=0.1276, pred_key=y_pred_mean
+    toto        : n=142, median R²=-0.0092, pred_key=y_pred_p50
+    nnls        : n=142, median R²=-0.0612, median naive=-0.0119, method=test_xgb
+
+-- bitbrains h120 --
+    chronos2    : n=142, median R²=-0.0495, pred_key=y_pred_mean
+    timesfm     : n=142, median R²=0.0427, pred_key=y_pred_mean
+    granite_ttm : n=142, median R²=0.0770, pred_key=y_pred_mean
+    toto        : n=142, median R²=-0.0605, pred_key=y_pred_p50
+    nnls        : n=142, median R²=-0.2504, median naive=-0.2203, method=test_xgb
+
+========================================================================
+DATASET: bytedance  (NNLS method = v3_plus_naive)
+========================================================================
+  loading + sorting test.parquet...
+    sorted, id_col=container_id, n_rows=64356
+
+-- bytedance h030 --
+    chronos2    : n=93, median R²=0.4338, pred_key=y_pred_mean
+    timesfm     : n=93, median R²=0.1450, pred_key=y_pred_mean
+    granite_ttm : n=93, median R²=-2.0571, pred_key=y_pred_mean
+    toto        : n=93, median R²=0.0925, pred_key=y_pred_p50
+    nnls        : n=93, median R²=0.4426, median naive=-0.1698, method=v3_plus_naive
+
+-- bytedance h060 --
+    chronos2    : n=93, median R²=0.3760, pred_key=y_pred_mean
+    timesfm     : n=93, median R²=0.1098, pred_key=y_pred_mean
+    granite_ttm : n=93, median R²=-3.7674, pred_key=y_pred_mean
+    toto        : n=93, median R²=0.0655, pred_key=y_pred_p50
+    nnls        : n=93, median R²=0.3657, median naive=-0.5498, method=v3_plus_naive
+
+-- bytedance h120 --
+    chronos2    : n=93, median R²=0.1474, pred_key=y_pred_mean
+    timesfm     : n=93, median R²=0.0466, pred_key=y_pred_mean
+    granite_ttm : n=93, median R²=-4.4738, pred_key=y_pred_mean
+    toto        : n=93, median R²=-0.0232, pred_key=y_pred_p50
+    nnls        : n=93, median R²=0.1676, median naive=-0.6216, method=v3_plus_naive
+
+========================================================================
+SUMMARY
+========================================================================
+Total rows: 102625, total elapsed: 5.3s
+
+Container count per (dataset, horizon, model):
+model              chronos2  granite_ttm  nnls  timesfm  toto
+dataset   horizon                                            
+alibaba   h010         4920         4920  4920     4920  4920
+          h030         4920         4920  4920     4920  4920
+          h060         4919         4919  4919     4919  4919
+          h120         4919         4919  4919     4919  4919
+bitbrains h010          142          142   142      142   142
+          h030          142          142   142      142   142
+          h060          142          142   142      142   142
+          h120          142          142   142      142   142
+bytedance h030           93           93    93       93    93
+          h060           93           93    93       93    93
+          h120           93           93    93       93    93
+
+Median R² per (dataset, horizon, model):
+model              chronos2  granite_ttm    nnls  timesfm    toto
+dataset   horizon                                                
+alibaba   h010       0.6362       0.2900  0.6726   0.4945  0.4863
+          h030       0.1702      -0.0127  0.2268   0.1553  0.1241
+          h060       0.0220      -0.1762  0.1012   0.0299 -0.0140
+          h120      -0.1230      -0.3289 -0.0080  -0.1097 -0.1392
+bitbrains h010       0.7572       0.5863  0.7444   0.6181  0.5765
+          h030       0.3162       0.2948  0.3062   0.3706  0.3187
+          h060       0.0146       0.1276 -0.0612   0.0685 -0.0092
+          h120      -0.0495       0.0770 -0.2504   0.0427 -0.0605
+bytedance h030       0.4338      -2.0571  0.4426   0.1450  0.0925
+          h060       0.3760      -3.7674  0.3657   0.1098  0.0655
+          h120       0.1474      -4.4738  0.1676   0.0466 -0.0232
+
+Median Δpp (model − naive) per (dataset, horizon, model):
+model              chronos2  granite_ttm   nnls  timesfm   toto
+dataset   horizon                                              
+alibaba   h010        -0.29       -22.24   0.58    -3.66  -5.22
+          h030         2.54       -13.74   7.34     2.47   0.00
+          h060         7.62       -12.16  16.98    11.12   4.25
+          h120        13.53        -8.31  32.50    18.80  10.12
+bitbrains h010         0.26       -12.92  -0.16   -10.03 -16.69
+          h030         2.18        -2.12   0.09     6.31   1.57
+          h060         4.44        13.01   1.23     9.89   3.04
+          h120        10.83        18.30   1.22    18.36   6.87
+bytedance h030        64.28      -157.71  66.26    32.13  30.48
+          h060        74.53      -320.90  78.66    57.11  54.67
+          h120        73.27      -347.94  75.75    46.36  57.26
+
+Per-cell winner (per-container argmax across {nnls, chronos2, timesfm, granite_ttm}):
+dataset    horizon
+alibaba    h010              nnls
+           h030              nnls
+           h060              nnls
+           h120              nnls
+bitbrains  h010          chronos2
+           h030          chronos2
+           h060       granite_ttm
+           h120       granite_ttm
+bytedance  h030              nnls
+           h060              nnls
+           h120              nnls
+
+Tally:
+_winner
+nnls           7
+chronos2       2
+granite_ttm    2
+
+Per-cell vote distribution (% of containers per cell that pick each model):
+_winner            chronos2  granite_ttm  nnls  timesfm
+dataset   horizon                                      
+alibaba   h010         26.4          6.5  50.2     16.9
+          h030         19.9         10.6  48.2     21.3
+          h060         15.7          8.8  53.3     22.3
+          h120         12.7          6.8  61.6     18.9
+bitbrains h010         50.0          8.5  25.4     16.2
+          h030         29.6         18.3  22.5     29.6
+          h060         14.1         42.3   9.9     33.8
+          h120         19.0         40.8  12.7     27.5
+bytedance h030         34.8          0.0  44.6     20.7
+          h060         33.3          0.0  52.7     14.0
+          h120         32.6          0.0  52.2     15.2
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_per_series_r2.parquet
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_per_series_r2.csv

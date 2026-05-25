@@ -1,0 +1,250 @@
+
+======================================================================
+PAR PATH 2 — PREDICTION FILE INVENTORY (v2)
+======================================================================
+results root: /workspace/kubernetes-cpu-ensemble-thesis/results
+
+======================================================================
+[A] Foundation model .npz structure (Alibaba h120 sample)
+======================================================================
+
+-- chronos2 --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/foundation_models/chronos2_perpoint.npz
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps']
+     [y_true]  shape=(98315,)  dtype=float32
+           first5=[3.0, 9.0, 14.0, 1.0, 9.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_mean]  shape=(98315,)  dtype=float32
+           first5=[5.9375, 14.9375, 11.25, 0.984375, 9.875]
+           min=-5.7812  max=100.0000  n_nan=0
+     [y_pred_p50]  shape=(98315,)  dtype=float32
+           first5=[5.9375, 14.9375, 11.25, 0.984375, 9.875]
+           min=-5.7812  max=100.0000  n_nan=0
+     [y_pred_p10]  shape=(98315,)  dtype=float32
+           first5=[2.9375, 12.3125, 8.8125, -0.287109375, 8.375]
+           min=-58.5000  max=100.0000  n_nan=0
+     [y_pred_p90]  shape=(98315,)  dtype=float32
+           first5=[6.3125, 20.0, 13.25, 1.015625, 14.25]
+           min=-0.0000  max=508.0000  n_nan=0
+     [y_naive]  shape=(98315,)  dtype=float32
+           first5=[6.0, 16.0, 12.0, 1.0, 10.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [container_ids]  shape=(98315,)  dtype=object
+           first5=['c_10032', 'c_10036', 'c_1005', 'c_10065', 'c_10076']
+     [origins]  shape=(98315,)  dtype=int64
+           first5=[23, 23, 23, 23, 23]
+     [horizon_label]  shape=()  dtype=<U6
+           first5=['120min']
+     [h_steps]  shape=()  dtype=int64
+           first5=[24]
+
+-- timesfm --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/foundation_models/timesfm_perpoint.npz
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps']
+     [y_true]  shape=(98310,)  dtype=float32
+           first5=[3.0, 9.0, 14.0, 1.0, 9.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_mean]  shape=(98310,)  dtype=float32
+           first5=[6.00240421295166, 13.860795021057129, 11.589326858520508, 0.992037832736969, 9.758432388305664]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_p50]  shape=(98310,)  dtype=float32
+           first5=[6.00240421295166, 13.860795021057129, 11.589326858520508, 0.992037832736969, 9.758432388305664]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_p10]  shape=(98310,)  dtype=float32
+           first5=[4.27867317199707, 11.95133113861084, 9.57345199584961, 0.07758073508739471, 8.354533195495605]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_p90]  shape=(98310,)  dtype=float32
+           first5=[6.315445423126221, 17.712276458740234, 13.246087074279785, 1.0411335229873657, 11.760351181030273]
+           min=0.0000  max=124.9948  n_nan=0
+     [y_naive]  shape=(98310,)  dtype=float32
+           first5=[6.0, 16.0, 12.0, 1.0, 10.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [container_ids]  shape=(98310,)  dtype=object
+           first5=['c_10032', 'c_10036', 'c_1005', 'c_10065', 'c_10076']
+     [origins]  shape=(98310,)  dtype=int64
+           first5=[24, 24, 24, 24, 24]
+     [horizon_label]  shape=()  dtype=<U6
+           first5=['120min']
+     [h_steps]  shape=()  dtype=int64
+           first5=[24]
+
+-- granite_ttm --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/foundation_models/granite_ttm_perpoint.npz
+/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/par_inventory_predictions.py:105: RuntimeWarning: All-NaN slice encountered
+  kinfo['min']   = float(np.nanmin(arr))
+/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/par_inventory_predictions.py:106: RuntimeWarning: All-NaN slice encountered
+  kinfo['max']   = float(np.nanmax(arr))
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps', 'dataset']
+     [y_true]  shape=(98310,)  dtype=float32
+           first5=[3.0, 9.0, 14.0, 1.0, 9.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_mean]  shape=(98310,)  dtype=float32
+           first5=[5.433745384216309, 16.9570369720459, 12.175894737243652, 1.067457675933838, 11.248821258544922]
+           min=-0.0081  max=104.8057  n_nan=0
+     [y_pred_p50]  shape=(98310,)  dtype=float32
+           first5=[nan, nan, nan, nan, nan]
+           min=nan  max=nan  n_nan=98310
+     [y_pred_p10]  shape=(98310,)  dtype=float32
+           first5=[nan, nan, nan, nan, nan]
+           min=nan  max=nan  n_nan=98310
+     [y_pred_p90]  shape=(98310,)  dtype=float32
+           first5=[nan, nan, nan, nan, nan]
+           min=nan  max=nan  n_nan=98310
+     [y_naive]  shape=(98310,)  dtype=float32
+           first5=[6.0, 16.0, 12.0, 1.0, 10.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [container_ids]  shape=(98310,)  dtype=object
+           first5=['c_10032', 'c_10036', 'c_1005', 'c_10065', 'c_10076']
+     [origins]  shape=(98310,)  dtype=int64
+           first5=[24, 24, 24, 24, 24]
+     [horizon_label]  shape=()  dtype=<U6
+           first5=['120min']
+     [h_steps]  shape=()  dtype=int64
+           first5=[24]
+     [dataset]  shape=()  dtype=<U7
+           first5=['alibaba']
+
+-- toto --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/foundation_models/toto_perpoint.npz
+   keys: ['y_true', 'y_pred_mean', 'y_pred_p50', 'y_pred_p10', 'y_pred_p90', 'y_naive', 'container_ids', 'origins', 'horizon_label', 'h_steps']
+     [y_true]  shape=(98315,)  dtype=float32
+           first5=[3.0, 9.0, 14.0, 1.0, 9.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [y_pred_mean]  shape=(98315,)  dtype=float32
+           first5=[5.315957069396973, 15.78065013885498, 11.026240348815918, 0.7165927886962891, 8.30862808227539]
+           min=-3087.0127  max=1615.6029  n_nan=0
+     [y_pred_p50]  shape=(98315,)  dtype=float32
+           first5=[5.965598106384277, 15.222238540649414, 11.226548194885254, 0.9872204661369324, 10.19911003112793]
+           min=-8.9404  max=100.0102  n_nan=0
+     [y_pred_p10]  shape=(98315,)  dtype=float32
+           first5=[0.5947632789611816, 9.822465896606445, 9.366055488586426, -0.0030075013637542725, 7.488326072692871]
+           min=-51.6413  max=99.9989  n_nan=0
+     [y_pred_p90]  shape=(98315,)  dtype=float32
+           first5=[7.609849452972412, 20.869327545166016, 12.109216690063477, 1.0090904235839844, 13.84036922454834]
+           min=0.0007  max=228.4448  n_nan=0
+     [y_naive]  shape=(98315,)  dtype=float32
+           first5=[6.0, 16.0, 12.0, 1.0, 10.0]
+           min=0.0000  max=100.0000  n_nan=0
+     [container_ids]  shape=(98315,)  dtype=object
+           first5=['c_10032', 'c_10036', 'c_1005', 'c_10065', 'c_10076']
+     [origins]  shape=(98315,)  dtype=int64
+           first5=[23, 23, 23, 23, 23]
+     [horizon_label]  shape=()  dtype=<U6
+           first5=['120min']
+     [h_steps]  shape=()  dtype=int64
+           first5=[24]
+
+======================================================================
+[B] Ground truth + ensemble .npy structure (Alibaba h120 sample)
+======================================================================
+
+-- y_true --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/predictions/y_true.npy
+   shape=(1562181,)  dtype=float32
+   first5=[6.0, 6.0, 6.0, 4.0, 4.0]
+   last5=[4.0, 5.0, 5.0, 5.0, 5.0]
+   min=0.0000  max=100.0000  mean=10.2299  n_nan=0  n_inf=0
+
+-- y_naive --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/predictions/y_naive.npy
+   shape=(1562181,)  dtype=float32
+   first5=[4.0, 4.0, 4.0, 4.0, 3.0]
+   last5=[7.0, 7.0, 8.0, 7.0, 7.0]
+   min=0.0000  max=100.0000  mean=10.2994  n_nan=0  n_inf=0
+
+-- test_naive --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/predictions/test_naive.npy
+   shape=(1562181,)  dtype=float32
+   first5=[4.0, 4.0, 4.0, 4.0, 3.0]
+   last5=[7.0, 7.0, 8.0, 7.0, 7.0]
+   min=0.0000  max=100.0000  mean=10.2994  n_nan=0  n_inf=0
+
+-- ensemble_v3 --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/predictions/test_ensemble_v3.npy
+   shape=(1562181,)  dtype=float32
+   first5=[-1.3567111492156982, -1.375746250152588, -1.367384433746338, -1.3750494718551636, -0.705997884273529]
+   last5=[0.13836845755577087, 0.06431364268064499, -0.4022124111652374, 0.13903172314167023, 0.21182827651500702]
+   min=-94.2853  max=61.0791  mean=-0.1244  n_nan=0  n_inf=0
+
+-- ensemble_hetero --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/predictions/test_ensemble_hetero.npy
+   shape=(1562181,)  dtype=float64
+   first5=[4.119211806953362, 4.098410480923078, 4.107717533755392, 4.099027519900829, 3.086215733767455]
+   last5=[6.343304215256755, 6.292241963850527, 7.296634696462697, 6.305332414102478, 6.337989271914593]
+   min=-11.8047  max=104.9414  mean=10.3147  n_nan=0  n_inf=0
+
+-- ensemble_v2 --
+   path: /workspace/kubernetes-cpu-ensemble-thesis/results/alibaba/h120/predictions/test_ensemble_v2.npy
+   shape=(1562181,)  dtype=float64
+   first5=[-1.700906716447336, -1.720507022118409, -1.7118969328078921, -1.7197895714146334, -1.0596718287791904]
+   last5=[-0.24886032396804095, -0.3234021068520315, -0.7824375993510008, -0.24851992282764118, -0.1794140175068197]
+   min=-93.1062  max=59.8892  mean=-0.4941  n_nan=0  n_inf=0
+
+======================================================================
+[C] Container-id alignment search (foundation_comparison/)
+======================================================================
+
+   FOUND  /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/oof_all_new.parquet
+          could not read parquet: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.
+ - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package.
+   FOUND  /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/leaderboard_v1.csv
+          header: dataset,horizon,n_points,naive_r2,nnls_ensemble_r2,chronos2_r2,timesfm_r2,granite_ttm_r2,delta_nnls_naive_pp,delta_chronos2_naive_pp,delta_timesfm_naive_pp,delta_ttm_naive_pp,nnls_agg_method,nnls_pool
+   FOUND  /workspace/kubernetes-cpu-ensemble-thesis/results/foundation_comparison/chronos2_leaderboard.csv
+          header: dataset,horizon,cadence_min,k_origins,n_points,naive_full,naive_sub,project_baseline,project_baseline_label,chronos2_r2,chronos2_mae,p10_p90_coverage,delta_vs_baseline_pp,delta_vs_naive_sub_pp
+
+======================================================================
+[D] Existence matrix — foundation model .npz
+======================================================================
+
+  dataset    horizon  chronos2      timesfm       granite_ttm   toto        
+  ---------- -------  ------------  ------------  ------------  ------------
+  alibaba    h010     PRESENT       PRESENT       PRESENT       PRESENT       
+  alibaba    h030     PRESENT       PRESENT       PRESENT       PRESENT       
+  alibaba    h060     PRESENT       PRESENT       PRESENT       PRESENT       
+  alibaba    h120     PRESENT       PRESENT       PRESENT       PRESENT       
+  bitbrains  h010     PRESENT       PRESENT       PRESENT       PRESENT       
+  bitbrains  h030     PRESENT       PRESENT       PRESENT       PRESENT       
+  bitbrains  h060     PRESENT       PRESENT       PRESENT       PRESENT       
+  bitbrains  h120     PRESENT       PRESENT       PRESENT       PRESENT       
+  bytedance  h030     PRESENT       PRESENT       PRESENT       PRESENT       
+  bytedance  h060     PRESENT       PRESENT       PRESENT       PRESENT       
+  bytedance  h120     PRESENT       PRESENT       PRESENT       PRESENT       
+
+  expected files: 44
+  missing:        0
+
+======================================================================
+[E] Existence matrix — predictions/ files
+======================================================================
+
+  dataset    horizon  y_true.npy              test_naive.npy          test_ensemble_v3.npy    test_ensemble_hetero.npy
+  ---------- -------  ----------------------  ----------------------  ----------------------  ----------------------
+  alibaba    h010     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  alibaba    h030     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  alibaba    h060     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  alibaba    h120     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  bitbrains  h010     PRESENT                 PRESENT                 PRESENT                 MISSING                 
+  bitbrains  h030     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  bitbrains  h060     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  bitbrains  h120     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  bytedance  h030     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  bytedance  h060     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+  bytedance  h120     PRESENT                 PRESENT                 PRESENT                 PRESENT                 
+
+======================================================================
+[F] BCF pairs canonical version check
+======================================================================
+
+bcf_pairs.csv (v1):  EXISTS  /workspace/kubernetes-cpu-ensemble-thesis/results/bcf/bcf_pairs.csv
+bcf_pairs_v2.csv:    EXISTS  /workspace/kubernetes-cpu-ensemble-thesis/results/bcf_v2/bcf_pairs_v2.csv
+   v1 header: model,dataset,horizon,r2_model,r2_naive,delta_pp,predicate,ml_wins
+   v1 rows:   60
+   v2 header: dataset,horizon,horizon_min,acf_24h,r2_naive,r2_old,r2_new,dpp_new_vs_naive,dpp_old_vs_naive,predicate,ml_wins_new,ml_wins_old
+   v2 rows:   11
+
+======================================================================
+END OF INVENTORY
+======================================================================

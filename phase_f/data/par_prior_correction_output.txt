@@ -1,0 +1,216 @@
+==============================================================================
+par_prior_correction.py — PAR Step 5b
+  EM + BBSE + temp-scaling + bootstrap CIs + sample-weighted aggregate
+==============================================================================
+
+[1] Loading data...
+    n = 19230 rows | n_features = 30
+
+[2] Loading best hyperparameters from par_router_results.json...
+    LDA: {'alibaba': {'shrinkage': 0.1}, 'bitbrains': {'shrinkage': 0.5}, 'bytedance': {'shrinkage': 0.5}}
+    XGB: {'alibaba': {'max_depth': 5, 'n_estimators': 300, 'learning_rate': 0.05}, 'bitbrains': {'max_depth': 7, 'n_estimators': 200, 'learning_rate': 0.05}, 'bytedance': {'max_depth': 7, 'n_estimators': 200, 'learning_rate': 0.05}}
+
+==============================================================================
+[3] LDA — three LODO folds with prior corrections
+==============================================================================
+
+--- lda_holdout_alibaba ---
+    train: n=676  val: n=169  test: n=18385 (alibaba)
+    fitting lda with params: {'shrinkage': 0.1}
+    fit took 0.0s
+    fitted temperature T = 1.9563
+    EM converged in 500 iter
+    p_train       = {np.str_('chronos2'): np.float64(0.299), np.str_('granite_ttm'): np.float64(0.185), np.str_('nnls'): np.float64(0.281), np.str_('timesfm'): np.float64(0.235)}
+    p_test_actual = {np.str_('chronos2'): np.float64(0.187), np.str_('granite_ttm'): np.float64(0.082), np.str_('nnls'): np.float64(0.533), np.str_('timesfm'): np.float64(0.198)}
+    p_test_em_est = {np.str_('chronos2'): np.float64(0.876), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.124), np.str_('timesfm'): np.float64(0.0)}
+    p_test_bbse   = {np.str_('chronos2'): np.float64(0.567), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.189), np.str_('timesfm'): np.float64(0.244)}
+    bootstrap 95% CIs (B=1000)...
+    bootstrap took 13s
+    macro-F1:
+      raw            = 0.2593   95% CI [0.2533, 0.2648]
+      temp-scaled    = 0.2593
+      EM-corrected   = 0.0786   95% CI [0.0765, 0.0808]
+      BBSE-corrected = 0.0844
+      baseline       = 0.2232
+    winsorised regret (mean | median):
+      raw      = +nan | +nan
+      EM       = +nan | +nan
+      baseline = +nan | +nan
+
+--- lda_holdout_bitbrains ---
+    train: n=14929  val: n=3733  test: n=568 (bitbrains)
+    fitting lda with params: {'shrinkage': 0.5}
+    fit took 0.0s
+    fitted temperature T = 1.0959
+    EM converged in 292 iter
+    p_train       = {np.str_('chronos2'): np.float64(0.189), np.str_('granite_ttm'): np.float64(0.081), np.str_('nnls'): np.float64(0.533), np.str_('timesfm'): np.float64(0.198)}
+    p_test_actual = {np.str_('chronos2'): np.float64(0.282), np.str_('granite_ttm'): np.float64(0.275), np.str_('nnls'): np.float64(0.176), np.str_('timesfm'): np.float64(0.268)}
+    p_test_em_est = {np.str_('chronos2'): np.float64(1.0), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.0)}
+    p_test_bbse   = {np.str_('chronos2'): np.float64(0.984), np.str_('granite_ttm'): np.float64(0.016), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.0)}
+    bootstrap 95% CIs (B=1000)...
+    bootstrap took 3s
+    macro-F1:
+      raw            = 0.1871   95% CI [0.1564, 0.2209]
+      temp-scaled    = 0.1871
+      EM-corrected   = 0.1099   95% CI [0.0983, 0.1218]
+      BBSE-corrected = 0.1099
+      baseline       = 0.0749
+    winsorised regret (mean | median):
+      raw      = +0.2316 | +0.0886
+      EM       = +0.1067 | +0.0501
+      baseline = +0.2985 | +0.1086
+
+--- lda_holdout_bytedance ---
+    train: n=15162  val: n=3791  test: n=277 (bytedance)
+    fitting lda with params: {'shrinkage': 0.5}
+    fit took 0.0s
+    fitted temperature T = 1.2161
+    EM converged in 500 iter
+    p_train       = {np.str_('chronos2'): np.float64(0.189), np.str_('granite_ttm'): np.float64(0.088), np.str_('nnls'): np.float64(0.522), np.str_('timesfm'): np.float64(0.2)}
+    p_test_actual = {np.str_('chronos2'): np.float64(0.336), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.498), np.str_('timesfm'): np.float64(0.166)}
+    p_test_em_est = {np.str_('chronos2'): np.float64(0.16), np.str_('granite_ttm'): np.float64(0.001), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.838)}
+    p_test_bbse   = {np.str_('chronos2'): np.float64(0.608), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.392)}
+    bootstrap 95% CIs (B=1000)...
+    bootstrap took 3s
+    macro-F1:
+      raw            = 0.1310   95% CI [0.0984, 0.1667]
+      temp-scaled    = 0.1310
+      EM-corrected   = 0.0712   95% CI [0.0532, 0.0866]
+      BBSE-corrected = 0.1375
+      baseline       = 0.2217
+    winsorised regret (mean | median):
+      raw      = +0.2216 | +0.1050
+      EM       = +0.2444 | +0.1591
+      baseline = +nan | +nan
+
+==============================================================================
+[4] XGBoost — three LODO folds with prior corrections
+==============================================================================
+
+--- xgb_holdout_alibaba ---
+    train: n=676  val: n=169  test: n=18385 (alibaba)
+    fitting xgb with params: {'max_depth': 5, 'n_estimators': 300, 'learning_rate': 0.05}
+    fit took 0.9s
+    fitted temperature T = 2.4900
+    EM converged in 299 iter
+    p_train       = {np.str_('chronos2'): np.float64(0.299), np.str_('granite_ttm'): np.float64(0.185), np.str_('nnls'): np.float64(0.281), np.str_('timesfm'): np.float64(0.235)}
+    p_test_actual = {np.str_('chronos2'): np.float64(0.187), np.str_('granite_ttm'): np.float64(0.082), np.str_('nnls'): np.float64(0.533), np.str_('timesfm'): np.float64(0.198)}
+    p_test_em_est = {np.str_('chronos2'): np.float64(0.0), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(1.0)}
+    p_test_bbse   = {np.str_('chronos2'): np.float64(0.0), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.068), np.str_('timesfm'): np.float64(0.932)}
+    bootstrap 95% CIs (B=1000)...
+    bootstrap took 13s
+    macro-F1:
+      raw            = 0.2275   95% CI [0.2215, 0.2335]
+      temp-scaled    = 0.2275
+      EM-corrected   = 0.0828   95% CI [0.0805, 0.0849]
+      BBSE-corrected = 0.0828
+      baseline       = 0.2232
+    winsorised regret (mean | median):
+      raw      = +nan | +nan
+      EM       = +nan | +nan
+      baseline = +nan | +nan
+
+--- xgb_holdout_bitbrains ---
+    train: n=14929  val: n=3733  test: n=568 (bitbrains)
+    fitting xgb with params: {'max_depth': 7, 'n_estimators': 200, 'learning_rate': 0.05}
+    fit took 1.7s
+    fitted temperature T = 1.1597
+    EM converged in 113 iter
+    p_train       = {np.str_('chronos2'): np.float64(0.189), np.str_('granite_ttm'): np.float64(0.081), np.str_('nnls'): np.float64(0.533), np.str_('timesfm'): np.float64(0.198)}
+    p_test_actual = {np.str_('chronos2'): np.float64(0.282), np.str_('granite_ttm'): np.float64(0.275), np.str_('nnls'): np.float64(0.176), np.str_('timesfm'): np.float64(0.268)}
+    p_test_em_est = {np.str_('chronos2'): np.float64(1.0), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.0)}
+    p_test_bbse   = {np.str_('chronos2'): np.float64(1.0), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.0)}
+    bootstrap 95% CIs (B=1000)...
+    bootstrap took 3s
+    macro-F1:
+      raw            = 0.1924   95% CI [0.1592, 0.2266]
+      temp-scaled    = 0.1924
+      EM-corrected   = 0.1099   95% CI [0.0983, 0.1218]
+      BBSE-corrected = 0.1099
+      baseline       = 0.0749
+    winsorised regret (mean | median):
+      raw      = +0.2303 | +0.0872
+      EM       = +0.1067 | +0.0501
+      baseline = +0.2985 | +0.1086
+
+--- xgb_holdout_bytedance ---
+    train: n=15162  val: n=3791  test: n=277 (bytedance)
+    fitting xgb with params: {'max_depth': 7, 'n_estimators': 200, 'learning_rate': 0.05}
+    fit took 1.9s
+    fitted temperature T = 1.2283
+    EM converged in 500 iter
+    p_train       = {np.str_('chronos2'): np.float64(0.189), np.str_('granite_ttm'): np.float64(0.088), np.str_('nnls'): np.float64(0.522), np.str_('timesfm'): np.float64(0.2)}
+    p_test_actual = {np.str_('chronos2'): np.float64(0.336), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.498), np.str_('timesfm'): np.float64(0.166)}
+    p_test_em_est = {np.str_('chronos2'): np.float64(0.004), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.996)}
+    p_test_bbse   = {np.str_('chronos2'): np.float64(0.11), np.str_('granite_ttm'): np.float64(0.0), np.str_('nnls'): np.float64(0.0), np.str_('timesfm'): np.float64(0.89)}
+    bootstrap 95% CIs (B=1000)...
+    bootstrap took 3s
+    macro-F1:
+      raw            = 0.1618   95% CI [0.1258, 0.1982]
+      temp-scaled    = 0.1618
+      EM-corrected   = 0.0712   95% CI [0.0532, 0.0866]
+      BBSE-corrected = 0.0712
+      baseline       = 0.2217
+    winsorised regret (mean | median):
+      raw      = +nan | +nan
+      EM       = +0.2444 | +0.1591
+      baseline = +nan | +nan
+
+==============================================================================
+AGGREGATE — equal-weight vs sample-weighted
+==============================================================================
+
+[LDA]
+  per-fold raw F1:      [0.2593, 0.1871, 0.131]
+  per-fold EM F1:       [0.0786, 0.1099, 0.0712]
+  per-fold BBSE F1:     [0.0844, 0.1099, 0.1375]
+  per-fold baseline F1: [0.2232, 0.0749, 0.2217]
+  per-fold n_test:      [18385, 568, 277]  (Σ = 19230)
+
+  equal-weight aggregate:
+    raw      = 0.1925
+    EM       = 0.0866
+    BBSE     = 0.1106
+    baseline = 0.1733
+  sample-weighted aggregate (deployment-realistic):
+    raw      = 0.2554
+    EM       = 0.0795
+    BBSE     = 0.0859
+    baseline = 0.2188
+
+[XGB]
+  per-fold raw F1:      [0.2275, 0.1924, 0.1618]
+  per-fold EM F1:       [0.0828, 0.1099, 0.0712]
+  per-fold BBSE F1:     [0.0828, 0.1099, 0.0712]
+  per-fold baseline F1: [0.2232, 0.0749, 0.2217]
+  per-fold n_test:      [18385, 568, 277]  (Σ = 19230)
+
+  equal-weight aggregate:
+    raw      = 0.1939
+    EM       = 0.0880
+    BBSE     = 0.0880
+    baseline = 0.1733
+  sample-weighted aggregate (deployment-realistic):
+    raw      = 0.2256
+    EM       = 0.0834
+    BBSE     = 0.0834
+    baseline = 0.2188
+
+==============================================================================
+DECISION-014 verdict (PRE-REGISTERED in script header)
+==============================================================================
+  HEADLINE-CAPABLE conditions (BOTH required):
+    (a) Alibaba-fold EM-corrected macro-F1 >= 0.3
+    (b) Sample-weighted EM-corrected macro-F1 >= 0.25
+
+  [LDA]
+    (a) Alibaba EM F1 = 0.0786  → FAIL (vs 0.3)
+    (b) Sample-weighted EM F1 = 0.0795  → FAIL (vs 0.25)
+    VERDICT: STRUCTURAL SATURATION CONFIRMED → commit to Pivot C+D
+
+  [XGB]
+    (a) Alibaba EM F1 = 0.0828  → FAIL (vs 0.3)
+    (b) Sample-weighted EM F1 = 0.0834  → FAIL (vs 0.25)
+    VERDICT: STRUCTURAL SATURATION CONFIRMED → commit to Pivot C+D
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/par_prior_correction_results.json

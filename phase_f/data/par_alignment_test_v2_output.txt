@@ -1,0 +1,117 @@
+======================================================================
+PAR ALIGNMENT TEST V2  —  alibaba h120  —  1000 sample points
+======================================================================
+
+[1] Loading chronos2 .npz...
+  n_points: 98315  h_steps: 24
+
+[2] Loading + sorting test.parquet by (container_id, time_stamp)...
+  raw rows:        1680285
+  before sort, first 3 rows:
+  container_id  time_stamp  cpu_util_percent
+0      c_34617      673920              21.0
+1       c_9263      673920               4.0
+2       c_5641      673920              32.0
+  after sort, first 3 rows:
+  container_id  time_stamp  cpu_util_percent
+0      c_10032      674180               4.0
+1      c_10032      674480               4.0
+2      c_10032      674780               4.0
+  unique containers: 4921
+
+[3] Dropping last h_steps=24 rows per container...
+  rows after drop: 1562181
+
+[4] Verifying against y_true.npy length...
+  sorted_dropped rows: 1562181
+  y_true.npy length:   1562181
+  match: True
+
+[5] Building container → start index in sorted_dropped...
+  containers: 4921
+  sample (c_10032):
+    start=0, size=321
+  size stats: min=1, max=322, median=319
+
+[6] Alignment check across first 1000 chronos2 points...
+
+  hypothesis                               match    miss     mismatch  
+  ---------------------------------------- -------- -------- ----------
+  H1: start + origin                       1000     0        0         
+  H2: start + (origin - h_steps + 1)       292      0        708       
+  H3: start + (origin - h_steps)           0        1000     0         
+
+[7] Diagnostic dump for c_10032 origin=23:
+  start of c_10032 in sorted_dropped: 0
+  chronos2 says y_true=3.0, y_naive=6.0
+  y_true.npy at various offsets:
+    [start +  20] = 3.000
+    [start +  21] = 3.000
+    [start +  22] = 3.000
+    [start +  23] = 3.000
+    [start +  24] = 3.000
+    [start +  25] = 3.000
+    [start +  26] = 3.000
+    [start +  27] = 3.000
+    [start +  28] = 3.000
+    [start +  29] = 3.000
+    [start +  30] = 4.000
+    [start +  31] = 4.000
+    [start +  32] = 4.000
+    [start +  33] = 4.000
+    [start +  34] = 4.000
+    [start +  35] = 4.000
+    [start +  36] = 4.000
+    [start +  37] = 4.000
+    [start +  38] = 4.000
+    [start +  39] = 4.000
+    [start +  40] = 4.000
+    [start +  41] = 3.000
+    [start +  42] = 3.000
+    [start +  43] = 3.000
+    [start +  44] = 3.000
+    [start +  45] = 3.000
+    [start +  46] = 3.000
+    [start +  47] = 3.000
+    [start +  48] = 3.000
+    [start +  49] = 3.000
+  sorted_dropped cpu_util_percent for c_10032 at sorted positions 20..49:
+    time_stamp  cpu_util_percent
+20      680180               6.0
+21      680480               6.0
+22      680780               6.0
+23      681080               6.0
+24      681380               6.0
+25      681680               6.0
+26      681980               6.0
+27      682280               4.0
+28      682580               4.0
+29      682880               4.0
+30      683180               4.0
+31      683480               4.0
+32      683780               4.0
+33      684080               4.0
+34      684380               4.0
+35      684680               4.0
+36      684980               4.0
+37      685280               4.0
+38      685580               4.0
+39      685880               4.0
+40      686180               4.0
+41      686480               4.0
+42      686780               4.0
+43      687080               4.0
+44      687380               3.0
+45      687680               3.0
+46      687980               3.0
+47      688280               3.0
+48      688580               3.0
+49      688880               3.0
+
+[8] Brute-force search for correct offset (c_10032, expected y_true=3.0)...
+  positions where y_true.npy[start_c_10032 + off] == 3.0 (off ≤ 200):
+    [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+
+======================================================================
+END OF ALIGNMENT TEST V2
+======================================================================

@@ -1,0 +1,125 @@
+======================================================================
+Data layout inspector
+======================================================================
+
+[1] data/processed/ — looking for raw time-series files
+
+  --- alibaba ---
+    test.parquet: 13.0 MB
+    train.parquet: 56.4 MB
+    val.parquet: 12.9 MB
+
+  --- bitbrains ---
+    test.parquet: 0.8 MB
+    test_BITBRAINS.csv: 7.2 MB
+    train.parquet: 3.8 MB
+    train_BITBRAINS.csv: 25.7 MB
+    val.parquet: 1.0 MB
+    val_BITBRAINS.csv: 8.9 MB
+
+  --- bytedance ---
+    test.parquet: 0.2 MB
+    train.parquet: 0.6 MB
+    val.parquet: 0.2 MB
+
+[2] test_spine.parquet schemas
+
+  --- alibaba h010 (test_spine.parquet) ---
+    shape:   (1670443, 5)
+    columns: ['container_id', 'time_stamp', 'cpu_residual', 'cpu_target', 'naive_cpu']
+    dtypes:
+      container_id: object
+      time_stamp: int32
+      cpu_residual: float64
+      cpu_target: float64
+      naive_cpu: float64
+    first 3 rows:
+  container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+0      c_10032      674180           0.0         4.0        4.0
+1      c_10032      674480           0.0         4.0        4.0
+2      c_10032      674780          -1.0         3.0        4.0
+    last 2 rows:
+        container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+1670441       c_9961      776410           0.0         5.0        5.0
+1670442       c_9961      776710           0.0         5.0        5.0
+
+  --- bitbrains h010 (test_spine.parquet) ---
+    shape:   (203536, 5)
+    columns: ['container_id', 'time_stamp', 'cpu_residual', 'cpu_target', 'naive_cpu']
+    dtypes:
+      container_id: object
+      time_stamp: int64
+      cpu_residual: float64
+      cpu_target: float64
+      naive_cpu: float64
+    first 3 rows:
+  container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+0      bb_1005  1378388649     -0.166666   18.733334  18.900000
+1      bb_1005  1378388949      0.699999   19.049999  18.350000
+2      bb_1005  1378389249      4.883333   23.616667  18.733334
+    last 2 rows:
+       container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+203534       bb_846  1378905898           0.0   10.000000  10.000000
+203535       bb_846  1378906198           0.0    9.966666   9.966666
+
+  --- bytedance h030 (test_spine.parquet) ---
+    shape:   (64077, 5)
+    columns: ['container_id', 'time_stamp', 'cpu_residual', 'cpu_target', 'naive_cpu']
+    dtypes:
+      container_id: object
+      time_stamp: int64
+      cpu_residual: float64
+      cpu_target: float64
+      naive_cpu: float64
+    first 3 rows:
+    container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+0  bd_instance_1  1689799200      0.025000   29.488333  29.463333
+1  bd_instance_1  1689799800     -0.495001   28.201666  28.696667
+2  bd_instance_1  1689800400     -0.723333   28.946667  29.670000
+    last 2 rows:
+         container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+64075  bd_instance_93  1690211400      0.764648   68.976318  68.211670
+64076  bd_instance_93  1690212000     -0.139999   67.928337  68.068336
+
+[3] spine metadata files (one per dataset)
+
+  --- alibaba (spine_alibaba_60min.parquet) ---
+    shape:   (7354249, 5)
+    columns: ['container_id', 'time_stamp', 'cpu_residual', 'cpu_target', 'naive_cpu']
+    first 3 rows:
+  container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+0      c_10032       87380           0.0         1.0        1.0
+1      c_10032       87680           0.0         1.0        1.0
+2      c_10032       87980           0.0         1.0        1.0
+
+  --- bitbrains (spine_bitbrains_60min.parquet) ---
+    shape:   (706908, 5)
+    columns: ['container_id', 'time_stamp', 'cpu_residual', 'cpu_target', 'naive_cpu']
+    first 3 rows:
+  container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+0      bb_1005  1376314846      3.266667   19.216667  15.950000
+1      bb_1005  1376315146      2.533334   18.066668  15.533334
+2      bb_1005  1376315446      3.033333   18.533333  15.500000
+
+  --- bytedance (spine_bytedance_60min.parquet) ---
+    shape:   (192231, 5)
+    columns: ['container_id', 'time_stamp', 'cpu_residual', 'cpu_target', 'naive_cpu']
+    first 3 rows:
+    container_id  time_stamp  cpu_residual  cpu_target  naive_cpu
+0  bd_instance_1  1688140800     -6.780001   31.280001  38.060001
+1  bd_instance_1  1688141400     -2.266666   31.930000  34.196667
+2  bd_instance_1  1688142000     -4.791668   30.911667  35.703335
+
+[4] Raw CSV files in root and common locations
+
+[5] Top-level layout of data/
+  [file] README.md
+  [DIR] processed
+  [DIR] raw
+
+[6] _paths.py P[] dictionary keys (from prior PAR scripts):
+  Expected: ['scripts', 'phase_f', 'thesis', 'data', 'results', 'src', 'reports',
+            'bcf', 'bcf_v2', 'foundation']
+  P["data"] = phase_f/data/   (NOT raw data; F-task outputs)
+  P["results"] = results/    (per-horizon test_spine.parquet lives here)
+  No P["raw_data"] key for raw time series.
