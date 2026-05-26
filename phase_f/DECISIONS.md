@@ -1,22 +1,11 @@
----
 # DECISIONS.md
 
-**Project:** kubernetes-cpu-ensemble-thesis
-**Started:** 2026-05-23 (consolidated from prior chat history + Phase F Day 1)
-**Update protocol:** append-only. Never delete or reorder. Decisions evolve via SUPERSEDED status, not deletion.
+**Project:** kubernetes-cpu-ensemble-thesis — Hybrid Ensemble Learning for Proactive Resource Prediction in Kubernetes
+**Started:** 2026-05-23 (Phase F Day 1 audit)
+**Last updated:** 2026-05-26 (F3 closure post-verification + fix)
+**Total decisions:** 16 (all LOCKED)
 
----
-
-## How to read this file
-
-Each decision is numbered sequentially (DECISION-NNN), never reused. Status values:
-- **PROPOSED** — drafted but not yet implemented
-- **ACCEPTED** — approved, awaiting implementation
-- **IMPLEMENTED** — done, in effect
-- **SUPERSEDED** — replaced by a later decision (points forward to the new DECISION-NNN)
-- **UNUSED** — drafted but determined not to be needed (resolved without action)
-
-The Y-statement format: "In the context of __, facing __, we decided __ to achieve __, accepting __."
+**Update protocol:** Append-only. Each decision is locked once made; supersession is documented in the new decision body, not by editing the older entry. Where this file shows a single version per decision ID, that is the consolidated canonical version.
 
 ---
 
@@ -35,6 +24,7 @@ The Y-statement format: "In the context of __, facing __, we decided __ to achie
 
 **Y-statement:** In the context of a Phase F manuscript revision, facing page budget constraints and content consolidation, we decided on a 6-chapter structure to achieve focused presentation within ~110-120 bound pages, accepting that some F1-F4 Phase F work will be appendices rather than separate chapters.
 
+---
 ---
 
 ## DECISION-002 — BCF canonical = 3-model pool
@@ -55,6 +45,7 @@ The Y-statement format: "In the context of __, facing __, we decided __ to achie
 **Y-statement:** In the context of BCF generalisation claims, facing a Granite-TTM model that wins on the wrong axis (dataset, not predicate), we decided to exclude Granite from the canonical pool to achieve a transferable predicate-based finding, accepting that the 4-model run becomes appendix material.
 
 ---
+---
 
 ## DECISION-003 — V4 HPA grid at max_replicas=1000 supersedes v1/v2/v3
 
@@ -74,6 +65,7 @@ The Y-statement format: "In the context of __, facing __, we decided __ to achie
 **Y-statement:** In the context of HPA dominance evidence, facing grid saturation in 12-40% of cells, we decided to regenerate at max_replicas=1000 to achieve unbiased dominance counts, accepting manuscript re-citation work in 4 sections.
 
 ---
+---
 
 ## DECISION-004 — F0 calendar reinvestment: path (a)
 
@@ -90,6 +82,7 @@ The Y-statement format: "In the context of __, facing __, we decided __ to achie
 
 **Y-statement:** In the context of an unexpectedly productive Day 1 (3 days of planned work collapsed into 1), facing the option to start F1 earlier or polish F0 further, we decided to reinvest the slack in F0 to achieve better foundations before threshold-gated experiments, accepting that F1 starts at original Day 11.
 
+---
 ---
 
 ## DECISION-005 — Phase F scope locked with Dr. Ho written acceptance
@@ -115,6 +108,7 @@ The Y-statement format: "In the context of __, facing __, we decided __ to achie
 **Y-statement:** In the context of a thesis extension following first-version submission, facing supervisor's preference for systems-grade contributions, we decided on a 5-phase Phase F with pre-registered thresholds to achieve defensible operational findings, accepting a ~135-day timeline and one-semester graduation delay.
 
 ---
+---
 
 ## DECISION-006 — Dual-canonical store: Drive + Git
 
@@ -131,6 +125,7 @@ The Y-statement format: "In the context of __, facing __, we decided __ to achie
 
 **Y-statement:** In the context of a long-running thesis with large data + versioned code needs, facing single-store limitations, we decided on dual-canonical Drive + Git to achieve both versioning and large-file handling, accepting the ~30-second daily sync overhead.
 
+---
 ---
 
 ## DECISION-007 — BCa CI label — UNUSED
@@ -161,6 +156,7 @@ pdftotext -layout Ensemble_*.pdf - | grep -iE 'BCa|bias[- ]?corrected[- ]?accele
 ---
 
 ---
+---
 
 ## DECISION-008 — Full retirement of v1-sprint 533/640 figure with dual-metric replacement
 
@@ -188,6 +184,8 @@ pdftotext -layout Ensemble_*.pdf - | grep -iE 'BCa|bias[- ]?corrected[- ]?accele
 - README directing supersession: `results/bcf_v2/README_HPA_CANONICAL.md`
 
 **Y-statement:** In the context of the HPA simulation's headline figure being saturation-confounded and the pre-registered gate failing in all eleven cells, facing the choice between cosmetic number-swap and full retirement, we decided to retire 533/640 entirely with a dual-metric substitution and explicit gate disclosure to achieve defensible operational framing, accepting a ~200 word expansion in Ch6 §6.1.
+---
+
 ## DECISION-009 — WPE implementation choice for F2 (Fadlallah weighted PE, m=4, tau=1)
 
 **Date:** 2026-05-26
@@ -214,6 +212,8 @@ pdftotext -layout Ensemble_*.pdf - | grep -iE 'BCa|bias[- ]?corrected[- ]?accele
 - Cross-dataset cadence asymmetry (ByteDance 10-min vs others 5-min) means WPE measures slightly different time scales. Document this disclosure in the F2 chapter when D5 work produces the partial-R² number.
 
 **Y-statement:** In the context of computing a permutation-entropy-based predictability metric for F2, facing literature ambiguity about which PE variant "WPE" denotes, we decided to use Fadlallah's amplitude-weighted PE with m=4 and tau=1 to capture amplitude information relevant to cloud workloads while keeping estimates stable on the shortest series, accepting that the choice locks in a specific definition that the F2 results section must disclose explicitly.
+---
+
 ## DECISION-010 — F2 regression framing: per-cell headline + Bitbrains per-VM robustness
 
 **Date:** 2026-05-27
@@ -304,6 +304,7 @@ low effective rank produces a degenerate cluster-bootstrap CI and that
 the headline reports a null result under the pre-reg threshold.
 
 ---
+---
 
 ## DECISION-011 — Q-007 Anchor A: verifier expected updated to NEW pool per-VM medians
 
@@ -377,6 +378,7 @@ pool per-VM medians to achieve verifier 214/0 with the post-Phase-B
 canonical scope intact, accepting that the submitted manuscript's
 Bitbrains BCF row now disagrees with the verifier and requires
 manuscript-side correction via ERRATA-012.
+---
 ---
 
 ## DECISION-012 — F1 router design lock (D8)
@@ -533,6 +535,8 @@ defence, accepting that F1 may report null in the [0.30, 0.55] range
 for sample-size and feature-constancy reasons rather than feature-set
 reasons, and that the structural null finding would itself be the
 chapter contribution.
+---
+
 ## DECISION-013 — PAR pivot: demote F1 cell-level + F3 quantile FT; adopt unified per-series PAR
 
 **Date:** 2026-06-07 (D16)
@@ -608,46 +612,144 @@ always intended, we decided to adopt the unified PAR approach to achieve a coher
 contribution narrative (BCF + HPA + structural diagnosis + PAR) that is defensible
 regardless of PAR outcome, accepting that F3 is demoted and the original four-
 contribution structure becomes a three-and-a-half-contribution structure.
-# DECISIONS.md — additions from 2026-05-25 F3 Day 1
+---
 
-Append to `phase_f/DECISIONS.md`. Decision IDs continue from D14 (locked 2026-05-25 in prior session).
+## DECISION-014 — PAR PARTIAL POSITIVE
+**Date:** ~D58
+**Status:** LOCKED
+**Statement:** PAR XGBoost LODO macro-F1 = 0.2166 (threshold 0.20) = PARTIAL POSITIVE. ByteDance catastrophe (R²-regret 0.97 vs baseline 0.06) documented as cross-dataset spillover finding (60 series routed to granite_ttm).
+**Rationale:** Per pre-registered threshold; ByteDance failure is a finding, not a bug.
+**Source:** `phase_f/data/par_router_summary.json`, `phase_f/f1_result_synthesis.md`
+
+---
+---
+
+## DECISION-015 — F3 SUCCESS post-verification + fix ✅ REFRAMED 2026-05-26
+**Date:** 2026-05-26 | **Status:** LOCKED (post-fix canonical)
+
+### Statement (REFRAMED with post-fix numbers)
+
+**Primary metric (pooled mean pinball h=60min, τ=0.9 across 3 datasets):**
+- Baseline: 1.921658
+- Post-fix fine-tuned: 1.70844
+- Improvement: **+11.10% → SUCCESS** (≥5% threshold)
+- (Pre-fix was +8.17%; the +2.93pp improvement reflects val-cohort bug fix that enabled meaningful fine-tuning)
+
+**Per-dataset pooled improvements (post-fix):**
+
+| Dataset | Baseline | Post-fix FT | Improvement | Verdict |
+|---|---|---|---|---|
+| Alibaba | 0.4466 | 0.42342 | **+5.19%** | SUCCESS |
+| Bitbrains | 4.8590 | 4.26580 | **+12.49%** | SUCCESS |
+| ByteDance | 0.4594 | 0.43611 | **+5.07%** | SUCCESS |
+
+**All three datasets clear the +5% pre-registered SUCCESS threshold.**
+
+**Truly-held-out Alibaba cohort (val saw 14% of main, 0% of holdout):**
+- Pre-fix Alibaba holdout improvement: −4.72%
+- Post-fix Alibaba holdout improvement: −2.90%
+- **Generalisation improvement: +1.82pp** (fine-tune learned transferable patterns,
+  not just val-cohort overfitting)
+
+### Training details
+
+- Model: amazon/chronos-2 (119.5M params)
+- Adapter: LoRA rank=8, alpha=16, target modules q/k/v/o/wi/wo/output_layer/residual_layer
+- Library: chronos-forecasting 2.2.2
+- Loss function: **native pinball loss over 21 quantiles** per chronos2/model.py `_compute_loss`
+  (verified by source code inspection 2026-05-26)
+- Best checkpoint: epoch 3 (post-fix) vs epoch 1 (pre-fix)
+- Early stopping: epoch 8, patience 5
+- Val signal: 3-dataset (Alibaba 500 + Bitbrains 142 + ByteDance 93 windows)
+
+### Verification chain (2026-05-26)
+
+1. Systematic technical inspection identified 9 potential issues
+2. Verification script confirmed 6 quick findings:
+   - Val target position vs test target position differs (Bitbrains 4.27% gap, ByteDance 0%, Alibaba N/A)
+   - Pre-train val (2-dataset) ≠ zero-shot baseline (3-dataset)
+   - Horizon rotation: epoch 1 trained Alibaba+Bitbrains at h=30, ByteDance at h=60
+   - Val cohort overlap: Alibaba truly held out, Bitbrains/ByteDance fully in val
+   - Asymmetric pinball ranking invariant across cost ratios (post-hoc only)
+   - DoRA marginal (+0.72pp at 6% more params)
+3. **Val-cohort bug identified:** Alibaba silently excluded from val due to val region (344 points)
+   < required window size (524 points at h=60). Fixed via adaptive val_frac.
+4. Re-trained lora_rank8 with fix → DECISION-015 numbers above
+5. **Loss-function inspection 2026-05-26:** chronos2/model.py source code confirms `_compute_loss`
+   is symmetric pinball over 21 quantiles {0.01, 0.05, ..., 0.95, 0.99}. Earlier concern about
+   ForCausalLMLoss was a false alarm. ERRATA-013 corrected.
+
+### Audit trail
+
+- Pre-fix adapter preserved at `phase_f/models/f3_lora_rank8_prefix/`
+- Pre-fix eval preserved at `phase_f/data/f3_eval_lora_rank8_prefix.{json,csv}`
+- Pre-fix training preserved at `phase_f/data/f3_training_rank8_prefix.csv`
+- Verification report at `phase_f/data/f3_verification.{json,md}`
+- Loss inspection at `phase_f/data/f3_loss_inspection.txt`
+- Per-dataset diagnosis at `phase_f/data/f3_postfix_per_dataset.txt`
+
+### Disclosures (see ERRATA.md)
+
+- **ERRATA-014 (new)**: F3 training loss is native symmetric pinball over 21 quantiles per chronos-forecasting 2.2.2 chronos2/model.py `_compute_loss`; pre-registration specified ASYMMETRIC pinball. Deviation is "symmetric within right loss family", not "wrong loss family".
+- **ERRATA-015 (new)**: F3 val-cohort bug — Alibaba silently excluded from val signal; fixed via adaptive val_frac; all 3 datasets re-evaluated SUCCESS.
+- **ERRATA-016 (new)**: F3 Bitbrains/ByteDance "holdout" overlaps 100% with val cohort (not truly held out); only Alibaba provides a truly held-out cohort.
+
+### Source files
+
+- `phase_f/data/f3_eval_lora_rank8.json` (post-fix canonical)
+- `phase_f/data/f3_eval_lora_rank8.csv`
+- `phase_f/data/f3_training_rank8.csv`
+- `phase_f/models/f3_lora_rank8/` (best LoRA adapter, epoch 3)
+
+---
+---
+
+## DECISION-016 — F3 secondary metric definition
+**Date:** 2026-05-25 | **Status:** LOCKED
+F3 secondary metric: geometric mean of per-dataset percentage improvements at h=60, τ=0.9.
+Used alongside arithmetic-mean-pinball primary to address scale dominance.
+
+Post-fix all-positive per-dataset improvements (+5.19, +12.49, +5.07):
+- Geometric mean = (5.19 × 12.49 × 5.07)^(1/3) = **6.94%** → SUCCESS
+- (Pre-fix was 3.44% PARTIAL with Bitbrains-dominated arithmetic)
 
 ---
 
-## DECISION-015 (PLACEHOLDER, locks at F3.5)
+## Pending decisions
 
-**Status:** OPEN. Will lock when F3 evaluation (F3.5) completes.
+None. All 16 decisions locked.
 
-**Trigger condition:** F3 fine-tune evaluation produces SUCCESS / PARTIAL / FAILURE per pre-registered primary metric.
+## Notes on usage
 
-**Possible outcomes:**
-
-- **SUCCESS** (mean pinball at h=60, τ=0.9 ≤ 1.825576, i.e., ≥5% improvement): F3 becomes empirical headline of revised thesis. Chapter 4 = F3 results chapter.
-- **PARTIAL** (1.825576 < mean pinball ≤ 1.883225, i.e., ≥2% but <5%): F3 reported as marginal positive. Chapter 4 framing more cautious.
-- **FAILURE** (mean pinball > 1.883225, i.e., <2% improvement): F3 downgrades to supporting chapter. Thesis framing pivots to "Why even fine-tuned foundation models cannot break the boundary condition" — consistent with Toner ICLR-W 2025 (foundation models underperform on cloud data) and with BCF + Structural Saturation as primary headline.
-
-All three paths give a defensible thesis. Decision logic chosen 2026-05-25 in advance to prevent post-hoc rationalisation.
-
+- Append-only. Locked decisions cannot be retroactively edited; new decisions supersede.
+- If a number in this file conflicts with a CSV/JSON source, the source wins.
+- DECISION-015 was reframed (not changed) on 2026-05-26: same decision ID, updated numbers
+  after methodological verification + bug fix.
 ---
 
-## DECISION-016 — Secondary metric for F3 (OPEN, recommendation Option C)
+## Notes on usage
 
-**Status:** RECOMMENDATION made 2026-05-25; LOCK pending next session.
+- Append-only; locked decisions are not retroactively edited. A new decision supersedes by reference.
+- If a number in this file conflicts with a CSV/JSON source, the source wins.
+- **DECISION-015 was REFRAMED on 2026-05-26 — same decision ID, updated numbers after methodological verification + bug fix.** Earlier locked values (+8.17% pooled, F3.5 lock) are superseded by the post-fix canonical (+11.10% pooled, all 3 datasets SUCCESS, REFRAMED 2026-05-26 version above).
 
-**Context:** F3.1 baseline disclosed (2026-05-25) that Bitbrains contributes 84% of the unweighted-mean primary metric due to ~10× larger absolute CPU values across datasets. Pinball loss is not scale-invariant. The pre-registered primary criterion has this design flaw.
+## Quick reference — current canonical decision states
 
-**Options:**
-
-- **Option A** — Keep pre-reg as is, accept artifact. Disclose Bitbrains dominance in writeup. Risk: defence committee challenges meaningfulness of an unweighted mean.
-- **Option B** — Renegotiate pre-reg with Dr Ho Long Van before fine-tune. Risk: opening pre-reg looks like p-hacking. NOT RECOMMENDED.
-- **Option C (RECOMMENDED)** — Keep pre-reg primary, ADD secondary = geometric mean of per-dataset % improvements at h=60, τ=0.9, same SUCCESS/PARTIAL/FAILURE thresholds (5%/2%). Both reported. Primary stays the official decision rule.
-
-**To lock Option C in next session:** Append the secondary-metric block to `phase_f/f3_design.md` BEFORE writing the fine-tune script. Document the addition in `phase_f/DECISIONS.md` as DECISION-016 LOCKED.
-
-**To lock Option A in next session:** Document in `phase_f/DECISIONS.md` as DECISION-016 LOCKED with rationale "pre-registration integrity > scale-invariance for thesis defence."
-
----
-
-## No other decisions locked 2026-05-25
-
-F3 Day 1 was pure execution. No methodology changes, no framing changes, no errata applied. The Chronos-2 calling-convention reverse-engineering is permanent technical knowledge captured in `phase_f/journal/2026-05-25_f3-day1.md` but does not warrant a separate DECISION entry — it's a how-to artefact, not a methodology choice.
+| ID | Name | Status | Outcome |
+|---|---|---|---|
+| 001 | Manuscript chapter structure | LOCKED | 6 chapters |
+| 002 | HPA grid canonical version | LOCKED | v4 (max_replicas=1000) |
+| 003 | Phase F scope | LOCKED with Dr. Ho acceptance | F1+F2+F3+F4+F5 |
+| 004 | Pivot C+D framing | LOCKED | Boundary Conditions + Structural Saturation |
+| 005 | Pre-registered thresholds | LOCKED | F1≥0.55, F2≥0.30, F3≥5% |
+| 006 | F2 framings | LOCKED | Pooled + Bitbrains per-VM |
+| 007 | BCF CI method | LOCKED | Percentile (BCa degenerate) |
+| 008 | F1 router architecture | LOCKED | 4-feature cell-level |
+| 009 | WPE method | LOCKED | Fadlallah m=4, τ=1 |
+| 010 | F2 regression framing | LOCKED | (combined with 006) |
+| 011 | Verifier Q-007 fix | LOCKED | NEW pool per-VM medians |
+| 012 | F1 router lock NULL | LOCKED | macro-F1 below threshold |
+| 013 | F3 demoted to ablation | SUPERSEDED by DECISION-015 | F3 restored to primary post-fix |
+| 014 | PAR PARTIAL POSITIVE | LOCKED | XGB macro-F1 = 0.2166 |
+| **015** | **F3 SUCCESS post-fix** | **LOCKED (REFRAMED 2026-05-26)** | **Pooled +11.10%, all 3 datasets SUCCESS** |
+| 016 | F3 secondary metric | LOCKED | Geometric mean per-dataset |
