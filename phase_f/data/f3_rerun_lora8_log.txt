@@ -1,0 +1,198 @@
+nohup: ignoring input
+[32mActivated conda/uv virtual environment at [36m/venv/main[0m
+==========================================
+F3 lora_rank8 RE-RUN with adaptive val_frac fix
+Start: Tue May 26 15:24:36 UTC 2026
+==========================================
+
+Backing up old adapter to phase_f/models/f3_lora_rank8_prefix
+
+[1/3] TRAINING phase (with fix)
+
+======================================================================
+F3 v3 fine-tune — rank=8, dora=False, curriculum=False
+FIX APPLIED: adaptive val_frac to include short-series datasets (e.g. Alibaba)
+======================================================================
+Out dir: phase_f/models/f3_lora_rank8
+History: phase_f/data/f3_training_rank8.csv
+VAL_FRAC_FLOOR: 0.15, VAL_REGION_MIN: 636
+
+Step 1: Loading Chronos-2 + adapter
+  Adapter: rank=8, alpha=16, dora=False
+  Trainable params: 1,990,272 / 121,467,936 (1.639%)
+
+Step 2: Loading datasets
+  alibaba: 4597 train, 4597 val series (adaptive=4597, skipped=403) | avg train_len=1642, val_len=636
+  bitbrains: 142 train, 142 val series (adaptive=0, skipped=0) | avg train_len=6930, val_len=1224
+  bytedance: 93 train, 93 val series (adaptive=93, skipped=0) | avg train_len=2820, val_len=636
+
+Step 2b: Val eligibility sanity check at h=60
+  alibaba: 4597/4597 (100.0%) val series eligible at h_obs=12
+  bitbrains: 142/142 (100.0%) val series eligible at h_obs=12
+  bytedance: 93/93 (100.0%) val series eligible at h_obs=6
+
+Step 3: Pre-training validation
+    val alibaba (n=500): 0.468199
+    val bitbrains (n=142): 3.923402
+    val bytedance (n=93): 0.303235
+  Pre-training val: 1.564945
+  Windows per dataset: {'alibaba': 500, 'bitbrains': 142, 'bytedance': 93}
+
+Step 4: Training (curriculum=False)
+Epoch 1/20 | train_loss=1.601342
+    val alibaba (n=500): 0.438251
+    val bitbrains (n=142): 4.442857
+    val bytedance (n=93): 0.441009
+  NEW BEST val=1.774039 → saved
+Epoch 2/20 | train_loss=3.600123
+    val alibaba (n=500): 0.448857
+    val bitbrains (n=142): 4.099626
+    val bytedance (n=93): 0.398207
+  NEW BEST val=1.648897 → saved
+Epoch 3/20 | train_loss=3.764332
+    val alibaba (n=500): 0.476931
+    val bitbrains (n=142): 3.006357
+    val bytedance (n=93): 0.367197
+  NEW BEST val=1.283495 → saved
+Epoch 4/20 | train_loss=0.411857
+    val alibaba (n=500): 0.371381
+    val bitbrains (n=142): 3.269060
+    val bytedance (n=93): 0.301941
+  val=1.314127 | best=1.283495 @ ep3 | patience 1/5
+Epoch 5/20 | train_loss=1.607863
+    val alibaba (n=500): 0.436167
+    val bitbrains (n=142): 3.663583
+    val bytedance (n=93): 0.310152
+  val=1.469967 | best=1.283495 @ ep3 | patience 2/5
+Epoch 6/20 | train_loss=3.482795
+    val alibaba (n=500): 0.386010
+    val bitbrains (n=142): 3.444314
+    val bytedance (n=93): 0.318917
+  val=1.383080 | best=1.283495 @ ep3 | patience 3/5
+Epoch 7/20 | train_loss=3.880987
+    val alibaba (n=500): 0.427475
+    val bitbrains (n=142): 3.219508
+    val bytedance (n=93): 0.365687
+  val=1.337557 | best=1.283495 @ ep3 | patience 4/5
+Epoch 8/20 | train_loss=0.458481
+    val alibaba (n=500): 0.406461
+    val bitbrains (n=142): 3.409645
+    val bytedance (n=93): 0.287719
+  val=1.367942 | best=1.283495 @ ep3 | patience 5/5
+Early stopping at epoch 8.
+
+======================================================================
+Done. Best val: 1.283495 at epoch 3
+Adapter saved: phase_f/models/f3_lora_rank8
+History: phase_f/data/f3_training_rank8.csv
+======================================================================
+
+[1/3] TRAINING DONE — Tue May 26 15:27:47 UTC 2026
+
+
+[2/3] EVALUATION phase
+
+======================================================================
+f3_evaluate_v3 — tag=lora_rank8
+Adapter: phase_f/models/f3_lora_rank8
+Hold-out fraction: 0.3
+Cost ratios: [1.0, 3.0, 5.0, 10.0]
+======================================================================
+Step 1: Loading Chronos-2 + adapter
+  Total params: 119,477,664
+
+Baseline primary (h=60 τ=0.9): 1.921658
+
+Step 3: Evaluation
+
+  Dataset: alibaba
+    h=10 (2 obs), main: 3499 series
+    h=10 (2 obs), holdout: 1500 series
+    h=30 (6 obs), main: 3499 series
+    h=30 (6 obs), holdout: 1499 series
+    h=60 (12 obs), main: 3499 series
+    h=60 (12 obs), holdout: 1499 series
+    h=120 (24 obs), main: 3499 series
+    h=120 (24 obs), holdout: 1499 series
+
+  Dataset: bitbrains
+    h=10 (2 obs), main: 99 series
+    h=10 (2 obs), holdout: 43 series
+    h=30 (6 obs), main: 99 series
+    h=30 (6 obs), holdout: 43 series
+    h=60 (12 obs), main: 99 series
+    h=60 (12 obs), holdout: 43 series
+    h=120 (24 obs), main: 99 series
+    h=120 (24 obs), holdout: 43 series
+
+  Dataset: bytedance
+    h=30 (3 obs), main: 65 series
+    h=30 (3 obs), holdout: 28 series
+    h=60 (6 obs), main: 65 series
+    h=60 (6 obs), holdout: 28 series
+    h=120 (12 obs), main: 65 series
+    h=120 (12 obs), holdout: 28 series
+
+======================================================================
+Primary metric: mean symmetric pinball at h=60, τ=0.9
+======================================================================
+
+Main group:
+  Baseline       : 1.921658
+  This adapter   : 1.225335
+  Improvement    : +36.24%
+
+Hold-out group:
+  This adapter   : 2.820214
+  Improvement    : -46.76%
+  Replication Δ  : 82.99pp (smaller = better)
+
+Asymmetric pinball at h=60 τ=0.9 (main group):
+  cost_ratio     mean_asym_pinball
+         1.0              1.225335
+         3.0              2.696883
+         5.0              4.168432
+        10.0              7.847302
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank8.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank8.csv
+
+f3_evaluate_v3 DONE — tag=lora_rank8
+
+[2/3] EVALUATION DONE — Tue May 26 15:35:08 UTC 2026
+
+
+[3/3] Comparing pre-fix vs post-fix
+
+============================================================
+PRE-FIX vs POST-FIX comparison for lora_rank8
+============================================================
+
+Primary metric (mean pinball h=60, tau=0.9):
+  Baseline:                 1.921658 (same)
+  Pre-fix main:             1.310430  →  improvement +31.81%
+  Post-fix main:            1.225335  →  improvement +36.24%
+  Pre-fix holdout:          2.810371  →  improvement -46.25%
+  Post-fix holdout:         2.820214  →  improvement -46.76%
+  Pre-fix replication d.:   78.05pp
+  Post-fix replication d.:  82.99pp
+
+Per-dataset main pinball (h=60, tau=0.9):
+  alibaba       pre-fix 0.421580  →  post-fix 0.407921  (delta -0.013659)
+  bitbrains     pre-fix 3.064120  →  post-fix 2.837859  (delta -0.226262)
+  bytedance     pre-fix 0.445591  →  post-fix 0.430226  (delta -0.015365)
+
+==========================================
+DONE — Tue May 26 15:35:08 UTC 2026
+==========================================
+
+Outputs:
+  Backup of pre-fix adapter:    phase_f/models/f3_lora_rank8_prefix/
+  Backup of pre-fix eval:       phase_f/data/f3_eval_lora_rank8_prefix.{json,csv}
+  Backup of pre-fix training:   phase_f/data/f3_training_rank8_prefix.csv
+  New adapter:                  phase_f/models/f3_lora_rank8/
+  New eval:                     phase_f/data/f3_eval_lora_rank8.{json,csv}
+  New training history:         phase_f/data/f3_training_rank8.csv
+
+Next step: re-run f3_compare_variants.py to update the variant table,
+then update DECISION-015 with the new lora_rank8 numbers.

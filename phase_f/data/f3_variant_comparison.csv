@@ -1,0 +1,7 @@
+variant,primary_improvement_pct,secondary_geom_mean_pct,alibaba_h60_t90_pct,bitbrains_h60_t90_pct,bytedance_h60_t90_pct,main_group_improvement_pct,holdout_improvement_pct,replication_delta_pp,verdict
+lora_rank8 (original v2),8.174,3.444,2.51,9.3,1.75,,,,SUCCESS
+lora_rank4,29.9016,,,,,29.9016,-47.1327,77.0344,SUCCESS
+lora_rank8,36.2355,,,,,36.2355,-46.7594,82.9949,SUCCESS
+lora_rank16,33.8419,,,,,33.8419,-47.0917,80.9336,SUCCESS
+dora_rank8,32.5334,,,,,32.5334,-46.2975,78.831,SUCCESS
+curriculum_rank8,-32.3391,,,,,-32.3391,-80.0069,47.6678,FAILURE

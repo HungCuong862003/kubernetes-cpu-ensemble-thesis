@@ -1,0 +1,22 @@
+======================================================================
+f3_compare_variants - aggregate all F3 ablation results
+======================================================================
+  Per-dataset baselines (h=60, tau=0.9): {}
+  Loaded original: f3_finetune_results.json
+  Loaded: f3_eval_lora_rank4.json
+  Loaded: f3_eval_lora_rank8.json
+  Loaded: f3_eval_lora_rank16.json
+  Loaded: f3_eval_dora_rank8.json
+  Loaded: f3_eval_curriculum_rank8.json
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_variant_comparison.csv
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_variant_comparison.md
+
+Comparison table:
+                 variant  primary_improvement_pct  secondary_geom_mean_pct  alibaba_h60_t90_pct  bitbrains_h60_t90_pct  bytedance_h60_t90_pct  main_group_improvement_pct  holdout_improvement_pct  replication_delta_pp verdict
+lora_rank8 (original v2)                   8.1740                    3.444                 2.51                    9.3                   1.75                         NaN                      NaN                   NaN SUCCESS
+              lora_rank4                  29.9016                      NaN                  NaN                    NaN                    NaN                     29.9016                 -47.1327               77.0344 SUCCESS
+              lora_rank8                  36.2355                      NaN                  NaN                    NaN                    NaN                     36.2355                 -46.7594               82.9949 SUCCESS
+             lora_rank16                  33.8419                      NaN                  NaN                    NaN                    NaN                     33.8419                 -47.0917               80.9336 SUCCESS
+              dora_rank8                  32.5334                      NaN                  NaN                    NaN                    NaN                     32.5334                 -46.2975               78.8310 SUCCESS
+        curriculum_rank8                 -32.3391                      NaN                  NaN                    NaN                    NaN                    -32.3391                 -80.0069               47.6678 FAILURE

@@ -1,0 +1,9 @@
+epoch,train_loss,val_pinball,is_best,patience,rank,dora,curriculum,fix_version
+1,1.6013424262305758,1.7740391095479329,True,0,8,False,False,adaptive_val_frac_v1
+2,3.6001234575612657,1.648896684249242,True,0,8,False,False,adaptive_val_frac_v1
+3,3.7643316046972024,1.2834950586160023,True,0,8,False,False,adaptive_val_frac_v1
+4,0.4118568929353435,1.3141273856163025,False,1,8,False,False,adaptive_val_frac_v1
+5,1.6078626874246096,1.4699672659238179,False,2,8,False,False,adaptive_val_frac_v1
+6,3.4827953318231986,1.3830803434054058,False,3,8,False,False,adaptive_val_frac_v1
+7,3.8809870403063926,1.3375570277372997,False,4,8,False,False,adaptive_val_frac_v1
+8,0.4584810431850584,1.3679418861865997,False,5,8,False,False,adaptive_val_frac_v1

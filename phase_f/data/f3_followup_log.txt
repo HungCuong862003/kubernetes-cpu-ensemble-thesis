@@ -1,0 +1,640 @@
+nohup: ignoring input
+[32mActivated conda/uv virtual environment at [36m/venv/main[0m
+==========================================
+F3 follow-up driver — Tue May 26 08:37:32 UTC 2026
+==========================================
+
+[1/3] TRAINING phase
+
+--- 1a. LoRA rank=4 ---
+======================================================================
+F3 v3 fine-tune — rank=4, dora=False, curriculum=False
+======================================================================
+Out dir: phase_f/models/f3_lora_rank4
+History: phase_f/data/f3_training_rank4.csv
+
+Step 1: Loading Chronos-2 + adapter
+  Adapter: rank=4, alpha=8, dora=False
+  Trainable params: 995,136 / 120,472,800 (0.826%)
+
+Step 2: Loading datasets
+  alibaba: 4882 train, 4882 val series
+  bitbrains: 142 train, 142 val series
+  bytedance: 93 train, 93 val series
+
+Step 3: Pre-training validation
+    val bitbrains: 3.076321
+    val bytedance: 0.447724
+  Pre-training val: 1.762023
+
+Step 4: Training (curriculum=False)
+Epoch 1/20 | train_loss=1.595286
+    val bitbrains: 3.069309
+    val bytedance: 0.421217
+  NEW BEST val=1.745263 → saved
+Epoch 2/20 | train_loss=3.754217
+    val bitbrains: 3.972792
+    val bytedance: 0.422474
+  val=2.197633 | best=1.745263 @ ep1 | patience 1/5
+Epoch 3/20 | train_loss=3.819754
+    val bitbrains: 3.733131
+    val bytedance: 0.445565
+  val=2.089348 | best=1.745263 @ ep1 | patience 2/5
+Epoch 4/20 | train_loss=0.425981
+    val bitbrains: 3.831527
+    val bytedance: 0.429847
+  val=2.130687 | best=1.745263 @ ep1 | patience 3/5
+Epoch 5/20 | train_loss=1.626122
+    val bitbrains: 3.284361
+    val bytedance: 0.444325
+  val=1.864343 | best=1.745263 @ ep1 | patience 4/5
+Epoch 6/20 | train_loss=3.599224
+    val bitbrains: 3.369430
+    val bytedance: 0.417619
+  val=1.893524 | best=1.745263 @ ep1 | patience 5/5
+Early stopping at epoch 6.
+
+======================================================================
+Done. Best val: 1.745263 at epoch 1
+Adapter saved: phase_f/models/f3_lora_rank4
+History: phase_f/data/f3_training_rank4.csv
+======================================================================
+
+--- 1b. LoRA rank=16 ---
+======================================================================
+F3 v3 fine-tune — rank=16, dora=False, curriculum=False
+======================================================================
+Out dir: phase_f/models/f3_lora_rank16
+History: phase_f/data/f3_training_rank16.csv
+
+Step 1: Loading Chronos-2 + adapter
+  Adapter: rank=16, alpha=32, dora=False
+  Trainable params: 3,980,544 / 123,458,208 (3.224%)
+
+Step 2: Loading datasets
+  alibaba: 4882 train, 4882 val series
+  bitbrains: 142 train, 142 val series
+  bytedance: 93 train, 93 val series
+
+Step 3: Pre-training validation
+    val bitbrains: 3.076321
+    val bytedance: 0.447724
+  Pre-training val: 1.762023
+
+Step 4: Training (curriculum=False)
+Epoch 1/20 | train_loss=1.598986
+    val bitbrains: 3.045220
+    val bytedance: 0.421347
+  NEW BEST val=1.733283 → saved
+Epoch 2/20 | train_loss=3.742996
+    val bitbrains: 4.170227
+    val bytedance: 0.438360
+  val=2.304293 | best=1.733283 @ ep1 | patience 1/5
+Epoch 3/20 | train_loss=3.814607
+    val bitbrains: 3.644563
+    val bytedance: 0.454957
+  val=2.049760 | best=1.733283 @ ep1 | patience 2/5
+Epoch 4/20 | train_loss=0.427002
+    val bitbrains: 3.898662
+    val bytedance: 0.451506
+  val=2.175084 | best=1.733283 @ ep1 | patience 3/5
+Epoch 5/20 | train_loss=1.627979
+    val bitbrains: 3.281304
+    val bytedance: 0.464448
+  val=1.872876 | best=1.733283 @ ep1 | patience 4/5
+Epoch 6/20 | train_loss=3.600589
+    val bitbrains: 3.323105
+    val bytedance: 0.410785
+  val=1.866945 | best=1.733283 @ ep1 | patience 5/5
+Early stopping at epoch 6.
+
+======================================================================
+Done. Best val: 1.733283 at epoch 1
+Adapter saved: phase_f/models/f3_lora_rank16
+History: phase_f/data/f3_training_rank16.csv
+======================================================================
+
+--- 1c. DoRA rank=8 ---
+======================================================================
+F3 v3 fine-tune — rank=8, dora=True, curriculum=False
+======================================================================
+Out dir: phase_f/models/f3_dora_rank8
+History: phase_f/data/f3_training_dora.csv
+
+Step 1: Loading Chronos-2 + adapter
+  Adapter: rank=8, alpha=16, dora=True
+  Trainable params: 2,112,288 / 121,589,952 (1.737%)
+
+Step 2: Loading datasets
+  alibaba: 4882 train, 4882 val series
+  bitbrains: 142 train, 142 val series
+  bytedance: 93 train, 93 val series
+
+Step 3: Pre-training validation
+    val bitbrains: 3.082678
+    val bytedance: 0.446725
+  Pre-training val: 1.764701
+
+Step 4: Training (curriculum=False)
+Epoch 1/20 | train_loss=1.593964
+    val bitbrains: 3.013002
+    val bytedance: 0.427987
+  NEW BEST val=1.720494 → saved
+Epoch 2/20 | train_loss=3.746161
+    val bitbrains: 3.869968
+    val bytedance: 0.421752
+  val=2.145860 | best=1.720494 @ ep1 | patience 1/5
+Epoch 3/20 | train_loss=3.811099
+    val bitbrains: 3.696787
+    val bytedance: 0.452173
+  val=2.074480 | best=1.720494 @ ep1 | patience 2/5
+Epoch 4/20 | train_loss=0.423732
+    val bitbrains: 3.764360
+    val bytedance: 0.441684
+  val=2.103022 | best=1.720494 @ ep1 | patience 3/5
+Epoch 5/20 | train_loss=1.624071
+    val bitbrains: 3.241944
+    val bytedance: 0.448439
+  val=1.845192 | best=1.720494 @ ep1 | patience 4/5
+Epoch 6/20 | train_loss=3.595809
+    val bitbrains: 3.370216
+    val bytedance: 0.390039
+  val=1.880127 | best=1.720494 @ ep1 | patience 5/5
+Early stopping at epoch 6.
+
+======================================================================
+Done. Best val: 1.720494 at epoch 1
+Adapter saved: phase_f/models/f3_dora_rank8
+History: phase_f/data/f3_training_dora.csv
+======================================================================
+
+--- 1d. Curriculum rank=8 ---
+======================================================================
+F3 v3 fine-tune — rank=8, dora=False, curriculum=True
+======================================================================
+Out dir: phase_f/models/f3_curriculum_rank8
+History: phase_f/data/f3_training_curriculum.csv
+
+Step 1: Loading Chronos-2 + adapter
+  Adapter: rank=8, alpha=16, dora=False
+  Trainable params: 1,990,272 / 121,467,936 (1.639%)
+
+Step 2: Loading datasets
+  alibaba: 4882 train, 4882 val series
+  bitbrains: 142 train, 142 val series
+  bytedance: 93 train, 93 val series
+
+Step 3: Pre-training validation
+    val bitbrains: 3.076321
+    val bytedance: 0.447724
+  Pre-training val: 1.762023
+
+Step 4: Training (curriculum=True)
+Epoch 1/20 | train_loss=2.503478
+    val bitbrains: 3.501749
+    val bytedance: 0.421141
+  NEW BEST val=1.961445 → saved
+Epoch 2/20 | train_loss=2.343205
+    val bitbrains: 3.385407
+    val bytedance: 0.472155
+  NEW BEST val=1.928781 → saved
+Epoch 3/20 | train_loss=2.430362
+    val bitbrains: 4.371188
+    val bytedance: 0.479308
+  val=2.425248 | best=1.928781 @ ep2 | patience 1/5
+Epoch 4/20 | train_loss=2.336238
+    val bitbrains: 3.534093
+    val bytedance: 0.406258
+  val=1.970176 | best=1.928781 @ ep2 | patience 2/5
+Epoch 5/20 | train_loss=2.425679
+    val bitbrains: 4.948039
+    val bytedance: 0.421382
+  val=2.684710 | best=1.928781 @ ep2 | patience 3/5
+Epoch 6/20 | train_loss=2.345543
+    val bitbrains: 3.305941
+    val bytedance: 0.362478
+  NEW BEST val=1.834209 → saved
+Epoch 7/20 | train_loss=2.419348
+    val bitbrains: 4.572843
+    val bytedance: 0.365675
+  val=2.469259 | best=1.834209 @ ep6 | patience 1/5
+Epoch 8/20 | train_loss=2.431773
+    val bitbrains: 3.547920
+    val bytedance: 0.428438
+  val=1.988179 | best=1.834209 @ ep6 | patience 2/5
+Epoch 9/20 | train_loss=2.396285
+    val bitbrains: 5.051405
+    val bytedance: 0.421599
+  val=2.736502 | best=1.834209 @ ep6 | patience 3/5
+Epoch 10/20 | train_loss=2.319554
+    val bitbrains: 2.997029
+    val bytedance: 0.459979
+  NEW BEST val=1.728504 → saved
+Epoch 11/20 | train_loss=2.380435
+    val bitbrains: 4.222175
+    val bytedance: 0.497855
+  val=2.360015 | best=1.728504 @ ep10 | patience 1/5
+Epoch 12/20 | train_loss=2.395371
+    val bitbrains: 5.177041
+    val bytedance: 0.384528
+  val=2.780784 | best=1.728504 @ ep10 | patience 2/5
+Epoch 13/20 | train_loss=2.362309
+    val bitbrains: 3.095638
+    val bytedance: 0.466323
+  val=1.780981 | best=1.728504 @ ep10 | patience 3/5
+Epoch 14/20 | train_loss=2.451573
+    val bitbrains: 2.740022
+    val bytedance: 0.464427
+  NEW BEST val=1.602224 → saved
+Epoch 15/20 | train_loss=2.338454
+    val bitbrains: 4.047639
+    val bytedance: 0.426801
+  val=2.237220 | best=1.602224 @ ep14 | patience 1/5
+Epoch 16/20 | train_loss=2.471353
+    val bitbrains: 4.483232
+    val bytedance: 0.439907
+  val=2.461569 | best=1.602224 @ ep14 | patience 2/5
+Epoch 17/20 | train_loss=2.390708
+    val bitbrains: 3.918963
+    val bytedance: 0.438916
+  val=2.178939 | best=1.602224 @ ep14 | patience 3/5
+Epoch 18/20 | train_loss=2.372532
+    val bitbrains: 3.706048
+    val bytedance: 0.390064
+  val=2.048056 | best=1.602224 @ ep14 | patience 4/5
+Epoch 19/20 | train_loss=2.331433
+    val bitbrains: 4.051510
+    val bytedance: 0.387071
+  val=2.219291 | best=1.602224 @ ep14 | patience 5/5
+Early stopping at epoch 19.
+
+======================================================================
+Done. Best val: 1.602224 at epoch 14
+Adapter saved: phase_f/models/f3_curriculum_rank8
+History: phase_f/data/f3_training_curriculum.csv
+======================================================================
+
+[1/3] TRAINING DONE — Tue May 26 11:24:38 UTC 2026
+
+[2/3] EVALUATION phase
+
+--- Evaluating: lora_rank4 ---
+======================================================================
+f3_evaluate_v3 — tag=lora_rank4
+Adapter: phase_f/models/f3_lora_rank4
+Hold-out fraction: 0.3
+Cost ratios: [1.0, 3.0, 5.0, 10.0]
+======================================================================
+Step 1: Loading Chronos-2 + adapter
+  Total params: 119,477,664
+
+Baseline primary (h=60 τ=0.9): 1.921658
+
+Step 3: Evaluation
+
+  Dataset: alibaba
+    h=10 (2 obs), main: 3499 series
+    h=10 (2 obs), holdout: 1500 series
+    h=30 (6 obs), main: 3499 series
+    h=30 (6 obs), holdout: 1499 series
+    h=60 (12 obs), main: 3499 series
+    h=60 (12 obs), holdout: 1499 series
+    h=120 (24 obs), main: 3499 series
+    h=120 (24 obs), holdout: 1499 series
+
+  Dataset: bitbrains
+    h=10 (2 obs), main: 99 series
+    h=10 (2 obs), holdout: 43 series
+    h=30 (6 obs), main: 99 series
+    h=30 (6 obs), holdout: 43 series
+    h=60 (12 obs), main: 99 series
+    h=60 (12 obs), holdout: 43 series
+    h=120 (24 obs), main: 99 series
+    h=120 (24 obs), holdout: 43 series
+
+  Dataset: bytedance
+    h=30 (3 obs), main: 65 series
+    h=30 (3 obs), holdout: 28 series
+    h=60 (6 obs), main: 65 series
+    h=60 (6 obs), holdout: 28 series
+    h=120 (12 obs), main: 65 series
+    h=120 (12 obs), holdout: 28 series
+
+======================================================================
+Primary metric: mean symmetric pinball at h=60, τ=0.9
+======================================================================
+
+Main group:
+  Baseline       : 1.921658
+  This adapter   : 1.347052
+  Improvement    : +29.90%
+
+Hold-out group:
+  This adapter   : 2.827389
+  Improvement    : -47.13%
+  Replication Δ  : 77.03pp (smaller = better)
+
+Asymmetric pinball at h=60 τ=0.9 (main group):
+  cost_ratio     mean_asym_pinball
+         1.0              1.347052
+         3.0              3.077577
+         5.0              4.808103
+        10.0              9.134416
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank4.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank4.csv
+
+f3_evaluate_v3 DONE — tag=lora_rank4
+
+--- Evaluating: lora_rank16 ---
+======================================================================
+f3_evaluate_v3 — tag=lora_rank16
+Adapter: phase_f/models/f3_lora_rank16
+Hold-out fraction: 0.3
+Cost ratios: [1.0, 3.0, 5.0, 10.0]
+======================================================================
+Step 1: Loading Chronos-2 + adapter
+  Total params: 119,477,664
+
+Baseline primary (h=60 τ=0.9): 1.921658
+
+Step 3: Evaluation
+
+  Dataset: alibaba
+    h=10 (2 obs), main: 3499 series
+    h=10 (2 obs), holdout: 1500 series
+    h=30 (6 obs), main: 3499 series
+    h=30 (6 obs), holdout: 1499 series
+    h=60 (12 obs), main: 3499 series
+    h=60 (12 obs), holdout: 1499 series
+    h=120 (24 obs), main: 3499 series
+    h=120 (24 obs), holdout: 1499 series
+
+  Dataset: bitbrains
+    h=10 (2 obs), main: 99 series
+    h=10 (2 obs), holdout: 43 series
+    h=30 (6 obs), main: 99 series
+    h=30 (6 obs), holdout: 43 series
+    h=60 (12 obs), main: 99 series
+    h=60 (12 obs), holdout: 43 series
+    h=120 (24 obs), main: 99 series
+    h=120 (24 obs), holdout: 43 series
+
+  Dataset: bytedance
+    h=30 (3 obs), main: 65 series
+    h=30 (3 obs), holdout: 28 series
+    h=60 (6 obs), main: 65 series
+    h=60 (6 obs), holdout: 28 series
+    h=120 (12 obs), main: 65 series
+    h=120 (12 obs), holdout: 28 series
+
+======================================================================
+Primary metric: mean symmetric pinball at h=60, τ=0.9
+======================================================================
+
+Main group:
+  Baseline       : 1.921658
+  This adapter   : 1.271333
+  Improvement    : +33.84%
+
+Hold-out group:
+  This adapter   : 2.826600
+  Improvement    : -47.09%
+  Replication Δ  : 80.93pp (smaller = better)
+
+Asymmetric pinball at h=60 τ=0.9 (main group):
+  cost_ratio     mean_asym_pinball
+         1.0              1.271333
+         3.0              2.838109
+         5.0              4.404884
+        10.0              8.321823
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank16.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank16.csv
+
+f3_evaluate_v3 DONE — tag=lora_rank16
+
+--- Evaluating: dora_rank8 ---
+======================================================================
+f3_evaluate_v3 — tag=dora_rank8
+Adapter: phase_f/models/f3_dora_rank8
+Hold-out fraction: 0.3
+Cost ratios: [1.0, 3.0, 5.0, 10.0]
+======================================================================
+Step 1: Loading Chronos-2 + adapter
+  Total params: 119,477,664
+
+Baseline primary (h=60 τ=0.9): 1.921658
+
+Step 3: Evaluation
+
+  Dataset: alibaba
+    h=10 (2 obs), main: 3499 series
+    h=10 (2 obs), holdout: 1500 series
+    h=30 (6 obs), main: 3499 series
+    h=30 (6 obs), holdout: 1499 series
+    h=60 (12 obs), main: 3499 series
+    h=60 (12 obs), holdout: 1499 series
+    h=120 (24 obs), main: 3499 series
+    h=120 (24 obs), holdout: 1499 series
+
+  Dataset: bitbrains
+    h=10 (2 obs), main: 99 series
+    h=10 (2 obs), holdout: 43 series
+    h=30 (6 obs), main: 99 series
+    h=30 (6 obs), holdout: 43 series
+    h=60 (12 obs), main: 99 series
+    h=60 (12 obs), holdout: 43 series
+    h=120 (24 obs), main: 99 series
+    h=120 (24 obs), holdout: 43 series
+
+  Dataset: bytedance
+    h=30 (3 obs), main: 65 series
+    h=30 (3 obs), holdout: 28 series
+    h=60 (6 obs), main: 65 series
+    h=60 (6 obs), holdout: 28 series
+    h=120 (12 obs), main: 65 series
+    h=120 (12 obs), holdout: 28 series
+
+======================================================================
+Primary metric: mean symmetric pinball at h=60, τ=0.9
+======================================================================
+
+Main group:
+  Baseline       : 1.921658
+  This adapter   : 1.296477
+  Improvement    : +32.53%
+
+Hold-out group:
+  This adapter   : 2.811338
+  Improvement    : -46.30%
+  Replication Δ  : 78.83pp (smaller = better)
+
+Asymmetric pinball at h=60 τ=0.9 (main group):
+  cost_ratio     mean_asym_pinball
+         1.0              1.296477
+         3.0              2.921520
+         5.0              4.546562
+        10.0              8.609168
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_dora_rank8.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_dora_rank8.csv
+
+f3_evaluate_v3 DONE — tag=dora_rank8
+
+--- Evaluating: curriculum_rank8 ---
+======================================================================
+f3_evaluate_v3 — tag=curriculum_rank8
+Adapter: phase_f/models/f3_curriculum_rank8
+Hold-out fraction: 0.3
+Cost ratios: [1.0, 3.0, 5.0, 10.0]
+======================================================================
+Step 1: Loading Chronos-2 + adapter
+  Total params: 119,477,664
+
+Baseline primary (h=60 τ=0.9): 1.921658
+
+Step 3: Evaluation
+
+  Dataset: alibaba
+    h=10 (2 obs), main: 3499 series
+    h=10 (2 obs), holdout: 1500 series
+    h=30 (6 obs), main: 3499 series
+    h=30 (6 obs), holdout: 1499 series
+    h=60 (12 obs), main: 3499 series
+    h=60 (12 obs), holdout: 1499 series
+    h=120 (24 obs), main: 3499 series
+    h=120 (24 obs), holdout: 1499 series
+
+  Dataset: bitbrains
+    h=10 (2 obs), main: 99 series
+    h=10 (2 obs), holdout: 43 series
+    h=30 (6 obs), main: 99 series
+    h=30 (6 obs), holdout: 43 series
+    h=60 (12 obs), main: 99 series
+    h=60 (12 obs), holdout: 43 series
+    h=120 (24 obs), main: 99 series
+    h=120 (24 obs), holdout: 43 series
+
+  Dataset: bytedance
+    h=30 (3 obs), main: 65 series
+    h=30 (3 obs), holdout: 28 series
+    h=60 (6 obs), main: 65 series
+    h=60 (6 obs), holdout: 28 series
+    h=120 (12 obs), main: 65 series
+    h=120 (12 obs), holdout: 28 series
+
+======================================================================
+Primary metric: mean symmetric pinball at h=60, τ=0.9
+======================================================================
+
+Main group:
+  Baseline       : 1.921658
+  This adapter   : 2.543106
+  Improvement    : -32.34%
+
+Hold-out group:
+  This adapter   : 3.459119
+  Improvement    : -80.01%
+  Replication Δ  : 47.67pp (smaller = better)
+
+Asymmetric pinball at h=60 τ=0.9 (main group):
+  cost_ratio     mean_asym_pinball
+         1.0              2.543106
+         3.0              6.807404
+         5.0             11.071701
+        10.0             21.732445
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_curriculum_rank8.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_curriculum_rank8.csv
+
+f3_evaluate_v3 DONE — tag=curriculum_rank8
+
+--- Re-evaluating: lora_rank8 (original) with hold-out + asymmetric ---
+======================================================================
+f3_evaluate_v3 — tag=lora_rank8
+Adapter: phase_f/models/f3_lora_rank8
+Hold-out fraction: 0.3
+Cost ratios: [1.0, 3.0, 5.0, 10.0]
+======================================================================
+Step 1: Loading Chronos-2 + adapter
+  Total params: 119,477,664
+
+Baseline primary (h=60 τ=0.9): 1.921658
+
+Step 3: Evaluation
+
+  Dataset: alibaba
+    h=10 (2 obs), main: 3499 series
+    h=10 (2 obs), holdout: 1500 series
+    h=30 (6 obs), main: 3499 series
+    h=30 (6 obs), holdout: 1499 series
+    h=60 (12 obs), main: 3499 series
+    h=60 (12 obs), holdout: 1499 series
+    h=120 (24 obs), main: 3499 series
+    h=120 (24 obs), holdout: 1499 series
+
+  Dataset: bitbrains
+    h=10 (2 obs), main: 99 series
+    h=10 (2 obs), holdout: 43 series
+    h=30 (6 obs), main: 99 series
+    h=30 (6 obs), holdout: 43 series
+    h=60 (12 obs), main: 99 series
+    h=60 (12 obs), holdout: 43 series
+    h=120 (24 obs), main: 99 series
+    h=120 (24 obs), holdout: 43 series
+
+  Dataset: bytedance
+    h=30 (3 obs), main: 65 series
+    h=30 (3 obs), holdout: 28 series
+    h=60 (6 obs), main: 65 series
+    h=60 (6 obs), holdout: 28 series
+    h=120 (12 obs), main: 65 series
+    h=120 (12 obs), holdout: 28 series
+
+======================================================================
+Primary metric: mean symmetric pinball at h=60, τ=0.9
+======================================================================
+
+Main group:
+  Baseline       : 1.921658
+  This adapter   : 1.310430
+  Improvement    : +31.81%
+
+Hold-out group:
+  This adapter   : 2.810371
+  Improvement    : -46.25%
+  Replication Δ  : 78.05pp (smaller = better)
+
+Asymmetric pinball at h=60 τ=0.9 (main group):
+  cost_ratio     mean_asym_pinball
+         1.0              1.310430
+         3.0              2.964753
+         5.0              4.619075
+        10.0              8.754882
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank8.json
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_eval_lora_rank8.csv
+
+f3_evaluate_v3 DONE — tag=lora_rank8
+
+[2/3] EVALUATION DONE — Tue May 26 12:02:06 UTC 2026
+
+[3/3] AGGREGATING comparison table
+
+======================================================================
+f3_compare_variants — aggregate all F3 ablation results
+======================================================================
+  Loaded original: f3_finetune_results.json
+  Loaded: f3_eval_lora_rank4.json
+  Loaded: f3_eval_lora_rank8.json
+  Loaded: f3_eval_lora_rank16.json
+  Loaded: f3_eval_dora_rank8.json
+  Loaded: f3_eval_curriculum_rank8.json
+
+Saved: /workspace/kubernetes-cpu-ensemble-thesis/phase_f/data/f3_variant_comparison.csv
+Traceback (most recent call last):
+  File "/workspace/kubernetes-cpu-ensemble-thesis/phase_f/scripts/f3_compare_variants.py", line 139, in <module>
+    f"{r['secondary_geom_mean_pct']:+.2f if r['secondary_geom_mean_pct'] is not None else 'N/A'} | "
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '+.2f if r['secondary_geom_mean_pct'] is not None else 'N/A'' for object of type 'float'

@@ -1,0 +1,257 @@
+{
+  "check_1_val_vs_test_position": {
+    "description": "val targets land in random positions in last 15% of series time; test targets are deterministic last h_obs points",
+    "verdict": "CONFIRMED - val and test target systematically different positions",
+    "per_dataset": {
+      "alibaba": {
+        "n_series_total": 5000,
+        "n_series_val_eligible": 0,
+        "series_length_median": 2296,
+        "series_length_min": 429,
+        "series_length_max": 2304,
+        "val_target_end_pct_min": NaN,
+        "val_target_end_pct_max": NaN,
+        "val_target_end_pct_mid": NaN,
+        "test_target_end_pct": 100.0,
+        "mean_gap_val_to_test_pct": NaN
+      },
+      "bitbrains": {
+        "n_series_total": 142,
+        "n_series_val_eligible": 142,
+        "series_length_median": 8615,
+        "series_length_min": 7285,
+        "series_length_max": 9945,
+        "val_target_end_pct_min": 91.46,
+        "val_target_end_pct_max": 100.0,
+        "val_target_end_pct_mid": 95.73,
+        "test_target_end_pct": 100.0,
+        "mean_gap_val_to_test_pct": 4.27
+      },
+      "bytedance": {
+        "n_series_total": 93,
+        "n_series_val_eligible": 93,
+        "series_length_median": 3456,
+        "series_length_min": 3456,
+        "series_length_max": 3456,
+        "val_target_end_pct_min": 99.97,
+        "val_target_end_pct_max": 100.0,
+        "val_target_end_pct_mid": 99.99,
+        "test_target_end_pct": 100.0,
+        "mean_gap_val_to_test_pct": 0.01
+      }
+    }
+  },
+  "check_2_pretrain_val_vs_zeroshot_baseline": {
+    "description": "if pre-training val equals zero-shot test baseline, then val and test measure the same thing; if they differ, val and test cohorts differ systematically",
+    "zero_shot_test_baseline_mean": 1.9216584364573162,
+    "per_dataset_zero_shot_baselines": {
+      "alibaba": 0.44660264253616333,
+      "bitbrains": 4.858964443206787,
+      "bytedance": 0.4594082236289978
+    },
+    "pretrain_val_per_variant": {
+      "lora_rank4": 1.762023,
+      "lora_rank16": 1.762023,
+      "dora_rank8": 1.764701,
+      "curriculum_rank8": 1.762023
+    },
+    "verdict": "CONFIRMED - pre-train val ~1.762 is consistently ~9% lower than zero-shot test baseline 1.922. Cohorts differ."
+  },
+  "check_3_horizon_schedule": {
+    "description": "rotation schedule means each (dataset, horizon) cell is trained only on specific epochs",
+    "schedule_first_6_epochs": [
+      {
+        "epoch": 1,
+        "alibaba": 30,
+        "bitbrains": 30,
+        "bytedance": 60
+      },
+      {
+        "epoch": 2,
+        "alibaba": 60,
+        "bitbrains": 60,
+        "bytedance": 120
+      },
+      {
+        "epoch": 3,
+        "alibaba": 120,
+        "bitbrains": 120,
+        "bytedance": 30
+      },
+      {
+        "epoch": 4,
+        "alibaba": 10,
+        "bitbrains": 10,
+        "bytedance": 60
+      },
+      {
+        "epoch": 5,
+        "alibaba": 30,
+        "bitbrains": 30,
+        "bytedance": 120
+      },
+      {
+        "epoch": 6,
+        "alibaba": 60,
+        "bitbrains": 60,
+        "bytedance": 30
+      }
+    ],
+    "epoch_1_trained_on_h60": {
+      "alibaba": false,
+      "bitbrains": false,
+      "bytedance": true
+    },
+    "verdict": "PARTIAL - epoch 1 trained on h=60 only for ByteDance, not Alibaba/Bitbrains. Best checkpoint selected on h=60 val metric."
+  },
+  "check_4_val_main_holdout_overlap": {
+    "description": "v3 'main' and 'holdout' groups are defined alphabetically; val cohort uses first 500 series; if val_cohort \u2287 holdout, then holdout was used for checkpoint selection",
+    "per_dataset": {
+      "alibaba": {
+        "n_series_total": 5000,
+        "n_series_val_eligible": 4998,
+        "val_cohort_size": 500,
+        "main_cohort_size": 3500,
+        "holdout_cohort_size": 1500,
+        "overlap_val_with_main": 500,
+        "overlap_val_with_holdout": 0,
+        "pct_main_in_val_cohort": 14.29,
+        "pct_holdout_in_val_cohort": 0.0
+      },
+      "bitbrains": {
+        "n_series_total": 142,
+        "n_series_val_eligible": 142,
+        "val_cohort_size": 142,
+        "main_cohort_size": 99,
+        "holdout_cohort_size": 43,
+        "overlap_val_with_main": 99,
+        "overlap_val_with_holdout": 43,
+        "pct_main_in_val_cohort": 100.0,
+        "pct_holdout_in_val_cohort": 100.0
+      },
+      "bytedance": {
+        "n_series_total": 93,
+        "n_series_val_eligible": 93,
+        "val_cohort_size": 93,
+        "main_cohort_size": 65,
+        "holdout_cohort_size": 28,
+        "overlap_val_with_main": 65,
+        "overlap_val_with_holdout": 28,
+        "pct_main_in_val_cohort": 100.0,
+        "pct_holdout_in_val_cohort": 100.0
+      }
+    },
+    "verdict": "MIXED - Alibaba holdout is truly held out (val saw 0% of it); Bitbrains and ByteDance holdouts were 100% in val cohort."
+  },
+  "check_5_asym_pinball_ranking": {
+    "description": "if rankings are invariant across cost ratios, the post-hoc asymmetric pinball does not provide new information beyond symmetric pinball",
+    "per_variant_per_cr": {
+      "lora_rank4": {
+        "cr=1.0": 1.3470515608787537,
+        "cr=3.0": 3.0775770942370095,
+        "cr=5.0": 4.808102667331696,
+        "cr=10.0": 9.134416182835897
+      },
+      "lora_rank8": {
+        "cr=1.0": 1.3104303479194641,
+        "cr=3.0": 2.9647530714670816,
+        "cr=5.0": 4.619075159231822,
+        "cr=10.0": 8.754881540934244
+      },
+      "lora_rank16": {
+        "cr=1.0": 1.2713329096635182,
+        "cr=3.0": 2.8381085991859436,
+        "cr=5.0": 4.404884060223897,
+        "cr=10.0": 8.321822961171469
+      },
+      "dora_rank8": {
+        "cr=1.0": 1.2964767118295033,
+        "cr=3.0": 2.921519676844279,
+        "cr=5.0": 4.546562055746715,
+        "cr=10.0": 8.609168211619059
+      },
+      "curriculum_rank8": {
+        "cr=1.0": 2.5431060989697776,
+        "cr=3.0": 6.807403703530629,
+        "cr=5.0": 11.071701208750406,
+        "cr=10.0": 21.732445160547893
+      }
+    },
+    "rankings_per_cr": {
+      "cr=1.0": [
+        "lora_rank16",
+        "dora_rank8",
+        "lora_rank8",
+        "lora_rank4",
+        "curriculum_rank8"
+      ],
+      "cr=3.0": [
+        "lora_rank16",
+        "dora_rank8",
+        "lora_rank8",
+        "lora_rank4",
+        "curriculum_rank8"
+      ],
+      "cr=5.0": [
+        "lora_rank16",
+        "dora_rank8",
+        "lora_rank8",
+        "lora_rank4",
+        "curriculum_rank8"
+      ],
+      "cr=10.0": [
+        "lora_rank16",
+        "dora_rank8",
+        "lora_rank8",
+        "lora_rank4",
+        "curriculum_rank8"
+      ]
+    },
+    "verdict": "ALL_SAME"
+  },
+  "check_6_trainable_params": {
+    "description": "DoRA at same rank adds a magnitude vector. Marginal improvement vs marginal params determines whether DoRA is meaningful.",
+    "per_variant": {
+      "lora_rank4": {
+        "trainable": 995136,
+        "total": 120472800,
+        "percent": 0.826
+      },
+      "lora_rank16": {
+        "trainable": 3980544,
+        "total": 123458208,
+        "percent": 3.224
+      },
+      "dora_rank8": {
+        "trainable": 2112288,
+        "total": 121589952,
+        "percent": 1.737
+      },
+      "curriculum_rank8": {
+        "trainable": 1990272,
+        "total": 121467936,
+        "percent": 1.639
+      }
+    },
+    "dora_marginal_params_vs_lora_rank8": null,
+    "dora_marginal_improvement_pp": 0.72,
+    "verdict": "MARGINAL - DoRA gives +0.72pp for 6% more trainable params; within parameter-scaling noise."
+  },
+  "deferred_checks": {
+    "check_3_weight_magnitudes": {
+      "description": "compute Frobenius norm of LoRA weights to see how far model drifted from zero-shot",
+      "why_deferred": "requires loading all 4 adapter weights",
+      "estimated_runtime_min": 5
+    },
+    "check_5_curriculum_val_at_test_positions": {
+      "description": "re-evaluate curriculum_rank8 with val sampled from absolute-end positions like test, to confirm val-overfitting hypothesis",
+      "why_deferred": "this IS the control experiment we discussed; requires model loading and new inference",
+      "estimated_runtime_min": 20
+    },
+    "check_7_per_series_bitbrains_holdout": {
+      "description": "compute per-VM pinball for Bitbrains holdout to see if -54% is dominated by 2-3 pathological VMs",
+      "why_deferred": "v3 eval JSONs save per-cell not per-series; would need to modify eval to save per-series",
+      "estimated_runtime_min": 15
+    }
+  }
+}
