@@ -42,3 +42,13 @@ __pycache__/
 *.bak
 
 rclone.conf.txt
+
+# Local backup files
+*backup*.md
+*_backup*/
+*.bak.*
+_commit_msg.txt
+_citation_keys_used.txt
+_unused_bib_keys.txt
+demo_build.zip
+demo_build/
