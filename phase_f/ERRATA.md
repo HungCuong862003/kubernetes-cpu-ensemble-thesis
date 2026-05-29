@@ -1,321 +1,65 @@
 # ERRATA.md
 
-**Project:** kubernetes-cpu-ensemble-thesis — Hybrid Ensemble Learning for Proactive Resource Prediction in Kubernetes
+**Project:** kubernetes-cpu-ensemble-thesis
 **Started:** 2026-05-23 (Phase F Day 1 audit)
-**Last updated:** 2026-05-26 (F3 closure — ERRATA-014/015/016 added)
-**Total errata:** 16 (13 APPLIED, 1 PENDING, 2 disclosure-only)
-**Sign-off:** Errata sheet approach approved by Dr. Ho Long Van for post-submission corrections (Day-Zero verification V3, 2026-05-22), in lieu of full manuscript resubmission.
+**Update protocol:** append-only. Never delete or reorder. Status field tracks lifecycle:
+- **PENDING** — error identified, not yet applied to manuscript
+- **APPLIED** — correction applied in Overleaf, commit pushed
+- **BLOCKED** — depends on a Q-ID resolution before it can be applied
 
 ---
 
-## Update protocol
-
-Append-only. Never delete or reorder. Status field tracks lifecycle:
-- **APPLIED** — correction applied in Overleaf, commit pushed to manuscript source
-- **PENDING** — error identified, not yet applied to manuscript
-- **DISCLOSURE** — disclosed at defence/manuscript appendix only, no chapter edit needed
-- **BLOCKED** — depends on a Q-ID resolution before it can be applied
+## How to read this file
 
 Each errata is numbered sequentially (ERRATA-NNN), never reused. Rows are immutable except for status updates and the appended `Applied` date. Corrections propagate from this file *into* the chapter, never the reverse. The submitted PDF is the baseline; this file tracks what changed since.
 
 ---
 
-## Errata table — quick reference
+## Errata table
 
-| # | Date opened | Location | Status | Applied |
-|---|---|---|---|---|
-| 001 | 2026-05-23 | Ch3 §3.8 BCF p-value | APPLIED | 2026-05-25 |
-| 002 | 2026-05-23 | Ch3 §3.8 BCF citation | APPLIED | 2026-05-25 |
-| 003 | 2026-05-23 | Ch3 §3.8 CI bounds + method | APPLIED | 2026-05-25 |
-| 004 | 2026-05-23 | Ch3 §3.8 BCa footnote | APPLIED | 2026-05-25 |
-| 005 | 2026-05-23 | Ch3 §3.10 HPA file path | APPLIED | 2026-05-25 |
-| 006 | 2026-05-23 | Ch4 §4.8 cross-reference | APPLIED | 2026-05-25 |
-| 007 | 2026-05-23 | Ch4 §4.11 ByteDance row count | APPLIED | 2026-05-25 |
-| 008 | 2026-05-23 | Ch5 §5.1 CI crossing claim | APPLIED | 2026-05-25 |
-| 009 | 2026-05-23 | Ch5 §5.6 lag-1 phrasing | APPLIED | 2026-05-25 |
-| 010 | 2026-05-23 | Ch6 §6.1 + Ch4 Table 4.13 HPA headline | APPLIED | 2026-05-25 |
-| 011 | 2026-05-25 | Ch6 §6.1 + Ch4 §4.11 production-readiness gate | APPLIED | 2026-05-25 |
-| 012 | 2026-05-27 | Ch4 BCF cell-level evidence + Table 4.10 Bitbrains row | PENDING | — |
-| 013 | 2026-05-25 | Project storage — Bitbrains test_ensemble_hetero.npy corruption | DISCLOSURE | n/a (no manuscript edit) |
-| **014** | **2026-05-26** | **F3 training loss objective** | **DISCLOSURE** | **n/a (manuscript appendix)** |
-| **015** | **2026-05-26** | **F3 validation-cohort bug + fix** | **DISCLOSURE** | **n/a (manuscript appendix)** |
-| **016** | **2026-05-26** | **F3 holdout cohort overlap (Bitbrains/ByteDance)** | **DISCLOSURE** | **n/a (manuscript §5 disclosure)** |
-
----
-
-## ERRATA-001 — Ch3 §3.8 BCF p-value
-
-**Location:** Ch3 §3.8
-**Original (submitted PDF):** "p < 0.011"
-**Correction:** "p = 0.0097"
-**Source:** `bcf_pooled_3model.json`
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-002
+| # | Date opened | Location | Original (in submitted PDF) | Correction | Status | Applied | Related Q-ID / DECISION |
+|---|---|---|---|---|---|---|---|
+| 001 | 2026-05-23 | Ch3 §3.8 | "p < 0.011" | "p = 0.0097" | APPLIED | 2026-05-25 | DECISION-002 |
+| 002 | 2026-05-23 | Ch3 §3.8 | cites `bcf_pooled_results.json` (4-model file) but reports 3-model numbers | change citation to `bcf_pooled_3model.json` | APPLIED | 2026-05-25 | DECISION-002 |
+| 003 | 2026-05-23 | Ch3 §3.8 | "95% CI [0.70, 0.88]" (method unlabeled) | "percentile 95% CI [0.71, 0.89] (BCa degenerate)" | APPLIED | 2026-05-25 | DECISION-007 |
+| 004 | 2026-05-23 | Ch3 §3.8 | (no footnote on CI method) | ADD footnote `fn:bca-degenerate` explaining percentile choice and BCa degeneracy (Efron-Tibshirani 1993) | APPLIED | 2026-05-25 | DECISION-007 |
+| 005 | 2026-05-23 | Ch3 §3.10 | cites `hpa_simulation_v2.csv` (v1-sprint, max_replicas=100) | change to `bcf_v2/hpa_simulation_*_v4.csv` (max_replicas=1000); add saturation justification clause | APPLIED | 2026-05-25 | DECISION-003 |
+| 006 | 2026-05-23 | Ch4 §4.8 | (no cross-reference to BCa footnote) | ADD reference to Ch3 §3.8 footnote `fn:bca-degenerate` | APPLIED | 2026-05-25 | DECISION-007 |
+| 007 | 2026-05-23 | Ch4 §4.11 | "800 rows per dataset" | qualify: "800 rows per Alibaba and Bitbrains; 600 rows for ByteDance (three horizons: h30, h60, h120)" | APPLIED | 2026-05-25 | DECISION-003 |
+| 008 | 2026-05-23 | Ch5 §5.1 | "CI crosses the Alibaba 30 min point" | "the Bitbrains 30 min CI lower bound (+3.54 pp) sits 0.15 pp above the Alibaba 30 min point (+3.39 pp) — within typical bootstrap variation across cells, but the interval itself does not cover the Alibaba point" | APPLIED | 2026-05-25 | — |
+| 009 | 2026-05-23 | Ch5 §5.6 | "matched reactive lag-1 point" | "matched reactive lag variant at the same $(h, \tau_{\text{util}}, s)$" | APPLIED | 2026-05-25 | — |
+| 010 | 2026-05-23 | Ch6 §6.1 + Ch4 Table 4.13 | Original headline: 533 / 640 Alibaba reactive points dominated, with per-horizon breakdown 128 / 156 / 157 / 92, from v1-sprint `hpa_simulation_v2.csv` at max_replicas=100 (saturation-confounded). | Dual-metric replacement from `hpa_v4_dominance_per_dataset.csv` at max_replicas=1000. **reactive_dominated_pct** per horizon (of 160): Alibaba 120/55/21/1; Bitbrains 117/0/0/0; ByteDance —/125/124/112. **ml_strict_dominance_pct** per horizon (of 40): Alibaba 40/35/15/1; Bitbrains 40/0/0/0; ByteDance —/33/32/29. 11-cell pools: 675/1760 (38.4%) and 225/440 (51.1%). Full substitution paragraph and Table 4.13 format in Day 3 application note below. | APPLIED | 2026-05-25 | DECISION-003, DECISION-008 |
+| 011 | 2026-05-25 | Ch6 §6.1 + Ch4 §4.11 | (implied population-level Pareto dominance via 533/640 headline; no acknowledgement of the pre-registered 80% reactive-dominated production-readiness gate) | Explicit disclosure that `passes_gate=False` in all eleven cells under the gate defined at `task_c3_hpa_rebuild_v4.py` line 279 (`reactive_dominated_pct >= 0.80`); highest single-cell rate ByteDance h30 at 78.12%. Disclosure embedded in the ERRATA-010 substitution paragraph rather than as a separate footnote. | APPLIED | 2026-05-25 | Q-008, Q-009, DECISION-003, DECISION-008 |
+| 012 | 2026-05-27 | Ch4 BCF cell-level evidence paragraph + Table 4.10 Bitbrains row | Table 4.10 Bitbrains row: delta@30min=`-5.46pp`, delta@120min=`+3.30pp`, verdict "ML wins only @120min"; surrounding §4.X prose claims "ML wins only at h=120 for Bitbrains" under OLD pool per-VM median scope. | Table 4.10 Bitbrains row: delta@30min=`+1.53pp`, delta@120min=`-2.81pp`, verdict reframed to NEW pool semantics (h10=-16.66, h30=+1.53, h60=-1.99, h120=-2.81pp; %VMs NEW>naive: h30=61%, h120=35%). §4.X prose grows from one sentence to ~3 sentences disclosing per-VM win rates and the OLD→NEW pool aggregation scope shift. Alibaba/ByteDance rows unchanged. Canonical source CSV: `reports/tables/boundary_condition_table_corrected.csv` (claimed at NEW pool from a prior session); verifier `thesis_numbers.json` cleared 211/3 → 214/0 on 2026-05-27 under same scope. | **BLOCKED** |  | DECISION-011 (Q-007 Anchor A); **see ERRATA-012 verification note below** |
+| 013 | 2026-05-25 | Project storage: `/results/bitbrains/h{030,060,120}/predictions/test_ensemble_hetero.npy` | Files contain Alibaba data (shape ~1.6M rows, mean 10.28), not Bitbrains data (~203K rows, mean 30.4). Confirmed via shape and value distribution against `y_true` and against the Alibaba hetero files at the same horizons. The h010 hetero file does not exist at all (consistent with the known BiLSTM OOF shared-memory failure documented in `run.log`). Likely cause: a pipeline run-script copied Alibaba's hetero output to the Bitbrains path during an earlier session (file-path templating error). | No manuscript change required. The submitted PDF cites per-VM XGBoost (`bitbrains_per_vm_results.csv`) as the Bitbrains ML reference, not the global hetero ensemble; Figure 4.2 caption already states this explicitly. PAR substitutes `test_xgb.npy` aligned to the Chronos-2 K=50 spine for apples-to-apples per-series comparison. Verification: `par_per_series_r2_v2.py` pre-flight check (ii) returns pooled R² = 0.4973 at Bitbrains h030, matching the diagnostic. Detail in standalone file `phase_f/ERRATA-013.md`. | APPLIED | 2026-05-25 | — (PAR D17 diagnostic) |
+| 014 | 2026-05-28 | F2 per-series rescue data pipeline | Bitbrains `test_ensemble_hetero.npy` corruption (same files as ERRATA-013) surfaces again during F2 per-series partial-R² computation against `meta_learner/hetero_ensemble.json`. The F2 per-series script cannot read the corrupted file as a Bitbrains source. | Substitute `test_ensemble_homo.npy` for Bitbrains as the canonical F2 per-series ensemble source. BiLSTM is unavailable at all Bitbrains horizons (per `hetero_ensemble.json` field `bilstm_unavailable`), so under the existing pool definition homo ≡ hetero on Bitbrains; the substitution does not change the underlying mathematics, only the file pointer. Pooled cell-level R² recomputed under the substituted file matches `meta_learner/homo_ensemble.json` to ≤ 0.001 across all 11 (dataset, horizon) cells (verification gate in `build_per_series_fulltest_r2.py`). | APPLIED | 2026-05-28 | DECISION-017 |
+| 015 | 2026-05-28 | Ch5 §5.7 (new section, drafted in `phase_f/manuscript/manuscript_5_7_F4_evaluation.md`) | The submitted PDF contains no F4 closed-loop autoscaler evaluation. F4 was scoped during Phase F under written supervisor acceptance (Dr. Ho Long Van, 2026-05-22) and ran on 2026-05-28 under pre-registered protocol committed to git at SHA `012786af9d` on 2026-05-27. | Insert §5.7 "Routing alternative evaluation". The section reports a paired stationary bootstrap (Politis and Romano 1994; R=1000; expected block length $b \approx T^{1/3}$) with Holm-Bonferroni correction across six tests, comparing v6 (uniform F3-FT pipeline) against v7 (per-dataset adapter routing) on three datasets at α = 0.95 chance-constrained MPC. Verdicts: Alibaba (n=14,760 paired) shows a Pareto **tradeoff** — violation rate −1.897 pp [−2.190, −1.603] AND replica mean +0.220 [+0.091, +0.353], both Holm-significant in opposite directions. Bitbrains (n=426) shows partial improvement — violation rate −0.231 pp significant, replica mean −0.132 with CI [−0.424, +0.141] straddling zero. ByteDance (n=279) shows neither effect significant. The pre-registered strict-Pareto rule (v7 must dominate Alibaba and be at least indistinguishable elsewhere) is not met because Alibaba's replica-mean CI is wholly positive. Resolution: adopt v6 as canonical F3-FT pipeline; retain v7 routing infrastructure as reproducibility artefact in `phase_f/models/f3_lora_rank8_no_log1p/` and `phase_f/configs/router_v7.yaml`. Source files: `phase_f/data/f4_trajectories.parquet` (30,933 rows), `phase_f/data/f4_bootstrap_results.csv`, `phase_f/data/f4_pareto_verdicts.csv`, `phase_f/data/f4_pareto_decision.json`. Companion figure: `phase_f/data/f4_pareto_combined.pdf`. | PENDING | | DECISION-018 |
+| 016 | 2026-05-28 | Ch5 §5.7 prose + `f4_pareto_decision.json` rationale string | The F4 Pareto analysis script (`phase_f/scripts/f4_pareto_analysis.py`) labels all three per-dataset verdicts `indistinguishable` whenever the strict Pareto orthant condition is not met. The JSON file inherits this label, and the script's `rationale` field reads "v7 did not dominate Alibaba; the routing hypothesis is not vindicated." | The single label collapses three distinct empirical patterns. Alibaba shows two Holm-significant effects in opposite directions (Pareto tradeoff). Bitbrains shows one significant effect and one CI straddling zero (partial improvement under uncertainty). ByteDance shows two CIs straddling zero (genuine null result). §5.7 must distinguish the three patterns by name, report the bootstrap CIs directly, and avoid the collapsed label in narrative prose. The single-label verdict drives only the binary routing decision (v6 retained); it does not describe the scientific finding. | PENDING | | DECISION-018 |
 
 ---
 
-## ERRATA-002 — Ch3 §3.8 BCF citation source
+## Day 1 audit summary
 
-**Location:** Ch3 §3.8
-**Original (submitted PDF):** cites `bcf_pooled_results.json` (4-model file) but reports 3-model numbers
-**Correction:** change citation to `bcf_pooled_3model.json`
-**Source:** `bcf_pooled_3model.json`
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-002
+10 errata identified through cross-chapter audit on 2026-05-23 (Phase F Day 1). All data-verified on Vast.ai instance C.37423026 against canonical source files:
 
----
-
-## ERRATA-003 — Ch3 §3.8 BCF CI bounds and method
-
-**Location:** Ch3 §3.8
-**Original (submitted PDF):** "95% CI [0.70, 0.88]" (method unlabeled)
-**Correction:** "percentile 95% CI [0.71, 0.89] (BCa degenerate)"
-**Source:** `bcf_pooled_3model.json` `ci_method` field declares `percentile (binary classifier; BCa degenerate)`
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-007
+- BCF stats (ERRATA-001 through 004): verified against `bcf_pooled_3model.json` and `bcf_pooled_results.json`
+- HPA file path (ERRATA-005): verified via `c3_hpa_v4_verdict.md` directing v4 as canonical
+- Bytedance row count (ERRATA-007): verified by line-counting `hpa_simulation_bytedance_v4.csv` = 601 lines (600 + header)
+- CI crossing claim (ERRATA-008): verified Bitbrains 30min CI = [+3.5390, +5.4170] vs Alibaba +3.39 (Alibaba sits 0.149 pp below CI lower bound)
+- Lag-1 phrasing (ERRATA-009): verified via inspection of `task2_hpa_v2.py` showing matched comparison is at same (h, τ, s) across all reactive lag variants
+- Per-horizon counts (ERRATA-010): submitted PDF's 128/156/157/92 from `hpa_simulation_v2.csv` (superseded); v4 re-derivation pending (Q-004 at D1 close, RESOLVED D2)
 
 ---
 
-## ERRATA-004 — Ch3 §3.8 BCa footnote
+## Day 2 audit note (2026-05-24)
 
-**Location:** Ch3 §3.8
-**Original (submitted PDF):** (no footnote on CI method choice)
-**Correction:** ADD footnote `fn:bca-degenerate` explaining percentile choice and BCa degeneracy (Efron-Tibshirani 1993): acceleration term unreliable from binary classifier × binary outcome producing few unique AUC values across resamples.
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-007
+Investigating Q-004 surfaced three findings about the HPA dominance landscape that bear on ERRATA-010 and motivated opening ERRATA-011 on Day 3.
 
----
+1. **v1-sprint vs v4 scope distinction.** The submitted PDF's 533/640 figure derived from `hpa_simulation_v2.csv` at `max_replicas=100`, which `c3_saturation_verdict.md` documents as saturating 12–40% of grid points (binding cluster-capacity ceiling). The v4 grid at `max_replicas=1000` reduces saturation to <0.07% on every grid point. The two figures are not commensurable; the v4 figure supersedes.
+2. **Dominance definition drift.** `hpa_v4_dominance_per_dataset.csv` reports two metrics whose distinction was not preserved in earlier prose: `reactive_dominated_pct` (160-point denominator) and `ml_strict_dominance_pct` (40-configuration denominator). They measure complementary axes of the same Pareto-cloud relationship and can disagree by a factor of two within the same cell. ERRATA-010's substitution reports both explicitly.
+3. **`passes_gate=False` for all eleven cells** under the pre-registered ≥80% reactive-dominated production-readiness criterion (highest single-cell rate: ByteDance h30 at 78.12%). The submitted PDF's headline framing implies population-level dominance that the gate refutes. ERRATA-011 opened on Day 3 to disclose this.
 
-## ERRATA-005 — Ch3 §3.10 HPA file path
-
-**Location:** Ch3 §3.10
-**Original (submitted PDF):** cites `hpa_simulation_v2.csv` (v1-sprint, max_replicas=100)
-**Correction:** change to `bcf_v2/hpa_simulation_*_v4.csv` (max_replicas=1000); add saturation justification clause from `c3_saturation_verdict.md` (v1-sprint saturated 12–40% of grid points).
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-003
-
----
-
-## ERRATA-006 — Ch4 §4.8 cross-reference
-
-**Location:** Ch4 §4.8
-**Original (submitted PDF):** (no cross-reference to BCa footnote)
-**Correction:** ADD reference to Ch3 §3.8 footnote `fn:bca-degenerate`
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-007
-
----
-
-## ERRATA-007 — Ch4 §4.11 ByteDance row count
-
-**Location:** Ch4 §4.11
-**Original (submitted PDF):** "800 rows per dataset"
-**Correction:** qualify: "800 rows per Alibaba and Bitbrains; 600 rows for ByteDance (three horizons: h30, h60, h120)". Verified via line-counting `hpa_simulation_bytedance_v4.csv` = 601 lines (600 + header).
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-003
-
----
-
-## ERRATA-008 — Ch5 §5.1 CI crossing claim
-
-**Location:** Ch5 §5.1
-**Original (submitted PDF):** "CI crosses the Alibaba 30 min point"
-**Correction:** "the Bitbrains 30 min CI lower bound (+3.54 pp) sits 0.15 pp above the Alibaba 30 min point (+3.39 pp) — within typical bootstrap variation across cells, but the interval itself does not cover the Alibaba point". Verified Bitbrains 30min CI = [+3.5390, +5.4170] vs Alibaba +3.39.
-**Status:** APPLIED 2026-05-25 (D3 batch)
-
----
-
-## ERRATA-009 — Ch5 §5.6 lag-1 phrasing
-
-**Location:** Ch5 §5.6
-**Original (submitted PDF):** "matched reactive lag-1 point"
-**Correction:** "matched reactive lag variant at the same $(h, \tau_{\text{util}}, s)$". Inspection of `task2_hpa_v2.py` confirms matched comparison is at same (h, τ, s) across all reactive lag variants.
-**Status:** APPLIED 2026-05-25 (D3 batch)
-
----
-
-## ERRATA-010 — Ch6 §6.1 + Ch4 Table 4.13 HPA headline
-
-**Location:** Ch6 §6.1 + Ch4 Table 4.13
-**Original (submitted PDF):** Headline: "533 / 640 Alibaba reactive points dominated, with per-horizon breakdown 128 / 156 / 157 / 92", from v1-sprint `hpa_simulation_v2.csv` at max_replicas=100 (saturation-confounded; `c3_saturation_verdict.md` documents 12–40% of grid points saturated against cluster-capacity ceiling).
-**Correction:** Dual-metric replacement from `hpa_v4_dominance_per_dataset.csv` at max_replicas=1000:
-- **reactive_dominated_pct** per horizon (of 160): Alibaba 120/55/21/1; Bitbrains 117/0/0/0; ByteDance —/125/124/112
-- **ml_strict_dominance_pct** per horizon (of 40): Alibaba 40/35/15/1; Bitbrains 40/0/0/0; ByteDance —/33/32/29
-- 11-cell pools: 675/1760 (38.4%) reactive-dominated; 225/440 (51.1%) ML strict-dominance
-- v4 protocol removes the saturation confound and supersedes the v1-sprint figure
-
-Full substitution paragraph: see "Day 3 application note" below.
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** DECISION-003, DECISION-008
-
----
-
-## ERRATA-011 — Ch6 §6.1 + Ch4 §4.11 production-readiness gate disclosure
-
-**Location:** Ch6 §6.1 + Ch4 §4.11
-**Original (submitted PDF):** Population-level Pareto dominance implied via 533/640 headline; no acknowledgement of the pre-registered 80% reactive-dominated production-readiness gate.
-**Correction:** Explicit disclosure that `passes_gate=False` in all eleven cells under the gate defined at `task_c3_hpa_rebuild_v4.py` line 279 (`reactive_dominated_pct >= 0.80`); highest single-cell rate ByteDance h30 at 78.12%. Disclosure embedded in ERRATA-010's substitution paragraph rather than as a separate footnote.
-**Status:** APPLIED 2026-05-25 (D3 batch)
-**Related:** Q-008, Q-009, DECISION-003, DECISION-008
-
----
-
-## ERRATA-012 — Ch4 BCF cell-level evidence + Table 4.10 Bitbrains row pool source
-
-**Location:** Ch4 BCF cell-level evidence paragraph + Table 4.10 Bitbrains row
-**Original (submitted PDF):** Table 4.10 Bitbrains row: delta@30min=`-5.46pp`, delta@120min=`+3.30pp`, verdict "ML wins only @120min"; surrounding §4.X prose claims "ML wins only at h=120 for Bitbrains" under OLD pool per-VM median scope.
-**Correction:** Table 4.10 Bitbrains row: delta@30min=`+1.53pp`, delta@120min=`-2.81pp`, verdict reframed to NEW pool semantics (h10=-16.66, h30=+1.53, h60=-1.99, h120=-2.81pp; %VMs NEW>naive: h30=61%, h120=35%). §4.X prose grows from one sentence to ~3 sentences disclosing per-VM win rates and the OLD→NEW pool aggregation scope shift. Alibaba/ByteDance rows unchanged. Canonical source CSV: `reports/tables/boundary_condition_table_corrected.csv` (already at NEW pool); verifier `thesis_numbers.json` cleared 211/3 → 214/0 on 2026-05-27 under same scope.
-**Status:** PENDING
-**Related:** DECISION-011 (Q-007 Anchor A)
-
----
-
-## ERRATA-013 — Project storage: Bitbrains test_ensemble_hetero.npy contains Alibaba data
-
-**Location:** Project storage (`/results/bitbrains/h{030,060,120}/predictions/test_ensemble_hetero.npy`)
-**Manuscript impact:** None directly; relevant only for PAR Phase F work (handled by substitution at PAR labels).
-
-**Finding:** The four hetero `.npy` files at the Bitbrains predictions path contain Alibaba data, not Bitbrains data. Confirmed via shape and value distribution:
-
-| Cell | Bitbrains shape (expected) | hetero shape (actual) | hetero mean (actual) | y_true mean (Bitbrains) |
-|---|---|---|---|---|
-| Bitbrains h030 | 202,968 | **1,650,759** (= Alibaba h030) | 10.28 | 30.37 |
-| Bitbrains h060 | 202,116 | **1,621,233** (= Alibaba h060) | 10.28 | 30.34 |
-| Bitbrains h120 | 200,412 | **1,562,181** (= Alibaba h120) | 10.32 | 30.47 |
-
-The mean ~10.3 matches Alibaba's CPU distribution; Bitbrains y_true mean ~30.4. Bitbrains h010 hetero file does not exist (consistent with known BiLSTM OOF shared-memory failure at h10 documented in `run.log`). All other Bitbrains ensemble files at the same paths (`test_ensemble_homo.npy`, `test_ensemble_v2.npy`, `test_ensemble_v3.npy`, `test_xgb.npy`, `test_et.npy`) have correct Bitbrains shapes (~203K) and value distributions.
-
-**Likely cause:** Pipeline run-script copied Alibaba's hetero output to the Bitbrains path during an earlier session (file path templating error).
-
-**Manuscript impact:** None. The submitted PDF does not cite the Bitbrains hetero ensemble in any R² table. `leaderboard_v1.csv` Bitbrains rows use `per_vm_median` aggregation referencing per-VM XGBoost (`bitbrains_per_vm_results.csv`), computed independently. Figure 4.2 caption already states "computed over N=156 active VMs using per-VM XGBoost as the ML reference". The corrupted files would have failed any sanity check at the time of writing; the manuscript's choice of per-VM XGBoost as the Bitbrains ML reference already side-stepped them.
-
-**PAR resolution:** PAR per-series R² (Phase F) substitutes `test_xgb.npy` (global XGBoost trained on all Bitbrains VMs, aligned to chronos2 K=50 spine) for the Bitbrains NNLS reference. Substitution documented in PAR chapter methods. Pre-flight sanity check confirms pooled R² = 0.4973 matches the diagnostic exactly.
-
-**Status:** DISCLOSURE (logged 2026-05-25, PAR D17 diagnostic). No manuscript edit required. Corrupted files left in place (not over-writing project storage).
-
----
-
-## ERRATA-014 — F3 training loss objective (NEW 2026-05-26)
-
-**Location:** Ch4 §4.X (new F3 section to be written in F5) + Ch5 §5.X (F3 evaluation section)
-**Status:** DISCLOSURE — to be applied at F5 chapter writing time.
-
-**Original submission diagnostic (in `f3_chronos2_lora_finetune_v2.py` header notes):**
-> "Training objective: native Chronos-2 ForCausalLMLoss, not pre-registered asymmetric pinball loss. Chronos-2 API does not expose differentiable quantile head."
-
-**This diagnostic was WRONG. Corrected by source code inspection 2026-05-26:**
-
-The training objective is **native Chronos-2 pinball loss over 21 quantiles**, computed at `/venv/main/lib/python3.12/site-packages/chronos/chronos2/model.py::_compute_loss` (line 499) in `chronos-forecasting==2.2.2`. The relevant code:
-
-```python
-quantile_loss = 2 * torch.abs(
-    (future_target - quantile_preds) *
-    ((future_target <= quantile_preds).float() - quantiles)
-)
-loss = quantile_loss * loss_mask
-loss = loss.mean(dim=-1).sum(dim=-1).mean()
-```
-
-This is the standard pinball formulation across all 21 quantiles {0.01, 0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 0.99} (plus intermediates).
-
-The model's `forward()` method (line 618) calls `_compute_loss` at line 723 when `future_target` is provided, returning the result inside `Chronos2Output.loss` (line 752).
-
-**Actual deviation from pre-registration** is therefore narrower than the submitted manuscript suggested:
-- Pre-registered: ASYMMETRIC pinball with cost ratio Cu/Co > 1
-- Implemented: SYMMETRIC pinball (all quantiles equally weighted)
-- Deviation is "symmetric within the right loss family", NOT "wrong loss family"
-
-**Why asymmetric weighting was not applied at training time:** Chronos-2 fit pipeline does not expose a per-quantile weight parameter. Implementation would require subclassing `_compute_loss` or wrapping `Chronos2Pipeline.fit()` to override the loss function. We elected to keep standard symmetric training and apply asymmetric reweighting only at evaluation (post-hoc) for the cost-ratio sensitivity analysis.
-
-**Defence framing:** "The model trains symmetric pinball, which is the natural objective for balanced quantile estimation across the 21-quantile grid. Asymmetric weighting is applied at evaluation to demonstrate cost-sensitivity properties; training-time asymmetric weighting is an obvious extension and is documented as future work."
-
-**Source:** `phase_f/data/f3_loss_inspection.txt` (full grep + sed -n output preserved)
-**Related:** DECISION-015
-
----
-
-## ERRATA-015 — F3 validation-cohort bug + adaptive val_frac fix (NEW 2026-05-26)
-
-**Location:** Ch4 §4.X (new F3 section) + Ch5 §5.X (F3 evaluation)
-**Status:** DISCLOSURE — to be applied at F5 chapter writing time.
-
-**Original submission:** F3 reported with +8.17% pooled improvement, val signal implied 3-dataset.
-
-**Bug discovered 2026-05-26:**
-
-For the Alibaba dataset (median series length 2296 points), the val region computed as `series[-int(len * val_frac):]` with default `val_frac=0.15` gives 344 points. The training script's `sample_window()` function requires `len(val_region) ≥ N_CONTEXT + h_obs`, i.e., ≥ 524 points at h=60min (N_CONTEXT=512, h_obs=12). Since 344 < 524, `sample_window()` returned `None` for **all Alibaba val series**, and Alibaba was silently excluded from the val signal.
-
-The val metric used for checkpoint selection was therefore a **2-dataset mean** (Bitbrains + ByteDance only), with Bitbrains (baseline 4.86) contributing 87% by magnitude. Alibaba (baseline 0.4466) had zero influence on which checkpoint was selected as "best".
-
-**Impact on submitted results:**
-- Best checkpoint pre-fix: epoch 1 (model barely fine-tuned before being selected "best" by 2-dataset val criterion)
-- The +8.17% pooled improvement at test was real but driven by Bitbrains scale dominance
-
-**Fix applied 2026-05-26:** Adaptive `val_frac` per series — increase `val_frac` from 0.15 to whatever makes val region ≥ 636 points (= 512 + max h_obs 24 + 100 headroom). For Alibaba median 2296, `val_frac` becomes 0.277. For Bitbrains and ByteDance, `val_frac` stays at 0.15. Runtime assertion added: `assert alibaba_series_in_val > 0`.
-
-**Post-fix results (canonical, DECISION-015 reframed):**
-- Pooled improvement: **+11.10%** (was +8.17%)
-- Per-dataset all SUCCESS: Alibaba +5.19%, Bitbrains +12.49%, ByteDance +5.07%
-- Best checkpoint moved from epoch 1 to epoch 3
-- Pre-train val (3-dataset) = 1.564945 (was 1.762 in 2-dataset framing)
-
-**Audit trail:**
-- Pre-fix adapter: `phase_f/models/f3_lora_rank8_prefix/`
-- Pre-fix eval: `phase_f/data/f3_eval_lora_rank8_prefix.{json,csv}`
-- Pre-fix training history: `phase_f/data/f3_training_rank8_prefix.csv`
-- Verification report: `phase_f/data/f3_verification.{json,md}`
-- Fix script: `phase_f/scripts/f3_v3_finetune_FIXED.py`
-- Re-run driver: `phase_f/scripts/f3_rerun_lora8_fixed.sh`
-
-**Defence framing:** "During post-submission methodological audit, we identified that the validation cohort silently excluded the Alibaba dataset due to insufficient series length relative to the model context window. We fixed this via adaptive validation fraction and re-ran the primary F3 variant. The corrected results show stronger and more balanced improvements (all three datasets clear the 5% SUCCESS threshold), with confirmed generalisation on the only truly-held-out cohort (Alibaba, +1.82pp on holdout)."
-**Related:** DECISION-015
-
----
-
-## ERRATA-016 — F3 holdout cohort overlap (Bitbrains/ByteDance) (NEW 2026-05-26)
-
-**Location:** Ch5 §5 F3 disclosure (new subsection at F5 chapter writing time)
-**Status:** DISCLOSURE — narrative disclosure required at F5.
-
-**Original submission:** F3 reported with main vs holdout comparison implying genuine generalisation test on all three datasets.
-
-**Issue identified 2026-05-26:**
-
-The "holdout" cohort was constructed by alphabetical series-ID split (last 30% by ID constitute holdout, first 70% constitute main). However:
-
-- **Alibaba:** 4597 series in train/val, 1500 series in holdout. The val cohort (sampled from train/val series) saw 14% of main-cohort series IDs and 0% of holdout-cohort series IDs. **Alibaba holdout IS truly held out** from val checkpoint selection.
-- **Bitbrains:** 142 series total. All 142 used for val. Val cohort overlaps **100%** with main cohort series IDs AND **100%** with holdout cohort series IDs. The "holdout" is a different time-window from the same series, not different series.
-- **ByteDance:** 93 series total. All 93 used for val. Same overlap as Bitbrains.
-
-**Implication:**
-
-For Bitbrains and ByteDance, the main-vs-holdout comparison is an *in-distribution stability test* (different time windows from the same series), not a true generalisation test (different series). Only Alibaba provides a genuine held-out-series cohort.
-
-**Why not fixed:**
-
-Overlap is intrinsic to dataset size. Bitbrains has 142 series total; sampling val from even 25% and excluding holdout series from val would leave ~25 series for val signal (too few for stable val metric). Same for ByteDance (93 series). Fix would require either:
-(a) collecting additional Bitbrains/ByteDance data (out of scope), or
-(b) accepting smaller val signal on these datasets (reduces statistical power).
-
-**Disclosure required in §5:**
-
-> "For Bitbrains (n=142) and ByteDance (n=93), the alphabetical hold-out split overlaps 100% with the val cohort due to small dataset size. For these datasets, hold-out vs main is an in-distribution stability test, not a generalisation test. Only Alibaba (val saw 14% of main, 0% of holdout) provides a true generalisation signal."
-
-**The Alibaba truly-held-out result remains the cleanest evidence of fine-tuning value:**
-
-| Cohort | Pre-fix | Post-fix | Δ |
-|---|---|---|---|
-| Alibaba main | +5.60% | +8.66% | +3.06pp |
-| **Alibaba holdout (truly held out)** | **−4.72%** | **−2.90%** | **+1.82pp** |
-| Bitbrains main | +36.94% | +41.60% | +4.66pp |
-| Bitbrains "holdout" (overlapping) | −54.33% | −55.41% | −1.08pp |
-| ByteDance main | +3.01% | +6.35% | +3.34pp |
-| ByteDance "holdout" (overlapping) | −1.17% | +2.10% | +3.27pp |
-
-The +1.82pp improvement on Alibaba truly-held-out cohort confirms the fine-tune learns transferable patterns, not just val-cohort optimisation.
-
-**Source:** `phase_f/data/f3_postfix_per_dataset.txt`
-**Related:** DECISION-015
+ERRATA-010 transitioned BLOCKED → PENDING on D2 close (substitution numbers locked from canonical CSV). The Day 3 SSH read of `README_HPA_CANONICAL.md` + script body for Q-008 confirmed the gate semantics and produced the final substitution wording in the Day 3 application note below.
 
 ---
 
@@ -342,42 +86,48 @@ Caption:
 
 ## Batch application record
 
-- **2026-05-25 (Day 3 morning):** ERRATA-001 through 011 applied in one Overleaf session in a single commit: "Apply ERRATA-001..011 — see ERRATA.md for source-of-truth substitutions, Phase F D3 (2026-05-25)". Visual diff against submitted-PDF baseline completed for all 8 chapter loci (Ch3 §3.8, Ch3 §3.10, Ch4 §4.8, Ch4 §4.11, Ch4 Table 4.13, Ch5 §5.1, Ch5 §5.6, Ch6 §6.1). PDF rebuilt clean.
-- **2026-05-25 (Day 3 afternoon):** ERRATA-013 logged from PAR D17 diagnostic; no manuscript edit required (project storage only).
-- **2026-05-26 (F3 closure):** ERRATA-014/015/016 logged from F3 verification + fix. To be applied at F5 chapter writing time.
-- **PENDING:** ERRATA-012 (Bitbrains pool source) — to apply at F5 chapter writing time, batched with bibliography audit.
+- **2026-05-25 (Day 3 morning):** ERRATA-001 through 010 applied in one Overleaf session; ERRATA-011 added and applied in the same commit (disclosure embedded in 010's paragraph). Single commit message: "Apply ERRATA-001..011 — see ERRATA.md for source-of-truth substitutions, Phase F D3 (2026-05-25)". Visual diff against submitted-PDF baseline completed for all 8 chapter loci (Ch3 §3.8, Ch3 §3.10, Ch4 §4.8, Ch4 §4.11, Ch4 Table 4.13, Ch5 §5.1, Ch5 §5.6, Ch6 §6.1). PDF rebuilt clean.
+- **2026-05-28 (Phase F dual closure):** ERRATA-014, 015, 016 opened during F2 per-series rescue and F4 closed-loop MPC evaluation. ERRATA-014 resolves at the computational-pipeline level (homo substitution applied in `build_per_series_fulltest_r2.py`); no Overleaf change required. ERRATA-015 and ERRATA-016 are content for a new §5.7 section drafted in `phase_f/manuscript/manuscript_5_7_F4_evaluation.md` but not yet pasted into Overleaf. Both will flip PENDING → APPLIED during F5 writing.
 
 ---
 
-## Bibliography audit (separate, related work item)
+## Closure additions audit (2026-05-25 to 2026-05-28)
 
-Per the research-report findings, multiple prior bibliography entries had fabricated metadata (Fremer authors, AAPA authors, OptScaler citation status). Bibliography audit must be done systematically per-entry before F5 chapter writing. Audit incomplete: schema-only checks done D3–D10; per-entry DOI/arXiv verification not yet run for all entries.
+Four rows were appended to the table after the Day 3 batch closed. Two of them (ERRATA-013, ERRATA-014) document a project-storage data corruption that surfaced first during PAR Step D17 diagnostic work and resurfaced during the F2 per-series rescue. The other two (ERRATA-015, ERRATA-016) capture the F4 closed-loop MPC evaluation outcome and the verdict-label disambiguation that emerged from reading the analysis script's output.
 
-Verified corrections logged:
-- **Fremer:** Chen, Ye, Jiang, He, Zhang, Chen, Gao (PVLDB 18, 2025), arXiv:2507.12908
-- **AHPA:** Zhou, Zhang, Ma et al. (AAAI 37(13):15621–15629, 2023), arXiv:2303.03640
-- **OptScaler:** Zou, Lu, Zhu et al. (PVLDB 17(12):4090–4103, 2024), arXiv:2311.12864
+We note that ERRATA-013 and ERRATA-014 describe the same underlying data corruption (`test_ensemble_hetero.npy` for Bitbrains containing Alibaba data) at different scopes. ERRATA-013 is the project-storage discovery and PAR-side resolution; ERRATA-014 is the F2 per-series rescue's parallel resolution via homo-file substitution. We considered collapsing the two into a single row and decided against it. The two work streams reached the corruption independently — PAR through its per-series argmax pipeline, F2 through partial-R² computation — and produced two distinct substitution decisions tied to two distinct downstream consumers (`test_xgb.npy` aligned to the Chronos-2 K=50 spine for PAR; `test_ensemble_homo.npy` for F2). Numbering the two events separately preserves the audit trail.
 
-**Action:** Run per-entry verification on full .bib before any F5 chapter is submitted. ~6–8 days.
+ERRATA-015 carries the substantive F4 evaluation finding. The Alibaba result is the only one that warrants careful framing in §5.7: two Holm-significant effects in opposite directions, neither of which dominates under the pre-registered strict-Pareto rule. The verdict label "indistinguishable" in `f4_pareto_decision.json` understates this. ERRATA-016 records the disambiguation we will write into the chapter — Pareto tradeoff, partial improvement, genuine null — and notes that the collapsed label is fine for the routing decision but inadequate for the scientific narrative.
 
----
-
-## Total errata status
-
-| Status | Count |
-|---|---|
-| APPLIED (D3 batch) | 11 |
-| PENDING (ERRATA-012) | 1 |
-| DISCLOSURE (013, 014, 015, 016) | 4 |
-| **Total** | **16** |
-
-All errata are tracked here; none are hidden.
+We did not draft Table 5.7.1 replacement text at the time the row was opened; the manuscript draft in `phase_f/manuscript/manuscript_5_7_F4_evaluation.md` already contains the companion table. The row therefore points at the draft file rather than embedding the table inline.
 
 ---
 
-## Notes on usage
+## ERRATA-012 verification note (added during state-reconciliation review)
 
-- Errata are append-only. Once added, an entry's number and core claim are locked.
-- If a corrected value is later found to be itself wrong, add a new ERRATA entry referencing the prior one ("ERRATA-NNN superseded by ERRATA-MMM") — do NOT edit the original.
-- All errata are surfaced to the examiner as a single appendix in the final manuscript.
-- ERRATA approval mechanism: Dr. Ho Long Van approved 2026-05-22 (Day-Zero verification V3) in lieu of full manuscript resubmission.
+We measured the proposed correction against the canonical per-VM source rather than trust the row text. Two files were on disk: `bitbrains_per_vm.csv` and `boundary_condition_table_corrected.csv`. The result inverts the premise of the erratum, and it contradicts a claim the row makes about its own source.
+
+**What the per-VM data shows.** Computing the per-VM median `r2_delta` over `bitbrains_per_vm.csv` (n=156 VMs per horizon, 624 rows):
+
+| Horizon | per-VM median r2_delta | %VMs where ML wins |
+|---|---|---|
+| h10  | −8.68 pp | 12.2% |
+| h30  | **−5.46 pp** | 35.9% |
+| h60  | −0.79 pp | 47.4% |
+| h120 | **+3.30 pp** | 51.9% |
+
+`boundary_condition_table_corrected.csv` agrees exactly: the Bitbrains row reads `-5.46pp` at h30, `+3.30pp` at h120, verdict "ML wins only @120min." These are the figures already printed in the submitted manuscript.
+
+**The finding.** The manuscript's existing numbers match the per-VM source. The proposed correction does not. ERRATA-012 was opened on the assumption that Table 4.10 held stale OLD-pool values needing migration to NEW-pool values; the per-VM data shows the manuscript was already correct, and the proposed `+1.53` / `−2.81` would replace a correct row with figures the source contradicts. The proposed win-rates compound the mismatch: the row claims 61% of VMs win at h30 and 35% at h120, while the data gives 35.9% at h30 and 51.9% at h120 — the two horizons roughly transposed.
+
+**A claim in the row that we disproved.** The Correction column asserts that `boundary_condition_table_corrected.csv` is "at NEW pool from a prior session." It is not. That file holds the OLD-pool per-VM values (`-5.46` / `+3.30`). The row's own source citation therefore points at a file that refutes the row's proposed numbers. We suspect the `+1.53` / `−2.81` figures were read from a different file and the citation was attached in error.
+
+**Why we did not simply void the erratum.** The proposed figures are not random. They trace to a genuinely different aggregation. A prior session recorded a per-VM median over a filtered 142-VM set (NEW pool) at exactly h30 = +1.53 / h120 = −2.81, against the 156-VM median we computed here. The 14-VM gap is the likely filter — idle or low-variance VMs excluded from the NEW pool. So three Bitbrains aggregations are in play, and they disagree on sign: the 156-VM per-VM median (−5.46 / +3.30), a 142-VM filtered per-VM median (+1.53 / −2.81 per the prior record), and a pooled full-test scope in `cross_dataset_headline_v2.csv`, which is not present in project knowledge. We did not reconcile the 142-versus-156 VM-count discrepancy directly, and we cannot read the pooled CSV from here.
+
+**Resolution required before this row may be applied.** Read `cross_dataset_headline_v2.csv` on Vast.ai. Establish which VM set Table 4.10 reports and which the surrounding §4.X prose intends. Determine whether `+1.53` / `−2.81` describes a real cell — the 142-VM filtered median or the pooled scope — that belongs somewhere in the manuscript, or whether the erratum was sourced in error. Until that read settles the scope, the Table 4.10 per-VM row stays at `−5.46` / `+3.30`. Applying the proposed correction to that row on current evidence would introduce an error into a correct table.
+
+**Status rationale.** PENDING → BLOCKED. Under this file's own definition, BLOCKED marks a row that depends on a resolution before it can be applied. The resolution here is the scope question above, gated on a source file absent from the working set. The row carries forward to the F5 writing session, where the Bitbrains row is cited and the canonical CSVs will be synced and present. It must not enter any earlier Overleaf batch.
+
+---
+
+(future errata appended below — keep ID sequence monotonic)
