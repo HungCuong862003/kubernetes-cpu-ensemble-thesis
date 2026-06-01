@@ -1,54 +1,50 @@
-# Data â€” too large + licensing
-data/raw/alibaba/*
-data/raw/bitbrains/*
-data/raw/bytedance/iaas.csv
-data/processed/
-data/interim/
-data/external/
-!data/raw/**/PROVENANCE.md
-!data/raw/**/manifest.json
-!data/raw/**/metadata.json
-
-# Heavy regenerable artifacts
-results/*/h*/predictions/*.npy
-results/*/h*/predictions/*.npz
-results/*/h*/foundation_models/*.npz
-results/*/h*/intervals/*.npz
-
-# Trained models
-models/demo/*.joblib
-models/base_learners/*
-models/meta_learner/*
-models/foundation_zero_shot/*
-
-# Migration / cleanup logs (keep run logs)
-logs/migration_*
-logs/cleanup_*
-logs/scaffold_*
-logs/post_migration_tree_*
-
-# Python / IDE
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
 .ipynb_checkpoints/
-.vscode/
-.idea/
-.DS_Store
+
+# Environments
 .env
-
-# venv
 .venv/
+env/
+venv/
 
-*.bak
+# ML/MLOps
+mlruns/
+.dvc/cache/
 
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Project-specific
+scratch/
+logs/*.log
+thesis/manuscript/build/
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Large binary artefacts that should be regenerable
+# (uncomment if you decide to keep them out of Git)
+# data/raw/**/*.parquet
+# data/raw/**/*.csv
+# results/**/*.npy
+# results/**/*.npz
+# models/foundation_zero_shot/**
+
+# Local secrets — DO NOT COMMIT
 rclone.conf.txt
 
-# Local backup files
-*backup*.md
-*_backup*/
-*.bak.*
-_commit_msg.txt
-_citation_keys_used.txt
-_unused_bib_keys.txt
-demo_build.zip
-demo_build/
+# Whitelist top-level data index
+!data/DATA_MANIFEST.md
